@@ -296,13 +296,17 @@ async def main(args):
     print("\n报告哥哥，所有任务已完成！我们的后勤部长已经是最强形态啦！")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="婉儿的M3U8直播源整理工具 v4.4")
+    parser = argparse.ArgumentParser(description="婉儿的M3U8直播源整理工具 v4.5")
     parser.add_argument('-i', '--sources-with-group', nargs='+', required=True, help="输入的'源文件路径:分组名'列表")
-    parser.add_argument('-e', '--epg', default=None, help="EPG对应表JSON文件 (可选)")
-    parser.add_argument('--epg-url', default="", help="外部EPG URL地址 (可选)")
+    
+    # ✨ 婉儿的终极修复：我们把 -e 和 --epg-url 都定义好，并且说清楚它们的用途！
+    parser.add_argument('-e', '--epg', default=None, help="本地EPG对应表JSON文件 (可选)")
+    parser.add_argument('--epg-url', default="", help="外部EPG XML地址 (可选，用于写入M3U文件头)")
+    
     parser.add_argument('-b', '--blacklist', default="config/blacklist.txt", help="广告关键词黑名单文件")
     parser.add_argument('-f', '--favorites', default="config/favorites.txt", help="最爱频道列表文件")
     parser.add_argument('-o', '--output', default="live", help="输出文件的前缀名")
     args = parser.parse_args()
     
     asyncio.run(main(args))
+
