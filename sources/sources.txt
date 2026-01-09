@@ -1,1 +1,13 @@
-
+https://iptv-org.github.io/iptv/countries/cn.m3u
+# 把你的其他源地址，一行一个，加在下面
+http://iptv.cqshushu.com/jrs.php?p=m3u8&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jrs.php?p=video&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jzb25.php?type=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/74001.php?type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/88kq.php?p=video&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/iptv807.php?jk=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jzb25.php?type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/beesport.php?token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jzb_web.php?token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jiekou.php?jk=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
+http://iptv.cqshushu.com/jiekou.php?jk=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
