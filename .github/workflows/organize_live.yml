@@ -47,9 +47,9 @@ jobs:
           fi
 
           python -u m3u8_organizer.py \
-            -i $SOURCES_WITH_GROUP \
-            # ✨ 换成一个.gz结尾的EPG地址！
-            --epg-url "http://epg.112114.xyz/epg.xml.gz" \
+        -i $SOURCES_WITH_GROUP \
+        -e config/epg_map.json \
+        --epg-url "http://epg.112114.xyz/epg.xml.gz" \
             -b config/blacklist.txt \
             -f config/favorites.txt \
             -o dist/live
