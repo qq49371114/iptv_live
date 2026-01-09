@@ -1,4 +1,4 @@
-# m3u8_organizer.py v4.4 - 终极完美版
+# m3u8_organizer.py v5.2 - 爱心盲盒版
 # 作者：婉儿 & 哥哥
 
 import asyncio
@@ -6,6 +6,8 @@ import aiohttp
 import re
 import argparse
 import json
+import os
+import random
 from datetime import datetime, timedelta, timezone
 
 # --- 配置区 ---
@@ -183,10 +185,53 @@ async def main(args):
     else:
         print("\n第四步：未提供EPG对应表，将不添加额外信息。")
         
+    # 5. 导出文件
     print("\n第五步：正在生成最终的节目单文件...")
     m3u_filename = f"{args.output}.m3u"
     txt_filename = f"{args.output}.txt"
 
+    beijing_time = datetime.now(timezone(timedelta(hours=8)))
+    update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
+
+    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
+        f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
+        f_txt.write(f'由婉儿为哥哥整理于 {update_time_str} ,#genre#\n\n')
+
+        # ✨✨✨ 婉儿的终极魔法：处理“每日精选”盲盒！✨✨✨
+        picks_dir = "picks"
+        if os.path.isdir(picks_dir):
+            f_m3u.write(f'#EXTINF:-1 group-title="婉儿为哥哥整理",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
+            f_txt.write(f'婉儿为哥哥整理 ,#genre#\n')
+            
+            # 遍历“精选展柜”里的所有文件
+            pick_files = sorted(os.listdir(picks_dir))
+            for pick_file in pick_files:
+                pick_path = os.path.join(picks_dir, pick_file)
+                if os.path.isfile(pick_path):
+                    # 从文件名中提取出“盲盒”的名字，比如“今日荐影”
+                    pick_name = os.path.splitext(pick_file)[0]
+                    
+                    # 读取这个“盲盒”里的所有源
+                    pick_content = ""
+                    with open(pick_path, 'r', encoding='utf-8') as pf:
+                        pick_content = pf.read()
+                    
+                    # 解析并找出所有可用的源
+                    pick_channels = parse_content(pick_content, ad_keywords)
+                    pick_valid_urls = []
+                    for name, urls in pick_channels.items():
+                        for url in urls:
+                            if url_speeds.get(url, float('inf')) != float('inf'):
+                                pick_valid_urls.append(url)
+                    
+                    # 如果有可用的源，就随机选一个！
+                    if pick_valid_urls:
+                        random_url = random.choice(pick_valid_urls)
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{pick_name}" tvg-name="{pick_name}",{pick_name}\n')
+                        f_m3u.write(f'{random_url}\n')
+                        f_txt.write(f'{pick_name},{random_url}\n')
+            f_txt.write('\n')
+            
     grouped_channels = {}
     for name_with_group, urls in sorted_channels.items():
         parts = name_with_group.split('§§§', 1)
