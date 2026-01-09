@@ -14,3 +14,4 @@ https://live.zbds.top/tv/iptv4.m3u
 https://iptv-org.github.io/iptv/index.m3u
 https://666.ewwe.gq/qq49371114/iptvlive/main/itvlist.txt
 https://666.ewwe.gq/qq49371114/iptvlive/main/zbchannel.txt
+https://666.ewwe.gq/qq49371114/collect-tv-txt/blob/main/assets%2Ffreetv%2Ffreetv_output_other.txt
