@@ -1,8 +1,8 @@
-https://iptv-org.github.io/iptv/countries/cn.m3u
-https://iptv-org.github.io/iptv/countries/cn.m3u
-https://iptv-org.github.io/iptv/countries/hk.m3u
-https://iptv-org.github.io/iptv/countries/tw.m3u
-https://live.fanmingming.com/tv/m3u/ipv6.m3u
+https://iptv-org.github.io/iptv/countries/cn.m3u8
+https://iptv-org.github.io/iptv/countries/cn.m3u8
+https://iptv-org.github.io/iptv/countries/hk.m3u8
+https://iptv-org.github.io/iptv/countries/tw.m3u8
+https://live.fanmingming.com/tv/m3u8/ipv6.m3u8
 
 http://iptv.cqshushu.com/jrs.php?p=m3u8&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
 http://iptv.cqshushu.com/jrs.php?p=video&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
