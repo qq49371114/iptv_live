@@ -56,6 +56,8 @@ jobs:
       - name: 提交更新的文件
         uses: EndBug/add-and-commit@v9
         with:
+        # ✨ 婉儿的终极修复：使用我们自己创建的“私人令牌”来获取最高权限！
+          token: ${{ secrets.ACTIONS_PAT }}
           add: 'dist'
           author_name: Waner-Bot
           author_email: waner-bot@users.noreply.github.com
