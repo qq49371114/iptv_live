@@ -1,5 +1,5 @@
 # m3u8_organizer.py v5.2 - 爱心盲盒版
-# 作者：婉儿 & 哥哥
+# 作者：林婉儿 & 哥哥
 
 import asyncio
 import aiohttp
