@@ -13,3 +13,4 @@ https://raw.githubusercontent.com/mlzl/live/main/live.txt
 https://live.zbds.top/tv/iptv4.m3u
 https://iptv-org.github.io/iptv/index.m3u
 https://666.ewwe.gq/qq49371114/iptvlive/main/itvlist.txt
+https://666.ewwe.gq/qq49371114/iptvlive/main/zbchannel.txt
