@@ -1,4 +1,6 @@
-# m3u8_organizer.py v5.7 - 精准微创版
+m3u8_organizer.py v5.7 - 【完整无省略版】
+
+# m3u8_organizer.py v5.7 - 精准微创版 (完整代码)
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -17,8 +19,9 @@ HEADERS = {
 }
 TIMEOUT = 5
 
-# --- 工具函数区 (与之前版本相同，保持不变) ---
+# --- 工具函数区 ---
 def load_list_from_file(filename):
+    """从文件中加载列表，如黑名单、收藏夹。"""
     if not filename or not os.path.exists(filename):
         if filename: print(f"  - 配置文件 {filename} 未找到，将跳过。")
         return []
@@ -30,6 +33,7 @@ def load_list_from_file(filename):
         return []
 
 async def test_url(session, url):
+    """异步测试单个URL的可用性和响应速度。"""
     try:
         start_time = asyncio.get_event_loop().time()
         async with session.get(url, headers=HEADERS, timeout=TIMEOUT) as response:
@@ -41,6 +45,7 @@ async def test_url(session, url):
         return url, float('inf')
 
 def parse_content(content, ad_keywords):
+    """从M3U或TXT格式的文本内容中解析出频道名和URL。"""
     channels = {}
     processed_urls = set()
     current_group = None
@@ -79,6 +84,7 @@ def parse_content(content, ad_keywords):
     return channels
 
 async def load_epg_data(epg_url):
+    """智能加载EPG数据，支持URL/本地、Gzip/纯文本、XML格式。"""
     if not epg_url: return {}
     print(f"\n第四步：正在加载EPG数据: {epg_url}...")
     epg_data = {}
@@ -109,6 +115,7 @@ async def load_epg_data(epg_url):
     return epg_data
 
 def get_group_name_fallback(channel_name):
+    """备用分组逻辑，根据频道名关键字猜测分组。"""
     group_rules = {"央视频道": ["CCTV", "央视"], "卫视频道": ["卫视"], "地方频道": ["北京", "上海", "广东"], "斗鱼直播": ["斗鱼"], "虎牙直播": ["虎牙"], "NewTV": ["NewTV"]}
     for group, keywords in group_rules.items():
         if any(keyword in channel_name for keyword in keywords): return group
@@ -189,7 +196,25 @@ async def main(args):
         f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
         f_txt.write(f'更新时间,#genre#\n{update_time_str},#\n\n')
         
-        # ... (每日精选逻辑保持不变) ...
+        picks_dir = "picks"
+        if os.path.isdir(picks_dir):
+            f_m3u.write(f'#EXTINF:-1 group-title="婉儿为哥哥整理",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
+            f_txt.write(f'婉儿为哥哥整理,#genre#\n')
+            pick_files = sorted(os.listdir(picks_dir))
+            for pick_file in pick_files:
+                pick_path = os.path.join(picks_dir, pick_file)
+                if os.path.isfile(pick_path):
+                    pick_name = os.path.splitext(pick_file)[0]
+                    with open(pick_path, 'r', encoding='utf-8') as pf:
+                        pick_content = pf.read()
+                    pick_channels = parse_content(pick_content, ad_keywords)
+                    pick_valid_urls = [url for urls in pick_channels.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+                    if pick_valid_urls:
+                        random_url = random.choice(pick_valid_urls)
+                        safe_pick_name = pick_name.replace(" ", "-")
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{safe_pick_name}" tvg-name="{safe_pick_name}",{safe_pick_name}\n{random_url}\n')
+                        f_txt.write(f'{safe_pick_name},{random_url}\n')
+            f_txt.write('\n')
 
         grouped_channels = {}
         for name, urls in sorted_channels.items():
@@ -205,12 +230,10 @@ async def main(args):
             channels_in_group = grouped_channels.get(group)
             if not channels_in_group: continue
             
-            # ✨✨✨ 终极修正：分组名保持原样，一个字都不动！ ✨✨✨
             f_txt.write(f'{group},#genre#\n')
             channels_in_group.sort(key=lambda x: x[0]) 
             
             for name, urls in channels_in_group:
-                # ✨✨✨ 精准手术：只替换节目名字里的空格 ✨✨✨
                 safe_name = name.replace(" ", "-")
                 fastest_url = urls[0]
                 
@@ -221,7 +244,6 @@ async def main(args):
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                # ✨✨✨ 终极修正：group-title使用原始分组名！ ✨✨✨
                 f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
                 f_m3u.write(f'{fastest_url}\n')
             f_txt.write('\n')
