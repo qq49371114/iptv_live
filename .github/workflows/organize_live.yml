@@ -1,11 +1,11 @@
-# organize_live.yml v4.4
-# 机器人管家：自动整理直播源
+# organize_live.yml v4.5
+# 机器人管家：自动整理直播源 (清爽重构版)
 # 作者：婉儿 & 哥哥
 
 name: 自动整理直播源
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 允许手动触发
   schedule:
     - cron: '0 0 * * *' # 每天北京时间早上8点运行
 
@@ -27,44 +27,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install aiohttp
 
-      - name: 运行整理程序
+      - name: 运行整理程序 (v4.5 新版调用方式)
         run: |
-          SOURCES_WITH_GROUP=""
-          
-          # 第一部分：处理本地 sources/ 文件夹，这部分逻辑是好的，我们保留
-          if [ -d "sources" ]; then
-            for file in sources/*; do
-              if [ -f "$file" ]; then
-                GROUP_NAME=$(basename "$file" | sed 's/\.[^.]*$//')
-                SOURCES_WITH_GROUP="$SOURCES_WITH_GROUP $file:$GROUP_NAME"
-              fi
-            done
-          fi
-          
-          # ✨ 婉儿的终极修复：用更安全的方式来读取和处理外部源！
-          if [ -f "sources.txt" ]; then
-            # 我们不再用那个复杂的管道命令了，我们用一个更稳妥的while read循环
-            while IFS= read -r url || [ -n "$url" ]; do
-              # 忽略空行和注释行
-              [[ "$url" =~ ^# ]] || [[ -z "$url" ]] && continue
-              # 把每一个完整的URL，都追加到我们的参数列表里
-              SOURCES_WITH_GROUP="$SOURCES_WITH_GROUP $url:网络源"
-            done < sources.txt
-          fi
-
-          # 最后，执行我们的Python脚本
           python -u m3u8_organizer.py \
-            -i $SOURCES_WITH_GROUP \
-            --epg-url "http://epg.51zmt.top:8000/e.xml" \
-            -b config/blacklist.txt \
-            -f config/favorites.txt \
-            -o dist/live
+            --local-sources-dir "sources" \
+            --remote-sources-file "sources.txt" \
+            --epg-url "http://epg.51zmt.top:8000/e.xml.gz" \
+            -b "config/blacklist.txt" \
+            -f "config/favorites.txt" \
+            -o "dist/live"
 
       - name: 提交更新的文件
         uses: EndBug/add-and-commit@v9
         with:
-          token: ${{ secrets.ACTIONS_PAT }}
+          # 使用 PAT, 确保有权限触发其他工作流 (如果需要的话)
+          token: ${{ secrets.ACTIONS_PAT }} 
+          # 只提交 dist 目录下的变动
           add: 'dist'
+          # 提交作者信息
           author_name: 'Waner-Bot'
           author_email: 'waner-bot@users.noreply.github.com'
+          # 提交信息
           message: 'chore: 自动更新直播源'
