@@ -1,11 +1,9 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间",2026-01-10 00:33:12
+#EXTINF:-1 group-title="更新时间",2026-01-10 00:54:48
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:33:12
+#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:54:48
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 tvg-id="Racing-TV" tvg-name="Racing-TV" tvg-logo="" group-title="网络源",Racing-TV
-http://iptv.cqshushu.com/beesport.php?id=Racing-TV
-#EXTINF:-1 tvg-id="Sky-Cinema-Action" tvg-name="Sky-Cinema-Action" tvg-logo="" group-title="网络源",Sky-Cinema-Action
-http://iptv.cqshushu.com/beesport.php?id=Sky-Cinema-Action
-#EXTINF:-1 tvg-id="TNT-SPORTS-4-(Main)" tvg-name="TNT-SPORTS-4-(Main)" tvg-logo="" group-title="网络源",TNT-SPORTS-4-(Main)
-http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-4
+#EXTINF:-1 tvg-id="Eurosport-2" tvg-name="Eurosport-2" tvg-logo="" group-title="网络源",Eurosport-2
+http://iptv.cqshushu.com/beesport.php?id=Eurosport-2
+#EXTINF:-1 tvg-id="TNT-SPORTS-2-(Backup-1)" tvg-name="TNT-SPORTS-2-(Backup-1)" tvg-logo="" group-title="网络源",TNT-SPORTS-2-(Backup-1)
+http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-2-BU
