@@ -42,6 +42,9 @@ async def test_url(session, url):
         return url, float('inf')
 
 def parse_content(content, ad_keywords):
+    """
+    婉儿升级版v4：终极智能解析，完美处理各种复杂格式！
+    """
     channels = {}
     processed_urls = set()
     current_group = None
@@ -64,6 +67,7 @@ def parse_content(content, ad_keywords):
             if '#genre#' in line:
                 current_group = line.split(',')[0].strip()
                 continue
+            
             if line.startswith('#EXTINF:'):
                 if i + 1 < len(lines):
                     next_line = lines[i+1].strip()
@@ -72,14 +76,22 @@ def parse_content(content, ad_keywords):
                         name_match = re.search(r'tvg-name="([^"]*)"', line)
                         name = name_match.group(1) if name_match else line.split(',')[-1]
                         add_channel(name, url, current_group)
+            
+            # ✨ 婉儿的终极修复：用更智能的方式来处理TXT格式！
             elif ',' in line and 'http' in line:
-                parts = line.split(',', 1)
-                if len(parts) >= 2:
-                    name, url = parts[0], parts[1]
-                    add_channel(name, url, current_group)
+                # 我们从最后一个逗号开始分割，把它前面的都当成频道名，后面的当成URL
+                last_comma_index = line.rfind(',')
+                if last_comma_index != -1:
+                    name = line[:last_comma_index]
+                    url = line[last_comma_index+1:]
+                    # 再确认一下URL部分是合法的
+                    if url.startswith('http'):
+                        add_channel(name, url, current_group)
         except Exception as e:
             print(f"  - 解析行失败: '{line}', 错误: {e}")
+            
     return channels
+
 
 def get_group_name_fallback(channel_name):
     # 这个函数现在只作为备用，主要的分类逻辑靠文件名和#genre#
