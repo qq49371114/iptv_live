@@ -1,9 +1,9 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间",2026-01-10 00:54:48
+#EXTINF:-1 group-title="更新时间",2026-01-10 01:02:16
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:54:48
-#EXTVLCOPT:network-caching=1000
-#EXTINF:-1 tvg-id="Eurosport-2" tvg-name="Eurosport-2" tvg-logo="" group-title="网络源",Eurosport-2
-http://iptv.cqshushu.com/beesport.php?id=Eurosport-2
-#EXTINF:-1 tvg-id="TNT-SPORTS-2-(Backup-1)" tvg-name="TNT-SPORTS-2-(Backup-1)" tvg-logo="" group-title="网络源",TNT-SPORTS-2-(Backup-1)
-http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-2-BU
+#EXTINF:-1 tvg-id="Bein-Sports-English-3" tvg-name="Bein-Sports-English-3" tvg-logo="" group-title="网络源",Bein-Sports-English-3
+http://iptv.cqshushu.com/beesport.php?id=Bein-Sports-English-3
+#EXTINF:-1 tvg-id="LALIGA-TV-HD-(Main)" tvg-name="LALIGA-TV-HD-(Main)" tvg-logo="" group-title="网络源",LALIGA-TV-HD-(Main)
+http://iptv.cqshushu.com/beesport.php?id=La-Liga-TV
+#EXTINF:-1 tvg-id="Willow-Cricket" tvg-name="Willow-Cricket" tvg-logo="" group-title="网络源",Willow-Cricket
+http://iptv.cqshushu.com/beesport.php?id=Willow-Cricket
