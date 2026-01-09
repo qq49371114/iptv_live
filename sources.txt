@@ -13,5 +13,7 @@ https://raw.githubusercontent.com/mlzl/live/main/live.txt
 https://live.zbds.top/tv/iptv4.m3u
 https://iptv-org.github.io/iptv/index.m3u
 https://666.ewwe.gq/qq49371114/iptvlive/main/itvlist.txt
+https://666.ewwe.gq/qq49371114/collect-tv-txt/main/%E4%B8%93%E5%8C%BA%2F%E2%99%AA%E7%94%B5%E5%BD%B1%E7%82%B9%E6%92%AD.txt
 https://666.ewwe.gq/qq49371114/iptvlive/main/zbchannel.txt
-https://666.ewwe.gq/qq49371114/collect-tv-txt/blob/main/assets%2Ffreetv%2Ffreetv_output_other.txt
+https://666.ewwe.gq/qq49371114/collect-tv-txt/main/assets%2Ffreetv%2Ffreetv_output_other.txt
+https://666.ewwe.gq/qq49371114/collect-tv-txt/main/%E4%B8%93%E5%8C%BA%2F%E2%99%AA%E4%BC%98%E8%B4%A8%E5%A4%AE%E8%A7%86.txt
