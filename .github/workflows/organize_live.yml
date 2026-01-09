@@ -30,6 +30,8 @@ jobs:
       - name: 运行整理程序
         run: |
           SOURCES_WITH_GROUP=""
+          
+          # 第一部分：处理本地 sources/ 文件夹，这部分逻辑是好的，我们保留
           if [ -d "sources" ]; then
             for file in sources/*; do
               if [ -f "$file" ]; then
@@ -39,17 +41,21 @@ jobs:
             done
           fi
           
+          # ✨ 婉儿的终极修复：用更安全的方式来读取和处理外部源！
           if [ -f "sources.txt" ]; then
-            EXTERNAL_SOURCES=$(cat sources.txt | grep -v '^#' | grep -v '^$' | tr '\n' ' ')
-            for url in $EXTERNAL_SOURCES; do
+            # 我们不再用那个复杂的管道命令了，我们用一个更稳妥的while read循环
+            while IFS= read -r url || [ -n "$url" ]; do
+              # 忽略空行和注释行
+              [[ "$url" =~ ^# ]] || [[ -z "$url" ]] && continue
+              # 把每一个完整的URL，都追加到我们的参数列表里
               SOURCES_WITH_GROUP="$SOURCES_WITH_GROUP $url:网络源"
-            done
+            done < sources.txt
           fi
 
+          # 最后，执行我们的Python脚本
           python -u m3u8_organizer.py \
-           -i $SOURCES_WITH_GROUP \
-           -e config/epg_map.json \
-           --epg-url "http://epg.112114.xyz/epg.xml.gz" \
+            -i $SOURCES_WITH_GROUP \
+            --epg-url "http://epg.51zmt.top:8000/e.xml" \
             -b config/blacklist.txt \
             -f config/favorites.txt \
             -o dist/live
