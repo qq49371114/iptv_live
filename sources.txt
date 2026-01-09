@@ -1,1 +1,2 @@
 https://raw.githubusercontent.com/Yuechan/Live/main/IPTV.m3u
+https://live.fanmingming.com/tv/m3u/index.m3u
