@@ -1,4 +1,4 @@
-# m3u8_organizer.py v5.3 - 智能修复版
+# m3u8_organizer.py v5.4 - 最终兼容版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -127,7 +127,9 @@ async def load_epg_data(epg_url):
             icon_tag = channel.find('icon')
             logo_url = icon_tag.get('src') if icon_tag is not None else ""
             if display_name:
-                epg_data[display_name] = {"tvg-id": channel_id or display_name, "tvg-logo": logo_url}
+                # ✨ 净化EPG中的频道名空格，用于后续匹配
+                safe_display_name = display_name.strip()
+                epg_data[safe_display_name] = {"tvg-id": channel_id or safe_display_name, "tvg-logo": logo_url}
         print(f"  - EPG加载成功！共解析出 {len(epg_data)} 个频道的节目信息。")
 
     except ET.ParseError as e:
@@ -150,7 +152,7 @@ def get_group_name_fallback(channel_name):
     return "其他频道"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v5.3 开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v5.4 开始工作啦！")
     
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
@@ -225,7 +227,6 @@ async def main(args):
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
-    # ✨✨✨ 关键修复：使用单个 with open 块，防止文件被覆盖 ✨✨✨
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, \
          open(txt_filename, 'w', encoding='utf-8') as f_txt:
         
@@ -253,18 +254,16 @@ async def main(args):
                     
                     if pick_valid_urls:
                         random_url = random.choice(pick_valid_urls)
-                        f_m3u.write(f'#EXTINF:-1 tvg-id="{pick_name}" tvg-name="{pick_name}",{pick_name}\n{random_url}\n')
-                        f_txt.write(f'{pick_name},{random_url}\n')
+                        safe_pick_name = pick_name.replace(" ", "-") # 净化盲盒名
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{safe_pick_name}" tvg-name="{safe_pick_name}",{safe_pick_name}\n{random_url}\n')
+                        f_txt.write(f'{safe_pick_name},{random_url}\n')
             f_txt.write('\n')
             
         # 准备常规频道数据
         grouped_channels = {}
-        for name_with_group, urls in sorted_channels.items():
-            parts = name_with_group.split('§§§', 1)
-            group_from_source, name = (parts[0], parts[1]) if len(parts) > 1 else (None, name_with_group)
-            
+        for name, urls in sorted_channels.items():
             fastest_url = urls[0]
-            group_name = "我的最爱" if name in favorite_channels else (group_from_source or url_to_group.get(fastest_url) or get_group_name_fallback(name))
+            group_name = "我的最爱" if name in favorite_channels else (url_to_group.get(fastest_url) or get_group_name_fallback(name))
 
             if group_name not in grouped_channels:
                 grouped_channels[group_name] = []
@@ -272,33 +271,36 @@ async def main(args):
 
         # 写入常规频道
         custom_group_order = ["我的最爱", "央视频道", "卫视频道", "地方频道", "斗鱼直播", "虎牙直播", "NewTV", "网络源"]
-        
         all_groups = custom_group_order + sorted([g for g in grouped_channels if g not in custom_group_order])
 
         for group in all_groups:
             channels_in_group = grouped_channels.get(group)
             if not channels_in_group: continue
             
-            f_txt.write(f'{group},#genre#\n')
+            # ✨✨✨ 关键净化：替换分组名中的空格 ✨✨✨
+            safe_group = group.replace(" ", "-")
+            f_txt.write(f'{safe_group},#genre#\n')
             channels_in_group.sort(key=lambda x: x[0]) 
             
             for name, urls in channels_in_group:
+                # ✨✨✨ 关键净化：替换频道名中的空格 ✨✨✨
+                safe_name = name.replace(" ", "-")
                 fastest_url = urls[0]
                 
                 # 写入TXT文件 (所有源)
                 for url in urls:
-                    f_txt.write(f'{name},{url}\n')
+                    f_txt.write(f'{safe_name},{url}\n')
                 
                 # 写入M3U文件 (最快的源)
-                epg_info = epg_data.get(name, {})
-                tvg_id = epg_info.get("tvg-id", name)
+                epg_info = epg_data.get(name, epg_data.get(safe_name, {})) # 优先用原名匹配EPG，再尝试用净化名
+                tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
-                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{tvg_logo}" group-title="{group}",{name}\n')
+                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{safe_group}",{safe_name}\n')
                 f_m3u.write(f'{fastest_url}\n')
             f_txt.write('\n')
 
     print(f"\n第六步：任务完成！节目单已生成到 {m3u_filename} 和 {txt_filename}")
-    print("哥哥辛苦啦，快去看看成果吧！ (づ｡◕‿‿◕｡)づ")
+    print("哥哥辛苦啦，现在我们的节目单完美啦！ (づ｡◕‿‿◕｡)づ")
 
 
 if __name__ == '__main__':
