@@ -1,99 +1,161 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间",2026-01-10 00:04:10
+#EXTINF:-1 group-title="更新时间",2026-01-10 00:06:53
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:04:10
+#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:06:53
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 tvg-id="(宝)MovieMusic欣赏" tvg-name="(宝)MovieMusic欣赏" tvg-logo="" group-title="网络源",(宝)MovieMusic欣赏
-https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvplus/dee3e3af-2706-3e77-a952-91b99f6d1819/5711200/manifest.m3u8
-#EXTINF:-1 tvg-id="?今天一整天都在蝕刻?" tvg-name="?今天一整天都在蝕刻?" tvg-logo="" group-title="网络源",?今天一整天都在蝕刻?
-https://vip2.slbfsl.com/20230415/r4tEJkrP/index.m3u8
-#EXTINF:-1 tvg-id="?今天蝕刻一整天?" tvg-name="?今天蝕刻一整天?" tvg-logo="" group-title="网络源",?今天蝕刻一整天?
-https://vip2.slbfsl.com/20230415/yeahjKmU/index.m3u8
+#EXTINF:-1 tvg-id="(箱)音乐欣赏" tvg-name="(箱)音乐欣赏" tvg-logo="" group-title="网络源",(箱)音乐欣赏
+http://61.221.215.25:8800/hls/49/index.m3u8
+#EXTINF:-1 tvg-id="4K 欧洲杯 1" tvg-name="4K 欧洲杯 1" tvg-logo="" group-title="网络源",4K 欧洲杯 1
+http://129.226.149.79:4785/html/freetest0321.php?access_token=test1208faku&id=Slive01
 #EXTINF:-1 tvg-id="BBC News" tvg-name="BBC News" tvg-logo="" group-title="网络源",BBC News
 http://125.227.210.55:8165/VideoInput/play.ts
+#EXTINF:-1 tvg-id="CCTV+2" tvg-name="CCTV+2" tvg-logo="" group-title="网络源",CCTV+2
+https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="" group-title="网络源",CCTV1
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9659&tk=b53028476470
+http://play.kankanlive.com/live/1661761962676984.m3u8
 #EXTINF:-1 tvg-id="11" tvg-name="CCTV10" tvg-logo="" group-title="网络源",CCTV10
-https://api.olelive.com/dis/live/CCTV10HD/hls.m3u8
-#EXTINF:-1 tvg-id="12" tvg-name="CCTV11" tvg-logo="" group-title="网络源",CCTV11
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2249&tk=f6cc1e0a0e1a
-#EXTINF:-1 tvg-id="14" tvg-name="CCTV13" tvg-logo="" group-title="网络源",CCTV13
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6155&tk=e640d0a1bf70
+http://115.48.161.179:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="" group-title="网络源",CCTV14
-http://222.169.85.8:9901/tsfile/live/0014_1.m3u8
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="" group-title="网络源",CCTV2
-http://61.136.172.236:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV5" tvg-logo="" group-title="网络源",CCTV5
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2598&tk=a0c4f6cfaba3
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV5+" tvg-logo="" group-title="网络源",CCTV5+
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=4927&tk=e640d0a1bf70
-#EXTINF:-1 tvg-id="7" tvg-name="CCTV6" tvg-logo="" group-title="网络源",CCTV6
-http://61.136.172.236:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+https://piccpndali.v.myalicdn.com/audio/cctv14_2.m3u8
+#EXTINF:-1 tvg-id="1864" tvg-name="CCTV16" tvg-logo="" group-title="网络源",CCTV16
+http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
+#EXTINF:-1 tvg-id="4" tvg-name="CCTV4" tvg-logo="" group-title="网络源",CCTV4
+http://123.129.70.178:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="8" tvg-name="CCTV7" tvg-logo="" group-title="网络源",CCTV7
-http://112.46.105.20:8009/hls/504/index.m3u8
-#EXTINF:-1 tvg-id="VIUTV" tvg-name="VIUTV" tvg-logo="" group-title="网络源",VIUTV
-http://php.jdshipin.com/PLTV/iptv.php?id=viutv2
-#EXTINF:-1 tvg-id="ワタシを中イキさせてください" tvg-name="ワタシを中イキさせてください" tvg-logo="" group-title="网络源",ワタシを中イキさせてください
-https://vip2.slbfsl.com/20230404/nj7n9xwa/index.m3u8
-#EXTINF:-1 tvg-id="72" tvg-name="三沙卫视" tvg-logo="" group-title="网络源",三沙卫视
-https://stream1.freetv.fun/fd1abacd02d10bf9e60b98fdc292704eefa30cff9e4eb0816eec3156e687c991.m3u8
-#EXTINF:-1 tvg-id="中华小当家" tvg-name="中华小当家" tvg-logo="" group-title="网络源",中华小当家
-http://61.221.215.25:8800/hls/40/index.m3u8
-#EXTINF:-1 tvg-id="中天娱乐" tvg-name="中天娱乐" tvg-logo="" group-title="网络源",中天娱乐
-http://61.221.215.25:8800/hls/47/index.m3u8
-#EXTINF:-1 tvg-id="云和新闻" tvg-name="云和新闻" tvg-logo="" group-title="网络源",云和新闻
-http://l.cztvcloud.com/channels/lantian/SXyunhe1/720p.m3u8?
-#EXTINF:-1 tvg-id="141" tvg-name="凤凰中文" tvg-logo="" group-title="网络源",凤凰中文
-http://183.237.95.108:9901/tsfile/live/1103_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 tvg-id="30" tvg-name="北京卫视" tvg-logo="" group-title="网络源",北京卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9267&tk=b53028476470
-#EXTINF:-1 tvg-id="南京新闻综合" tvg-name="南京新闻综合" tvg-logo="" group-title="网络源",南京新闻综合
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7679&tk=e640d0a1bf70
-#EXTINF:-1 tvg-id="南通新闻综合" tvg-name="南通新闻综合" tvg-logo="" group-title="网络源",南通新闻综合
-https://migu.188766.xyz/?migutoken=61a3a9103235260cc82c94647d760ce5&id=%E5%8D%97%E9%80%9A%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&type=yy
+http://123.129.70.178:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" tvg-logo="" group-title="网络源",CCTV兵器科技
+http://sh.lnott.top:880/dx81.m3u8
+#EXTINF:-1 tvg-id="CCTV阿拉伯语" tvg-name="CCTV阿拉伯语" tvg-logo="" group-title="网络源",CCTV阿拉伯语
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7715&tk=b53028476470
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" tvg-logo="" group-title="网络源",CCTV风云足球
+http://120.238.94.10:9901/tsfile/live/1087_1.m3u8
+#EXTINF:-1 tvg-id="DJ舞曲" tvg-name="DJ舞曲" tvg-logo="" group-title="网络源",DJ舞曲
+https://vd4.bdstatic.com/mda-idpg23napy9gsnxb/logo/sc/mda-idpg23napy9gsnxb.mp4
+#EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="" group-title="网络源",ESPN
+http://41.205.93.154/ESPN/index.m3u8
+#EXTINF:-1 tvg-id="NewsMax" tvg-name="NewsMax" tvg-logo="" group-title="网络源",NewsMax
+https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
+#EXTINF:-1 tvg-id="Red Bull TV" tvg-name="Red Bull TV" tvg-logo="" group-title="网络源",Red Bull TV
+http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
+#EXTINF:-1 tvg-id="TVB明珠" tvg-name="TVB明珠" tvg-logo="" group-title="网络源",TVB明珠
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=3418&tk=e640d0a1bf70
+#EXTINF:-1 tvg-id="Token过期" tvg-name="Token过期" tvg-logo="" group-title="网络源",Token过期
+https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
+#EXTINF:-1 tvg-id="41" tvg-name="东南卫视" tvg-logo="" group-title="网络源",东南卫视
+https://www.freetv.top/migu/849116810.m3u8?migutoken=ad40cfb84c6c3a70e2f36f9419fde87147081bd969b8a7c270fde9e9dee90e1aabf8472344c1316a13639f26892f03cd1807f6b81db9976a0212ada2cdc1cdf9f9c01696f6478a7484eb04e6ef
+#EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="" group-title="网络源",东方卫视
+http://218.13.170.98:9901/tsfile/live/1010_1.m3u8
+#EXTINF:-1 tvg-id="58" tvg-name="云南卫视" tvg-logo="" group-title="网络源",云南卫视
+http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
+#EXTINF:-1 tvg-id="五星体育" tvg-name="五星体育" tvg-logo="" group-title="网络源",五星体育
+https://gdcucc.v1.mk/gdcucc/wxty.m3u8
+#EXTINF:-1 tvg-id="亚洲新闻" tvg-name="亚洲新闻" tvg-logo="" group-title="网络源",亚洲新闻
+http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
+#EXTINF:-1 tvg-id="优漫卡通" tvg-name="优漫卡通" tvg-logo="" group-title="网络源",优漫卡通
+https://stream1.freetv.fun/4073fb5ec1ec48f010e1db882aeb63ddc7104c56c5c729c4d08e932d585591a8.m3u8
+#EXTINF:-1 tvg-id="八大综合" tvg-name="八大综合" tvg-logo="" group-title="网络源",八大综合
+http://61.221.215.25:8800/hls/56/index.m3u8
+#EXTINF:-1 tvg-id="到期日期:2026-02-08 12:41:20" tvg-name="到期日期:2026-02-08 12:41:20" tvg-logo="" group-title="网络源",到期日期:2026-02-08 12:41:20
+https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
+#EXTINF:-1 tvg-id="动漫秀场" tvg-name="动漫秀场" tvg-logo="" group-title="网络源",动漫秀场
+http://183.237.95.108:9901/tsfile/live/1104_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 tvg-id="北京新闻" tvg-name="北京新闻" tvg-logo="" group-title="网络源",北京新闻
+http://live.xmcdn.com/live/91/64.m3u8
+#EXTINF:-1 tvg-id="北京科教" tvg-name="北京科教" tvg-logo="" group-title="网络源",北京科教
+http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=btv3&P2PChannelID=pd://cctv_p2p_hdbtv3
 #EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="" group-title="网络源",吉林卫视
-http://61.136.172.236:9901/tsfile/live/0116_1.m3u8
-#EXTINF:-1 tvg-id="38" tvg-name="山东卫视" tvg-logo="" group-title="网络源",山东卫视
-http://222.169.85.8:9901/tsfile/live/0131_1.m3u8
-#EXTINF:-1 tvg-id="山东齐鲁" tvg-name="山东齐鲁" tvg-logo="" group-title="网络源",山东齐鲁
-http://61.156.228.12:8154/tsfile/live/1001_1.m3u8
-#EXTINF:-1 tvg-id="广东体育" tvg-name="广东体育" tvg-logo="" group-title="网络源",广东体育
-http://218.15.183.23:9901/tsfile/live/23012_1.m3u8
-#EXTINF:-1 tvg-id="33" tvg-name="广东卫视" tvg-logo="" group-title="网络源",广东卫视
-http://dms.yryyj.site:8188/udp/239.76.245.189:1234
-#EXTINF:-1 tvg-id="新疆｜奎屯汉语综合" tvg-name="新疆｜奎屯汉语综合" tvg-logo="" group-title="网络源",新疆｜奎屯汉语综合
-http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd
-#EXTINF:-1 tvg-id="星空卫视" tvg-name="星空卫视" tvg-logo="" group-title="网络源",星空卫视
-http://39.107.120.164:8080/live/diyp_xingkong.flv
-#EXTINF:-1 tvg-id="民视新闻" tvg-name="民视新闻" tvg-logo="" group-title="网络源",民视新闻
-http://38.64.72.148:80/hls/modn/list/4012/playlist.m3u8
-#EXTINF:-1 tvg-id="河南｜周口扶沟" tvg-name="河南｜周口扶沟" tvg-logo="" group-title="网络源",河南｜周口扶沟
-http://live.dxhmt.cn:9081/tv/11621-1.m3u8
-#EXTINF:-1 tvg-id="浙江少儿" tvg-name="浙江少儿" tvg-logo="" group-title="网络源",浙江少儿
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6385&tk=f6cc1e0a0e1a
-#EXTINF:-1 tvg-id="海南少儿" tvg-name="海南少儿" tvg-logo="" group-title="网络源",海南少儿
-https://migu.188766.xyz/?migutoken=6eaa069383f63ab8eaf9cf3944f58538&id=hn_sepd&type=sz
+http://23.237.228.134/live8/jilin.m3u8
+#EXTINF:-1 tvg-id="56" tvg-name="四川卫视" tvg-logo="" group-title="网络源",四川卫视
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8662&tk=b53028476470
+#EXTINF:-1 tvg-id="四川科教" tvg-name="四川科教" tvg-logo="" group-title="网络源",四川科教
+http://182.150.115.21:8030/pcgacg/pcgacg_0.m3u8
+#EXTINF:-1 tvg-id="天津" tvg-name="天津" tvg-logo="" group-title="网络源",天津
+https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/5f03d9f1684241f696b25a19ffc44145/main.m3u8
+#EXTINF:-1 tvg-id="39" tvg-name="天津卫视" tvg-logo="" group-title="网络源",天津卫视
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=4702&tk=f6cc1e0a0e1a
+#EXTINF:-1 tvg-id="54" tvg-name="山西卫视" tvg-logo="" group-title="网络源",山西卫视
+http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
+#EXTINF:-1 tvg-id="岷县综合" tvg-name="岷县综合" tvg-logo="" group-title="网络源",岷县综合
+http://play.kankanlive.com/live/1614311581479927.m3u8?zgand
+#EXTINF:-1 tvg-id="广东新闻" tvg-name="广东新闻" tvg-logo="" group-title="网络源",广东新闻
+https://stream1.freetv.fun/yan-dong-xin-wen-8.m3u8
+#EXTINF:-1 tvg-id="广东民生" tvg-name="广东民生" tvg-logo="" group-title="网络源",广东民生
+https://stream1.freetv.fun/yan-dong-min-sheng-24.ctv
+#EXTINF:-1 tvg-id="广东珠江" tvg-name="广东珠江" tvg-logo="" group-title="网络源",广东珠江
+http://live.xmcdn.com/live/252/64.m3u8
+#EXTINF:-1 tvg-id="广州影视" tvg-name="广州影视" tvg-logo="" group-title="网络源",广州影视
+https://stream1.freetv.fun/yan-zhou-ying-shi-22.ctv
+#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="" group-title="网络源",广西卫视
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7024&tk=b53028476470
+#EXTINF:-1 tvg-id="1684" tvg-name="快乐垂钓" tvg-logo="" group-title="网络源",快乐垂钓
+http://drive.mxmy.net:8888/udp/239.3.1.164:8001
+#EXTINF:-1 tvg-id="57" tvg-name="新疆卫视" tvg-logo="" group-title="网络源",新疆卫视
+http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd
+#EXTINF:-1 tvg-id="有线新闻" tvg-name="有线新闻" tvg-logo="" group-title="网络源",有线新闻
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8
+#EXTINF:-1 tvg-id="武乡新闻综合" tvg-name="武乡新闻综合" tvg-logo="" group-title="网络源",武乡新闻综合
+http://60.220.198.84:81/0.m3u8
+#EXTINF:-1 tvg-id="汕头经济" tvg-name="汕头经济" tvg-logo="" group-title="网络源",汕头经济
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9512&tk=a0c4f6cfaba3
+#EXTINF:-1 tvg-id="29" tvg-name="江苏卫视" tvg-logo="" group-title="网络源",江苏卫视
+http://69.30.246.194/live/jsws.m3u8
+#EXTINF:-1 tvg-id="河北农民" tvg-name="河北农民" tvg-logo="" group-title="网络源",河北农民
+https://stream1.freetv.fun/he-bei-nong-min-14.m3u8
+#EXTINF:-1 tvg-id="河北都市" tvg-name="河北都市" tvg-logo="" group-title="网络源",河北都市
+https://radio.pull.hebtv.com/live/hebnczx.m3u8
+#EXTINF:-1 tvg-id="浙江教科" tvg-name="浙江教科" tvg-logo="" group-title="网络源",浙江教科
+https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江钱江" tvg-name="浙江钱江" tvg-logo="" group-title="网络源",浙江钱江
+https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8\r\n
+#EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="" group-title="网络源",湖北卫视
+http://120.238.94.10:9901/tsfile/live/1055_1.m3u8
+#EXTINF:-1 tvg-id="湖北生活" tvg-name="湖北生活" tvg-logo="" group-title="网络源",湖北生活
+https://stream1.freetv.fun/hu-bei-sheng-huo-4.ctv
 #EXTINF:-1 tvg-id="湖北经视" tvg-name="湖北经视" tvg-logo="" group-title="网络源",湖北经视
-http://113.57.93.165:9900/tsfile/live/1017_1.m3u8
-#EXTINF:-1 tvg-id="玛纳斯综合" tvg-name="玛纳斯综合" tvg-logo="" group-title="网络源",玛纳斯综合
-http://218.84.127.245:1026/hls/main1/playlist.m3u8
-#EXTINF:-1 tvg-id="纬来体育" tvg-name="纬来体育" tvg-logo="" group-title="网络源",纬来体育
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1978&tk=e640d0a1bf70
-#EXTINF:-1 tvg-id="萧山综合" tvg-name="萧山综合" tvg-logo="" group-title="网络源",萧山综合
-http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8
-#EXTINF:-1 tvg-id="辽宁公共" tvg-name="辽宁公共" tvg-logo="" group-title="网络源",辽宁公共
-http://120.76.248.139/live/bfgd/4200000077.m3u8
+https://stream1.freetv.fun/hu-bei-jing-shi-2.ctv
+#EXTINF:-1 tvg-id="湖北综合" tvg-name="湖北综合" tvg-logo="" group-title="网络源",湖北综合
+http://58.19.133.144:9901
+#EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="" group-title="网络源",湖南卫视
+http://222.134.245.16:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="湖南娱乐" tvg-name="湖南娱乐" tvg-logo="" group-title="网络源",湖南娱乐
+https://stream1.freetv.fun/hu-nan-yu-le-6.m3u8
+#EXTINF:-1 tvg-id="湖南教育" tvg-name="湖南教育" tvg-logo="" group-title="网络源",湖南教育
+https://stream1.freetv.fun/hu-nan-jiao-yu-1.m3u8
+#EXTINF:-1 tvg-id="42" tvg-name="甘肃卫视" tvg-logo="" group-title="网络源",甘肃卫视
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6868&tk=e503191f8e20
+#EXTINF:-1 tvg-id="生活时尚" tvg-name="生活时尚" tvg-logo="" group-title="网络源",生活时尚
+https://stream1.freetv.fun/sheng-huo-shi-shang-2.ctv
+#EXTINF:-1 tvg-id="睛彩羽毛球" tvg-name="睛彩羽毛球" tvg-logo="" group-title="网络源",睛彩羽毛球
+http://drive.mxmy.net:8888/udp/239.3.1.127:8001
+#EXTINF:-1 tvg-id="福建少儿" tvg-name="福建少儿" tvg-logo="" group-title="网络源",福建少儿
+https://stream1.freetv.fun/fu-jian-shao-er-1.m3u8
+#EXTINF:-1 tvg-id="第一财经" tvg-name="第一财经" tvg-logo="" group-title="网络源",第一财经
+https://www.freetv.top/migu/608780988.m3u8?migutoken=62e21890acbd9928d0be0b4eae9f5e32e1879604b785ee7ce8751d5001a9ff431d7714025aa03d48a2b190ff214e5115dcb6ba455c3d26b1db0f5b3cb49c5967429ff3b1fe8e96e87cc6146543
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="" group-title="网络源",翡翠台
+http://beishan008.asuscomm.com:8889/bysid/1.m3u8
+#EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="" group-title="网络源",辽宁卫视
+http://satellitepull.cnr.cn/live/wxlnws/playlist.m3u8
+#EXTINF:-1 tvg-id="过期时间:2026-02-08 12:41:20" tvg-name="过期时间:2026-02-08 12:41:20" tvg-logo="" group-title="网络源",过期时间:2026-02-08 12:41:20
+https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
 #EXTINF:-1 tvg-id="40" tvg-name="重庆卫视" tvg-logo="" group-title="网络源",重庆卫视
-http://60.2.190.206:4000/rtp/239.253.92.10:6053
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6076&tk=e640d0a1bf70
 #EXTINF:-1 tvg-id="重庆汽摩" tvg-name="重庆汽摩" tvg-logo="" group-title="网络源",重庆汽摩
-http://222.179.155.21:1935/ch1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-#EXTINF:-1 tvg-id="铜梁综合" tvg-name="铜梁综合" tvg-logo="" group-title="网络源",铜梁综合
-http://183.64.174.171:40123/ch1.m3u8
-#EXTINF:-1 tvg-id="陕西洋县国宝朱鹮03" tvg-name="陕西洋县国宝朱鹮03" tvg-logo="" group-title="网络源",陕西洋县国宝朱鹮03
-https://gcalic.v.myalicdn.com/gc/zh03_1/index.m3u8
-#EXTINF:-1 tvg-id="青岛城阳" tvg-name="青岛城阳" tvg-logo="" group-title="网络源",青岛城阳
-http://pili-live-rtmp.56.i2863.com/i2863-56/live_56_307317.m3u8?shandd
+http://123.146.162.24:8017/iTXwrGs/800/live.m3u8
+#EXTINF:-1 tvg-id="金川新闻综合" tvg-name="金川新闻综合" tvg-logo="" group-title="网络源",金川新闻综合
+http://139.203.180.9:90/live/zhxw.m3u8
+#EXTINF:-1 tvg-id="69" tvg-name="金鹰卡通" tvg-logo="" group-title="网络源",金鹰卡通
+https://stream1.freetv.fun/jin-ying-qia-tong-41.ctv
+#EXTINF:-1 tvg-id="音乐_AT_KroneHit" tvg-name="音乐_AT_KroneHit" tvg-logo="" group-title="网络源",音乐_AT_KroneHit
+http://bitcdn-kronehit.bitmovin.com/v2/hls/master.m3u8
+#EXTINF:-1 tvg-id="46" tvg-name="黑龙江卫视" tvg-logo="" group-title="网络源",黑龙江卫视
+http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2183&tk=a0c4f6cfaba3
 #EXTINF:-1 tvg-id="黑龙江都市" tvg-name="黑龙江都市" tvg-logo="" group-title="网络源",黑龙江都市
-http://112.99.193.34:9901/tsfile/live/1027_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-#EXTINF:-1 tvg-id="龙泉新闻" tvg-name="龙泉新闻" tvg-logo="" group-title="网络源",龙泉新闻
-http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8?zzhed?
+https://stream1.freetv.fun/hei-long-jiang-du-shi-12.m3u8
+#EXTINF:-1 tvg-id="🚨(广)Music Channel" tvg-name="🚨(广)Music Channel" tvg-logo="" group-title="网络源",🚨(广)Music Channel
+https://cmc-ono.amagi.tv/playlist1080_p.m3u8
+#EXTINF:-1 tvg-id="浙江教科" tvg-name="浙江教科" tvg-logo="" group-title="地方",浙江教科
+https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="到期时间2026-02-08 12:41:20" tvg-name="到期时间2026-02-08 12:41:20" tvg-logo="" group-title="更新缓存",到期时间2026-02-08 12:41:20
+https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
+#EXTINF:-1 tvg-id="更新缓存" tvg-name="更新缓存" tvg-logo="" group-title="更新缓存",更新缓存
+http://iptv.cqshushu.com/jzb25.php?type=txt&token=19c3a8c4bc14e15a9c73ba6684d78456&refresh=1
