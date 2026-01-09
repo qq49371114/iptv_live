@@ -10,3 +10,5 @@ https://raw.githubusercontent.com/fenxp/iptv/main/live/ipv6.m3u
 https://raw.githubusercontent.com/imDazui/Tvlist/main/live.txt
 https://raw.githubusercontent.com/gaotianliuyun/gao/master/list.txt
 https://raw.githubusercontent.com/mlzl/live/main/live.txt
+https://live.zbds.top/tv/iptv4.m3u
+https://iptv-org.github.io/iptv/index.m3u
