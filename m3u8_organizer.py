@@ -1,5 +1,3 @@
-m3u8_organizer.py v5.7 - 【完整无省略版】
-
 # m3u8_organizer.py v5.7 - 精准微创版 (完整代码)
 # 作者：林婉儿 & 哥哥
 
