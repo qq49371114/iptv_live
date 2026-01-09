@@ -1,4 +1,4 @@
-# m3u8_organizer.py v4.1 - 自动化分组版
+# m3u8_organizer.py v4.4 - 终极完美版
 # 作者：婉儿 & 哥哥
 
 import asyncio
@@ -6,8 +6,7 @@ import aiohttp
 import re
 import argparse
 import json
-from urllib.parse import urlparse
-import os
+from datetime import datetime, timedelta, timezone
 
 # --- 配置区 ---
 HEADERS = {
@@ -15,14 +14,10 @@ HEADERS = {
 }
 TIMEOUT = 5
 
-# ✨ 我们不再需要GROUP_RULES了，因为分组是自动的！
-
 # --- 核心功能区 ---
 
 def load_list_from_file(filename):
-    """从txt文件加载列表，一行一个"""
-    if not filename:
-        return []
+    if not filename: return []
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             return [line.strip() for line in f if line.strip()]
@@ -34,64 +29,71 @@ def load_list_from_file(filename):
         return []
 
 async def test_url(session, url):
-    """异步测试单个URL的连通性和响应时间"""
     try:
         start_time = asyncio.get_event_loop().time()
         async with session.get(url, headers=HEADERS, timeout=TIMEOUT) as response:
             if 200 <= response.status < 300:
                 end_time = asyncio.get_event_loop().time()
                 return url, (end_time - start_time) * 1000
-            else:
-                return url, float('inf')
+            return url, float('inf')
     except Exception:
         return url, float('inf')
 
-def parse_m3u(content, ad_keywords):
-    """解析M3U和TXT格式的内容"""
+def parse_content(content, ad_keywords):
     channels = {}
     processed_urls = set()
+    current_group = None
 
-    def add_channel(name, url):
-        if not name or not url or url in processed_urls:
-            return
-        if any(keyword in name for keyword in ad_keywords):
-            print(f"  - 过滤广告频道: {name}")
-            return
-        if name not in channels:
-            channels[name] = []
-        channels[name].append(url)
+    def add_channel(name, url, group_title=None):
+        if not name or not url or url in processed_urls: return
+        if any(keyword in name for keyword in ad_keywords): return
+        
+        final_name = f"{group_title}§§§{name}" if group_title else name
+        if final_name not in channels:
+            channels[final_name] = []
+        channels[final_name].append(url)
         processed_urls.add(url)
 
     lines = content.split('\n')
     for i, line in enumerate(lines):
         line = line.strip()
-        if not line:
-            continue
+        if not line or line.startswith('#EXTM3U'): continue
         try:
+            if '#genre#' in line:
+                current_group = line.split(',')[0].strip()
+                continue
             if line.startswith('#EXTINF:'):
                 if i + 1 < len(lines):
                     next_line = lines[i+1].strip()
                     if next_line and not next_line.startswith('#'):
                         url = next_line
-                        name_match = re.search(r'tvg-name="([^"]+)"', line)
+                        name_match = re.search(r'tvg-name="([^"]*)"', line)
                         name = name_match.group(1) if name_match else line.split(',')[-1]
-                        add_channel(name, url)
+                        add_channel(name, url, current_group)
             elif ',' in line and 'http' in line:
-                parts = line.split(',')
+                parts = line.split(',', 1)
                 if len(parts) >= 2:
-                    name = parts[0]
-                    url = ','.join(parts[1:])
-                    add_channel(name, url)
+                    name, url = parts[0], parts[1]
+                    add_channel(name, url, current_group)
         except Exception as e:
             print(f"  - 解析行失败: '{line}', 错误: {e}")
-            
     return channels
 
+def get_group_name_fallback(channel_name):
+    # 这个函数现在只作为备用，主要的分类逻辑靠文件名和#genre#
+    group_rules = {
+        "央视频道": ["CCTV", "央视"], "卫视频道": ["卫视"], "地方频道": ["北京", "上海", "广东"],
+        "斗鱼直播": ["斗鱼"], "虎牙直播": ["虎牙"], "NewTV": ["NewTV"],
+    }
+    for group, keywords in group_rules.items():
+        for keyword in keywords:
+            if keyword in channel_name:
+                return group
+    return "其他频道"
+
 async def main(args):
-    """主函数"""
-    print("报告哥哥，婉儿的“超级节目单” v4.1 开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v4.4 开始工作啦！")
     
-    print("零步：正在加载外部配置文件...")
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
     
@@ -102,8 +104,7 @@ async def main(args):
     print("\n第一步：正在读取、解析并过滤所有直播源...")
     for source_pair in args.sources_with_group:
         parts = source_pair.split(':', 1)
-        source_path = parts[0]
-        group_name = parts[1] if len(parts) > 1 else "其他频道" 
+        source_path, group_from_filename = (parts[0], parts[1]) if len(parts) > 1 else (parts[0], None)
         
         content = ""
         try:
@@ -115,15 +116,15 @@ async def main(args):
                 with open(source_path, 'r', encoding='utf-8') as f:
                     content = f.read()
             
-            channels = parse_m3u(content, ad_keywords)
-            for name, urls in channels.items():
-                if name not in all_channels:
-                    all_channels[name] = []
-                all_channels[name].extend(urls)
+            channels = parse_content(content, ad_keywords)
+            for name_with_group, urls in channels.items():
+                if name_with_group not in all_channels:
+                    all_channels[name_with_group] = []
+                all_channels[name_with_group].extend(urls)
                 for url in urls:
                     unique_urls.add(url)
                     if url not in url_to_group:
-                        url_to_group[url] = group_name
+                        url_to_group[url] = group_from_filename or "网络源"
         except Exception as e:
             print(f"  - 读取源 {source_path} 失败: {e}")
     print(f"  - 解析完成！...")
@@ -140,67 +141,92 @@ async def main(args):
 
     print("\n第三步：正在淘汰失效地址，并为每个频道按速度排序...")
     sorted_channels = {}
-    for name, urls in all_channels.items():
-        valid_urls = []
-        for url in set(urls):
-            if url_speeds.get(url, float('inf')) != float('inf'):
-                valid_urls.append(url)
+    for name_with_group, urls in all_channels.items():
+        valid_urls = [url for url in set(urls) if url_speeds.get(url, float('inf')) != float('inf')]
         if valid_urls:
             valid_urls.sort(key=lambda u: url_speeds[u])
-            sorted_channels[name] = valid_urls
-    print(f"  - 排序完成！剩余 {len(sorted_channels)} 个拥有可用源的频道。")
+            sorted_channels[name_with_group] = valid_urls
+    print(f"  - 排序完成！...")
 
     epg_data = {}
     if args.epg:
-        print(f"\n第四步：正在加载EPG对应表: {args.epg}...")
+        print(f"\n第四步：正在加载EPG对应表...")
         try:
             with open(args.epg, 'r', encoding='utf-8') as f:
                 epg_data = json.load(f)
             print("  - EPG对应表加载成功。")
         except Exception as e:
             print(f"  - EPG对应表加载失败: {e}")
-    else:
-        print("\n第四步：未提供EPG对应表，将不添加额外信息。")
-
+    
     print("\n第五步：正在生成最终的节目单文件...")
     m3u_filename = f"{args.output}.m3u"
-    with open(m3u_filename, 'w', encoding='utf-8') as f:
-        f.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f.write("#EXTM3U\n")
-        
-        grouped_channels = {}
-        for name, urls in sorted_channels.items():
-            fastest_url = urls[0]
-            group_name = "我的最爱" if name in favorite_channels else url_to_group.get(fastest_url, "其他频道")
-            if group_name not in grouped_channels:
-                grouped_channels[group_name] = []
-            grouped_channels[group_name].append((name, urls))
+    txt_filename = f"{args.output}.txt"
 
-        custom_group_order = ["我的最爱"] + [g for g in grouped_channels if g != "我的最爱" and g != "其他频道"] + ["其他频道"]
+    grouped_channels = {}
+    for name_with_group, urls in sorted_channels.items():
+        parts = name_with_group.split('§§§', 1)
+        group_from_source, name = (parts[0], parts[1]) if len(parts) > 1 else (None, name_with_group)
+        
+        fastest_url = urls[0]
+        group_name = "我的最爱" if name in favorite_channels else (group_from_source or url_to_group.get(fastest_url) or get_group_name_fallback(name))
+
+        if group_name not in grouped_channels:
+            grouped_channels[group_name] = []
+        grouped_channels[group_name].append((name, urls))
+
+    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
+        beijing_time = datetime.now(timezone(timedelta(hours=8)))
+        update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
+        
+        f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
+        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
+        
+        f_txt.write(f'更新时间 ,#genre#\n{update_time_str},#\n\n')
+        
+        custom_group_order = ["我的最爱", "央视频道", "卫视频道", "地方频道", "斗鱼直播", "虎牙直播", "NewTV", "网络源"]
         
         for group in custom_group_order:
-            channels_in_group = grouped_channels.get(group, [])
+            channels_in_group = grouped_channels.pop(group, [])
+            if not channels_in_group: continue
+            
+            f_txt.write(f'{group} ,#genre#\n')
             channels_in_group.sort(key=lambda x: x[0]) 
             for name, urls in channels_in_group:
+                for url in urls:
+                    f_txt.write(f'{name},{url}\n')
+                
                 fastest_url = urls[0]
                 epg_info = epg_data.get(name, {})
                 tvg_id = epg_info.get("tvg-id", name)
                 tvg_logo = epg_info.get("tvg-logo", "")
-                f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{tvg_logo}" group-title="{group}",{name}\n')
-                f.write(f'{fastest_url}\n')
+                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{tvg_logo}" group-title="{group}",{name}\n')
+                f_m3u.write(f'{fastest_url}\n')
+            f_txt.write('\n')
+        
+        remaining_groups = sorted(grouped_channels.keys())
+        for group in remaining_groups:
+            channels_in_group = grouped_channels.get(group, [])
+            f_txt.write(f'{group} ,#genre#\n')
+            channels_in_group.sort(key=lambda x: x[0])
+            for name, urls in channels_in_group:
+                for url in urls:
+                    f_txt.write(f'{name},{url}\n')
 
-    print(f"  - 已生成优化版M3U文件: {m3u_filename}")
+                fastest_url = urls[0]
+                epg_info = epg_data.get(name, {})
+                tvg_id = epg_info.get("tvg-id", name)
+                tvg_logo = epg_info.get("tvg-logo", "")
+                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{tvg_logo}" group-title="{group}",{name}\n')
+                f_m3u.write(f'{fastest_url}\n')
+            f_txt.write('\n')
 
-    txt_filename = f"{args.output}.txt"
-    with open(txt_filename, 'w', encoding='utf-8') as f:
-        for name, urls in sorted_channels.items():
-            for url in urls:
-                f.write(f'{name},{url}\n')
-    print(f"  - 已生成TXT备份文件: {txt_filename}")
+    print(f"  - 已生成最终版M3U文件: {m3u_filename}")
+    print(f"  - 已生成最终版TXT备份文件: {txt_filename}")
     
-    print("\n报告哥哥，所有任务已完成！我们的后勤部长更强大啦！")
+    print("\n报告哥哥，所有任务已完成！我们的后勤部长已经是最强形态啦！")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="婉儿的M3U8直播源整理工具 v4.1")
+    parser = argparse.ArgumentParser(description="婉儿的M3U8直播源整理工具 v4.4")
     parser.add_argument('-i', '--sources-with-group', nargs='+', required=True, help="输入的'源文件路径:分组名'列表")
     parser.add_argument('-e', '--epg', default=None, help="EPG对应表JSON文件 (可选)")
     parser.add_argument('--epg-url', default="", help="外部EPG URL地址 (可选)")
