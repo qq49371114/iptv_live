@@ -1,4 +1,4 @@
-# m3u8_organizer.py v5.4 - 最终兼容版
+# m3u8_organizer.py v5.5 - 终极完美版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -127,7 +127,6 @@ async def load_epg_data(epg_url):
             icon_tag = channel.find('icon')
             logo_url = icon_tag.get('src') if icon_tag is not None else ""
             if display_name:
-                # ✨ 净化EPG中的频道名空格，用于后续匹配
                 safe_display_name = display_name.strip()
                 epg_data[safe_display_name] = {"tvg-id": channel_id or safe_display_name, "tvg-logo": logo_url}
         print(f"  - EPG加载成功！共解析出 {len(epg_data)} 个频道的节目信息。")
@@ -152,7 +151,7 @@ def get_group_name_fallback(channel_name):
     return "其他频道"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v5.4 开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v5.5 开始工作啦！")
     
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
@@ -185,7 +184,8 @@ async def main(args):
                 print(f"  - 读取网络源: {url}")
                 try:
                     async with session.get(url, headers=HEADERS, timeout=10) as response:
-                        content = await response.text()
+                        # ✨✨✨ 终极修正：强制使用UTF-8编码，杜绝一切乱码！ ✨✨✨
+                        content = await response.text(encoding='utf-8', errors='ignore')
                         channels = parse_content(content, ad_keywords)
                         for name, urls in channels.items():
                             if name not in all_channels: all_channels[name] = []
@@ -277,13 +277,13 @@ async def main(args):
             channels_in_group = grouped_channels.get(group)
             if not channels_in_group: continue
             
-            # ✨✨✨ 关键净化：替换分组名中的空格 ✨✨✨
+            # ✨ 兼容性净化：替换分组名中的空格 ✨
             safe_group = group.replace(" ", "-")
             f_txt.write(f'{safe_group},#genre#\n')
             channels_in_group.sort(key=lambda x: x[0]) 
             
             for name, urls in channels_in_group:
-                # ✨✨✨ 关键净化：替换频道名中的空格 ✨✨✨
+                # ✨ 兼容性净化：替换频道名中的空格 ✨
                 safe_name = name.replace(" ", "-")
                 fastest_url = urls[0]
                 
