@@ -1,10 +1,13 @@
 更新时间,#genre#
-2026-01-10 01:17:41,#
+2026-01-10 01:25:28,#
 
 婉儿为哥哥整理,#genre#
 
 网络源,#genre#
-Discovery-Channel,http://iptv.cqshushu.com/beesport.php?id=Discovery-Channel
-ESPN-2,http://iptv.cqshushu.com/beesport.php?id=ESPN-2
-NFL-REDZONE,http://iptv.cqshushu.com/beesport.php?id=NFL-REDZONE
+Cartoon Network,http://iptv.cqshushu.com/beesport.php?id=UK-Cartoon-Network
+Great Movies,http://iptv.cqshushu.com/beesport.php?id=UK-Great-Movies
+ITV 1,http://iptv.cqshushu.com/beesport.php?id=ITV-1
+MLB Network,http://iptv.cqshushu.com/beesport.php?id=MLB-Network
+SKY SPORTS PREMIER LEAGUE (Main),http://iptv.cqshushu.com/beesport.php?id=Sky-Sports-Premier-League
+TNT SPORTS 3 (Main),http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-3
 
