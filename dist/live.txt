@@ -1,3 +1,57 @@
-更新时间 ,#genre#
-2026-01-09 22:22:48,#
+更新时间,#genre#
+2026-01-10 00:04:10,#
+
+婉儿为哥哥整理,#genre#
+
+网络源,#genre#
+(宝)MovieMusic欣赏,https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvplus/dee3e3af-2706-3e77-a952-91b99f6d1819/5711200/manifest.m3u8
+?今天一整天都在蝕刻?,https://vip2.slbfsl.com/20230415/r4tEJkrP/index.m3u8
+?今天蝕刻一整天?,https://vip2.slbfsl.com/20230415/yeahjKmU/index.m3u8
+BBC News,http://125.227.210.55:8165/VideoInput/play.ts
+CCTV1,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9659&tk=b53028476470
+CCTV10,https://api.olelive.com/dis/live/CCTV10HD/hls.m3u8
+CCTV10,http://xiaoya.crccxw.top:35455/gaoma/cctv10.m3u8
+CCTV11,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2249&tk=f6cc1e0a0e1a
+CCTV13,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6155&tk=e640d0a1bf70
+CCTV14,http://222.169.85.8:9901/tsfile/live/0014_1.m3u8
+CCTV2,http://61.136.172.236:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV5,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2598&tk=a0c4f6cfaba3
+CCTV5+,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=4927&tk=e640d0a1bf70
+CCTV6,http://61.136.172.236:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV7,http://112.46.105.20:8009/hls/504/index.m3u8
+VIUTV,http://php.jdshipin.com/PLTV/iptv.php?id=viutv2
+ワタシを中イキさせてください,https://vip2.slbfsl.com/20230404/nj7n9xwa/index.m3u8
+三沙卫视,https://stream1.freetv.fun/fd1abacd02d10bf9e60b98fdc292704eefa30cff9e4eb0816eec3156e687c991.m3u8
+中华小当家,http://61.221.215.25:8800/hls/40/index.m3u8
+中天娱乐,http://61.221.215.25:8800/hls/47/index.m3u8
+云和新闻,http://l.cztvcloud.com/channels/lantian/SXyunhe1/720p.m3u8?
+凤凰中文,http://183.237.95.108:9901/tsfile/live/1103_1.m3u8?key=txiptv&playlive=0&authid=0
+北京卫视,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9267&tk=b53028476470
+南京新闻综合,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7679&tk=e640d0a1bf70
+南通新闻综合,https://migu.188766.xyz/?migutoken=61a3a9103235260cc82c94647d760ce5&id=%E5%8D%97%E9%80%9A%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&type=yy
+吉林卫视,http://61.136.172.236:9901/tsfile/live/0116_1.m3u8
+山东卫视,http://222.169.85.8:9901/tsfile/live/0131_1.m3u8
+山东齐鲁,http://61.156.228.12:8154/tsfile/live/1001_1.m3u8
+广东体育,http://218.15.183.23:9901/tsfile/live/23012_1.m3u8
+广东卫视,http://dms.yryyj.site:8188/udp/239.76.245.189:1234
+新疆｜奎屯汉语综合,http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd
+星空卫视,http://39.107.120.164:8080/live/diyp_xingkong.flv
+民视新闻,http://38.64.72.148:80/hls/modn/list/4012/playlist.m3u8
+河南｜周口扶沟,http://live.dxhmt.cn:9081/tv/11621-1.m3u8
+浙江少儿,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6385&tk=f6cc1e0a0e1a
+海南少儿,https://migu.188766.xyz/?migutoken=6eaa069383f63ab8eaf9cf3944f58538&id=hn_sepd&type=sz
+湖北经视,http://113.57.93.165:9900/tsfile/live/1017_1.m3u8
+玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8
+纬来体育,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1978&tk=e640d0a1bf70
+萧山综合,http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8
+辽宁公共,http://120.76.248.139/live/bfgd/4200000077.m3u8
+重庆卫视,http://60.2.190.206:4000/rtp/239.253.92.10:6053
+重庆卫视,http://124.116.183.146:9901/tsfile/live/0142_1.m3u8
+重庆卫视,http://183.57.249.119:8183/tsfile/live/0142_1.m3u8
+重庆汽摩,http://222.179.155.21:1935/ch1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
+铜梁综合,http://183.64.174.171:40123/ch1.m3u8
+陕西洋县国宝朱鹮03,https://gcalic.v.myalicdn.com/gc/zh03_1/index.m3u8
+青岛城阳,http://pili-live-rtmp.56.i2863.com/i2863-56/live_56_307317.m3u8?shandd
+黑龙江都市,http://112.99.193.34:9901/tsfile/live/1027_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
+龙泉新闻,http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8?zzhed?
 
