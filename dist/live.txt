@@ -1,13 +1,8 @@
 更新时间,#genre#
-2026-01-10 01:25:28,#
+2026-01-10 01:36:13,#
 
 婉儿为哥哥整理,#genre#
 
 网络源,#genre#
-Cartoon Network,http://iptv.cqshushu.com/beesport.php?id=UK-Cartoon-Network
-Great Movies,http://iptv.cqshushu.com/beesport.php?id=UK-Great-Movies
-ITV 1,http://iptv.cqshushu.com/beesport.php?id=ITV-1
-MLB Network,http://iptv.cqshushu.com/beesport.php?id=MLB-Network
-SKY SPORTS PREMIER LEAGUE (Main),http://iptv.cqshushu.com/beesport.php?id=Sky-Sports-Premier-League
-TNT SPORTS 3 (Main),http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-3
+浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 
