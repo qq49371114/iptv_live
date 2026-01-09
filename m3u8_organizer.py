@@ -150,14 +150,39 @@ async def main(args):
 
     epg_data = {}
     if args.epg:
-        print(f"\n第四步：正在加载EPG对应表...")
+        print(f"\n第四步：正在加载EPG对应表: {args.epg}...")
         try:
-            with open(args.epg, 'r', encoding='utf-8') as f:
-                epg_data = json.load(f)
-            print("  - EPG对应表加载成功。")
+            # ✨ 婉儿的终极升级：智能判断EPG源是本地文件还是远程URL！
+            if args.epg.startswith('http'):
+                # 如果是URL，就用网络请求去下载
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(args.epg, headers=HEADERS, timeout=30) as response: # 延长超时时间
+                        epg_content_bytes = await response.read()
+                        
+                        # ✨✨✨ 核心改动：检查是不是.gz文件，如果是，就先解压！✨✨✨
+                        if args.epg.endswith('.gz'):
+                            import gzip
+                            epg_content = gzip.decompress(epg_content_bytes).decode('utf-8')
+                        else:
+                            epg_content = epg_content_bytes.decode('utf-8')
+                            
+                        epg_data = json.loads(epg_content)
+                print("  - 已从远程URL成功加载并解析EPG数据。")
+            else:
+                # 如果是本地文件，也同样支持.gz
+                if args.epg.endswith('.gz'):
+                    import gzip
+                    with gzip.open(args.epg, 'rt', encoding='utf-8') as f:
+                        epg_data = json.load(f)
+                else:
+                    with open(args.epg, 'r', encoding='utf-8') as f:
+                        epg_data = json.load(f)
+                print("  - 已从本地文件成功加载EPG数据。")
         except Exception as e:
             print(f"  - EPG对应表加载失败: {e}")
-    
+    else:
+        print("\n第四步：未提供EPG对应表，将不添加额外信息。")
+        
     print("\n第五步：正在生成最终的节目单文件...")
     m3u_filename = f"{args.output}.m3u"
     txt_filename = f"{args.output}.txt"
