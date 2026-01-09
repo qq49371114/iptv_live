@@ -1,0 +1,12 @@
+{
+  "CCTV-1 综合": {
+    "tvg-id": "CCTV1.cn",
+    "tvg-logo": "https://.../cctv1.png",
+    "group-title": "央视频道"
+  },
+  "湖南卫视": {
+    "tvg-id": "HunanTV.cn",
+    "tvg-logo": "https://.../hunan.png",
+    "group-title": "卫视频道"
+  }
+}
