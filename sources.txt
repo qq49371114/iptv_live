@@ -1,15 +1,1 @@
-http://iptv.cqshushu.com/jrs.php?p=m3u8&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jrs.php?p=video&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jzb25.php?type=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/74001.php?type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/88kq.php?p=video&type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/iptv807.php?jk=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jzb25.php?type=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/beesport.php?token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jzb_web.php?token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jiekou.php?jk=txt&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://iptv.cqshushu.com/jiekou.php?jk=m3u&token=19c3a8c4bc14e15a9c73ba6684d78456
-http://我不是.肥猫.live/TV/tvzb.txt
-http://home.jundie.top:81/Cat/tv/live.txt
-https://agit.ai/Yoursmile7/TVBox/raw/branch/master/live.txt
-https://catbox.n13.club/jk/live
+https://raw.githubusercontent.com/Yuechan/Live/main/IPTV.m3u
