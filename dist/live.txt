@@ -1,11 +1,10 @@
 更新时间,#genre#
-2026-01-10 01:06:02,#
+2026-01-10 01:17:41,#
 
 婉儿为哥哥整理,#genre#
 
 网络源,#genre#
-Golf-Channel,http://iptv.cqshushu.com/beesport.php?id=Golf-Channel
-Premier-Sports-2,http://iptv.cqshushu.com/beesport.php?id=Premier-Sports-2
-SKY-SPORTS-MAIN-EVENT-(Main),http://iptv.cqshushu.com/beesport.php?id=Sky-Sports-Main-Event
-TNT-SPORTS-3-(Backup-1),http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-3-BU
+Discovery-Channel,http://iptv.cqshushu.com/beesport.php?id=Discovery-Channel
+ESPN-2,http://iptv.cqshushu.com/beesport.php?id=ESPN-2
+NFL-REDZONE,http://iptv.cqshushu.com/beesport.php?id=NFL-REDZONE
 

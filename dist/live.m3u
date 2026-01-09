@@ -1,13 +1,11 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间",2026-01-10 01:06:02
+#EXTINF:-1 group-title="更新时间",2026-01-10 01:17:41
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 01:06:02
+#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 01:17:41
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 tvg-id="Golf-Channel" tvg-name="Golf-Channel" tvg-logo="" group-title="网络源",Golf-Channel
-http://iptv.cqshushu.com/beesport.php?id=Golf-Channel
-#EXTINF:-1 tvg-id="Premier-Sports-2" tvg-name="Premier-Sports-2" tvg-logo="" group-title="网络源",Premier-Sports-2
-http://iptv.cqshushu.com/beesport.php?id=Premier-Sports-2
-#EXTINF:-1 tvg-id="SKY-SPORTS-MAIN-EVENT-(Main)" tvg-name="SKY-SPORTS-MAIN-EVENT-(Main)" tvg-logo="" group-title="网络源",SKY-SPORTS-MAIN-EVENT-(Main)
-http://iptv.cqshushu.com/beesport.php?id=Sky-Sports-Main-Event
-#EXTINF:-1 tvg-id="TNT-SPORTS-3-(Backup-1)" tvg-name="TNT-SPORTS-3-(Backup-1)" tvg-logo="" group-title="网络源",TNT-SPORTS-3-(Backup-1)
-http://iptv.cqshushu.com/beesport.php?id=TNT-Sports-3-BU
+#EXTINF:-1 tvg-id="Discovery-Channel" tvg-name="Discovery-Channel" tvg-logo="" group-title="网络源",Discovery-Channel
+http://iptv.cqshushu.com/beesport.php?id=Discovery-Channel
+#EXTINF:-1 tvg-id="ESPN-2" tvg-name="ESPN-2" tvg-logo="" group-title="网络源",ESPN-2
+http://iptv.cqshushu.com/beesport.php?id=ESPN-2
+#EXTINF:-1 tvg-id="NFL-REDZONE" tvg-name="NFL-REDZONE" tvg-logo="" group-title="网络源",NFL-REDZONE
+http://iptv.cqshushu.com/beesport.php?id=NFL-REDZONE
