@@ -1,161 +1,395 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间",2026-01-10 00:06:53
+#EXTINF:-1 group-title="更新时间",2026-01-10 00:10:43
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:06:53
+#EXTINF:-1 group-title="婉儿为哥哥整理",2026-01-10 00:10:43
 #EXTVLCOPT:network-caching=1000
-#EXTINF:-1 tvg-id="(箱)音乐欣赏" tvg-name="(箱)音乐欣赏" tvg-logo="" group-title="网络源",(箱)音乐欣赏
-http://61.221.215.25:8800/hls/49/index.m3u8
-#EXTINF:-1 tvg-id="4K 欧洲杯 1" tvg-name="4K 欧洲杯 1" tvg-logo="" group-title="网络源",4K 欧洲杯 1
-http://129.226.149.79:4785/html/freetest0321.php?access_token=test1208faku&id=Slive01
-#EXTINF:-1 tvg-id="BBC News" tvg-name="BBC News" tvg-logo="" group-title="网络源",BBC News
-http://125.227.210.55:8165/VideoInput/play.ts
-#EXTINF:-1 tvg-id="CCTV+2" tvg-name="CCTV+2" tvg-logo="" group-title="网络源",CCTV+2
-https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="CCTV-10 科教" tvg-name="CCTV-10 科教" tvg-logo="" group-title="网络源",CCTV-10 科教
+http://iptv.cqshushu.com/migu.php?pid=cctv10&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-17 农业农村" tvg-name="CCTV-17 农业农村" tvg-logo="" group-title="网络源",CCTV-17 农业农村
+http://iptv.cqshushu.com/migu.php?pid=cctv17&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-4 中文国际" tvg-name="CCTV-4 中文国际" tvg-logo="" group-title="网络源",CCTV-4 中文国际
+http://iptv.cqshushu.com/migu.php?pid=cctv4&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-8 电视剧" tvg-name="CCTV-8 电视剧" tvg-logo="" group-title="网络源",CCTV-8 电视剧
+http://iptv.cqshushu.com/migu.php?pid=cctv8&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="" group-title="网络源",CCTV1
-http://play.kankanlive.com/live/1661761962676984.m3u8
-#EXTINF:-1 tvg-id="11" tvg-name="CCTV10" tvg-logo="" group-title="网络源",CCTV10
-http://115.48.161.179:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
+https://tvpull.careryun.com/live/6affc23769b9b98ae2aef4a030603d8b.m3u8?txSecret=1ab4572f7267a765a2b8dff4fe1a1a55&txTime=696126ec
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV11" tvg-logo="" group-title="网络源",CCTV11
+https://tvpull.careryun.com/live/c38f0fd188382b7bc025724033e69882.m3u8?txSecret=6b421236e87356559ac6ccabf41618d0&txTime=696126ec
+#EXTINF:-1 tvg-id="13" tvg-name="CCTV12" tvg-logo="" group-title="网络源",CCTV12
+https://tvpull.careryun.com/live/e3c27629e20740ce89cb75e5fbfc02c9.m3u8?txSecret=51640e66fc09ed81b8b1a119a65ef41f&txTime=696126ec
 #EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="" group-title="网络源",CCTV14
-https://piccpndali.v.myalicdn.com/audio/cctv14_2.m3u8
-#EXTINF:-1 tvg-id="1864" tvg-name="CCTV16" tvg-logo="" group-title="网络源",CCTV16
-http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
+https://tvpull.careryun.com/live/a955c6024121e7ec8cdefb176387bddb.m3u8?txSecret=1b34c856815cd5d7eedfae350009267b&txTime=696126ec
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="" group-title="网络源",CCTV15
+https://tvpull.careryun.com/live/fed59211dafcd17ec37e8ac349fc5dd4.m3u8?txSecret=365c7e6716067dc18f0dbbd83dad9241&txTime=696126ec
+#EXTINF:-1 tvg-id="17" tvg-name="CCTV17" tvg-logo="" group-title="网络源",CCTV17
+https://tvpull.careryun.com/live/ba591d30ad977fb8ca911e665fa016cf.m3u8?txSecret=4f741e89a38736118ae91db2338874fa&txTime=696126ec
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="" group-title="网络源",CCTV2
+https://tvpull.careryun.com/live/84e2198828007870a4e8f5499964888c.m3u8?txSecret=a5b63572c757fba997cb1ce58759b430&txTime=696126ec
+#EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="" group-title="网络源",CCTV3
+https://tvpull.careryun.com/live/02b04ee89a7bea25b7778c181285fd0b.m3u8?txSecret=7a671de439693254e785c11f3773bd4c&txTime=696126ec
 #EXTINF:-1 tvg-id="4" tvg-name="CCTV4" tvg-logo="" group-title="网络源",CCTV4
-http://123.129.70.178:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+https://tvpull.careryun.com/live/37476db232639f59958cc054877e6548.m3u8?txSecret=3b30139f6d247d350957f541fe9e3d81&txTime=696126ec
+#EXTINF:-1 tvg-id="CCTV4欧洲" tvg-name="CCTV4欧洲" tvg-logo="" group-title="网络源",CCTV4欧洲
+https://tvpull.careryun.com/live/903111606b4cc63776fa6cc132725d53.m3u8?txSecret=5d0166af18ebf8f789fc5ae9568e6c42&txTime=696126ec
+#EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="" group-title="网络源",CCTV4美洲
+https://tvpull.careryun.com/live/7c1802f464444c79df44fe28863057db.m3u8?txSecret=92549b441e52c6644357689bc5956751&txTime=696126ec
+#EXTINF:-1 tvg-id="6" tvg-name="CCTV5+" tvg-logo="" group-title="网络源",CCTV5+
+https://tvpull.careryun.com/live/481df449d0406ba63091dc0322d33c2a.m3u8?txSecret=53a47a48f1dbdc616105aae04624fe66&txTime=696126ec
+#EXTINF:-1 tvg-id="7" tvg-name="CCTV6" tvg-logo="" group-title="网络源",CCTV6
+https://tvpull.careryun.com/live/6212fce3f9dbc18dd52290c9b11c878b.m3u8?txSecret=9a11dd5b40b63c261e51e10cd6a5f1bf&txTime=696126ec
 #EXTINF:-1 tvg-id="8" tvg-name="CCTV7" tvg-logo="" group-title="网络源",CCTV7
-http://123.129.70.178:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" tvg-logo="" group-title="网络源",CCTV兵器科技
-http://sh.lnott.top:880/dx81.m3u8
-#EXTINF:-1 tvg-id="CCTV阿拉伯语" tvg-name="CCTV阿拉伯语" tvg-logo="" group-title="网络源",CCTV阿拉伯语
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7715&tk=b53028476470
-#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" tvg-logo="" group-title="网络源",CCTV风云足球
-http://120.238.94.10:9901/tsfile/live/1087_1.m3u8
-#EXTINF:-1 tvg-id="DJ舞曲" tvg-name="DJ舞曲" tvg-logo="" group-title="网络源",DJ舞曲
-https://vd4.bdstatic.com/mda-idpg23napy9gsnxb/logo/sc/mda-idpg23napy9gsnxb.mp4
-#EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="" group-title="网络源",ESPN
-http://41.205.93.154/ESPN/index.m3u8
-#EXTINF:-1 tvg-id="NewsMax" tvg-name="NewsMax" tvg-logo="" group-title="网络源",NewsMax
-https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
-#EXTINF:-1 tvg-id="Red Bull TV" tvg-name="Red Bull TV" tvg-logo="" group-title="网络源",Red Bull TV
-http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
-#EXTINF:-1 tvg-id="TVB明珠" tvg-name="TVB明珠" tvg-logo="" group-title="网络源",TVB明珠
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=3418&tk=e640d0a1bf70
+https://tvpull.careryun.com/live/010d49629a6e9e3f4fabaae699399717.m3u8?txSecret=1616ff55e8debe52a20b4d9f3347f279&txTime=696126ec
+#EXTINF:-1 tvg-id="9" tvg-name="CCTV8" tvg-logo="" group-title="网络源",CCTV8
+https://tvpull.careryun.com/live/e0b8f4049d92f6773b878d26a6e870c2.m3u8?txSecret=0de7f38aef1d5e6a2c8f247ba2f6bdbf&txTime=696126ec
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV9" tvg-logo="" group-title="网络源",CCTV9
+https://tvpull.careryun.com/live/b729fe7014340b4670a94a69bffc2515.m3u8?txSecret=ddb14219f40714fdf2eb6b806203110c&txTime=696126ec
+#EXTINF:-1 tvg-id="CH5" tvg-name="CH5" tvg-logo="" group-title="网络源",CH5
+http://iptv.cqshushu.com/migu.php?pid=hk_ch5&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CHU" tvg-name="CHU" tvg-logo="" group-title="网络源",CHU
+http://iptv.cqshushu.com/migu.php?pid=hk_chu&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="TVB星河" tvg-name="TVB星河" tvg-logo="" group-title="网络源",TVB星河
+http://iptv.cqshushu.com/migu.php?pid=hk_tvbxh&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="Token过期" tvg-name="Token过期" tvg-logo="" group-title="网络源",Token过期
 https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
-#EXTINF:-1 tvg-id="41" tvg-name="东南卫视" tvg-logo="" group-title="网络源",东南卫视
-https://www.freetv.top/migu/849116810.m3u8?migutoken=ad40cfb84c6c3a70e2f36f9419fde87147081bd969b8a7c270fde9e9dee90e1aabf8472344c1316a13639f26892f03cd1807f6b81db9976a0212ada2cdc1cdf9f9c01696f6478a7484eb04e6ef
+#EXTINF:-1 tvg-id="上海都市" tvg-name="上海都市" tvg-logo="" group-title="网络源",上海都市
+http://iptv.cqshushu.com/migu.php?pid=shds&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="上海魔都眼" tvg-name="上海魔都眼" tvg-logo="" group-title="网络源",上海魔都眼
+http://iptv.cqshushu.com/migu.php?pid=mdy&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="" group-title="网络源",东方卫视
-http://218.13.170.98:9901/tsfile/live/1010_1.m3u8
-#EXTINF:-1 tvg-id="58" tvg-name="云南卫视" tvg-logo="" group-title="网络源",云南卫视
-http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
+https://tvpull.careryun.com/live/55a22c3494565b0b615ae40699e90bc4.m3u8?txSecret=f570f36b7a8a03df1012b7daa8d148aa&txTime=696126ec
+#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="" group-title="网络源",之江纪录
+https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="五星体育" tvg-name="五星体育" tvg-logo="" group-title="网络源",五星体育
-https://gdcucc.v1.mk/gdcucc/wxty.m3u8
-#EXTINF:-1 tvg-id="亚洲新闻" tvg-name="亚洲新闻" tvg-logo="" group-title="网络源",亚洲新闻
-http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
-#EXTINF:-1 tvg-id="优漫卡通" tvg-name="优漫卡通" tvg-logo="" group-title="网络源",优漫卡通
-https://stream1.freetv.fun/4073fb5ec1ec48f010e1db882aeb63ddc7104c56c5c729c4d08e932d585591a8.m3u8
-#EXTINF:-1 tvg-id="八大综合" tvg-name="八大综合" tvg-logo="" group-title="网络源",八大综合
-http://61.221.215.25:8800/hls/56/index.m3u8
+https://other.ottiptv.cc/wxty.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="61" tvg-name="兵团卫视" tvg-logo="" group-title="网络源",兵团卫视
+http://iptv.cqshushu.com/migu.php?pid=%E5%85%B5%E5%9B%A2%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古农牧" tvg-name="内蒙古农牧" tvg-logo="" group-title="网络源",内蒙古农牧
+http://play1-qk.nmtv.cn:80/live/1686561299036179.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古少儿" tvg-name="内蒙古少儿" tvg-logo="" group-title="网络源",内蒙古少儿
+http://play1-qk.nmtv.cn/live/1686560464515368.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古文体娱乐" tvg-name="内蒙古文体娱乐" tvg-logo="" group-title="网络源",内蒙古文体娱乐
+http://play1-qk.nmtv.cn/live/1686561195713372.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古新闻综合" tvg-name="内蒙古新闻综合" tvg-logo="" group-title="网络源",内蒙古新闻综合
+http://play1-qk.nmtv.cn/live/1686560423879174.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古经济生活" tvg-name="内蒙古经济生活" tvg-logo="" group-title="网络源",内蒙古经济生活
+http://play1-qk.nmtv.cn/live/1686562470947181.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古蒙语卫视" tvg-name="内蒙古蒙语卫视" tvg-logo="" group-title="网络源",内蒙古蒙语卫视
+http://play1-qk.nmtv.cn/live/1686560387346365.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古蒙语文化" tvg-name="内蒙古蒙语文化" tvg-logo="" group-title="网络源",内蒙古蒙语文化
+http://play1-qk.nmtv.cn/live/1686561065304370.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="农林卫视" tvg-name="农林卫视" tvg-logo="" group-title="网络源",农林卫视
+http://iptv.cqshushu.com/migu.php?pid=%E4%B8%AD%E5%9B%BD%E5%86%9C%E6%9E%97%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="142" tvg-name="凤凰资讯" tvg-logo="" group-title="网络源",凤凰资讯
+http://iptv.cqshushu.com/migu.php?pid=fhzx&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="到期日期:2026-02-08 12:41:20" tvg-name="到期日期:2026-02-08 12:41:20" tvg-logo="" group-title="网络源",到期日期:2026-02-08 12:41:20
 https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
-#EXTINF:-1 tvg-id="动漫秀场" tvg-name="动漫秀场" tvg-logo="" group-title="网络源",动漫秀场
-http://183.237.95.108:9901/tsfile/live/1104_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 tvg-id="北京新闻" tvg-name="北京新闻" tvg-logo="" group-title="网络源",北京新闻
-http://live.xmcdn.com/live/91/64.m3u8
-#EXTINF:-1 tvg-id="北京科教" tvg-name="北京科教" tvg-logo="" group-title="网络源",北京科教
-http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=btv3&P2PChannelID=pd://cctv_p2p_hdbtv3
+#EXTINF:-1 tvg-id="南通新闻综合" tvg-name="南通新闻综合" tvg-logo="" group-title="网络源",南通新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E5%8D%97%E9%80%9A%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="" group-title="网络源",吉林卫视
-http://23.237.228.134/live8/jilin.m3u8
-#EXTINF:-1 tvg-id="56" tvg-name="四川卫视" tvg-logo="" group-title="网络源",四川卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8662&tk=b53028476470
-#EXTINF:-1 tvg-id="四川科教" tvg-name="四川科教" tvg-logo="" group-title="网络源",四川科教
-http://182.150.115.21:8030/pcgacg/pcgacg_0.m3u8
-#EXTINF:-1 tvg-id="天津" tvg-name="天津" tvg-logo="" group-title="网络源",天津
-https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/5f03d9f1684241f696b25a19ffc44145/main.m3u8
-#EXTINF:-1 tvg-id="39" tvg-name="天津卫视" tvg-logo="" group-title="网络源",天津卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=4702&tk=f6cc1e0a0e1a
-#EXTINF:-1 tvg-id="54" tvg-name="山西卫视" tvg-logo="" group-title="网络源",山西卫视
-http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
-#EXTINF:-1 tvg-id="岷县综合" tvg-name="岷县综合" tvg-logo="" group-title="网络源",岷县综合
-http://play.kankanlive.com/live/1614311581479927.m3u8?zgand
-#EXTINF:-1 tvg-id="广东新闻" tvg-name="广东新闻" tvg-logo="" group-title="网络源",广东新闻
-https://stream1.freetv.fun/yan-dong-xin-wen-8.m3u8
-#EXTINF:-1 tvg-id="广东民生" tvg-name="广东民生" tvg-logo="" group-title="网络源",广东民生
-https://stream1.freetv.fun/yan-dong-min-sheng-24.ctv
-#EXTINF:-1 tvg-id="广东珠江" tvg-name="广东珠江" tvg-logo="" group-title="网络源",广东珠江
-http://live.xmcdn.com/live/252/64.m3u8
-#EXTINF:-1 tvg-id="广州影视" tvg-name="广州影视" tvg-logo="" group-title="网络源",广州影视
-https://stream1.freetv.fun/yan-zhou-ying-shi-22.ctv
-#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="" group-title="网络源",广西卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7024&tk=b53028476470
-#EXTINF:-1 tvg-id="1684" tvg-name="快乐垂钓" tvg-logo="" group-title="网络源",快乐垂钓
-http://drive.mxmy.net:8888/udp/239.3.1.164:8001
+https://tvpull.careryun.com/live/bde962dca24d1984c7de9c2e17cdef5a.m3u8?txSecret=84a314977f23d649b7067d8a2580b8e6&txTime=696126ec
+#EXTINF:-1 tvg-id="土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]" tvg-name="土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]" tvg-logo="" group-title="网络源",土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]
+https://44c071a0-zbpull3.njlycc.com/live/705353115082268317.m3u8
+#EXTINF:-1 tvg-id="大湾区卫视" tvg-name="大湾区卫视" tvg-logo="" group-title="网络源",大湾区卫视
+http://iptv.cqshushu.com/migu.php?pid=%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="宜兴新闻综合" tvg-name="宜兴新闻综合" tvg-logo="" group-title="网络源",宜兴新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E5%AE%9C%E5%85%B4%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="33" tvg-name="广东卫视" tvg-logo="" group-title="网络源",广东卫视
+https://tvpull.careryun.com/live/c1d67f2dae5bcef5fa1d3cd7488f5cc4.m3u8?txSecret=34d2ea7fac0ee207e4f68334975baaf0&txTime=696126ec
+#EXTINF:-1 tvg-id="广州法治" tvg-name="广州法治" tvg-logo="" group-title="网络源",广州法治
+http://iptv.cqshushu.com/gddf.php?id=gzfz&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="57" tvg-name="新疆卫视" tvg-logo="" group-title="网络源",新疆卫视
-http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd
-#EXTINF:-1 tvg-id="有线新闻" tvg-name="有线新闻" tvg-logo="" group-title="网络源",有线新闻
-http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8
-#EXTINF:-1 tvg-id="武乡新闻综合" tvg-name="武乡新闻综合" tvg-logo="" group-title="网络源",武乡新闻综合
-http://60.220.198.84:81/0.m3u8
-#EXTINF:-1 tvg-id="汕头经济" tvg-name="汕头经济" tvg-logo="" group-title="网络源",汕头经济
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9512&tk=a0c4f6cfaba3
+https://tvpull.careryun.com/live/e709955812ee44e2bf6cc6e72dad6de6.m3u8?txSecret=98ec6e38dc5c521ae052e9ffb85958ee&txTime=696126ec
+#EXTINF:-1 tvg-id="明珠台" tvg-name="明珠台" tvg-logo="" group-title="网络源",明珠台
+http://iptv.cqshushu.com/migu.php?pid=hk_mzt&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="29" tvg-name="江苏卫视" tvg-logo="" group-title="网络源",江苏卫视
-http://69.30.246.194/live/jsws.m3u8
-#EXTINF:-1 tvg-id="河北农民" tvg-name="河北农民" tvg-logo="" group-title="网络源",河北农民
-https://stream1.freetv.fun/he-bei-nong-min-14.m3u8
-#EXTINF:-1 tvg-id="河北都市" tvg-name="河北都市" tvg-logo="" group-title="网络源",河北都市
-https://radio.pull.hebtv.com/live/hebnczx.m3u8
+https://tvpull.careryun.com/live/7214452e59b51cb0dd249b1945fd854a.m3u8?txSecret=5c0918ae0ac8eb698463b92bf77fbda6&txTime=696126ec
+#EXTINF:-1 tvg-id="江苏国际" tvg-name="江苏国际" tvg-logo="" group-title="网络源",江苏国际
+http://iptv.cqshushu.com/migu.php?pid=%E6%B1%9F%E8%8B%8F%E5%9B%BD%E9%99%85&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="50" tvg-name="江西卫视" tvg-logo="" group-title="网络源",江西卫视
+https://tvpull.careryun.com/live/bbb8bf636b7f9383870ca53fb5e9a6e9.m3u8?txSecret=16d15681ed4169d1bbec2f47cf52eb52&txTime=696126ec
+#EXTINF:-1 tvg-id="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]" tvg-name="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]" tvg-logo="" group-title="网络源",沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]
+https://44c071a0-zbpull3.njlycc.com/live/705297020723674935.m3u8
+#EXTINF:-1 tvg-id="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]" tvg-name="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]" tvg-logo="" group-title="网络源",沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]
+https://play1nm.hnyongshun.cn/live/b4eedef7597063b168eb87bb5a600959.m3u8
+#EXTINF:-1 tvg-id="河北4K" tvg-name="河北4K" tvg-logo="" group-title="网络源",河北4K
+https://event.pull.hebtv.com:443/live/live101.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="河南公共" tvg-name="河南公共" tvg-logo="" group-title="网络源",河南公共
+http://iptv.cqshushu.com/migu.php?pid=%E5%85%AC%E5%85%B1%E9%A2%91%E9%81%93&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="47" tvg-name="河南卫视" tvg-logo="" group-title="网络源",河南卫视
+https://tvpull.careryun.com/live/1124f8800030622a70e7cf7c0f5c428b.m3u8?txSecret=ec0b4c4af1c609f8e48fd66d117aa497&txTime=696126ec
+#EXTINF:-1 tvg-id="河南民生" tvg-name="河南民生" tvg-logo="" group-title="网络源",河南民生
+http://iptv.cqshushu.com/migu.php?pid=%E6%B0%91%E7%94%9F%E9%A2%91%E9%81%93&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="28" tvg-name="浙江卫视" tvg-logo="" group-title="网络源",浙江卫视
+http://iptv.cqshushu.com/migu.php?pid=z_jws&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江国际" tvg-name="浙江国际" tvg-logo="" group-title="网络源",浙江国际
+https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江少儿" tvg-name="浙江少儿" tvg-logo="" group-title="网络源",浙江少儿
+https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="浙江教科" tvg-name="浙江教科" tvg-logo="" group-title="网络源",浙江教科
 https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江新闻" tvg-name="浙江新闻" tvg-logo="" group-title="网络源",浙江新闻
+https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江民生" tvg-name="浙江民生" tvg-logo="" group-title="网络源",浙江民生
+https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江经济" tvg-name="浙江经济" tvg-logo="" group-title="网络源",浙江经济
+https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="浙江钱江" tvg-name="浙江钱江" tvg-logo="" group-title="网络源",浙江钱江
-https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8\r\n
+https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南公共" tvg-name="海南公共" tvg-logo="" group-title="网络源",海南公共
+http://iptv.cqshushu.com/migu.php?pid=hn_ggpd&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南卫视" tvg-name="海南卫视" tvg-logo="" group-title="网络源",海南卫视
+http://iptv.cqshushu.com/migu.php?pid=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南自贸" tvg-name="海南自贸" tvg-logo="" group-title="网络源",海南自贸
+http://iptv.cqshushu.com/migu.php?pid=hn_jjpd&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="淮安新闻综合" tvg-name="淮安新闻综合" tvg-logo="" group-title="网络源",淮安新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E6%B7%AE%E5%AE%89%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="" group-title="网络源",湖北卫视
-http://120.238.94.10:9901/tsfile/live/1055_1.m3u8
-#EXTINF:-1 tvg-id="湖北生活" tvg-name="湖北生活" tvg-logo="" group-title="网络源",湖北生活
-https://stream1.freetv.fun/hu-bei-sheng-huo-4.ctv
-#EXTINF:-1 tvg-id="湖北经视" tvg-name="湖北经视" tvg-logo="" group-title="网络源",湖北经视
-https://stream1.freetv.fun/hu-bei-jing-shi-2.ctv
-#EXTINF:-1 tvg-id="湖北综合" tvg-name="湖北综合" tvg-logo="" group-title="网络源",湖北综合
-http://58.19.133.144:9901
+https://tvpull.careryun.com/live/daa930c139ec074a005739d8bca7c1dc.m3u8?txSecret=3ad1d5d1dd07ec6c5eb18e6822fb5db9&txTime=696126ec
 #EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="" group-title="网络源",湖南卫视
-http://222.134.245.16:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="湖南娱乐" tvg-name="湖南娱乐" tvg-logo="" group-title="网络源",湖南娱乐
-https://stream1.freetv.fun/hu-nan-yu-le-6.m3u8
-#EXTINF:-1 tvg-id="湖南教育" tvg-name="湖南教育" tvg-logo="" group-title="网络源",湖南教育
-https://stream1.freetv.fun/hu-nan-jiao-yu-1.m3u8
-#EXTINF:-1 tvg-id="42" tvg-name="甘肃卫视" tvg-logo="" group-title="网络源",甘肃卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6868&tk=e503191f8e20
-#EXTINF:-1 tvg-id="生活时尚" tvg-name="生活时尚" tvg-logo="" group-title="网络源",生活时尚
-https://stream1.freetv.fun/sheng-huo-shi-shang-2.ctv
-#EXTINF:-1 tvg-id="睛彩羽毛球" tvg-name="睛彩羽毛球" tvg-logo="" group-title="网络源",睛彩羽毛球
-http://drive.mxmy.net:8888/udp/239.3.1.127:8001
-#EXTINF:-1 tvg-id="福建少儿" tvg-name="福建少儿" tvg-logo="" group-title="网络源",福建少儿
-https://stream1.freetv.fun/fu-jian-shao-er-1.m3u8
-#EXTINF:-1 tvg-id="第一财经" tvg-name="第一财经" tvg-logo="" group-title="网络源",第一财经
-https://www.freetv.top/migu/608780988.m3u8?migutoken=62e21890acbd9928d0be0b4eae9f5e32e1879604b785ee7ce8751d5001a9ff431d7714025aa03d48a2b190ff214e5115dcb6ba455c3d26b1db0f5b3cb49c5967429ff3b1fe8e96e87cc6146543
-#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="" group-title="网络源",翡翠台
-http://beishan008.asuscomm.com:8889/bysid/1.m3u8
-#EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="" group-title="网络源",辽宁卫视
-http://satellitepull.cnr.cn/live/wxlnws/playlist.m3u8
+http://iptv.cqshushu.com/migu.php?pid=hnws&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="苏州4K" tvg-name="苏州4K" tvg-logo="" group-title="网络源",苏州4K
+https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="过期时间:2026-02-08 12:41:20" tvg-name="过期时间:2026-02-08 12:41:20" tvg-logo="" group-title="网络源",过期时间:2026-02-08 12:41:20
 https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
-#EXTINF:-1 tvg-id="40" tvg-name="重庆卫视" tvg-logo="" group-title="网络源",重庆卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6076&tk=e640d0a1bf70
-#EXTINF:-1 tvg-id="重庆汽摩" tvg-name="重庆汽摩" tvg-logo="" group-title="网络源",重庆汽摩
-http://123.146.162.24:8017/iTXwrGs/800/live.m3u8
-#EXTINF:-1 tvg-id="金川新闻综合" tvg-name="金川新闻综合" tvg-logo="" group-title="网络源",金川新闻综合
-http://139.203.180.9:90/live/zhxw.m3u8
-#EXTINF:-1 tvg-id="69" tvg-name="金鹰卡通" tvg-logo="" group-title="网络源",金鹰卡通
-https://stream1.freetv.fun/jin-ying-qia-tong-41.ctv
-#EXTINF:-1 tvg-id="音乐_AT_KroneHit" tvg-name="音乐_AT_KroneHit" tvg-logo="" group-title="网络源",音乐_AT_KroneHit
-http://bitcdn-kronehit.bitmovin.com/v2/hls/master.m3u8
-#EXTINF:-1 tvg-id="46" tvg-name="黑龙江卫视" tvg-logo="" group-title="网络源",黑龙江卫视
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2183&tk=a0c4f6cfaba3
-#EXTINF:-1 tvg-id="黑龙江都市" tvg-name="黑龙江都市" tvg-logo="" group-title="网络源",黑龙江都市
-https://stream1.freetv.fun/hei-long-jiang-du-shi-12.m3u8
-#EXTINF:-1 tvg-id="🚨(广)Music Channel" tvg-name="🚨(广)Music Channel" tvg-logo="" group-title="网络源",🚨(广)Music Channel
-https://cmc-ono.amagi.tv/playlist1080_p.m3u8
+#EXTINF:-1 tvg-id="重温经典" tvg-name="重温经典" tvg-logo="" group-title="网络源",重温经典
+https://other.ottiptv.cc/cwjd.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="55" tvg-name="陕西卫视" tvg-logo="" group-title="网络源",陕西卫视
+https://tvpull.careryun.com/live/fb9d80c9a8d145c454bfb90630a4292f.m3u8?txSecret=2f18e4fe450c9897ca944099adbddd97&txTime=696126ec
+#EXTINF:-1 tvg-id="59" tvg-name="青海卫视" tvg-logo="" group-title="网络源",青海卫视
+https://tvpull.careryun.com/live/33e352f38a22e91b8cabd981f470e92c.m3u8?txSecret=e60f7ec023876c1710df6021812d07c6&txTime=696126ec
+#EXTINF:-1 tvg-id="非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]" tvg-name="非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]" tvg-logo="" group-title="网络源",非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]
+https://44c071a0-zbpull3.njlycc.com/live/765354895543702381.m3u8
+#EXTINF:-1 tvg-id="CH5" tvg-name="CH5" tvg-logo="" group-title="其他",CH5
+http://iptv.cqshushu.com/migu.php?pid=hk_ch5&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CHU" tvg-name="CHU" tvg-logo="" group-title="其他",CHU
+http://iptv.cqshushu.com/migu.php?pid=hk_chu&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="ELEVEN 2（DAZN 2）" tvg-name="ELEVEN 2（DAZN 2）" tvg-logo="" group-title="其他",ELEVEN 2（DAZN 2）
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3533616363373930376632326332376135323064616334643437323030343932267469643d67742669643d3737&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="Fox Life" tvg-name="Fox Life" tvg-logo="" group-title="其他",Fox Life
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6233336462383732303737396535343930333264613238653262303733343663267469643d6f746865722669643d3133&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="Now Sports 精選" tvg-name="Now Sports 精選" tvg-logo="" group-title="其他",Now Sports 精選
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6164323832353432366565353237303137623938353935393438356664303134267469643d67742669643d3135&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="SBS International" tvg-name="SBS International" tvg-logo="" group-title="其他",SBS International
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3938376264616337303831383762643130653363303635303865336139386562267469643d6f746865722669643d3934&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="TVB星河" tvg-name="TVB星河" tvg-logo="" group-title="其他",TVB星河
+http://iptv.cqshushu.com/migu.php?pid=hk_tvbxh&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="五星体育" tvg-name="五星体育" tvg-logo="" group-title="其他",五星体育
+https://other.ottiptv.cc/wxty.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="142" tvg-name="凤凰资讯" tvg-logo="" group-title="其他",凤凰资讯
+http://iptv.cqshushu.com/migu.php?pid=fhzx&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="明珠台" tvg-name="明珠台" tvg-logo="" group-title="其他",明珠台
+http://iptv.cqshushu.com/migu.php?pid=hk_mzt&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="纬来日本台" tvg-name="纬来日本台" tvg-logo="" group-title="其他",纬来日本台
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6538313734323963333237666630626337663263623439643462663034316633267469643d67742669643d3734&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="重温经典" tvg-name="重温经典" tvg-logo="" group-title="其他",重温经典
+https://other.ottiptv.cc/cwjd.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="韓國-NEWS 24" tvg-name="韓國-NEWS 24" tvg-logo="" group-title="其他",韓國-NEWS 24
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6331343263646235323036353038323735653438646134366336376365613661267469643d6f746865722669643d323133&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="韓國-TBS" tvg-name="韓國-TBS" tvg-logo="" group-title="其他",韓國-TBS
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6462346166356532306461613863613133656532633036303262396434303434267469643d6f746865722669643d323230&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="" group-title="卫视",东方卫视
+https://tvpull.careryun.com/live/55a22c3494565b0b615ae40699e90bc4.m3u8?txSecret=f570f36b7a8a03df1012b7daa8d148aa&txTime=696126ec
+#EXTINF:-1 tvg-id="61" tvg-name="兵团卫视" tvg-logo="" group-title="卫视",兵团卫视
+http://iptv.cqshushu.com/migu.php?pid=%E5%85%B5%E5%9B%A2%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="农林卫视" tvg-name="农林卫视" tvg-logo="" group-title="卫视",农林卫视
+http://iptv.cqshushu.com/migu.php?pid=%E4%B8%AD%E5%9B%BD%E5%86%9C%E6%9E%97%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="" group-title="卫视",吉林卫视
+https://tvpull.careryun.com/live/bde962dca24d1984c7de9c2e17cdef5a.m3u8?txSecret=84a314977f23d649b7067d8a2580b8e6&txTime=696126ec
+#EXTINF:-1 tvg-id="大湾区卫视" tvg-name="大湾区卫视" tvg-logo="" group-title="卫视",大湾区卫视
+http://iptv.cqshushu.com/migu.php?pid=%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="33" tvg-name="广东卫视" tvg-logo="" group-title="卫视",广东卫视
+https://tvpull.careryun.com/live/c1d67f2dae5bcef5fa1d3cd7488f5cc4.m3u8?txSecret=34d2ea7fac0ee207e4f68334975baaf0&txTime=696126ec
+#EXTINF:-1 tvg-id="57" tvg-name="新疆卫视" tvg-logo="" group-title="卫视",新疆卫视
+https://tvpull.careryun.com/live/e709955812ee44e2bf6cc6e72dad6de6.m3u8?txSecret=98ec6e38dc5c521ae052e9ffb85958ee&txTime=696126ec
+#EXTINF:-1 tvg-id="29" tvg-name="江苏卫视" tvg-logo="" group-title="卫视",江苏卫视
+https://tvpull.careryun.com/live/7214452e59b51cb0dd249b1945fd854a.m3u8?txSecret=5c0918ae0ac8eb698463b92bf77fbda6&txTime=696126ec
+#EXTINF:-1 tvg-id="50" tvg-name="江西卫视" tvg-logo="" group-title="卫视",江西卫视
+https://tvpull.careryun.com/live/bbb8bf636b7f9383870ca53fb5e9a6e9.m3u8?txSecret=16d15681ed4169d1bbec2f47cf52eb52&txTime=696126ec
+#EXTINF:-1 tvg-id="47" tvg-name="河南卫视" tvg-logo="" group-title="卫视",河南卫视
+https://tvpull.careryun.com/live/1124f8800030622a70e7cf7c0f5c428b.m3u8?txSecret=ec0b4c4af1c609f8e48fd66d117aa497&txTime=696126ec
+#EXTINF:-1 tvg-id="28" tvg-name="浙江卫视" tvg-logo="" group-title="卫视",浙江卫视
+http://iptv.cqshushu.com/migu.php?pid=z_jws&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南卫视" tvg-name="海南卫视" tvg-logo="" group-title="卫视",海南卫视
+http://iptv.cqshushu.com/migu.php?pid=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="" group-title="卫视",湖北卫视
+https://tvpull.careryun.com/live/daa930c139ec074a005739d8bca7c1dc.m3u8?txSecret=3ad1d5d1dd07ec6c5eb18e6822fb5db9&txTime=696126ec
+#EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="" group-title="卫视",湖南卫视
+http://iptv.cqshushu.com/migu.php?pid=hnws&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="55" tvg-name="陕西卫视" tvg-logo="" group-title="卫视",陕西卫视
+https://tvpull.careryun.com/live/fb9d80c9a8d145c454bfb90630a4292f.m3u8?txSecret=2f18e4fe450c9897ca944099adbddd97&txTime=696126ec
+#EXTINF:-1 tvg-id="59" tvg-name="青海卫视" tvg-logo="" group-title="卫视",青海卫视
+https://tvpull.careryun.com/live/33e352f38a22e91b8cabd981f470e92c.m3u8?txSecret=e60f7ec023876c1710df6021812d07c6&txTime=696126ec
+#EXTINF:-1 tvg-id="上海都市" tvg-name="上海都市" tvg-logo="" group-title="地方",上海都市
+http://iptv.cqshushu.com/migu.php?pid=shds&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="上海魔都眼" tvg-name="上海魔都眼" tvg-logo="" group-title="地方",上海魔都眼
+http://iptv.cqshushu.com/migu.php?pid=mdy&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="之江纪录" tvg-name="之江纪录" tvg-logo="" group-title="地方",之江纪录
+https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古农牧" tvg-name="内蒙古农牧" tvg-logo="" group-title="地方",内蒙古农牧
+http://play1-qk.nmtv.cn:80/live/1686561299036179.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古少儿" tvg-name="内蒙古少儿" tvg-logo="" group-title="地方",内蒙古少儿
+http://play1-qk.nmtv.cn/live/1686560464515368.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古文体娱乐" tvg-name="内蒙古文体娱乐" tvg-logo="" group-title="地方",内蒙古文体娱乐
+http://play1-qk.nmtv.cn/live/1686561195713372.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古新闻综合" tvg-name="内蒙古新闻综合" tvg-logo="" group-title="地方",内蒙古新闻综合
+http://play1-qk.nmtv.cn/live/1686560423879174.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古经济生活" tvg-name="内蒙古经济生活" tvg-logo="" group-title="地方",内蒙古经济生活
+http://play1-qk.nmtv.cn/live/1686562470947181.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古蒙语卫视" tvg-name="内蒙古蒙语卫视" tvg-logo="" group-title="地方",内蒙古蒙语卫视
+http://play1-qk.nmtv.cn/live/1686560387346365.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="内蒙古蒙语文化" tvg-name="内蒙古蒙语文化" tvg-logo="" group-title="地方",内蒙古蒙语文化
+http://play1-qk.nmtv.cn/live/1686561065304370.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="南通新闻综合" tvg-name="南通新闻综合" tvg-logo="" group-title="地方",南通新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E5%8D%97%E9%80%9A%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="宜兴新闻综合" tvg-name="宜兴新闻综合" tvg-logo="" group-title="地方",宜兴新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E5%AE%9C%E5%85%B4%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="江苏国际" tvg-name="江苏国际" tvg-logo="" group-title="地方",江苏国际
+http://iptv.cqshushu.com/migu.php?pid=%E6%B1%9F%E8%8B%8F%E5%9B%BD%E9%99%85&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="河南公共" tvg-name="河南公共" tvg-logo="" group-title="地方",河南公共
+http://iptv.cqshushu.com/migu.php?pid=%E5%85%AC%E5%85%B1%E9%A2%91%E9%81%93&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="河南民生" tvg-name="河南民生" tvg-logo="" group-title="地方",河南民生
+http://iptv.cqshushu.com/migu.php?pid=%E6%B0%91%E7%94%9F%E9%A2%91%E9%81%93&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江国际" tvg-name="浙江国际" tvg-logo="" group-title="地方",浙江国际
+https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江少儿" tvg-name="浙江少儿" tvg-logo="" group-title="地方",浙江少儿
+https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="浙江教科" tvg-name="浙江教科" tvg-logo="" group-title="地方",浙江教科
 https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江新闻" tvg-name="浙江新闻" tvg-logo="" group-title="地方",浙江新闻
+https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江民生" tvg-name="浙江民生" tvg-logo="" group-title="地方",浙江民生
+https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江经济" tvg-name="浙江经济" tvg-logo="" group-title="地方",浙江经济
+https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="浙江钱江" tvg-name="浙江钱江" tvg-logo="" group-title="地方",浙江钱江
+https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南公共" tvg-name="海南公共" tvg-logo="" group-title="地方",海南公共
+http://iptv.cqshushu.com/migu.php?pid=hn_ggpd&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="海南自贸" tvg-name="海南自贸" tvg-logo="" group-title="地方",海南自贸
+http://iptv.cqshushu.com/migu.php?pid=hn_jjpd&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="淮安新闻综合" tvg-name="淮安新闻综合" tvg-logo="" group-title="地方",淮安新闻综合
+http://iptv.cqshushu.com/migu.php?pid=%E6%B7%AE%E5%AE%89%E6%96%B0%E9%97%BB%E7%BB%BC%E5%90%88&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-10 科教" tvg-name="CCTV-10 科教" tvg-logo="" group-title="央视",CCTV-10 科教
+http://iptv.cqshushu.com/migu.php?pid=cctv10&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-17 农业农村" tvg-name="CCTV-17 农业农村" tvg-logo="" group-title="央视",CCTV-17 农业农村
+http://iptv.cqshushu.com/migu.php?pid=cctv17&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-4 中文国际" tvg-name="CCTV-4 中文国际" tvg-logo="" group-title="央视",CCTV-4 中文国际
+http://iptv.cqshushu.com/migu.php?pid=cctv4&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="CCTV-8 电视剧" tvg-name="CCTV-8 电视剧" tvg-logo="" group-title="央视",CCTV-8 电视剧
+http://iptv.cqshushu.com/migu.php?pid=cctv8&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="" group-title="央视",CCTV1
+https://tvpull.careryun.com/live/6affc23769b9b98ae2aef4a030603d8b.m3u8?txSecret=1ab4572f7267a765a2b8dff4fe1a1a55&txTime=696126ec
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV11" tvg-logo="" group-title="央视",CCTV11
+https://tvpull.careryun.com/live/c38f0fd188382b7bc025724033e69882.m3u8?txSecret=6b421236e87356559ac6ccabf41618d0&txTime=696126ec
+#EXTINF:-1 tvg-id="13" tvg-name="CCTV12" tvg-logo="" group-title="央视",CCTV12
+https://tvpull.careryun.com/live/e3c27629e20740ce89cb75e5fbfc02c9.m3u8?txSecret=51640e66fc09ed81b8b1a119a65ef41f&txTime=696126ec
+#EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="" group-title="央视",CCTV14
+https://tvpull.careryun.com/live/a955c6024121e7ec8cdefb176387bddb.m3u8?txSecret=1b34c856815cd5d7eedfae350009267b&txTime=696126ec
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="" group-title="央视",CCTV15
+https://tvpull.careryun.com/live/fed59211dafcd17ec37e8ac349fc5dd4.m3u8?txSecret=365c7e6716067dc18f0dbbd83dad9241&txTime=696126ec
+#EXTINF:-1 tvg-id="17" tvg-name="CCTV17" tvg-logo="" group-title="央视",CCTV17
+https://tvpull.careryun.com/live/ba591d30ad977fb8ca911e665fa016cf.m3u8?txSecret=4f741e89a38736118ae91db2338874fa&txTime=696126ec
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="" group-title="央视",CCTV2
+https://tvpull.careryun.com/live/84e2198828007870a4e8f5499964888c.m3u8?txSecret=a5b63572c757fba997cb1ce58759b430&txTime=696126ec
+#EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="" group-title="央视",CCTV3
+https://tvpull.careryun.com/live/02b04ee89a7bea25b7778c181285fd0b.m3u8?txSecret=7a671de439693254e785c11f3773bd4c&txTime=696126ec
+#EXTINF:-1 tvg-id="4" tvg-name="CCTV4" tvg-logo="" group-title="央视",CCTV4
+https://tvpull.careryun.com/live/37476db232639f59958cc054877e6548.m3u8?txSecret=3b30139f6d247d350957f541fe9e3d81&txTime=696126ec
+#EXTINF:-1 tvg-id="CCTV4欧洲" tvg-name="CCTV4欧洲" tvg-logo="" group-title="央视",CCTV4欧洲
+https://tvpull.careryun.com/live/903111606b4cc63776fa6cc132725d53.m3u8?txSecret=5d0166af18ebf8f789fc5ae9568e6c42&txTime=696126ec
+#EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="" group-title="央视",CCTV4美洲
+https://tvpull.careryun.com/live/7c1802f464444c79df44fe28863057db.m3u8?txSecret=92549b441e52c6644357689bc5956751&txTime=696126ec
+#EXTINF:-1 tvg-id="6" tvg-name="CCTV5+" tvg-logo="" group-title="央视",CCTV5+
+https://tvpull.careryun.com/live/481df449d0406ba63091dc0322d33c2a.m3u8?txSecret=53a47a48f1dbdc616105aae04624fe66&txTime=696126ec
+#EXTINF:-1 tvg-id="7" tvg-name="CCTV6" tvg-logo="" group-title="央视",CCTV6
+https://tvpull.careryun.com/live/6212fce3f9dbc18dd52290c9b11c878b.m3u8?txSecret=9a11dd5b40b63c261e51e10cd6a5f1bf&txTime=696126ec
+#EXTINF:-1 tvg-id="8" tvg-name="CCTV7" tvg-logo="" group-title="央视",CCTV7
+https://tvpull.careryun.com/live/010d49629a6e9e3f4fabaae699399717.m3u8?txSecret=1616ff55e8debe52a20b4d9f3347f279&txTime=696126ec
+#EXTINF:-1 tvg-id="9" tvg-name="CCTV8" tvg-logo="" group-title="央视",CCTV8
+https://tvpull.careryun.com/live/e0b8f4049d92f6773b878d26a6e870c2.m3u8?txSecret=0de7f38aef1d5e6a2c8f247ba2f6bdbf&txTime=696126ec
+#EXTINF:-1 tvg-id="CCTV8电视剧" tvg-name="CCTV8电视剧" tvg-logo="" group-title="央视",CCTV8电视剧
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3965653262323133626233373832623633313231303763333538333633623666267469643d79732669643d39&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV9" tvg-logo="" group-title="央视",CCTV9
+https://tvpull.careryun.com/live/b729fe7014340b4670a94a69bffc2515.m3u8?txSecret=ddb14219f40714fdf2eb6b806203110c&txTime=696126ec
+#EXTINF:-1 tvg-id="广州法治" tvg-name="广州法治" tvg-logo="" group-title="广东",广州法治
+http://iptv.cqshushu.com/gddf.php?id=gzfz&token=19c3a8c4bc14e15a9c73ba6684d78456
 #EXTINF:-1 tvg-id="到期时间2026-02-08 12:41:20" tvg-name="到期时间2026-02-08 12:41:20" tvg-logo="" group-title="更新缓存",到期时间2026-02-08 12:41:20
 https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4
 #EXTINF:-1 tvg-id="更新缓存" tvg-name="更新缓存" tvg-logo="" group-title="更新缓存",更新缓存
 http://iptv.cqshushu.com/jzb25.php?type=txt&token=19c3a8c4bc14e15a9c73ba6684d78456&refresh=1
+#EXTINF:-1 tvg-id="土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]" tvg-name="土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]" tvg-logo="" group-title="比赛中",土篮甲-卡赫拉曼马拉什VS科勒基尔 01-09 23:30:00[威哥]
+https://44c071a0-zbpull3.njlycc.com/live/705353115082268317.m3u8
+#EXTINF:-1 tvg-id="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]" tvg-name="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]" tvg-logo="" group-title="比赛中",沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[路飞]
+https://44c071a0-zbpull3.njlycc.com/live/705297020723674935.m3u8
+#EXTINF:-1 tvg-id="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]" tvg-name="沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]" tvg-logo="" group-title="比赛中",沙特联-布赖代合作VS利雅得青年人 01-09 23:05:00[高清]
+https://play1nm.hnyongshun.cn/live/b4eedef7597063b168eb87bb5a600959.m3u8
+#EXTINF:-1 tvg-id="非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]" tvg-name="非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]" tvg-logo="" group-title="比赛中",非洲杯-马里VS塞内加尔 01-10 00:00:00[卡尔]
+https://44c071a0-zbpull3.njlycc.com/live/765354895543702381.m3u8
+#EXTINF:-1 tvg-id="【僵尸】24小时放映厅" tvg-name="【僵尸】24小时放映厅" tvg-logo="" group-title="电影",【僵尸】24小时放映厅
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3361373536663166353337303537383764353863313537386462316533316537267469643d6d6f7669652669643d313530&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="宝宝巴士启蒙音乐剧" tvg-name="宝宝巴士启蒙音乐剧" tvg-logo="" group-title="电影",宝宝巴士启蒙音乐剧
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6166666133633935633832333333313331396361386232386564326233643430267469643d6d6f7669652669643d343638&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="小品" tvg-name="小品" tvg-logo="" group-title="电影",小品
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6335313662346337353435313931663062653763623339313333663162343761267469643d6d6f7669652669643d343531&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="成龙" tvg-name="成龙" tvg-logo="" group-title="电影",成龙
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3563663661386239303264373538303264333738383463393734316165346564267469643d6d6f7669652669643d333433&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="我是詹密" tvg-name="我是詹密" tvg-logo="" group-title="电影",我是詹密
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6366386336363862383366393166316536363632626433643661393037666130267469643d6d6f7669652669643d313636&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="扁豆看电影" tvg-name="扁豆看电影" tvg-logo="" group-title="电影",扁豆看电影
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3262356538396639623731383834613366356662616361633366623661303636267469643d6d6f7669652669643d3430&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="文章马伊琍" tvg-name="文章马伊琍" tvg-logo="" group-title="电影",文章马伊琍
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3761386631383362363330393365316137346130623631366462306664313735267469643d6d6f7669652669643d333535&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="映画" tvg-name="映画" tvg-logo="" group-title="电影",映画
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6563306231373835383462663634316239363230313634663438383162363838267469643d6d6f7669652669643d353030&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="晴天-小曦" tvg-name="晴天-小曦" tvg-logo="" group-title="电影",晴天-小曦
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6635366535303932343062346232653265306465323136346433396162633435267469643d6d6f7669652669643d313031&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="李连杰电影" tvg-name="李连杰电影" tvg-logo="" group-title="电影",李连杰电影
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3134663064646461653361353136346636633366303833613066613365666465267469643d6d6f7669652669643d39&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="渣子看闹剧" tvg-name="渣子看闹剧" tvg-logo="" group-title="电影",渣子看闹剧
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3331306665323666626434613763383463313337373431383263393231303766267469643d6d6f7669652669643d323535&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="电影11" tvg-name="电影11" tvg-logo="" group-title="电影",电影11
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6262366635386132396464313263633339333065663336396262643538303963267469643d6d6f7669652669643d343335&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="电影17" tvg-name="电影17" tvg-logo="" group-title="电影",电影17
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6239333139313339336664616162393030633764646233376663336663303430267469643d6d6f7669652669643d343431&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="笙歌" tvg-name="笙歌" tvg-logo="" group-title="电影",笙歌
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3262303364643533656662363133633637336130396134333533363266373433267469643d6d6f7669652669643d313833&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="经典校园" tvg-name="经典校园" tvg-logo="" group-title="电影",经典校园
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6666646132313764626261643637303361646231666432326632393961666163267469643d6d6f7669652669643d333638&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="西红柿" tvg-name="西红柿" tvg-logo="" group-title="电影",西红柿
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6531353739643330316536653036396462643639376265623532376662653664267469643d6d6f7669652669643d3735&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="超级快递港囧喜剧片爆笑之旅" tvg-name="超级快递港囧喜剧片爆笑之旅" tvg-logo="" group-title="电影",超级快递港囧喜剧片爆笑之旅
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6638336462613937326362623633326537353734333665363362376230343431267469643d6d6f7669652669643d333736&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="乌苏综合" tvg-name="乌苏综合" tvg-logo="" group-title="综合",乌苏综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3438656636363239383239316137666161663836353139396533386661626564267469643d6974762669643d333732&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="北京文艺" tvg-name="北京文艺" tvg-logo="" group-title="综合",北京文艺
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3936333964303332343434353438386336666263373064373363656635616431267469643d6974762669643d3832&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="和平台" tvg-name="和平台" tvg-logo="" group-title="综合",和平台
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3762353239666466313233343031636436656433623266366439323732346630267469643d6974762669643d313437&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="广东公共" tvg-name="广东公共" tvg-logo="" group-title="综合",广东公共
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3439373465633630333133643234616539363938343162303964646235343231267469643d6974762669643d3836&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="广州少儿" tvg-name="广州少儿" tvg-logo="" group-title="综合",广州少儿
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3339356264333838313764666366306138326433383837376161356661333161267469643d6974762669643d313034&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="广汉综合" tvg-name="广汉综合" tvg-logo="" group-title="综合",广汉综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6432636431386339663339306362363862363835376133396334666333383938267469643d6974762669643d333235&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="文成综合" tvg-name="文成综合" tvg-logo="" group-title="综合",文成综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3263666633343232643064663332363239326637383266636633343931323031267469643d6974762669643d323432&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="新昌生活" tvg-name="新昌生活" tvg-logo="" group-title="综合",新昌生活
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6639343465613264336438336165396466346661363162623837376439646263267469643d6974762669643d323430&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="沙县综合" tvg-name="沙县综合" tvg-logo="" group-title="综合",沙县综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6662313630393966353062336331313935356139326133616235636161616535267469643d6974762669643d313933&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="河源公共" tvg-name="河源公共" tvg-logo="" group-title="综合",河源公共
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3163323931376532326138623236623639343739616434336639333036363932267469643d6974762669643d313036&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="石河子综合台" tvg-name="石河子综合台" tvg-logo="" group-title="综合",石河子综合台
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d6364336532666138633436353330333431326666323232343039393866396561267469643d6974762669643d333636&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="绵阳综合" tvg-name="绵阳综合" tvg-logo="" group-title="综合",绵阳综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3564383732396530366462653839363564316231393466643365336238303864267469643d6974762669643d323934&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="鄂尔多斯综合" tvg-name="鄂尔多斯综合" tvg-logo="" group-title="综合",鄂尔多斯综合
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3662356363346161623533653263653263626164646432663338396534346639267469643d6974762669643d333832&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="阳春电台" tvg-name="阳春电台" tvg-logo="" group-title="综合",阳春电台
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3439336237323363323466313938313536363366623334323838303463353363267469643d6974762669643d313631&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="音乐之声" tvg-name="音乐之声" tvg-logo="" group-title="综合",音乐之声
+http://iptv.cqshushu.com/iptv807.php?id=6163743d706c617926746f6b656e3d3937323862663561396431626439316561303336373162393338356333633031267469643d6974762669643d313431&token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="河北4K" tvg-name="河北4K" tvg-logo="" group-title="超清",河北4K
+https://event.pull.hebtv.com:443/live/live101.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
+#EXTINF:-1 tvg-id="苏州4K" tvg-name="苏州4K" tvg-logo="" group-title="超清",苏州4K
+https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8?token=19c3a8c4bc14e15a9c73ba6684d78456
