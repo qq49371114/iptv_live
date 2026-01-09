@@ -48,7 +48,8 @@ jobs:
 
           python -u m3u8_organizer.py \
             -i $SOURCES_WITH_GROUP \
-            --epg-url "http://epg.51zmt.top:8000/e.xml" \
+            # ✨ 换成一个.gz结尾的EPG地址！
+            --epg-url "http://epg.112114.xyz/epg.xml.gz" \
             -b config/blacklist.txt \
             -f config/favorites.txt \
             -o dist/live
