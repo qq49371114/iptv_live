@@ -1,55 +1,56 @@
-# m3u8_organizer.py v5.2 - 爱心盲盒版
+# m3u8_organizer.py v5.3 - 智能修复版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
 import aiohttp
 import re
 import argparse
-import json
 import os
 import random
+import gzip
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 # --- 配置区 ---
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
 }
-TIMEOUT = 5
+TIMEOUT = 5 # 单个URL的测试超时时间
 
-# --- 核心功能区 ---
+# --- 工具函数区 ---
 
 def load_list_from_file(filename):
-    if not filename: return []
+    """从文件中加载列表，如黑名单、收藏夹。"""
+    if not filename or not os.path.exists(filename):
+        if filename: print(f"  - 配置文件 {filename} 未找到，将跳过。")
+        return []
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             return [line.strip() for line in f if line.strip()]
-    except FileNotFoundError:
-        print(f"  - 配置文件 {filename} 未找到，将跳过。")
-        return []
     except Exception as e:
         print(f"  - 读取配置文件 {filename} 失败: {e}")
         return []
 
 async def test_url(session, url):
+    """异步测试单个URL的可用性和响应速度。"""
     try:
         start_time = asyncio.get_event_loop().time()
         async with session.get(url, headers=HEADERS, timeout=TIMEOUT) as response:
             if 200 <= response.status < 300:
                 end_time = asyncio.get_event_loop().time()
-                return url, (end_time - start_time) * 1000
+                return url, (end_time - start_time) * 1000  # 返回毫秒
             return url, float('inf')
     except Exception:
         return url, float('inf')
 
 def parse_content(content, ad_keywords):
-    """
-    婉儿升级版v4：终极智能解析，完美处理各种复杂格式！
-    """
+    """从M3U或TXT格式的文本内容中解析出频道名和URL。"""
     channels = {}
     processed_urls = set()
     current_group = None
 
     def add_channel(name, url, group_title=None):
+        name = name.strip()
         if not name or not url or url in processed_urls: return
         if any(keyword in name for keyword in ad_keywords): return
         
@@ -77,14 +78,11 @@ def parse_content(content, ad_keywords):
                         name = name_match.group(1) if name_match else line.split(',')[-1]
                         add_channel(name, url, current_group)
             
-            # ✨ 婉儿的终极修复：用更智能的方式来处理TXT格式！
             elif ',' in line and 'http' in line:
-                # 我们从最后一个逗号开始分割，把它前面的都当成频道名，后面的当成URL
                 last_comma_index = line.rfind(',')
                 if last_comma_index != -1:
                     name = line[:last_comma_index]
                     url = line[last_comma_index+1:]
-                    # 再确认一下URL部分是合法的
                     if url.startswith('http'):
                         add_channel(name, url, current_group)
         except Exception as e:
@@ -92,9 +90,55 @@ def parse_content(content, ad_keywords):
             
     return channels
 
+async def load_epg_data(epg_url):
+    """
+    ✨ 婉儿的智能EPG加载器 v1.0 ✨
+    - 自动判断是URL还是本地文件
+    - 自动检测并解压Gzip
+    - 使用正确的XML解析器
+    """
+    if not epg_url: return {}
+    
+    print(f"\n第四步：正在加载EPG数据: {epg_url}...")
+    epg_data = {}
+    try:
+        content_bytes = b''
+        if epg_url.startswith('http'):
+            async with aiohttp.ClientSession() as session:
+                async with session.get(epg_url, headers=HEADERS, timeout=30) as response:
+                    content_bytes = await response.read()
+        else:
+            with open(epg_url, 'rb') as f:
+                content_bytes = f.read()
+
+        # 智能检测Gzip并解压
+        if content_bytes.startswith(b'\x1f\x8b'):
+            print("  - 检测到Gzip压缩，正在解压...")
+            content = gzip.decompress(content_bytes).decode('utf-8')
+        else:
+            content = content_bytes.decode('utf-8')
+
+        # 使用XML解析器
+        print("  - 正在使用XML解析器解析EPG...")
+        root = ET.fromstring(content)
+        for channel in root.findall('channel'):
+            display_name = channel.find('display-name').text
+            channel_id = channel.get('id')
+            icon_tag = channel.find('icon')
+            logo_url = icon_tag.get('src') if icon_tag is not None else ""
+            if display_name:
+                epg_data[display_name] = {"tvg-id": channel_id or display_name, "tvg-logo": logo_url}
+        print(f"  - EPG加载成功！共解析出 {len(epg_data)} 个频道的节目信息。")
+
+    except ET.ParseError as e:
+        print(f"  - EPG文件XML解析失败: {e}。请检查文件格式是否正确。")
+    except Exception as e:
+        print(f"  - EPG数据加载失败: {e}")
+        
+    return epg_data
 
 def get_group_name_fallback(channel_name):
-    # 这个函数现在只作为备用，主要的分类逻辑靠文件名和#genre#
+    """备用分组逻辑，根据频道名关键字猜测分组。"""
     group_rules = {
         "央视频道": ["CCTV", "央视"], "卫视频道": ["卫视"], "地方频道": ["北京", "上海", "广东"],
         "斗鱼直播": ["斗鱼"], "虎牙直播": ["虎牙"], "NewTV": ["NewTV"],
@@ -106,42 +150,50 @@ def get_group_name_fallback(channel_name):
     return "其他频道"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v4.4 开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v5.3 开始工作啦！")
     
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
     
     all_channels = {}
     url_to_group = {} 
-    unique_urls = set()
 
-    print("\n第一步：正在读取、解析并过滤所有直播源...")
-    for source_pair in args.sources_with_group:
-        parts = source_pair.split(':', 1)
-        source_path, group_from_filename = (parts[0], parts[1]) if len(parts) > 1 else (parts[0], None)
-        
-        content = ""
-        try:
-            if source_path.startswith('http'):
-                async with aiohttp.ClientSession() as session:
-                    async with session.get(source_path, headers=HEADERS, timeout=10) as response:
-                        content = await response.text()
-            else:
-                with open(source_path, 'r', encoding='utf-8') as f:
+    print("\n第一步：正在读取并解析所有直播源...")
+    
+    # 1. 处理本地源目录
+    if args.local_sources_dir and os.path.isdir(args.local_sources_dir):
+        for filename in os.listdir(args.local_sources_dir):
+            filepath = os.path.join(args.local_sources_dir, filename)
+            if os.path.isfile(filepath):
+                group_name = os.path.splitext(filename)[0]
+                print(f"  - 读取本地源: {filename} (分组: {group_name})")
+                with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
-            
-            channels = parse_content(content, ad_keywords)
-            for name_with_group, urls in channels.items():
-                if name_with_group not in all_channels:
-                    all_channels[name_with_group] = []
-                all_channels[name_with_group].extend(urls)
-                for url in urls:
-                    unique_urls.add(url)
-                    if url not in url_to_group:
-                        url_to_group[url] = group_from_filename or "网络源"
-        except Exception as e:
-            print(f"  - 读取源 {source_path} 失败: {e}")
-    print(f"  - 解析完成！...")
+                    channels = parse_content(content, ad_keywords)
+                    for name, urls in channels.items():
+                        if name not in all_channels: all_channels[name] = []
+                        all_channels[name].extend(urls)
+                        for url in urls: url_to_group[url] = group_name
+
+    # 2. 处理远程源文件
+    if args.remote_sources_file and os.path.exists(args.remote_sources_file):
+        remote_urls = load_list_from_file(args.remote_sources_file)
+        async with aiohttp.ClientSession() as session:
+            for url in remote_urls:
+                print(f"  - 读取网络源: {url}")
+                try:
+                    async with session.get(url, headers=HEADERS, timeout=10) as response:
+                        content = await response.text()
+                        channels = parse_content(content, ad_keywords)
+                        for name, urls in channels.items():
+                            if name not in all_channels: all_channels[name] = []
+                            all_channels[name].extend(urls)
+                            for u in urls: url_to_group[u] = "网络源"
+                except Exception as e:
+                    print(f"    - 读取失败: {e}")
+
+    unique_urls = {url for urls in all_channels.values() for url in urls}
+    print(f"  - 解析完成！共收集到 {len(all_channels)} 个频道，{len(unique_urls)} 个不重复地址。")
 
     print("\n第二步：正在检验所有地址的可用性和速度...")
     url_speeds = {}
@@ -155,146 +207,89 @@ async def main(args):
 
     print("\n第三步：正在淘汰失效地址，并为每个频道按速度排序...")
     sorted_channels = {}
-    for name_with_group, urls in all_channels.items():
+    for name, urls in all_channels.items():
         valid_urls = [url for url in set(urls) if url_speeds.get(url, float('inf')) != float('inf')]
         if valid_urls:
             valid_urls.sort(key=lambda u: url_speeds[u])
-            sorted_channels[name_with_group] = valid_urls
-    print(f"  - 排序完成！...")
+            sorted_channels[name] = valid_urls
+    print(f"  - 排序完成！剩下 {len(sorted_channels)} 个拥有可用源的频道。")
 
-    epg_data = {}
-    if args.epg:
-        print(f"\n第四步：正在加载EPG对应表: {args.epg}...")
-        try:
-            # ✨ 婉儿的终极升级：智能判断EPG源是本地文件还是远程URL！
-            if args.epg.startswith('http'):
-                # 如果是URL，就用网络请求去下载
-                async with aiohttp.ClientSession() as session:
-                    async with session.get(args.epg, headers=HEADERS, timeout=30) as response: # 延长超时时间
-                        epg_content_bytes = await response.read()
-                        
-                        # ✨✨✨ 核心改动：检查是不是.gz文件，如果是，就先解压！✨✨✨
-                        if args.epg.endswith('.gz'):
-                            import gzip
-                            epg_content = gzip.decompress(epg_content_bytes).decode('utf-8')
-                        else:
-                            epg_content = epg_content_bytes.decode('utf-8')
-                            
-                        epg_data = json.loads(epg_content)
-                print("  - 已从远程URL成功加载并解析EPG数据。")
-            else:
-                # 如果是本地文件，也同样支持.gz
-                if args.epg.endswith('.gz'):
-                    import gzip
-                    with gzip.open(args.epg, 'rt', encoding='utf-8') as f:
-                        epg_data = json.load(f)
-                else:
-                    with open(args.epg, 'r', encoding='utf-8') as f:
-                        epg_data = json.load(f)
-                print("  - 已从本地文件成功加载EPG数据。")
-        except Exception as e:
-            print(f"  - EPG对应表加载失败: {e}")
-    else:
-        print("\n第四步：未提供EPG对应表，将不添加额外信息。")
+    # 第四步：加载EPG数据
+    epg_data = await load_epg_data(args.epg_url)
         
-    # 5. 导出文件
     print("\n第五步：正在生成最终的节目单文件...")
     m3u_filename = f"{args.output}.m3u"
     txt_filename = f"{args.output}.txt"
+    os.makedirs(os.path.dirname(m3u_filename), exist_ok=True)
 
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
-    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
+    # ✨✨✨ 关键修复：使用单个 with open 块，防止文件被覆盖 ✨✨✨
+    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, \
+         open(txt_filename, 'w', encoding='utf-8') as f_txt:
+        
+        # 写入文件头
         f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
-        f_txt.write(f'由婉儿为哥哥整理于 {update_time_str} ,#genre#\n\n')
+        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
+        f_txt.write(f'更新时间,#genre#\n{update_time_str},#\n\n')
 
-        # ✨✨✨ 婉儿的终极魔法：处理“每日精选”盲盒！✨✨✨
+        # 处理“每日精选”盲盒
         picks_dir = "picks"
         if os.path.isdir(picks_dir):
             f_m3u.write(f'#EXTINF:-1 group-title="婉儿为哥哥整理",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
-            f_txt.write(f'婉儿为哥哥整理 ,#genre#\n')
+            f_txt.write(f'婉儿为哥哥整理,#genre#\n')
             
-            # 遍历“精选展柜”里的所有文件
             pick_files = sorted(os.listdir(picks_dir))
             for pick_file in pick_files:
                 pick_path = os.path.join(picks_dir, pick_file)
                 if os.path.isfile(pick_path):
-                    # 从文件名中提取出“盲盒”的名字，比如“今日荐影”
                     pick_name = os.path.splitext(pick_file)[0]
-                    
-                    # 读取这个“盲盒”里的所有源
-                    pick_content = ""
                     with open(pick_path, 'r', encoding='utf-8') as pf:
                         pick_content = pf.read()
                     
-                    # 解析并找出所有可用的源
                     pick_channels = parse_content(pick_content, ad_keywords)
-                    pick_valid_urls = []
-                    for name, urls in pick_channels.items():
-                        for url in urls:
-                            if url_speeds.get(url, float('inf')) != float('inf'):
-                                pick_valid_urls.append(url)
+                    pick_valid_urls = [url for urls in pick_channels.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
                     
-                    # 如果有可用的源，就随机选一个！
                     if pick_valid_urls:
                         random_url = random.choice(pick_valid_urls)
-                        f_m3u.write(f'#EXTINF:-1 tvg-id="{pick_name}" tvg-name="{pick_name}",{pick_name}\n')
-                        f_m3u.write(f'{random_url}\n')
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{pick_name}" tvg-name="{pick_name}",{pick_name}\n{random_url}\n')
                         f_txt.write(f'{pick_name},{random_url}\n')
             f_txt.write('\n')
             
-    grouped_channels = {}
-    for name_with_group, urls in sorted_channels.items():
-        parts = name_with_group.split('§§§', 1)
-        group_from_source, name = (parts[0], parts[1]) if len(parts) > 1 else (None, name_with_group)
-        
-        fastest_url = urls[0]
-        group_name = "我的最爱" if name in favorite_channels else (group_from_source or url_to_group.get(fastest_url) or get_group_name_fallback(name))
+        # 准备常规频道数据
+        grouped_channels = {}
+        for name_with_group, urls in sorted_channels.items():
+            parts = name_with_group.split('§§§', 1)
+            group_from_source, name = (parts[0], parts[1]) if len(parts) > 1 else (None, name_with_group)
+            
+            fastest_url = urls[0]
+            group_name = "我的最爱" if name in favorite_channels else (group_from_source or url_to_group.get(fastest_url) or get_group_name_fallback(name))
 
-        if group_name not in grouped_channels:
-            grouped_channels[group_name] = []
-        grouped_channels[group_name].append((name, urls))
+            if group_name not in grouped_channels:
+                grouped_channels[group_name] = []
+            grouped_channels[group_name].append((name, urls))
 
-    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
-        beijing_time = datetime.now(timezone(timedelta(hours=8)))
-        update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
-        
-        f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
-        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
-        
-        f_txt.write(f'更新时间 ,#genre#\n{update_time_str},#\n\n')
-        
+        # 写入常规频道
         custom_group_order = ["我的最爱", "央视频道", "卫视频道", "地方频道", "斗鱼直播", "虎牙直播", "NewTV", "网络源"]
         
-        for group in custom_group_order:
-            channels_in_group = grouped_channels.pop(group, [])
+        all_groups = custom_group_order + sorted([g for g in grouped_channels if g not in custom_group_order])
+
+        for group in all_groups:
+            channels_in_group = grouped_channels.get(group)
             if not channels_in_group: continue
             
-            f_txt.write(f'{group} ,#genre#\n')
+            f_txt.write(f'{group},#genre#\n')
             channels_in_group.sort(key=lambda x: x[0]) 
+            
             for name, urls in channels_in_group:
+                fastest_url = urls[0]
+                
+                # 写入TXT文件 (所有源)
                 for url in urls:
                     f_txt.write(f'{name},{url}\n')
                 
-                fastest_url = urls[0]
-                epg_info = epg_data.get(name, {})
-                tvg_id = epg_info.get("tvg-id", name)
-                tvg_logo = epg_info.get("tvg-logo", "")
-                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{tvg_logo}" group-title="{group}",{name}\n')
-                f_m3u.write(f'{fastest_url}\n')
-            f_txt.write('\n')
-        
-        remaining_groups = sorted(grouped_channels.keys())
-        for group in remaining_groups:
-            channels_in_group = grouped_channels.get(group, [])
-            f_txt.write(f'{group} ,#genre#\n')
-            channels_in_group.sort(key=lambda x: x[0])
-            for name, urls in channels_in_group:
-                for url in urls:
-                    f_txt.write(f'{name},{url}\n')
-
-                fastest_url = urls[0]
+                # 写入M3U文件 (最快的源)
                 epg_info = epg_data.get(name, {})
                 tvg_id = epg_info.get("tvg-id", name)
                 tvg_logo = epg_info.get("tvg-logo", "")
@@ -302,23 +297,19 @@ async def main(args):
                 f_m3u.write(f'{fastest_url}\n')
             f_txt.write('\n')
 
-    print(f"  - 已生成最终版M3U文件: {m3u_filename}")
-    print(f"  - 已生成最终版TXT备份文件: {txt_filename}")
-    
-    print("\n报告哥哥，所有任务已完成！我们的后勤部长已经是最强形态啦！")
+    print(f"\n第六步：任务完成！节目单已生成到 {m3u_filename} 和 {txt_filename}")
+    print("哥哥辛苦啦，快去看看成果吧！ (づ｡◕‿‿◕｡)づ")
+
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="婉儿的M3U8直播源整理工具 v4.5")
-    parser.add_argument('-i', '--sources-with-group', nargs='+', required=True, help="输入的'源文件路径:分组名'列表")
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单”整理工具')
+    parser.add_argument('--local-sources-dir', type=str, default='sources', help='本地直播源目录 (例如: sources/)')
+    parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件 (例如: sources.txt)')
+    parser.add_argument('--epg-url', type=str, help='EPG数据源的URL或本地路径')
+    parser.add_argument('-b', '--blacklist', type=str, default='config/blacklist.txt', help='频道黑名单文件')
+    parser.add_argument('-f', '--favorites', type=str, default='config/favorites.txt', help='收藏频道列表文件')
+    parser.add_argument('-o', '--output', type=str, default='dist/live', help='输出文件的前缀 (不含扩展名)')
     
-    # ✨ 婉儿的终极修复：我们把 -e 和 --epg-url 都定义好，并且说清楚它们的用途！
-    parser.add_argument('-e', '--epg', default=None, help="本地EPG对应表JSON文件 (可选)")
-    parser.add_argument('--epg-url', default="", help="外部EPG XML地址 (可选，用于写入M3U文件头)")
-    
-    parser.add_argument('-b', '--blacklist', default="config/blacklist.txt", help="广告关键词黑名单文件")
-    parser.add_argument('-f', '--favorites', default="config/favorites.txt", help="最爱频道列表文件")
-    parser.add_argument('-o', '--output', default="live", help="输出文件的前缀名")
     args = parser.parse_args()
     
     asyncio.run(main(args))
-
