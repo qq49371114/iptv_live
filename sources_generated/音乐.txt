@@ -1,2 +1,0 @@
-CCTV-15音乐,http://220.169.100.41:10087/udp/239.76.252.252:9000
-MasMusica FM (720p),https://movil.ejeserver.com/live/masmusica.m3u8
