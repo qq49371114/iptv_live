@@ -1,5 +1,5 @@
-# organize_live.yml v4.5
-# 机器人管家：自动整理直播源 (清爽重构版)
+# organize_live.yml v7.2
+# 机器人管家：自动整理直播源 (生态融合版)
 # 作者：婉儿 & 哥哥
 
 name: 自动整理直播源
@@ -27,10 +27,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install aiohttp
 
-      - name: 运行整理程序 (v4.5 新版调用方式)
+      - name: 运行整理程序 (v7.2 全新调用方式)
         run: |
           python -u m3u8_organizer.py \
-            --local-sources-dir "sources" \
+            --config "config.json" \
+            --rules-dir "rules" \
+            --manual-sources-dir "sources_manual" \
+            --generated-sources-dir "sources_generated" \
             --remote-sources-file "sources.txt" \
             --epg-url "http://epg.51zmt.top:8000/e.xml.gz" \
             -b "config/blacklist.txt" \
@@ -42,10 +45,10 @@ jobs:
         with:
           # 使用 PAT, 确保有权限触发其他工作流 (如果需要的话)
           token: ${{ secrets.ACTIONS_PAT }} 
-          # 只提交 dist 目录下的变动
-          add: 'dist'
+          # ✨ 关键升级：同时提交最终成品和“进化”出的新源！
+          add: 'dist/ sources_generated/'
           # 提交作者信息
           author_name: 'Waner-Bot'
           author_email: 'waner-bot@users.noreply.github.com'
           # 提交信息
-          message: 'chore: 自动更新直播源'
+          message: 'chore(bot): 自动更新直播源 (v7.2)'
