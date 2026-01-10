@@ -1,0 +1,5 @@
+AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8
+Artflix Movie Classics (720p),https://amogonetworx-artflix-1-nl.samsung.wurl.tv/playlist.m3u8
+Pluto TV Comedy Movies,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62ea3d24b8e02600071fa296/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7b8d24-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=eac25957-ab7a-4358-b0cd-9e596b2f1a6f
+Star Movies Select HD (1080p),http://103.178.78.151:7505/play/a1gd/index.m3u8
+粤语电影2,http://epg.112114.xyz/douyu/6566671
