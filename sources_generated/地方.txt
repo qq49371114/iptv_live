@@ -1,4 +1,5 @@
-新疆卫视,http://222.169.85.8:9901/tsfile/live/0110_1.m3u8
+广东体育,https://t.freetv.fun/live/yan-dong-ti-yu-gao-qing-1.m3u8
+广西卫视,http://111.61.236.247:9081/hls/44/index.m3u8
 河北都市,https://radio.pull.hebtv.com/live/hebnczx.m3u8
-浙江少儿,https://t.freetv.fun/live/zhe-jiang-shao-er-1.m3u8
-浙江数码时代,http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8
+浙江新闻,https://t.freetv.fun/live/zhe-jiang-xin-wen-6.m3u8
+辽宁卫视,http://120.76.248.139/live/bfgd/4200000058.m3u8
