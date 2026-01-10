@@ -1,4 +1,4 @@
-# m3u8_organizer.py v7.2 - 规则文件化版
+# m3u8_organizer.py v7.5 - 细节完美 & 完全可配版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -16,12 +16,13 @@ import json
 # --- 配置加载区 ---
 
 def load_global_config(config_path):
-    """从JSON文件加载全局配置（超时、请求头等）"""
+    """从JSON文件加载全局配置"""
     default_config = {
         "headers": {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
         },
-        "url_test_timeout": 8
+        "url_test_timeout": 8,
+        "clock_url": "http://epg.pw/zdy/clock.m3u8" # 默认时钟地址
     }
     try:
         if os.path.exists(config_path):
@@ -37,7 +38,7 @@ def load_global_config(config_path):
     return default_config
 
 def load_category_rules_from_dir(rules_dir):
-    """从目录加载分类规则，一个文件一个分类"""
+    """从目录加载分类规则"""
     category_rules = {}
     if not os.path.isdir(rules_dir):
         print(f"【警告】规则目录 '{rules_dir}' 不存在，将无法进行分类！")
@@ -54,10 +55,11 @@ def load_category_rules_from_dir(rules_dir):
                 print(f"  - 已加载分类 '{category_name}'，包含 {len(keywords)} 个关键字。")
     return category_rules
 
-# --- 全局变量 (将在 main 函数前被赋值) ---
+# --- 全局变量 ---
 HEADERS = {}
 URL_TEST_TIMEOUT = 8
 CATEGORY_RULES = {}
+CLOCK_URL = ""
 
 # --- 工具函数区 ---
 def load_list_from_file(filename):
@@ -154,7 +156,7 @@ def classify_channel(channel_name):
     return "其他"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v7.2【规则文件化】版开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v7.5【细节完美 & 完全可配】版开始工作啦！")
     
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
@@ -191,8 +193,19 @@ async def main(args):
     unique_urls_count = sum(len(data["urls"]) for data in all_channels_pool.values())
     print(f"  - 融合完成！共收集到 {len(all_channels_pool)} 个频道，{unique_urls_count} 个不重复地址。")
 
+
     print("\n第二步：【终极试炼】正在检验所有地址的可用性...")
     all_urls_to_test = {url for data in all_channels_pool.values() for url in data["urls"]}
+    if os.path.isdir(args.picks_dir):
+        for pick_file in os.listdir(args.picks_dir):
+            pick_path = os.path.join(args.picks_dir, pick_file)
+            if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
+                with open(pick_path, 'r', encoding='utf-8') as pf:
+                    pick_content = pf.read()
+                    pick_channels = parse_content(pick_content, ad_keywords)
+                    for urls in pick_channels.values():
+                        all_urls_to_test.update(urls)
+
     url_speeds = {}
     async with aiohttp.ClientSession() as session:
         tasks = [test_url(session, url) for url in all_urls_to_test]
@@ -240,8 +253,39 @@ async def main(args):
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
         f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
-        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n#EXTVLCOPT:network-caching=1000\n')
-        f_txt.write(f'更新时间,#genre#\n{update_time_str},#\n\n')
+        
+        # ✨✨✨ 终极修正：优雅地写入更新时间和网络时钟 ✨✨✨
+        f_m3u.write(f'#EXTINF:-1 group-title="更新时间" tvg-name="更新时间",{update_time_str}\n')
+        f_m3u.write(f'{CLOCK_URL}\n')
+        f_txt.write(f'更新时间,#genre#\n')
+        f_txt.write(f'{update_time_str},{CLOCK_URL}\n\n')
+        
+        # ✨✨✨ 盲盒功能，回归并加入诊断日志 ✨✨✨
+        if os.path.isdir(args.picks_dir):
+            print("  - 发现【每日精选】盲盒，正在开启...")
+            f_m3u.write(f'#EXTINF:-1 group-title="婉儿为哥哥整理"\n#EXTVLCOPT:network-caching=1000\n')
+            f_txt.write(f'婉儿为哥哥整理,#genre#\n')
+            pick_files = sorted(os.listdir(args.picks_dir))
+            for pick_file in pick_files:
+                pick_path = os.path.join(args.picks_dir, pick_file)
+                if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
+                    pick_name = os.path.splitext(pick_file)[0]
+                    with open(pick_path, 'r', encoding='utf-8') as pf:
+                        pick_content = pf.read()
+                    pick_channels = parse_content(pick_content, ad_keywords)
+                    pick_valid_urls = [url for urls in pick_channels.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+                    if pick_valid_urls:
+                        random_url = random.choice(pick_valid_urls)
+                        safe_pick_name = pick_name.replace(" ", "-")
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{safe_pick_name}" tvg-name="{safe_pick_name}",{safe_pick_name}\n{random_url}\n')
+                        f_txt.write(f'{safe_pick_name},{random_url}\n')
+                        print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已添加！")
+                    else:
+                        print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，本次不开启。")
+            f_txt.write('\n')
+        else:
+            print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
+
         final_grouped_channels = {}
         for category, channels in survivors_classified.items():
             group_name = category
@@ -252,9 +296,7 @@ async def main(args):
                 final_grouped_channels[group_name] = {}
             final_grouped_channels[group_name].update(channels)
         
-        # 确保分组顺序
         custom_group_order = ["我的最爱"] + list(CATEGORY_RULES.keys()) + ["其他"]
-        # 去重并保持顺序
         ordered_groups = []
         for group in custom_group_order:
             if group not in ordered_groups:
@@ -278,12 +320,13 @@ async def main(args):
     print(f"\n第五步：任务完成！我们的生态系统完成了一次进化！")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v7.2【规则文件化】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v7.5【细节完美 & 完全可配】版')
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【规则库】分类规则目录')
     parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
     parser.add_argument('--generated-sources-dir', type=str, default='sources_generated', help='【成品仓库】脚本自动生成的源目录')
     parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件')
+    parser.add_argument('--picks-dir', type=str, default='picks', help='【每日精选】盲盒源目录')
     parser.add_argument('--epg-url', type=str, help='EPG数据源的URL或本地路径')
     parser.add_argument('-b', '--blacklist', type=str, default='config/blacklist.txt', help='频道黑名单文件')
     parser.add_argument('-f', '--favorites', type=str, default='config/favorites.txt', help='收藏频道列表文件')
@@ -295,6 +338,7 @@ if __name__ == '__main__':
     config = load_global_config(args.config)
     HEADERS = config['headers']
     URL_TEST_TIMEOUT = config['url_test_timeout']
+    CLOCK_URL = config['clock_url']
     CATEGORY_RULES = load_category_rules_from_dir(args.rules_dir)
     
     asyncio.run(main(args))
