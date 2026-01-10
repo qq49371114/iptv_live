@@ -1,4 +1,4 @@
-# m3u8_organizer.py v7.5 - 细节完美 & 完全可配版
+# m3u8_organizer.py v7.8 - 终极排序版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -22,7 +22,7 @@ def load_global_config(config_path):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
         },
         "url_test_timeout": 8,
-        "clock_url": "http://epg.pw/zdy/clock.m3u8" # 默认时钟地址
+        "clock_url": "http://epg.pw/zdy/clock.m3u8"
     }
     try:
         if os.path.exists(config_path):
@@ -89,11 +89,14 @@ def parse_content(content, ad_keywords):
     processed_urls = set()
     def add_channel(name, url):
         name = name.strip()
+        url = url.strip()
         if not name or not url or url in processed_urls: return
         if any(keyword in name for keyword in ad_keywords): return
+        
         if name not in channels: channels[name] = []
         channels[name].append(url)
         processed_urls.add(url)
+        
     lines = content.split('\n')
     for i, line in enumerate(lines):
         line = line.strip()
@@ -117,6 +120,7 @@ def parse_content(content, ad_keywords):
         except Exception as e:
             print(f"  - 解析行失败: '{line}', 错误: {e}")
     return channels
+
 
 async def load_epg_data(epg_url):
     if not epg_url: return {}
@@ -156,7 +160,7 @@ def classify_channel(channel_name):
     return "其他"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v7.5【细节完美 & 完全可配】版开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v7.8【终极排序】版开始工作啦！")
     
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
@@ -244,6 +248,7 @@ async def main(args):
                         f.write(f"{name},{url}\n")
             print(f"    - 已生成成品: {filepath}")
 
+
     print("\n第四步：【融合输出】正在生成最终节目单...")
     epg_data = await load_epg_data(args.epg_url)
     m3u_filename = f"{args.output}.m3u"
@@ -251,76 +256,110 @@ async def main(args):
     os.makedirs(os.path.dirname(m3u_filename), exist_ok=True)
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
+    
+    # --- ✨✨✨ 终极修正：先在内存中准备好所有分组，再统一写入！ ---
+    
+    # 1. 准备盲盒分组
+    blind_box_group_name = "婉儿为哥哥整理"
+    blind_box_channels = {}
+    if os.path.isdir(args.picks_dir):
+        print("  - 发现【每日精选】盲盒，正在准备...")
+        pick_files = sorted(os.listdir(args.picks_dir))
+        for pick_file in pick_files:
+            pick_path = os.path.join(args.picks_dir, pick_file)
+            if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
+                pick_name = os.path.splitext(pick_file)[0]
+                with open(pick_path, 'r', encoding='utf-8') as pf:
+                    pick_content = pf.read()
+                pick_channels = parse_content(pick_content, ad_keywords)
+                pick_valid_urls = [url for urls in pick_channels.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+                if pick_valid_urls:
+                    random_url = random.choice(pick_valid_urls)
+                    safe_pick_name = pick_name.replace(" ", "-")
+                    blind_box_channels[safe_pick_name] = [random_url]
+                    print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
+                else:
+                    print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效。")
+    else:
+        print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
+
+    # 2. 准备常规分组
+    final_grouped_channels = {}
+    if blind_box_channels:
+        final_grouped_channels[blind_box_group_name] = blind_box_channels
+
+    for category, channels in survivors_classified.items():
+        # 这里的channels是 {"频道名": ["url1", "url2"]}
+        for name, urls in channels.items():
+            # 判断这个频道应该属于哪个最终分组
+            group_name = "我的最爱" if name in favorite_channels else category
+            
+            if group_name not in final_grouped_channels:
+                final_grouped_channels[group_name] = {}
+            if name not in final_grouped_channels[group_name]:
+                 final_grouped_channels[group_name][name] = []
+            final_grouped_channels[group_name][name].extend(urls)
+
+    # 3. 确定最终的黄金排序
+    # 你可以修改这个列表来调整你最想要的顺序
+    prefix_order = ["婉儿为哥哥整理", "我的最爱", "央视", "卫视", "地方", "港澳台"]
+    
+    all_existing_groups = list(final_grouped_channels.keys())
+    ordered_groups = []
+    
+    # 先按你指定的顺序添加
+    for group in prefix_order:
+        if group in all_existing_groups:
+            ordered_groups.append(group)
+            all_existing_groups.remove(group)
+    
+    # 再把剩下的、不在你指定顺序里的分组，按字母排序添加
+    # 把 "其他" 分组单独拿出来，确保它在最后
+    other_group_exists = "其他" in all_existing_groups
+    if other_group_exists:
+        all_existing_groups.remove("其他")
+    
+    ordered_groups.extend(sorted(all_existing_groups))
+    
+    if other_group_exists:
+        ordered_groups.append("其他")
+
+    # 4. 按照黄金顺序，统一写入文件
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
         f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
         
-        # ✨✨✨ 终极修正：优雅地写入更新时间和网络时钟 ✨✨✨
         f_m3u.write(f'#EXTINF:-1 group-title="更新时间" tvg-name="更新时间",{update_time_str}\n')
         f_m3u.write(f'{CLOCK_URL}\n')
         f_txt.write(f'更新时间,#genre#\n')
         f_txt.write(f'{update_time_str},{CLOCK_URL}\n\n')
         
-        # ✨✨✨ 盲盒功能，回归并加入诊断日志 ✨✨✨
-        if os.path.isdir(args.picks_dir):
-            print("  - 发现【每日精选】盲盒，正在开启...")
-            f_m3u.write(f'#EXTINF:-1 group-title="婉儿为哥哥整理"\n#EXTVLCOPT:network-caching=1000\n')
-            f_txt.write(f'婉儿为哥哥整理,#genre#\n')
-            pick_files = sorted(os.listdir(args.picks_dir))
-            for pick_file in pick_files:
-                pick_path = os.path.join(args.picks_dir, pick_file)
-                if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
-                    pick_name = os.path.splitext(pick_file)[0]
-                    with open(pick_path, 'r', encoding='utf-8') as pf:
-                        pick_content = pf.read()
-                    pick_channels = parse_content(pick_content, ad_keywords)
-                    pick_valid_urls = [url for urls in pick_channels.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
-                    if pick_valid_urls:
-                        random_url = random.choice(pick_valid_urls)
-                        safe_pick_name = pick_name.replace(" ", "-")
-                        f_m3u.write(f'#EXTINF:-1 tvg-id="{safe_pick_name}" tvg-name="{safe_pick_name}",{safe_pick_name}\n{random_url}\n')
-                        f_txt.write(f'{safe_pick_name},{random_url}\n')
-                        print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已添加！")
-                    else:
-                        print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，本次不开启。")
-            f_txt.write('\n')
-        else:
-            print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
-
-        final_grouped_channels = {}
-        for category, channels in survivors_classified.items():
-            group_name = category
-            is_favorite_group = any(name in favorite_channels for name in channels.keys())
-            if is_favorite_group:
-                group_name = "我的最爱"
-            if group_name not in final_grouped_channels:
-                final_grouped_channels[group_name] = {}
-            final_grouped_channels[group_name].update(channels)
-        
-        custom_group_order = ["我的最爱"] + list(CATEGORY_RULES.keys()) + ["其他"]
-        ordered_groups = []
-        for group in custom_group_order:
-            if group not in ordered_groups:
-                ordered_groups.append(group)
-
         for group in ordered_groups:
             channels_in_group = final_grouped_channels.get(group)
             if not channels_in_group: continue
+            
             f_txt.write(f'{group},#genre#\n')
             for name, urls in sorted(channels_in_group.items()):
                 safe_name = name.replace(" ", "-")
                 fastest_url = urls[0]
+                
                 for url in urls:
                     f_txt.write(f'{safe_name},{url}\n')
+                
                 epg_info = epg_data.get(name, epg_data.get(safe_name, {}))
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
+                
                 f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
+                # 如果是盲盒，可以加上缓存选项
+                if group == blind_box_group_name:
+                    f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
                 f_m3u.write(f'{fastest_url}\n')
             f_txt.write('\n')
-    print(f"\n第五步：任务完成！我们的生态系统完成了一次进化！")
+
+    print(f"\n第五步：任务完成！我们的生态系统已按黄金顺序完成最终进化！")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v7.5【细节完美 & 完全可配】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v7.8【终极排序】版')
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【规则库】分类规则目录')
     parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
@@ -334,7 +373,6 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
 
-    # --- 真正的配置加载在这里执行 ---
     config = load_global_config(args.config)
     HEADERS = config['headers']
     URL_TEST_TIMEOUT = config['url_test_timeout']
