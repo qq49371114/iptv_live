@@ -1,3 +1,5 @@
-CCTV10,http://112.46.105.20:8009/hls/506/index.m3u8
-新沂新闻,http://live.xysrmt.cn/xwzh/sd/live.m3u8?zjiangsd"
-桦甸综合,http://stream9.jlntv.cn:80/aac_huadiangb/playlist.m3u8
+CCTV4,http://112.46.105.20:8009/hls/4/index.m3u8
+CCTV9,http://123.149.163.5:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
+乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd;http://rmlive.lzxrmtzx.com/live1/live1.m3u8?zsicd
+武威新闻,https://play.kankanlive.com/live/1693539781636986.m3u8
+金平综合,http://live.ynurl.com/video/s10041-JPTV/index.m3u8?zyund
