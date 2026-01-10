@@ -11,5 +11,8 @@
     "电影": ["电影", "影院", "Movie"],
     "体育": ["体育", "Sport"],
     "音乐": ["音乐", "Music"]
-  }
+  },
+  "url_test_timeout": 8,
+  "clock_url": "https://v26-mccv.onewsvod.com/d2154c1a6ddc0838e4abc889a6e98ea3/6961ce2d/video/tos/cn/tos-cn-ve-19734/oQe05gEGSC3aBeQLIacN1mQyiBkAewCAvzI0r9/?a=34&ch=0&cr=0&dr=1&er=0&lr=xigua&cd=0%7C0%7C1%7C0&cv=1&br=645&bt=645&cs=0&ds=1&ft=z5kIyzPccxibXGrsfDsdetlN4gd3-tEmHqYWHFYis9.QXch00hL4ge3p-A~nRfqs&mime_type=video_mp4&qs=0&rc=Mzw7OztmO2Q2ZzhnMzpkO0BpajM3ZHA5cjo5ODczNDlnM0BhMzNiYjIyNi0xXmA2MDQ0YSNjNXNqMmRrcWRhLS1kLi9zcw%3D%3D&btag=c0000e00028000&dy_q=1768013686&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=20260110105446040CECB650444F5940E4"
+ }
 }
