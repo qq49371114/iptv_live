@@ -2,7 +2,7 @@
 2026-01-10 10:57:16,http://epg.pw/zdy/clock.m3u8
 
 婉儿为哥哥整理,#genre#
-今日鉴赏,https://vdse.bdstatic.com//bf4bb1d82b2eb17681c49e745dc2da21.mp4
+今日鉴赏,https://01.tv.streaming.bredanu.nl/hls/stream.m3u8
 
 地方,#genre#
 新疆卫视,http://222.169.85.8:9901/tsfile/live/0110_1.m3u8
