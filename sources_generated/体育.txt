@@ -1,2 +1,1 @@
-CCTV-5体育,http://183.236.43.98:4111/udp/239.77.0.170:5146
-More Than Sports TV (1080p),https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8
+RTSH Sport (1080p),http://178.33.11.6:8696/live/rtshsport/playlist.m3u8

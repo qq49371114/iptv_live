@@ -1,3 +1,11 @@
-上海金色学堂,http://117.174.25.254:8188/rtp/239.0.0.32:5140
-新疆天山,http://gctxyc.liveplay.myqcloud.com/gc/xjtcdhsz_1/index.m3u8
-辽宁卫视,http://123.129.70.178:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+北京卫视,https://t.freetv.fun/live/bei-jing-wei-shi-4.m3u8$[BD]北京卫视
+安徽导视,http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8
+安徽黟县西递牌坊,https://gcalic.v.myalicdn.com/gc/yxxdpf_1/index.m3u8
+山西卫视,http://139.196.151.191:2051/rtp/239.45.1.229:5140
+广东体育,https://t.freetv.fun/live/yan-dong-ti-yu-gao-qing-12.m3u8$[BD]广东体育高清
+广东少儿,https://t.freetv.fun/live/yan-dong-shao-er.m3u8
+广东影视,https://t.freetv.fun/live/yan-dong-ying-shi-gao-qing-4.m3u8
+广西国际,https://hlscdn.liangtv.cn/live/0234c48e0bc24fe1b41b9999a253e581/1075ee38e04f490690f6a36a16e09c79.m3u8
+浙江教科,http://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
+湖南卫视,http://59.39.89.130:60901/tsfile/live/0125_2.m3u8?key=txiptv&playlive=1&authid=0
+重庆卫视,https://t.freetv.fun/live/zhong-qing-wei-shi-9.m3u8$[BD]重庆卫视
