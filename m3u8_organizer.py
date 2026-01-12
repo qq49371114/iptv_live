@@ -348,31 +348,35 @@ async def main(args):
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                # ✨✨✨ 逻辑分叉 ✨✨✨
+                # --- 逻辑分叉 ---
                 
                 if group == blind_box_group_name:
-                    # 【盲盒模式】只写一条！(保持神秘感，列表中本身也只有一条随机选好的)
-                    url = urls[0]
-                    
-                    # 写入 TXT
-                    f_txt.write(f'{safe_name},{url}\n')
-                    
-                    # 写入 M3U (带缓存参数)
-                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
-                    f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
-                    f_m3u.write(f'{url}\n')
-                    
-                else:
-                    # 【普通模式】有多少条写多少条！(Top 5 全部写入)
-                    for url in urls:
-                        # 写入 TXT
+                    # 【盲盒模式】只写一条！
+                    if urls: # 确保不为空
+                        url = urls[0]
                         f_txt.write(f'{safe_name},{url}\n')
                         
-                        # 写入 M3U (每个 URL 都生成一个 EXTINF 条目)
                         f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
+                        f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
+                        f_m3u.write(f'{url}\n')
+                    
+                else:
+                    # 【普通模式】有多少写多少！(带回放标签)
+                    for url in urls:
+                        f_txt.write(f'{safe_name},{url}\n')
+                        
+                        # ✨ 智能识别回放标签 ✨
+                        catchup_tag = ""
+                        if "PLTV" in url or "TVOD" in url or "/OtpUser/" in url:
+                            catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                        elif ".php" in url and "id=" in url:
+                             catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
                         f_m3u.write(f'{url}\n')
 
             f_txt.write('\n')
+
 
 
     print(f"\n第五步：任务完成！我们的生态系统已按黄金顺序完成最终进化！")
