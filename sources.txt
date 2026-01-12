@@ -21,3 +21,4 @@ https://raw.githubusercontent.com/8080713/iptv-api666/refs/heads/main/output/res
 https://raw.githubusercontent.com/SonyIPTV/Sony-IPTV-Live/refs/heads/main/Sony%20IPTV%20Live.m3u
 https://raw.githubusercontent.com/SonyIPTV/Sony-IPTV-Live/refs/heads/main/Sony%20IPTV%20Live.m3u
 https://666.ewwe.gq/qq49371114/collect-tv-txt/main/assets/freetv/freetv_output.txt
+https://raw.githubusercontent.com/kimwang1978/collect-txt/refs/heads/main/bbxx_lite.txt
