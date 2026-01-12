@@ -326,6 +326,7 @@ async def main(args):
 
     # 4. 按照黄金顺序，统一写入文件
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
+        # 写入头部信息
         f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
         
         f_m3u.write(f'#EXTINF:-1 group-title="更新时间" tvg-name="更新时间",{update_time_str}\n')
@@ -338,23 +339,41 @@ async def main(args):
             if not channels_in_group: continue
             
             f_txt.write(f'{group},#genre#\n')
+            
             for name, urls in sorted(channels_in_group.items()):
                 safe_name = name.replace(" ", "-")
-                fastest_url = urls[0]
                 
-                for url in urls:
-                    f_txt.write(f'{safe_name},{url}\n')
-                
+                # 获取 EPG 信息
                 epg_info = epg_data.get(name, epg_data.get(safe_name, {}))
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
-                # 如果是盲盒，可以加上缓存选项
+                # ✨✨✨ 逻辑分叉 ✨✨✨
+                
                 if group == blind_box_group_name:
+                    # 【盲盒模式】只写一条！(保持神秘感，列表中本身也只有一条随机选好的)
+                    url = urls[0]
+                    
+                    # 写入 TXT
+                    f_txt.write(f'{safe_name},{url}\n')
+                    
+                    # 写入 M3U (带缓存参数)
+                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
                     f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
-                f_m3u.write(f'{fastest_url}\n')
+                    f_m3u.write(f'{url}\n')
+                    
+                else:
+                    # 【普通模式】有多少条写多少条！(Top 5 全部写入)
+                    for url in urls:
+                        # 写入 TXT
+                        f_txt.write(f'{safe_name},{url}\n')
+                        
+                        # 写入 M3U (每个 URL 都生成一个 EXTINF 条目)
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
+                        f_m3u.write(f'{url}\n')
+
             f_txt.write('\n')
+
 
     print(f"\n第五步：任务完成！我们的生态系统已按黄金顺序完成最终进化！")
 
