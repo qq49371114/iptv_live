@@ -1,0 +1,2 @@
+Kuriakos Music (1080p),http://195.23.211.179:1935/kmusic/smil:kmusic.smil/playlist.m3u8
+Oxygen Music (1080p),https://oxygenmusic.hu:2443/hls/oxygenmusic.m3u8
