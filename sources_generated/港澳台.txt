@@ -1,2 +1,0 @@
-HBO,https://cdn10jtedge.indihometv.com/atm/DASH/hbo/manifest.mpd
-东森超视,https://t.freetv.fun/live/dong-sen-chao-shi-3.php$[BD]东森超视

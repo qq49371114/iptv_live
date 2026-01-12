@@ -1,1 +1,4 @@
-RTSH Sport (1080p),http://178.33.11.6:8696/live/rtshsport/playlist.m3u8
+KTV Sport Plus (1080p),https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8
+QazSport (480p) [Geo-blocked],https://qazsporttv-stream.qazcdn.com/qazsporttv/qazsporttv/playlist.m3u8
+纬来体育,https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
+纬来体育,https://cdn.iptv8k.top/dl/jrys.php?id=292&time=20240926215313&ip=111.229.253.40
