@@ -1,5 +1,2 @@
-CCTV3,http://182.114.48.30:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
-吴忠综合,http://live.kanwz.net/zhpd/sd/live.m3u8
-宜阳综合,http://live.dxhmt.cn:9081/tv/10327-1.m3u8
-长子综合,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd
-龙游新闻综合,https://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
+宾阳综合,http://pulls.myun.tv/live/0dkp33j5.m3u8
+绍兴新闻综合,https://t.freetv.fun/live/shao-xing-xin-wen-zong-he-3.m3u8$[HD]绍兴新闻综合

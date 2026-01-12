@@ -1,0 +1,3 @@
+Premier Sports 1 (480p),http://cdn4.skygo.mn/live/disk1/SPSPrime/HLS-FTA/SPSPrime.m3u8
+Sony Sports Ten 1 (576p),http://103.178.78.151:7505/play/a1qd/index.m3u8
+Sportitalia Solocalcio (1080p),https://distribution.sportitalialive.it/sportitalia/sisolocalcio_abr/playlist.m3u8

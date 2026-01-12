@@ -1,4 +1,1 @@
-HBO Family,https://cdn10jtedge.indihometv.com/atm/DASH/hbofamily/manifest.mpd
-TVBS亚洲,http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
-凤凰中文,http://220.169.100.41:10087/udp/239.76.246.134:1234
-凤凰资讯,http://61.221.215.25:8800/hls/47/index.m3u8
+TVBS亚洲,http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
