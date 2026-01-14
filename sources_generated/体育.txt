@@ -1,4 +1,6 @@
-Bein Sports 1🎯,http://135.125.109.73:9000/beinsport1_.m3u8
-CCTV-5体育,http://117.174.25.254:8188/rtp/239.0.0.14:5140
-NBC Sports,https://xumo-xumoent-vc-122-sjv70.fast.nbcuni.com/live/master.m3u8
-Premier Sports 5 (480p),http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8
+PRO Sport International,https://proshls.wns.live/hls/stream.m3u8
+PRO Sport International �,https://proshls.wns.live/hls/stream.m3u8
+Sportoutdoor.tv,https://gto2000-sportoutdoortv-1-it.samsung.wurl.tv/playlist.m3u8
+山东体育,https://t.freetv.fun/live/shan-dong-ti-yu-1.m3u8
+广东体育,http://218.15.183.23:9901/tsfile/live/23012_1.m3u8
+广东体育,http://120.198.101.106:9901/tsfile/live/1012_1.m3u8?key=txiptv
