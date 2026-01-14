@@ -1,7 +1,5 @@
-CCTV-17农业农村,http://183.236.43.98:4111/udp/239.77.1.121:5146
-CCTV6,https://t.freetv.fun/live/cctv6-9.m3u8$[BD]cctv6
-宜兴新闻,http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8
-广元综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8
-第一财经,https://cdn3.163189.xyz/163189/dycj
-萧山综合,http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8?
-鹤壁新闻综合 (480p) [Not 24/7],http://pili-live-hls.hebitv.com/hebi/hebi.m3u8
+CCTV14,https://t.freetv.fun/live/cctv-14hd.m3u8$[BD]cctv-14hd
+CCTV15,http://www.cdnstv.com:6398/hls/15/index.m3u8
+新闻综合,https://stream1.freetv.fun/ipv6-xin-wen-zong-he-7.m3u8
+朝天综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel104601/playlist.m3u8
+荥经综合,https://file.ysxtv.cn/nmip-media/channellive/channel101492/playlist.m3u8
