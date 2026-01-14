@@ -1,0 +1,8 @@
+东南卫视,http://220.169.100.41:10087/udp/239.76.252.190:9000
+东南卫视,https://t.freetv.fun/live/dong-nan-wei-shi-1.php$[BD]东南卫视
+山东新闻,https://stream1.freetv.fun/shan-dong-xin-wen-3.m3u8
+广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-24.ctv
+广西玉林大容山莲花山顶,https://gcalic.v.myalicdn.com/gc/drs01_1/index.m3u8
+湖南国际FHD,http://220.169.100.41:10087/udp/239.76.252.124:9000
+湖南电视剧,https://stream1.freetv.fun/hu-nan-dian-shi-ju-14.ctv
+西藏卫视,http://117.174.25.254:8188/rtp/239.0.0.104:5140
