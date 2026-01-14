@@ -1,8 +1,9 @@
-东南卫视,http://220.169.100.41:10087/udp/239.76.252.190:9000
-东南卫视,https://t.freetv.fun/live/dong-nan-wei-shi-1.php$[BD]东南卫视
-山东新闻,https://stream1.freetv.fun/shan-dong-xin-wen-3.m3u8
-广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-24.ctv
-广西玉林大容山莲花山顶,https://gcalic.v.myalicdn.com/gc/drs01_1/index.m3u8
-湖南国际FHD,http://220.169.100.41:10087/udp/239.76.252.124:9000
-湖南电视剧,https://stream1.freetv.fun/hu-nan-dian-shi-ju-14.ctv
-西藏卫视,http://117.174.25.254:8188/rtp/239.0.0.104:5140
+人间卫视,https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
+兵团卫视,http://183.11.239.36:808/hls/7/index.m3u8
+北京新闻,https://brtv-radiolive.rbc.cn/alive/fm945.m3u8
+宁夏卫视,http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
+广东民生,https://t.freetv.fun/live/yan-dong-min-sheng-1.m3u8
+广东民生,http://183.237.95.108:9901/tsfile/live/1032_1.m3u8?key=txiptv&playlive=0&authid=0
+广东珠江,http://218.15.183.23:9901/tsfile/live/23009_1.m3u8
+辽宁卫视,http://23.237.228.134/live8/liaoning.m3u8
+陕西卫视,http://220.169.100.41:10087/udp/239.76.254.76:9000
