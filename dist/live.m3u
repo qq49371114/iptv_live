@@ -1,328 +1,427 @@
-#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间" tvg-name="时间",2026-01-14 13:06:16
-http://epg.pw/zdy/clock.m3u8
-#EXTINF:-1 tvg-id="今日鉴赏" tvg-name="今日鉴赏" tvg-logo="" group-title="婉儿为哥哥整理",今日鉴赏
-#EXTVLCOPT:network-caching=1000
-https://vdse.bdstatic.com//13da18e12728e9d7849f6589a3070b4c.mp4
-#EXTINF:-1 tvg-id="CCTV-2财经" tvg-name="CCTV-2财经" tvg-logo="" group-title="央视",CCTV-2财经
-http://117.174.25.254:8188/rtp/239.0.0.11:5140
-#EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="" group-title="央视",CCTV1
-http://112.123.206.32:808/hls/1/index.m3u8
-#EXTINF:-1 tvg-id="CCTV10" tvg-name="CCTV10" tvg-logo="" group-title="央视",CCTV10
-http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
-#EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="" group-title="央视",CCTV2
-https://t.freetv.fun/live/cctv2-3.php$[BD]cctv2
-#EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="" group-title="央视",CCTV2
-http://61.156.228.12:8154/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="CCTV7" tvg-name="CCTV7" tvg-logo="" group-title="央视",CCTV7
-http://www.cdnstv.com:6398/hls/7/index.m3u8
-#EXTINF:-1 tvg-id="CCTV8" tvg-name="CCTV8" tvg-logo="" group-title="央视",CCTV8
-http://112.132.10.54:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" tvg-logo="" group-title="央视",CCTV世界地理
-http://111.61.236.247:9081/hls/62/index.m3u8
-#EXTINF:-1 tvg-id="叙州新闻综合" tvg-name="叙州新闻综合" tvg-logo="" group-title="央视",叙州新闻综合
-http://pili-live-hls.ybcxjd.com/jdh-live/2108111201035597.m3u8?zsicd
-#EXTINF:-1 tvg-id="睛彩篮球" tvg-name="睛彩篮球" tvg-logo="" group-title="央视" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",睛彩篮球
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8352&tk=e503191f8e20
-#EXTINF:-1 tvg-id="赣州新闻" tvg-name="赣州新闻" tvg-logo="" group-title="央视",赣州新闻
-https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526329228525.m3u8
-#EXTINF:-1 tvg-id="风云足球" tvg-name="风云足球" tvg-logo="" group-title="央视" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",风云足球
-https://live.goodiptv.club/api/yqgd.php?id=fyzq
-#EXTINF:-1 tvg-id="人间卫视" tvg-name="人间卫视" tvg-logo="" group-title="卫视",人间卫视
-https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
-#EXTINF:-1 tvg-id="兵团卫视" tvg-name="兵团卫视" tvg-logo="" group-title="卫视",兵团卫视
-http://183.11.239.36:808/hls/7/index.m3u8
-#EXTINF:-1 tvg-id="北京新闻" tvg-name="北京新闻" tvg-logo="" group-title="卫视",北京新闻
-https://brtv-radiolive.rbc.cn/alive/fm945.m3u8
-#EXTINF:-1 tvg-id="宁夏卫视" tvg-name="宁夏卫视" tvg-logo="" group-title="卫视",宁夏卫视
-http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
-#EXTINF:-1 tvg-id="广东民生" tvg-name="广东民生" tvg-logo="" group-title="卫视",广东民生
-https://t.freetv.fun/live/yan-dong-min-sheng-1.m3u8
-#EXTINF:-1 tvg-id="广东民生" tvg-name="广东民生" tvg-logo="" group-title="卫视",广东民生
-http://183.237.95.108:9901/tsfile/live/1032_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 tvg-id="广东珠江" tvg-name="广东珠江" tvg-logo="" group-title="卫视",广东珠江
-http://218.15.183.23:9901/tsfile/live/23009_1.m3u8
-#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" tvg-logo="" group-title="卫视",辽宁卫视
-http://23.237.228.134/live8/liaoning.m3u8
-#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" tvg-logo="" group-title="卫视",陕西卫视
-http://220.169.100.41:10087/udp/239.76.254.76:9000
-#EXTINF:-1 tvg-id="湖南都市" tvg-name="湖南都市" tvg-logo="" group-title="地方",湖南都市
-https://stream1.freetv.fun/hu-nan-du-shi-5.m3u8
-#EXTINF:-1 tvg-id="生活时尚" tvg-name="生活时尚" tvg-logo="" group-title="地方",生活时尚
-https://stream1.freetv.fun/sheng-huo-shi-shang-20.ctv
-#EXTINF:-1 tvg-id="TVB-Plus" tvg-name="TVB-Plus" tvg-logo="" group-title="港澳台",TVB-Plus
-http://60.248.77.83/sat/hk031.flv
-#EXTINF:-1 tvg-id="KTV-Sport-Plus-(1080p)" tvg-name="KTV-Sport-Plus-(1080p)" tvg-logo="" group-title="体育",KTV-Sport-Plus-(1080p)
-https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="Sport-1-HD" tvg-name="Sport-1-HD" tvg-logo="" group-title="体育",Sport-1-HD
-http://178.23.88.55/Sport1/index.m3u8
-#EXTINF:-1 tvg-id="Star-Sports-3-(576p)" tvg-name="Star-Sports-3-(576p)" tvg-logo="" group-title="体育",Star-Sports-3-(576p)
-http://103.167.255.18:8085/play/a0jm/index.m3u8
-#EXTINF:-1 tvg-id="五星体育" tvg-name="五星体育" tvg-logo="" group-title="体育",五星体育
-https://stream1.freetv.fun/wu-xing-ti-yu-2.m3u8
-#EXTINF:-1 tvg-id="广东体育" tvg-name="广东体育" tvg-logo="" group-title="体育",广东体育
-http://27.41.245.32:801/hls/204/index.m3u8
-#EXTINF:-1 tvg-id="30A-TV-Classic-Movies" tvg-name="30A-TV-Classic-Movies" tvg-logo="" group-title="电影",30A-TV-Classic-Movies
-https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8
-#EXTINF:-1 tvg-id="ETV-Music-(1080p)" tvg-name="ETV-Music-(1080p)" tvg-logo="" group-title="音乐",ETV-Music-(1080p)
-https://cc-szivnms4rlah6.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-szivnms4rlah6/WWBI/Amagi/ETV_Music_IN/playlist.m3u8
-#EXTINF:-1 tvg-id="MCN6-Music-Channel-(1080p)-[Not-24/7]" tvg-name="MCN6-Music-Channel-(1080p)-[Not-24/7]" tvg-logo="" group-title="音乐",MCN6-Music-Channel-(1080p)-[Not-24/7]
-https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MUSIC.smil/Playlist.m3u8
-#EXTINF:-1 tvg-id="23-ABC-Bakersfield-CA-(KERO)-(720p)" tvg-name="23-ABC-Bakersfield-CA-(KERO)-(720p)" tvg-logo="" group-title="其他",23-ABC-Bakersfield-CA-(KERO)-(720p)
-https://content.uplynk.com/channel/ff809e6d9ec34109abfb333f0d4444b5.m3u8
-#EXTINF:-1 tvg-id="30A-Golf-Kingdom" tvg-name="30A-Golf-Kingdom" tvg-logo="" group-title="其他",30A-Golf-Kingdom
-https://30a-tv.com/feeds/vidaa/golf.m3u8
-#EXTINF:-1 tvg-id="5-Minute-Craft-(1080p)" tvg-name="5-Minute-Craft-(1080p)" tvg-logo="" group-title="其他",5-Minute-Craft-(1080p)
-https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="5AAB-TV-(720p)-[Not-24/7]" tvg-name="5AAB-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",5AAB-TV-(720p)-[Not-24/7]
-http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8
-#EXTINF:-1 tvg-id="AL-SUNNAH-TV" tvg-name="AL-SUNNAH-TV" tvg-logo="" group-title="其他",AL-SUNNAH-TV
-https://sbc-prod-dub-enc.edgenextcdn.net/out/v1/b09bbb8d9b684763be4211b088168de7/index.m3u8
-#EXTINF:-1 tvg-id="AfroLandTV-(1080p)" tvg-name="AfroLandTV-(1080p)" tvg-logo="" group-title="其他",AfroLandTV-(1080p)
-https://alt-al.otteravision.com/alt/al/al.m3u8
-#EXTINF:-1 tvg-id="Al-Ittihad-(552p)-[Not-24/7]" tvg-name="Al-Ittihad-(552p)-[Not-24/7]" tvg-logo="" group-title="其他",Al-Ittihad-(552p)-[Not-24/7]
-http://185.105.4.151:8080/_defapp_/ittihad/index.m3u8
-#EXTINF:-1 tvg-id="Al-Jazeera-(1080p)" tvg-name="Al-Jazeera-(1080p)" tvg-logo="" group-title="其他",Al-Jazeera-(1080p)
-https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8
-#EXTINF:-1 tvg-id="Al-Masar-TV-(576p)" tvg-name="Al-Masar-TV-(576p)" tvg-logo="" group-title="其他",Al-Masar-TV-(576p)
-https://starmenajo.com/hls/almasar/index.m3u8
-#EXTINF:-1 tvg-id="Alfred-Hitchcock-Presents" tvg-name="Alfred-Hitchcock-Presents" tvg-logo="" group-title="其他",Alfred-Hitchcock-Presents
-https://xumo-xumoent-ch825-ku23q.fast.nbcuni.com/live/master.m3u8
-#EXTINF:-1 tvg-id="Amman-TV-(720p)" tvg-name="Amman-TV-(720p)" tvg-logo="" group-title="其他",Amman-TV-(720p)
-https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8
-#EXTINF:-1 tvg-id="Auction-Hunters" tvg-name="Auction-Hunters" tvg-logo="" group-title="其他",Auction-Hunters
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ede45d077746000072be0fe/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c7952-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=419716ea-defd-40f9-9cfe-81ca78138875
-#EXTINF:-1 tvg-id="BNR-Nieuwsradio-(720p)-[Geo-blocked]" tvg-name="BNR-Nieuwsradio-(720p)-[Geo-blocked]" tvg-logo="" group-title="其他",BNR-Nieuwsradio-(720p)-[Geo-blocked]
-https://bnr-cache-cdp.triple-it.nl/studio/index.m3u8
-#EXTINF:-1 tvg-id="Banijay-Mr-Bean-Classic" tvg-name="Banijay-Mr-Bean-Classic" tvg-logo="" group-title="其他",Banijay-Mr-Bean-Classic
-https://amg00627-amg00627c40-rakuten-uk-5725.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanpopupcc-rakutenuk/playlist.m3u8
-#EXTINF:-1 tvg-id="Bonao-TV-(720p)" tvg-name="Bonao-TV-(720p)" tvg-logo="" group-title="其他",Bonao-TV-(720p)
-https://bonaotv.com/stream2/index.m3u8
-#EXTINF:-1 tvg-id="Brat-TV-(720p)-[Geo-blocked]" tvg-name="Brat-TV-(720p)-[Geo-blocked]" tvg-logo="" group-title="其他",Brat-TV-(720p)-[Geo-blocked]
-https://amg00350-amg00350c1-klowdtv-us-2536.playouts.now.amagi.tv/playlist/amg00350-bratstudiofast-brat-klowdtvus/playlist.m3u8
-#EXTINF:-1 tvg-id="COPS" tvg-name="COPS" tvg-logo="" group-title="其他",COPS
-https://a7d6af1c184e465db4f39316a5181c1f.mediatailor.us-east-1.amazonaws.com/v1/master/0fb304b2320b25f067414d481a779b77db81760d/RakutenTV-eu_COPS/playlist.m3u8
-#EXTINF:-1 tvg-id="CT24" tvg-name="CT24" tvg-logo="" group-title="其他",CT24
-https://dash2.antik.sk/live/ct24_avc_25p/playlist.m3u8
-#EXTINF:-1 tvg-id="Canal-1-Nuble" tvg-name="Canal-1-Nuble" tvg-logo="" group-title="其他",Canal-1-Nuble
-https://tls-cl.cdnz.cl/canal21tv/live/playlist.m3u8
-#EXTINF:-1 tvg-id="Canal-10-SOL-TV-(1080p)" tvg-name="Canal-10-SOL-TV-(1080p)" tvg-logo="" group-title="其他",Canal-10-SOL-TV-(1080p)
-http://190.211.140.89:8081/SVTranscoder/SOLTVabr.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="Canal-100-Chinique-(480p)" tvg-name="Canal-100-Chinique-(480p)" tvg-logo="" group-title="其他",Canal-100-Chinique-(480p)
-https://cdn.streamhispanatv.net:3295/live/canal100chilive.m3u8
-#EXTINF:-1 tvg-id="Canale-2-Altamura-(576p)-[Not-24/7]" tvg-name="Canale-2-Altamura-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Canale-2-Altamura-(576p)-[Not-24/7]
-https://59d7d6f47d7fc.streamlock.net/canale2/canale2/playlist.m3u8
-#EXTINF:-1 tvg-id="Cao-Bang-TV-(480p)" tvg-name="Cao-Bang-TV-(480p)" tvg-logo="" group-title="其他",Cao-Bang-TV-(480p)
-http://118.107.85.4:1935/live/smil:CRTV.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Citizen-Extra-(720p)" tvg-name="Citizen-Extra-(720p)" tvg-logo="" group-title="其他",Citizen-Extra-(720p)
-https://74937.global.ssl.fastly.net/5ea49827ff3b5d7b22708777/live_40c5808063f711ec89a87b62db2ecab5/index.m3u8
-#EXTINF:-1 tvg-id="Colorados-Visión-TV-(1080p)" tvg-name="Colorados-Visión-TV-(1080p)" tvg-logo="" group-title="其他",Colorados-Visión-TV-(1080p)
-http://177.234.247.66:9975/ColoradosTV/index.m3u8
-#EXTINF:-1 tvg-id="Cosmic-Frontiers-(1080p)" tvg-name="Cosmic-Frontiers-(1080p)" tvg-logo="" group-title="其他",Cosmic-Frontiers-(1080p)
-https://amg00376-magellan-amg00376c14-rakuten-uk-1694.playouts.now.amagi.tv/playlist/amg00376-magellantv-spacesciencenowcauk-rakutenuk/playlist.m3u8
-#EXTINF:-1 tvg-id="Costa-Noroeste-TV-(1080p)-[Not-24/7]" tvg-name="Costa-Noroeste-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Costa-Noroeste-TV-(1080p)-[Not-24/7]
-https://limited31.todostreaming.es/live/noroestetv-livestream.m3u8
-#EXTINF:-1 tvg-id="DAN-TV-(1080p)-[Not-24/7]" tvg-name="DAN-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",DAN-TV-(1080p)-[Not-24/7]
-https://cnn.hostlagarto.com/telesiglo/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="DD-Jharkhand" tvg-name="DD-Jharkhand" tvg-logo="" group-title="其他",DD-Jharkhand
-https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/2c6c5c20-6afe-47c4-934f-a0d7002cb151/2.m3u8
-#EXTINF:-1 tvg-id="DEEJAY" tvg-name="DEEJAY" tvg-logo="" group-title="其他",DEEJAY
-https://stream1.freetv.fun/17956d69d146e1e295f299d9b2b58406722e46803cad54b1dd58cc01ce2d8a29.m3u8
-#EXTINF:-1 tvg-id="DEFA-TV-(720p)" tvg-name="DEFA-TV-(720p)" tvg-logo="" group-title="其他",DEFA-TV-(720p)
-https://wdrmediagroup-defatv-1-eu.rakuten.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="DELTA-TV-(720p)" tvg-name="DELTA-TV-(720p)" tvg-logo="" group-title="其他",DELTA-TV-(720p)
-http://81.171.10.42:554/liveD/DStream.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="Deal-or-No-Deal-(1080p)" tvg-name="Deal-or-No-Deal-(1080p)" tvg-logo="" group-title="其他",Deal-or-No-Deal-(1080p)
-https://amg00627-banijaygroup-dealornodeal-samsungau-si7xg.amagi.tv/playlist/amg00627-banijaygroup-dealornodeal-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="Degrassi" tvg-name="Degrassi" tvg-logo="" group-title="其他",Degrassi
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e71322f5f180007001dde/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd0-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b13bbde4-6ce3-474b-9630-e27748ff481f
-#EXTINF:-1 tvg-id="Dry-Bar-Comedy-(720p)" tvg-name="Dry-Bar-Comedy-(720p)" tvg-logo="" group-title="其他",Dry-Bar-Comedy-(720p)
-https://drybar-drybarcomedy-1-au.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Duna-(720p)" tvg-name="Duna-(720p)" tvg-logo="" group-title="其他",Duna-(720p)
-https://viamotionhsi.netplus.ch/live/eds/duna/browser-dash/duna.mpd
-#EXTINF:-1 tvg-id="Estilo-y-Vida-(1080p)" tvg-name="Estilo-y-Vida-(1080p)" tvg-logo="" group-title="其他",Estilo-y-Vida-(1080p)
-https://4a7284f0c8334835adb8f223c36fbc37.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6232/master.m3u8
-#EXTINF:-1 tvg-id="FGTEEV-(1080p)-[Geo-blocked]" tvg-name="FGTEEV-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",FGTEEV-(1080p)-[Geo-blocked]
-https://amg00285-amg00285c3-firetv-us-6596.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="FOX-NEWS" tvg-name="FOX-NEWS" tvg-logo="" group-title="其他",FOX-NEWS
-https://stream.livenewsplay.com:9443/hls/foxnews/foxsd.m3u8
-#EXTINF:-1 tvg-id="Falastini-TV-(1080p)" tvg-name="Falastini-TV-(1080p)" tvg-logo="" group-title="其他",Falastini-TV-(1080p)
-https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8
-#EXTINF:-1 tvg-id="Fear-Factor-(1080p)" tvg-name="Fear-Factor-(1080p)" tvg-logo="" group-title="其他",Fear-Factor-(1080p)
-https://amg00627-banijaygroup-fearfactor-samsungau-9vdod.amagi.tv/playlist/amg00627-banijaygroup-fearfactor-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="Gaunda-Punjab-TV" tvg-name="Gaunda-Punjab-TV" tvg-logo="" group-title="其他",Gaunda-Punjab-TV
-http://cdn6.live247stream.com/gaundapunjab/tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Global-News-National" tvg-name="Global-News-National" tvg-logo="" group-title="其他",Global-News-National
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62cbef9ebb857100072fc187/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7a7bb2-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=28cf81a2-fc9d-48d7-8d50-3eebbcf68d91
-#EXTINF:-1 tvg-id="HISTORY" tvg-name="HISTORY" tvg-logo="" group-title="其他",HISTORY
-http://37.27.111.214:8080/live/27/hls.m3u8
-#EXTINF:-1 tvg-id="Hardcore-Pawn-(1080p)" tvg-name="Hardcore-Pawn-(1080p)" tvg-logo="" group-title="其他",Hardcore-Pawn-(1080p)
-https://amg00627-amg00627c8-rakuten-uk-4801.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="History-Hunters-(1080p)" tvg-name="History-Hunters-(1080p)" tvg-logo="" group-title="其他",History-Hunters-(1080p)
-https://amg00841-amg00841c7-rakuten-uk-2820.playouts.now.amagi.tv/playlist/amg00841-aeemeafast-historyhuntersrakuten-rakutenuk/playlist.m3u8
-#EXTINF:-1 tvg-id="Homicide-la-chaîne-du-fait-divers" tvg-name="Homicide-la-chaîne-du-fait-divers" tvg-logo="" group-title="其他",Homicide-la-chaîne-du-fait-divers
-https://rakutenaa-fastmedia-homicide-rakuten-pw6g3.amagi.tv/playlist/rakutenAA-fastmedia-homicide-rakuten/playlist.m3u8
-#EXTINF:-1 tvg-id="INFAST-(1080p)" tvg-name="INFAST-(1080p)" tvg-logo="" group-title="其他",INFAST-(1080p)
-https://amg00861-terninternation-lifestyle-samsungau-kdlyy.amagi.tv/playlist/amg00861-terninternation-lifestyle-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="Ionian-Channel-(1080p)-[Not-24/7]" tvg-name="Ionian-Channel-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Ionian-Channel-(1080p)-[Not-24/7]
-http://stream.ioniantv.gr:8081/ionian/live/playlist.m3u8
-#EXTINF:-1 tvg-id="Iran-Jewish-TV" tvg-name="Iran-Jewish-TV" tvg-logo="" group-title="其他",Iran-Jewish-TV
-http://iran620.com:1935/live/IranJewishTv/playlist.m3u8
-#EXTINF:-1 tvg-id="Karcag-TV-(720p)" tvg-name="Karcag-TV-(720p)" tvg-logo="" group-title="其他",Karcag-TV-(720p)
-https://cloudfront41.lexanetwork.com:1344/relay03/livestream003.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="Kartoon-Channel-(1080p)" tvg-name="Kartoon-Channel-(1080p)" tvg-logo="" group-title="其他",Kartoon-Channel-(1080p)
-https://lightning-fnf-samsungaus.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Lahore-News-(720p)-[Not-24/7]" tvg-name="Lahore-News-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Lahore-News-(720p)-[Not-24/7]
-https://vcdn.dunyanews.tv/lahorelive/ngrp:lnews_1_all/playlist.m3u8
-#EXTINF:-1 tvg-id="Lighting-Lives-Blessing-Nations-Smart-Life-Style-TV-(LLBN)-(720p)" tvg-name="Lighting-Lives-Blessing-Nations-Smart-Life-Style-TV-(LLBN)-(720p)" tvg-logo="" group-title="其他",Lighting-Lives-Blessing-Nations-Smart-Life-Style-TV-(LLBN)-(720p)
-https://brightstar-sls-pull-secure.akamaized.net/brightstarsls/stream.m3u8
-#EXTINF:-1 tvg-id="Lighting-Lives-Blessing-Nations-TV-Latino-(LLBN)-(480p)" tvg-name="Lighting-Lives-Blessing-Nations-TV-Latino-(LLBN)-(480p)" tvg-logo="" group-title="其他",Lighting-Lives-Blessing-Nations-TV-Latino-(LLBN)-(480p)
-https://brightstar-latino-pull-secure.akamaized.net/brightstarlatino/stream.m3u8
-#EXTINF:-1 tvg-id="Lotte-Home-Shopping-(720p)" tvg-name="Lotte-Home-Shopping-(720p)" tvg-logo="" group-title="其他",Lotte-Home-Shopping-(720p)
-https://pchlslivesw.lotteimall.com/live/livestream/lotteimalllive_mp4.m3u8
-#EXTINF:-1 tvg-id="Magic-TV" tvg-name="Magic-TV" tvg-logo="" group-title="其他",Magic-TV
-https://stream1.freetv.fun/1b6fbbe10526fd40a075cf515219e46ffce33568b574ee1274a5370dadce33f9.m3u8
-#EXTINF:-1 tvg-id="MeTV-(720p)" tvg-name="MeTV-(720p)" tvg-logo="" group-title="其他",MeTV-(720p)
-https://fl61.moveonjoy.com/ME_TV/index.m3u8
-#EXTINF:-1 tvg-id="Nexxo-TV-(720p)-[Not-24/7]" tvg-name="Nexxo-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Nexxo-TV-(720p)-[Not-24/7]
-https://cdn3.streamgato.us:3938/live/nexxotvlive.m3u8
-#EXTINF:-1 tvg-id="Noor-Dubai-(1080p)" tvg-name="Noor-Dubai-(1080p)" tvg-logo="" group-title="其他",Noor-Dubai-(1080p)
-https://dmiffthftl.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="Noovo-Comédies-(1080p)" tvg-name="Noovo-Comédies-(1080p)" tvg-logo="" group-title="其他",Noovo-Comédies-(1080p)
-https://d2s8iafdyzconc.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-6x2p3ho0vw00a/Noovo_Comedies_Home.m3u8
-#EXTINF:-1 tvg-id="ORBIT-TV-(1080p)-[Not-24/7]" tvg-name="ORBIT-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",ORBIT-TV-(1080p)-[Not-24/7]
-https://cnn.hostlagarto.com/orbittv/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="Payam-e-Afghan-TV-(480p)-[Not-24/7]" tvg-name="Payam-e-Afghan-TV-(480p)-[Not-24/7]" tvg-logo="" group-title="其他",Payam-e-Afghan-TV-(480p)-[Not-24/7]
-https://g5nl6xx5lpq6-hls-live.5centscdn.com/live1234/2621b29e501b445fabf227b086123b70.sdp/mono.m3u8
-#EXTINF:-1 tvg-id="Persiana-Iranian" tvg-name="Persiana-Iranian" tvg-logo="" group-title="其他",Persiana-Iranian
-https://irhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="Persiana-Nostalgia" tvg-name="Persiana-Nostalgia" tvg-logo="" group-title="其他",Persiana-Nostalgia
-https://noshls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="Persiana-Travel" tvg-name="Persiana-Travel" tvg-logo="" group-title="其他",Persiana-Travel
-https://ptravelhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="PixL-TV" tvg-name="PixL-TV" tvg-logo="" group-title="其他",PixL-TV
-https://frndlymsl.akamaized.net/hls/live/2006426/pixlmsl/pixlmsl/playlist.m3u8?hdnts=st=1606053234~exp=3216054041~acl=*~hmac=208d261d9f98d76a5ac30aa2ce51751f88ee50cfc24812b7cbea8b0397489a07
-#EXTINF:-1 tvg-id="Plus-TV-(720p)-[Not-24/7]" tvg-name="Plus-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Plus-TV-(720p)-[Not-24/7]
-https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
-#EXTINF:-1 tvg-id="Pluto-TV-Cine-Estelar" tvg-name="Pluto-TV-Cine-Estelar" tvg-logo="" group-title="其他",Pluto-TV-Cine-Estelar
-http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5dcde437229eff00091b6c30/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=unknown&architecture=&buildVersion=&clientTime=0&deviceDNT=0&deviceId=bff0c3c1-6307-11eb-b3fa-019cb96f121b&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=20f53e04-9cb8-454e-ad8b-838686c353e7&userId=
-#EXTINF:-1 tvg-id="Pluto-TV-Explore" tvg-name="Pluto-TV-Explore" tvg-logo="" group-title="其他",Pluto-TV-Explore
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ad9b8551b95267e225e59c1/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc855314-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=64f3cdf6-1108-4dba-aaa7-66a51e739485
-#EXTINF:-1 tvg-id="Pluto-TV-Histoire" tvg-name="Pluto-TV-Histoire" tvg-logo="" group-title="其他",Pluto-TV-Histoire
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e771e2f5f180007002224/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd3-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a7663e8d-062c-4293-9b93-a2bd07b5cb20
-#EXTINF:-1 tvg-id="Prime9-News-(1080p)" tvg-name="Prime9-News-(1080p)" tvg-logo="" group-title="其他",Prime9-News-(1080p)
-https://mumbai-edge.smartplaytv.in/Prime9News/index.m3u8
-#EXTINF:-1 tvg-id="Promovideo-TV-(486p)" tvg-name="Promovideo-TV-(486p)" tvg-logo="" group-title="其他",Promovideo-TV-(486p)
-https://media2021.rtvweb.com/promovideo_web/promovideo/playlist.m3u8
-#EXTINF:-1 tvg-id="Qui-Veut-Gagner-Des-Millions-La-Chaîne" tvg-name="Qui-Veut-Gagner-Des-Millions-La-Chaîne" tvg-logo="" group-title="其他",Qui-Veut-Gagner-Des-Millions-La-Chaîne
-https://amg02393-awpg-amg02393c1-rakuten-uk-2461.playouts.now.amagi.tv/playlist/amg02393-awpg-quiveutgagnerdesmillions-rakutenuk/playlist.m3u8
-#EXTINF:-1 tvg-id="REFLET-TV-(1080p)" tvg-name="REFLET-TV-(1080p)" tvg-logo="" group-title="其他",REFLET-TV-(1080p)
-https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8
-#EXTINF:-1 tvg-id="ROUGE-TV" tvg-name="ROUGE-TV" tvg-logo="" group-title="其他",ROUGE-TV
-https://stream1.freetv.fun/dad66bcb56b8e356472186f4e4c0484138089d166301e0b7567fa8ef72a57471.m3u8
-#EXTINF:-1 tvg-id="RTL-Radio-Web-TV-(1080p)" tvg-name="RTL-Radio-Web-TV-(1080p)" tvg-logo="" group-title="其他",RTL-Radio-Web-TV-(1080p)
-https://rtlradio-streaming.rtl.lu/rtlradiowebtv/smil:rtlradiowebtv/playlist.m3u8
-#EXTINF:-1 tvg-id="Rai-3-(720p)-[Not-24/7]" tvg-name="Rai-3-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Rai-3-(720p)-[Not-24/7]
-https://wzstreaming.rai.it/TVlive/liveStream/chunklist_w823540263.m3u8
-#EXTINF:-1 tvg-id="Rakuten-TV-Thrillers-Germany-(1080p)" tvg-name="Rakuten-TV-Thrillers-Germany-(1080p)" tvg-logo="" group-title="其他",Rakuten-TV-Thrillers-Germany-(1080p)
-https://thriller-rakuten-tv-de.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6481/master.m3u8
-#EXTINF:-1 tvg-id="Rakuten-TV-Viki-Europe-(720p)" tvg-name="Rakuten-TV-Viki-Europe-(720p)" tvg-logo="" group-title="其他",Rakuten-TV-Viki-Europe-(720p)
-https://newidco-rakutenviki-2-eu.rakuten.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="RecordTV-Interior-SP" tvg-name="RecordTV-Interior-SP" tvg-logo="" group-title="其他",RecordTV-Interior-SP
-http://200.77.176.130:8000/udp/224.0.0.4:49152
-#EXTINF:-1 tvg-id="Revry-News-Europe-(Frequency-backend)" tvg-name="Revry-News-Europe-(Frequency-backend)" tvg-logo="" group-title="其他",Revry-News-Europe-(Frequency-backend)
-https://dce9e10d279f410d87ef5ad1c3740459.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-eu_RevryNews/playlist.m3u8
-#EXTINF:-1 tvg-id="Rlive-TV-(406p)" tvg-name="Rlive-TV-(406p)" tvg-logo="" group-title="其他",Rlive-TV-(406p)
-https://realitatealive.md/tv/rlive.m3u8
-#EXTINF:-1 tvg-id="Sanskar-TV-(1080p)" tvg-name="Sanskar-TV-(1080p)" tvg-logo="" group-title="其他",Sanskar-TV-(1080p)
-https://d26idhjf0y1p2g.cloudfront.net/out/v1/cd66dd25b9774cb29943bab54bbf3e2f/index.m3u8
-#EXTINF:-1 tvg-id="Sanskar-USA-(1080p)" tvg-name="Sanskar-USA-(1080p)" tvg-logo="" group-title="其他",Sanskar-USA-(1080p)
-https://d2netiedy8cz3x.cloudfront.net/out/v1/9bf6fa4ac8d6432cb98da13b121ba3c2/index.m3u8
-#EXTINF:-1 tvg-id="Sardari-TV-(1080p)-[Not-24/7]" tvg-name="Sardari-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Sardari-TV-(1080p)-[Not-24/7]
-http://158.69.124.9:1935/sardaritv/sardaritv/playlist.m3u8
-#EXTINF:-1 tvg-id="Satsang-Web-TV-(1080p)" tvg-name="Satsang-Web-TV-(1080p)" tvg-logo="" group-title="其他",Satsang-Web-TV-(1080p)
-https://d1ji7e9jbzm5g8.cloudfront.net/out/v1/769f22f64d80442889306b9c4abea63c/index.m3u8
-#EXTINF:-1 tvg-id="Sivan-TV-(1080p)" tvg-name="Sivan-TV-(1080p)" tvg-logo="" group-title="其他",Sivan-TV-(1080p)
-http://sivantv.livebox.co.in/sivantvhls/sivan.m3u8
-#EXTINF:-1 tvg-id="Siyatha-TV" tvg-name="Siyatha-TV" tvg-logo="" group-title="其他",Siyatha-TV
-https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8
-#EXTINF:-1 tvg-id="Skai-TV-(720p)" tvg-name="Skai-TV-(720p)" tvg-logo="" group-title="其他",Skai-TV-(720p)
-http://skai-live-back.siliconweb.com/media/cambria4/index.m3u8
-#EXTINF:-1 tvg-id="Son-Latino" tvg-name="Son-Latino" tvg-logo="" group-title="其他",Son-Latino
-https://stream1.freetv.fun/0a48ebcfe67e0bfa17036b52f3ce43a0bc9bc464c45b565ad99ef07bed5652cc.m3u8
-#EXTINF:-1 tvg-id="Sony-One-Hits-Comedie-(1080p)" tvg-name="Sony-One-Hits-Comedie-(1080p)" tvg-logo="" group-title="其他",Sony-One-Hits-Comedie-(1080p)
-https://7aa9671895264ec9a384dfed1b992171.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-818-FR-SONYONEHITSCOMDIE-LG_FR/playlist.m3u8
-#EXTINF:-1 tvg-id="TFM-(720p)" tvg-name="TFM-(720p)" tvg-logo="" group-title="其他",TFM-(720p)
-http://69.64.57.208/tfm/playlist.m3u8
-#EXTINF:-1 tvg-id="TOI-Global-(1080p)" tvg-name="TOI-Global-(1080p)" tvg-logo="" group-title="其他",TOI-Global-(1080p)
-https://live.sli.ke/live/npnhm84gz9/master.m3u8
-#EXTINF:-1 tvg-id="TV-100-(1080p)" tvg-name="TV-100-(1080p)" tvg-logo="" group-title="其他",TV-100-(1080p)
-https://tv100-live.daioncdn.net/tv100/tv100.m3u8
-#EXTINF:-1 tvg-id="TV-Eger-(1080p)" tvg-name="TV-Eger-(1080p)" tvg-logo="" group-title="其他",TV-Eger-(1080p)
-http://stream.tveger.hu:8010/live.m3u8
-#EXTINF:-1 tvg-id="TV-Toruń-(1080p)-[Not-24/7]" tvg-name="TV-Toruń-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",TV-Toruń-(1080p)-[Not-24/7]
-http://217.173.176.107:1935/live/tvk.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="TVCARiB-Radio-(720p)-[Not-24/7]" tvg-name="TVCARiB-Radio-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",TVCARiB-Radio-(720p)-[Not-24/7]
-https://cdn.mycloudstream.io/hls/live/broadcast/agf7yo9x/index.m3u8
-#EXTINF:-1 tvg-id="TVI-Reality-(720p)-[Not-24/7]" tvg-name="TVI-Reality-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",TVI-Reality-(720p)-[Not-24/7]
-https://video-auth4.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/playlist.m3u8
-#EXTINF:-1 tvg-id="Tele-Boston-(480p)" tvg-name="Tele-Boston-(480p)" tvg-logo="" group-title="其他",Tele-Boston-(480p)
-https://tv2.fastcast4u.com:3238/live/radiotelebostonlive.m3u8
-#EXTINF:-1 tvg-id="Tele7ABC-HD-(720p)" tvg-name="Tele7ABC-HD-(720p)" tvg-logo="" group-title="其他",Tele7ABC-HD-(720p)
-https://live.tele7abc.ro/hls/stream/index.m3u8
-#EXTINF:-1 tvg-id="Telecolor-(480p)" tvg-name="Telecolor-(480p)" tvg-logo="" group-title="其他",Telecolor-(480p)
-https://cloud.livescast.com:19360/telecolor/telecolor.m3u8
-#EXTINF:-1 tvg-id="Telemundo-Romance" tvg-name="Telemundo-Romance" tvg-logo="" group-title="其他",Telemundo-Romance
-https://xumo-drct-ch836-57aiq.fast.nbcuni.com/live/master.m3u8
-#EXTINF:-1 tvg-id="Telenorte-(480p)" tvg-name="Telenorte-(480p)" tvg-logo="" group-title="其他",Telenorte-(480p)
-http://astrasvip.com:1935/Telenorte/Telenorte/playlist.m3u8
-#EXTINF:-1 tvg-id="Temecula-TV-(Temecula-CA)-(1080p)" tvg-name="Temecula-TV-(Temecula-CA)-(1080p)" tvg-logo="" group-title="其他",Temecula-TV-(Temecula-CA)-(1080p)
-https://reflect-temecula.cablecast.tv/live-2/live/stream-1/live.m3u8
-#EXTINF:-1 tvg-id="The-Pet-Collective" tvg-name="The-Pet-Collective" tvg-logo="" group-title="其他",The-Pet-Collective
-https://the-pet-collective-international-es.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Tide-TV-(1080p)-[Not-24/7]" tvg-name="Tide-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Tide-TV-(1080p)-[Not-24/7]
-https://5889e7d0d6e28.streamlock.net/tide-live/smil:livestream.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Türkmenistan-(406p)-[Not-24/7]" tvg-name="Türkmenistan-(406p)-[Not-24/7]" tvg-logo="" group-title="其他",Türkmenistan-(406p)-[Not-24/7]
-https://alpha.tv.online.tm/hls/ch007.m3u8
-#EXTINF:-1 tvg-id="U-Los-Lagos-TV-(1080p)-[Not-24/7]" tvg-name="U-Los-Lagos-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",U-Los-Lagos-TV-(1080p)-[Not-24/7]
-http://tv.ulagos.cl/web/live.m3u8
-#EXTINF:-1 tvg-id="UnionTV" tvg-name="UnionTV" tvg-logo="" group-title="其他",UnionTV
-https://tigocloud.desdeparaguay.net/800tv/800tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Vevo-Hip-Hop-&-R&B-(1080p)" tvg-name="Vevo-Hip-Hop-&-R&B-(1080p)" tvg-logo="" group-title="其他",Vevo-Hip-Hop-&-R&B-(1080p)
-https://amg00056-amg00056c26-rakuten-uk-3236.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Vevo-Pop-Italy-(1080p)" tvg-name="Vevo-Pop-Italy-(1080p)" tvg-logo="" group-title="其他",Vevo-Pop-Italy-(1080p)
-https://amg00056-amg00056c8-rakuten-it-3239.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Vision-(1080p)" tvg-name="Vision-(1080p)" tvg-logo="" group-title="其他",Vision-(1080p)
-http://103.85.204.205:1935/VISIONMEDIA/live/playlist.m3u8
-#EXTINF:-1 tvg-id="WMBC-DT1-(720p)" tvg-name="WMBC-DT1-(720p)" tvg-logo="" group-title="其他",WMBC-DT1-(720p)
-http://d029dcec.kazmazpaz.ru/iptv/GVR4V8HYAGBS5V/1098/manifest.m3u8
-#EXTINF:-1 tvg-id="WNBC-TV" tvg-name="WNBC-TV" tvg-logo="" group-title="其他",WNBC-TV
-https://stream1.freetv.fun/faa1050b26e685a2b2e23f36c1dbd5734edf9a4ab9d91f6668dfa3a58b11e600.m3u8
-#EXTINF:-1 tvg-id="WPXX-DT1" tvg-name="WPXX-DT1" tvg-logo="" group-title="其他",WPXX-DT1
-http://104.255.88.155/ion/index.m3u8
-#EXTINF:-1 tvg-id="Y'a-que-la-vérité-qui-compte" tvg-name="Y'a-que-la-vérité-qui-compte" tvg-logo="" group-title="其他",Y'a-que-la-vérité-qui-compte
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/612e044c970e6f00083bcf3b/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd6-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=2371cf64-2e91-492c-9f0c-c88a7f973944
-#EXTINF:-1 tvg-id="YourTime-TV" tvg-name="YourTime-TV" tvg-logo="" group-title="其他",YourTime-TV
-https://hls.yourtime.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="astro-QJ" tvg-name="astro-QJ" tvg-logo="" group-title="其他" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",astro-QJ
-http://php.jdshipin.com/smt.php?id=Quanjia
-#EXTINF:-1 tvg-id="АБАЗА-ТВ" tvg-name="АБАЗА-ТВ" tvg-logo="" group-title="其他",АБАЗА-ТВ
-https://public.apsny.camera/tv_abaza_tv_to_site/index.m3u8
-#EXTINF:-1 tvg-id="Большая-Азия" tvg-name="Большая-Азия" tvg-logo="" group-title="其他",Большая-Азия
-http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Губерния-(Самара)-(576p)" tvg-name="Губерния-(Самара)-(576p)" tvg-logo="" group-title="其他",Губерния-(Самара)-(576p)
-http://live.guberniatv.cdnvideo.ru/guberniatv/guberniatv.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="Ланет.TV-(486p)" tvg-name="Ланет.TV-(486p)" tvg-logo="" group-title="其他",Ланет.TV-(486p)
-https://kiev1-cdn.lanet.tv/live/1008.m3u8
-#EXTINF:-1 tvg-id="Патриот-(576i)" tvg-name="Патриот-(576i)" tvg-logo="" group-title="其他",Патриот-(576i)
-http://catchup.videoline.ru/asvtv/index.m3u8
-#EXTINF:-1 tvg-id="台視新聞" tvg-name="台視新聞" tvg-logo="" group-title="其他",台視新聞
-https://t.freetv.fun/live/tai-shi-xin-wen-12.m3u8
-#EXTINF:-1 tvg-id="民生" tvg-name="民生" tvg-logo="" group-title="其他",民生
-http://221.13.235.86:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="睛彩竞技" tvg-name="睛彩竞技" tvg-logo="" group-title="其他" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",睛彩竞技
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=6879&tk=f6cc1e0a0e1a
-#EXTINF:-1 tvg-id="睛彩羽毛球" tvg-name="睛彩羽毛球" tvg-logo="" group-title="其他" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",睛彩羽毛球
-http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=7332&tk=e640d0a1bf70
-#EXTINF:-1 tvg-id="记录片-破发点：大满贯之路" tvg-name="记录片-破发点：大满贯之路" tvg-logo="" group-title="其他",记录片-破发点：大满贯之路
-https://hd.ijycnd.com/play/6dBpzjNa/index.m3u8
+# m3u8_organizer.py v8.0 - 婉儿最终修复版
+# 作者：林婉儿 & 哥哥
+
+import asyncio
+import aiohttp
+import re
+import argparse
+import os
+import random
+import gzip
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+import shutil
+import json
+
+# --- 配置加载区 ---
+
+def load_global_config(config_path):
+    """从JSON文件加载全局配置"""
+    default_config = {
+        "headers": {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+        },
+        "url_test_timeout": 8,
+        "clock_url": "http://epg.pw/zdy/clock.m3u8"
+    }
+    try:
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                print(f"正在从 {config_path} 加载外部配置...")
+                user_config = json.load(f)
+                # 使用深度更新，确保嵌套的字典（如headers）也能正确合并
+                for key, value in user_config.items():
+                    if isinstance(value, dict) and key in default_config and isinstance(default_config[key], dict):
+                        default_config[key].update(value)
+                    else:
+                        default_config[key] = value
+                print("外部配置加载成功！")
+        else:
+            print(f"配置文件 {config_path} 未找到，将使用默认配置。")
+    except Exception as e:
+        print(f"加载全局配置文件 {config_path} 失败: {e}，将使用默认配置。")
+    return default_config
+
+def load_category_rules_from_dir(rules_dir):
+    """从目录加载分类规则"""
+    category_rules = {}
+    if not os.path.isdir(rules_dir):
+        print(f"【警告】规则目录 '{rules_dir}' 不存在，将无法进行分类！")
+        return {}
+    
+    print(f"正在从【规则库】'{rules_dir}' 加载分类规则...")
+    for filename in os.listdir(rules_dir):
+        if filename.endswith('.txt'):
+            category_name = os.path.splitext(filename)[0]
+            filepath = os.path.join(rules_dir, filename)
+            keywords = load_list_from_file(filepath)
+            if keywords:
+                category_rules[category_name] = keywords
+                print(f"  - 已加载分类 '{category_name}'，包含 {len(keywords)} 个关键字。")
+    return category_rules
+
+# --- 全局变量 ---
+HEADERS = {}
+URL_TEST_TIMEOUT = 8
+CATEGORY_RULES = {}
+CLOCK_URL = ""
+
+# --- 工具函数区 ---
+def load_list_from_file(filename):
+    """从文件加载列表，去除空行和注释"""
+    if not filename or not os.path.exists(filename):
+        if filename: print(f"  - 配置文件 {filename} 未找到，将跳过。")
+        return []
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            return [line.strip() for line in f if line.strip() and not line.startswith('#')]
+    except Exception as e:
+        print(f"  - 读取配置文件 {filename} 失败: {e}")
+        return []
+
+async def test_url(session, url):
+    """测试单个URL的延迟，返回 (url, 延迟毫秒)"""
+    try:
+        start_time = asyncio.get_event_loop().time()
+        async with session.get(url, headers=HEADERS, timeout=URL_TEST_TIMEOUT) as response:
+            if 200 <= response.status < 400: # 扩大成功状态码范围
+                end_time = asyncio.get_event_loop().time()
+                return url, (end_time - start_time) * 1000
+            return url, float('inf')
+    except (aiohttp.ClientError, asyncio.TimeoutError):
+        return url, float('inf')
+    except Exception:
+        return url, float('inf')
+
+def parse_content(content, ad_keywords):
+    """从文本内容中解析出频道名称和URL"""
+    channels = {}
+    processed_urls = set()
+
+    def add_channel(name, url):
+        name = name.strip()
+        url = url.strip()
+        if not name or not url or url in processed_urls: return
+        # 过滤广告频道
+        if any(keyword in name for keyword in ad_keywords): return
+        
+        if name not in channels: channels[name] = []
+        channels[name].append(url)
+        processed_urls.add(url)
+
+    lines = content.split('\n')
+    for i, line in enumerate(lines):
+        line = line.strip()
+        if not line or line.startswith('#EXTM3U'): continue
+        try:
+            # 兼容 #genre# 格式
+            if '#genre#' in line: continue
+            
+            # 优先处理 M3U 格式
+            if line.startswith('#EXTINF:'):
+                if i + 1 < len(lines):
+                    next_line = lines[i+1].strip()
+                    if next_line and not next_line.startswith('#'):
+                        url = next_line
+                        # 尝试从 tvg-name 获取频道名，失败则从行尾获取
+                        name_match = re.search(r'tvg-name="([^"]*)"', line)
+                        name = name_match.group(1) if name_match else line.split(',')[-1]
+                        add_channel(name, url)
+            # 兼容 频道名,URL 格式
+            elif ',' in line and 'http' in line:
+                last_comma_index = line.rfind(',')
+                if last_comma_index != -1:
+                    name = line[:last_comma_index]
+                    url = line[last_comma_index+1:]
+                    if url.startswith('http'): add_channel(name, url)
+        except Exception as e:
+            # 在解析失败时打印更详细的日志，方便排查
+            # print(f"  - 解析行时遇到问题: '{line}', 错误: {e}")
+            pass # 正式运行时可以注释掉，避免过多输出
+    return channels
+
+
+async def load_epg_data(epg_url):
+    """加载并解析EPG数据，支持gzip压缩"""
+    if not epg_url: return {}
+    print(f"\n加载EPG数据: {epg_url}...")
+    epg_data = {}
+    try:
+        content_bytes = b''
+        async with aiohttp.ClientSession() as session:
+            async with session.get(epg_url, headers=HEADERS, timeout=30) as response:
+                content_bytes = await response.read()
+        
+        # 自动检测并解压gzip
+        if content_bytes.startswith(b'\x1f\x8b'):
+            content = gzip.decompress(content_bytes).decode('utf-8')
+        else:
+            content = content_bytes.decode('utf-8')
+            
+        root = ET.fromstring(content)
+        for channel in root.findall('channel'):
+            display_name_tag = channel.find('display-name')
+            if display_name_tag is not None and display_name_tag.text:
+                display_name = display_name_tag.text.strip()
+                channel_id = channel.get('id', display_name)
+                icon_tag = channel.find('icon')
+                logo_url = icon_tag.get('src', "") if icon_tag is not None else ""
+                epg_data[display_name] = {"tvg-id": channel_id, "tvg-logo": logo_url}
+        print(f"  - EPG加载成功！共解析出 {len(epg_data)} 个频道的节目信息。")
+    except Exception as e:
+        print(f"  - EPG数据加载失败: {e}")
+    return epg_data
+
+def classify_channel(channel_name):
+    """根据全局规则为频道名分类"""
+    for category, keywords in CATEGORY_RULES.items():
+        if any(keyword in channel_name for keyword in keywords):
+            return category
+    return "其他"
+
+async def main(args):
+    """主执行函数"""
+    print("报告哥哥，婉儿的“超级节目单” v8.0【最终修复】版开始工作啦！")
+    
+    # 加载黑名单和收藏夹
+    ad_keywords = load_list_from_file(args.blacklist)
+    favorite_channels = load_list_from_file(args.favorites)
+    
+    # --- 第一步：【万源归宗】融合所有源 ---
+    print("\n第一步：【万源归宗】正在融合所有源...")
+    all_channels_pool = {}
+    
+    # 读取本地手动源
+    if os.path.isdir(args.manual_sources_dir):
+        print(f"  - 读取【种子仓库】: {args.manual_sources_dir}")
+        for filename in os.listdir(args.manual_sources_dir):
+            filepath = os.path.join(args.manual_sources_dir, filename)
+            if os.path.isfile(filepath) and filename.endswith(('.txt', '.m3u')):
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    channels = parse_content(content, ad_keywords)
+                    for name, urls in channels.items():
+                        if name not in all_channels_pool:
+                            all_channels_pool[name] = set()
+                        all_channels_pool[name].update(urls)
+    
+    # 读取网络源列表
+    if args.remote_sources_file and os.path.exists(args.remote_sources_file):
+        print(f"  - 读取网络源文件: {args.remote_sources_file}")
+        remote_urls = load_list_from_file(args.remote_sources_file)
+        async with aiohttp.ClientSession() as session:
+            tasks = []
+            for url in remote_urls:
+                async def fetch_and_parse(remote_url):
+                    try:
+                        async with session.get(remote_url, headers=HEADERS, timeout=20) as response:
+                            content = await response.text(encoding='utf-8', errors='ignore')
+                            channels = parse_content(content, ad_keywords)
+                            for name, urls in channels.items():
+                                if name not in all_channels_pool:
+                                    all_channels_pool[name] = set()
+                                all_channels_pool[name].update(urls)
+                            print(f"    - 成功拉取并解析: {remote_url}")
+                    except Exception as e:
+                        print(f"    - 读取网络源 {remote_url} 失败: {e}")
+                tasks.append(fetch_and_parse(url))
+            await asyncio.gather(*tasks)
+
+    unique_urls_count = sum(len(urls) for urls in all_channels_pool.values())
+    print(f"  - 融合完成！共收集到 {len(all_channels_pool)} 个频道，{unique_urls_count} 个不重复地址。")
+
+
+    # --- 第二步：【终极试炼】检验所有地址的可用性 ---
+    print("\n第二步：【终极试炼】正在检验所有地址的可用性...")
+    all_urls_to_test = {url for urls in all_channels_pool.values() for url in urls}
+    
+    # 将【每日精选】的源也加入测试，确保盲盒可用
+    if os.path.isdir(args.picks_dir):
+        for pick_file in os.listdir(args.picks_dir):
+            pick_path = os.path.join(args.picks_dir, pick_file)
+            if os.path.isfile(pick_path) and pick_file.endswith(('.txt', '.m3u')):
+                with open(pick_path, 'r', encoding='utf-8') as pf:
+                    pick_content = pf.read()
+                    pick_channels = parse_content(pick_content, ad_keywords)
+                    for urls in pick_channels.values():
+                        all_urls_to_test.update(urls)
+
+    url_speeds = {}
+    async with aiohttp.ClientSession() as session:
+        tasks = [test_url(session, url) for url in all_urls_to_test]
+        results = await asyncio.gather(*tasks)
+        for url, speed in results:
+            url_speeds[url] = speed
+            
+    valid_url_count = sum(1 for speed in url_speeds.values() if speed != float('inf'))
+    print(f"  - 试炼完成！在 {len(all_urls_to_test)} 个地址中，共有 {valid_url_count} 个可用。")
+
+    # --- 第三步：【生态进化】分类幸存者并筛选线路 ---
+    print("\n第三步：【生态进化】正在为幸存者分类并筛选优质线路...")
+    survivors_classified = {}
+    for name, urls in all_channels_pool.items():
+        # 筛选出当前频道所有可用的URL
+        valid_urls = [url for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+        
+        if valid_urls:
+            # 根据延迟对可用URL进行排序，速度越快越靠前
+            valid_urls.sort(key=lambda u: url_speeds[u])
+            
+            # 为频道进行分类
+            category = classify_channel(name)
+            if category not in survivors_classified:
+                survivors_classified[category] = {}
+            
+            # ✨✨✨ 核心修复：为每个频道保留最多5条最快的线路 ✨✨✨
+            survivors_classified[category][name] = valid_urls[:5]
+
+    print(f"  - 生态进化完成！已将幸存频道分类并筛选出最佳线路。")
+
+    # --- 第四步：【融合输出】正在生成最终节目单 ---
+    print("\n第四步：【融合输出】正在生成最终节目单...")
+    epg_data = await load_epg_data(args.epg_url)
+    m3u_filename = f"{args.output}.m3u"
+    txt_filename = f"{args.output}.txt"
+    os.makedirs(os.path.dirname(m3u_filename), exist_ok=True)
+    beijing_time = datetime.now(timezone(timedelta(hours=8)))
+    update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
+    
+    # --- ✨✨✨ 终极修正：先在内存中准备好所有分组，再统一写入！ ---
+    
+    # 1. 准备盲盒分组
+    blind_box_group_name = "婉儿为哥哥整理"
+    blind_box_channels = {}
+    if os.path.isdir(args.picks_dir):
+        print("  - 发现【每日精选】盲盒，正在准备...")
+        pick_files = sorted(os.listdir(args.picks_dir))
+        for pick_file in pick_files:
+            pick_path = os.path.join(args.picks_dir, pick_file)
+            if os.path.isfile(pick_path) and pick_file.endswith(('.txt', '.m3u')):
+                pick_name = os.path.splitext(pick_file)[0]
+                with open(pick_path, 'r', encoding='utf-8') as pf:
+                    pick_content = pf.read()
+                pick_channels_data = parse_content(pick_content, ad_keywords)
+                
+                # 从所有解析出的URL中，找出有效的
+                pick_valid_urls = [url for urls in pick_channels_data.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+                
+                if pick_valid_urls:
+                    # 从有效URL中随机选择一个作为盲盒结果
+                    random_url = random.choice(pick_valid_urls)
+                    safe_pick_name = pick_name.replace(" ", "-") # 确保频道名安全
+                    blind_box_channels[safe_pick_name] = [random_url]
+                    print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
+                else:
+                    print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效。")
+    else:
+        print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
+
+    # 2. 准备常规分组
+    final_grouped_channels = {}
+    if blind_box_channels:
+        final_grouped_channels[blind_box_group_name] = blind_box_channels
+
+    for category, channels in survivors_classified.items():
+        for name, urls in channels.items():
+            # 判断这个频道应该属于哪个最终分组
+            group_name = "我的最爱" if name in favorite_channels else category
+            
+            if group_name not in final_grouped_channels:
+                final_grouped_channels[group_name] = {}
+            if name not in final_grouped_channels[group_name]:
+                 final_grouped_channels[group_name][name] = []
+            final_grouped_channels[group_name][name].extend(urls)
+
+    # 3. 确定最终的黄金排序
+    prefix_order = ["婉儿为哥哥整理", "我的最爱", "央视", "卫视", "地方", "港澳台"]
+    all_existing_groups = list(final_grouped_channels.keys())
+    ordered_groups = []
+    
+    for group in prefix_order:
+        if group in all_existing_groups:
+            ordered_groups.append(group)
+            all_existing_groups.remove(group)
+    
+    other_group_exists = "其他" in all_existing_groups
+    if other_group_exists:
+        all_existing_groups.remove("其他")
+    
+    ordered_groups.extend(sorted(all_existing_groups))
+    
+    if other_group_exists:
+        ordered_groups.append("其他")
+
+    # 4. 按照黄金顺序，统一写入文件
+    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
+        # --- ✨✨✨ 核心修复：写入纯净的开台标识 ✨✨✨
+        f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}" catchup="append" catchup-source="?playseek=${{(b)yyyyMMddHHmmss}}-${{(e)yyyyMMddHHmmss}}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
+        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n')
+        f_m3u.write(f'{CLOCK_URL}\n')
+        
+        # 写入TXT文件的头部
+        f_txt.write(f'更新时间,#genre#\n')
+        f_txt.write(f'{update_time_str},{CLOCK_URL}\n\n')
+        
+        for group in ordered_groups:
+            channels_in_group = final_grouped_channels.get(group)
+            if not channels_in_group: continue
+            
+            f_txt.write(f'{group},#genre#\n')
+            
+            # 对分组内的频道按名称排序
+            for name, urls in sorted(channels_in_group.items()):
+                safe_name = name.replace(" ", "-")
+                
+                epg_info = epg_data.get(name, epg_data.get(safe_name, {}))
+                tvg_id = epg_info.get("tvg-id", safe_name)
+                tvg_logo = epg_info.get("tvg-logo", "")
+                
+                # 【普通模式】写入所有线路
+                for url in urls:
+                    f_txt.write(f'{safe_name},{url}\n')
+                    
+                    # ✨ 智能识别回放标签 (增强版) ✨
+                    catchup_tag = ""
+                    if "PLTV" in url or "TVOD" in url or "/liveplay/" in url or "/replay/" in url:
+                        catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                    elif ".m3u8" in url and ("playback" in url or "replay" in url):
+                         catchup_tag = ' catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}"'
+                    elif ".php" in url and "id=" in url:
+                         catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+
+                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
+                    f_m3u.write(f'{url}\n')
+
+            f_txt.write('\n')
+
+if __name__ == '__main__':
+    # --- 程序入口 ---
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v8.0【最终修复】版')
+    
+    # 核心路径配置
+    parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
+    parser.add_argument('--rules-dir', type=str, default='rules', help='【规则库】分类规则目录')
+    parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
+    parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件')
+    parser.add_argument('--picks-dir', type=str, default='picks', help='【每日精选】盲盒源目录')
+    
+    # 功能性配置
+    parser.add_argument('--epg-url', type=str, default='http://epg.51zmt.top:8000/e.xml.gz', help='EPG数据源的URL')
+    parser.add_argument('-b', '--blacklist', type=str, default='config/blacklist.txt', help='频道黑名单文件')
+    parser.add_argument('-f', '--favorites', type=str, default='config/favorites.txt', help='收藏频道列表文件')
+    parser.add_argument('-o', '--output', type=str, default='dist/live', help='输出文件的前缀（不含扩展名）')
+    
+    args = parser.parse_args()
+
+    # 初始化全局变量
+    config = load_global_config(args.config)
+    HEADERS = config.get('headers', {})
+    URL_TEST_TIMEOUT = config.get('url_test_timeout', 8)
+    CLOCK_URL = config.get('clock_url', "")
+    CATEGORY_RULES = load_category_rules_from_dir(args.rules_dir)
+    
+    # 启动异步主程序
+    try:
+        asyncio.run(main(args))
+    except KeyboardInterrupt:
+        print("\n收到哥哥的指令，程序提前结束。")
