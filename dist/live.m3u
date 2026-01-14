@@ -1,5 +1,5 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 group-title="更新时间" tvg-name="更新时间",2026-01-14 13:06:16
+#EXTINF:-1 group-title="更新时间" tvg-name="时间",2026-01-14 13:06:16
 http://epg.pw/zdy/clock.m3u8
 #EXTINF:-1 tvg-id="今日鉴赏" tvg-name="今日鉴赏" tvg-logo="" group-title="婉儿为哥哥整理",今日鉴赏
 #EXTVLCOPT:network-caching=1000
