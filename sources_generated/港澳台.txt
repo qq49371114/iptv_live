@@ -1,1 +1,4 @@
-TVB Plus,http://60.248.77.83/sat/hk031.flv
+HBO Family(USA),https://stream1.freetv.fun/4493c413ee5e49580bdb02d759d10099711ceeef2094a6afa20607fb98025356.m3u8
+TVBS综艺,https://stream1.freetv.fun/36dfe5b7f73b4fa17eea91228489e7e11f4a31fbc79abc72d188889a487bc43b.m3u8
+TVB武侠国,http://iptv.4666888.xyz/iptv2A.php?id=10
+杭州明珠,https://stream1.freetv.fun/hang-zhou-ming-zhu-4.m3u8

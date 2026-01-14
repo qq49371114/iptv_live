@@ -1,2 +1,1 @@
-湖南都市,https://stream1.freetv.fun/hu-nan-du-shi-5.m3u8
-生活时尚,https://stream1.freetv.fun/sheng-huo-shi-shang-20.ctv
+浙江生活,https://stream1.freetv.fun/zhe-jiang-jing-ji-sheng-huo-2.ctv

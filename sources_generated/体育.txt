@@ -1,5 +1,4 @@
-KTV Sport Plus (1080p),https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8
-Sport 1 HD,http://178.23.88.55/Sport1/index.m3u8
-Star Sports 3 (576p),http://103.167.255.18:8085/play/a0jm/index.m3u8
-五星体育,https://stream1.freetv.fun/wu-xing-ti-yu-2.m3u8
-广东体育,http://27.41.245.32:801/hls/204/index.m3u8
+Bein Sports 1🎯,http://135.125.109.73:9000/beinsport1_.m3u8
+CCTV-5体育,http://117.174.25.254:8188/rtp/239.0.0.14:5140
+NBC Sports,https://xumo-xumoent-vc-122-sjv70.fast.nbcuni.com/live/master.m3u8
+Premier Sports 5 (480p),http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8

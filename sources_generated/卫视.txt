@@ -1,9 +1,6 @@
-人间卫视,https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
-兵团卫视,http://183.11.239.36:808/hls/7/index.m3u8
-北京新闻,https://brtv-radiolive.rbc.cn/alive/fm945.m3u8
-宁夏卫视,http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
-广东民生,https://t.freetv.fun/live/yan-dong-min-sheng-1.m3u8
-广东民生,http://183.237.95.108:9901/tsfile/live/1032_1.m3u8?key=txiptv&playlive=0&authid=0
-广东珠江,http://218.15.183.23:9901/tsfile/live/23009_1.m3u8
-辽宁卫视,http://23.237.228.134/live8/liaoning.m3u8
-陕西卫视,http://220.169.100.41:10087/udp/239.76.254.76:9000
+延边卫视,http://120.76.248.139/live/bfgd/4200000117.m3u8
+浙江新闻,https://stream1.freetv.fun/zhe-jiang-xin-wen-5.m3u8
+浙江遂昌,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8
+湖北公共,https://stream1.freetv.fun/hu-bei-gong-gong-11.m3u8
+甘肃卫视,http://220.169.100.41:10087/udp/239.76.253.94:9000
+陕西卫视,http://23.237.228.134/live6/sichuan.m3u8

@@ -1,12 +1,3 @@
-CCTV-2财经,http://117.174.25.254:8188/rtp/239.0.0.11:5140
-CCTV1,http://112.123.206.32:808/hls/1/index.m3u8
-CCTV10,http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
-CCTV2,https://t.freetv.fun/live/cctv2-3.php$[BD]cctv2
-CCTV2,http://61.156.228.12:8154/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV7,http://www.cdnstv.com:6398/hls/7/index.m3u8
-CCTV8,http://112.132.10.54:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV世界地理,http://111.61.236.247:9081/hls/62/index.m3u8
-叙州新闻综合,http://pili-live-hls.ybcxjd.com/jdh-live/2108111201035597.m3u8?zsicd
-睛彩篮球,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8352&tk=e503191f8e20
-赣州新闻,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526329228525.m3u8
-风云足球,https://live.goodiptv.club/api/yqgd.php?id=fyzq
+CCTV15,https://t.freetv.fun/live/cctv-15hd.m3u8$[BD]cctv-15hd
+东丰综合,http://stream3.jlntv.cn:80/aac_dfgb/playlist.m3u8
+荆门新闻综合,https://stream.jmtv.com.cn/xwzh/playlist.m3u8?_upt=3e28e7271664278691
