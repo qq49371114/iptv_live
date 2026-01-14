@@ -1,6 +1,7 @@
-PRO Sport International,https://proshls.wns.live/hls/stream.m3u8
-PRO Sport International �,https://proshls.wns.live/hls/stream.m3u8
-Sportoutdoor.tv,https://gto2000-sportoutdoortv-1-it.samsung.wurl.tv/playlist.m3u8
-山东体育,https://t.freetv.fun/live/shan-dong-ti-yu-1.m3u8
-广东体育,http://218.15.183.23:9901/tsfile/live/23012_1.m3u8
-广东体育,http://120.198.101.106:9901/tsfile/live/1012_1.m3u8?key=txiptv
+AS3 Sport TV (1080p),https://streamtv.as3sport.online:3394/hybrid/play.m3u8
+More Than Sports TV (1080p),https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8
+Star Sports 2 HD (1080p),http://103.167.255.18:8085/play/a0jj/index.m3u8
+Willow Sports  📺,http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8
+广东体育,https://t.freetv.fun/live/yan-dong-ti-yu-gao-qing-12.m3u8
+广东体育,https://t.freetv.fun/live/yan-dong-ti-yu-3.m3u8
+广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-30.ctv
