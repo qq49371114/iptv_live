@@ -1,4 +1,4 @@
-# m3u8_organizer.py v9.0 - GPS定位最终版
+# m3u8_organizer.py v9.1 - 最终成品版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -182,7 +182,7 @@ def classify_channel(channel_name):
 
 async def main(args):
     """主执行函数"""
-    print(f"报告哥哥，婉儿的“超级节目单” v9.0【GPS定位】版开始工作啦！")
+    print(f"报告哥哥，婉儿的“超级节目单” v9.1【最终成品】版开始工作啦！")
     
     # --- ✨✨✨ 新增：EPG源优选 ✨✨✨ ---
     print("\nEPG源优选：正在测试所有EPG地址...")
@@ -304,6 +304,7 @@ async def main(args):
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
+
     # 1. 准备盲盒分组
     blind_box_group_name = "婉儿为哥哥整理"
     blind_box_channels = {}
@@ -406,11 +407,12 @@ async def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v9.0【GPS定位】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v9.1【最终成品】版')
     
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【备用】分类规则目录')
     parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
+    parser.add_argument('--generated-sources-dir', type=str, default='sources_generated', help='【成品仓库】脚本自动生成的源目录')
     parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件')
     parser.add_argument('--picks-dir', type=str, default='picks', help='【每日精选】盲盒源目录')
     
