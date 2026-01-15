@@ -185,23 +185,26 @@ async def main(args):
     print(f"报告哥哥，婉儿的“超级节目单” v9.1【最终成品】版开始工作啦！")
     
     # --- ✨✨✨ 新增：EPG源优选 ✨✨✨ ---
-    print("\nEPG源优选：正在测试所有EPG地址...")
-    async with aiohttp.ClientSession() as session:
-        epg_tasks = [test_url(session, url) for url in args.epg_url]
-        epg_results = await asyncio.gather(*epg_tasks)
+    print("\nEPG处理：正在准备EPG备份列表...")
     
-    valid_epgs = [(url, speed) for url, speed in epg_results if speed != float('inf')]
-    if not valid_epgs:
+    # 1. 直接从配置中获取前3个URL作为备份，写入最终文件
+    epg_backup_list = args.epg_url[:3]
+    top_3_epgs_str = ",".join(epg_backup_list)
+    print(f"  - 最终将写入这几个EPG源到文件: {top_3_epgs_str}")
+
+    # 2. 依次尝试加载EPG数据，直到成功一个为止
+    epg_data = {}
+    best_epg_url = "" # 记录一下本次用的是哪个
+    for epg_url in epg_backup_list:
+        # load_epg_data 内部会打印开始加载的信息
+        temp_epg_data = await load_epg_data(epg_url)
+        if temp_epg_data: # 如果成功加载到数据，就赋值并跳出循环
+            epg_data = temp_epg_data
+            best_epg_url = epg_url
+            print(f"  - 本次运行选用EPG源: {epg_url}")
+            break
+    if not epg_data:
         print("  - 警告：所有EPG源均不可用！将无法加载节目信息。")
-        best_epg_url = ""
-        top_3_epgs_str = ""
-    else:
-        valid_epgs.sort(key=lambda x: x[1])
-        top_3_epgs = [url for url, speed in valid_epgs[:3]]
-        top_3_epgs_str = ",".join(top_3_epgs)
-        best_epg_url = valid_epgs[0][0]
-        print(f"  - EPG优选完成！本次将使用: {best_epg_url}")
-        print(f"  - 最终将写入这几个源: {top_3_epgs_str}")
 
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
@@ -293,7 +296,7 @@ async def main(args):
 
     # --- 第四步：【融合输出】正在生成最终节目单 ---
     print("\n第四步：【融合输出】正在生成最终节目单...")
-    epg_data = await load_epg_data(best_epg_url)
+    # --- epg_data = await load_epg_data(best_epg_url)
     
     # ✨ GPS定位：确保输出目录正确
     output_abs_path = os.path.join(BASE_DIR, args.output)
