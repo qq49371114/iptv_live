@@ -188,7 +188,7 @@ async def main(args):
     print("\nEPG源优选：正在测试所有EPG地址...")
     async with aiohttp.ClientSession() as session:
         epg_tasks = [test_url(session, url) for url in args.epg_url]
-        epg_results = await asyncio.gather(epg_tasks)
+        epg_results = await asyncio.gather(*epg_tasks)
     
     valid_epgs = [(url, speed) for url, speed in epg_results if speed != float('inf')]
     if not valid_epgs:
