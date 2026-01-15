@@ -27,18 +27,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install aiohttp
 
-      - name: 运行整理程序 (v7.2 全新调用方式)
+      - name: 运行整理程序
         run: |
           python -u m3u8_organizer.py \
-            --config "config.json" \
-            --rules-dir "rules" \
-            --manual-sources-dir "sources_manual" \
-            --generated-sources-dir "sources_generated" \
-            --remote-sources-file "sources.txt" \
-            --epg-url "http://epg.51zmt.top:8000/e.xml.gz" \
-            -b "config/blacklist.txt" \
-            -f "config/favorites.txt" \
-            -o "dist/live"
+          --config "config.json" \
+          --rules-dir "rules" \
+          --manual-sources-dir "sources_manual" \
+          --generated-sources-dir "sources_generated" \
+          --remote-sources-file "sources.txt" \
+          -b "config/blacklist.txt" \
+          -f "config/favorites.txt" \
+          -o "dist/live"
 
       - name: 提交更新的文件
         uses: EndBug/add-and-commit@v9
