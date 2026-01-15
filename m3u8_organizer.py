@@ -1,4 +1,4 @@
-# m3u8_organizer.py v9.1 - 最终成品版
+# m3u8_organizer.py v11.0 - 终极完美版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -73,6 +73,7 @@ HEADERS = {}
 URL_TEST_TIMEOUT = 8
 CATEGORY_RULES = {}
 CLOCK_URL = ""
+
 
 # --- 工具函数区 ---
 def load_list_from_file(filename):
@@ -182,25 +183,19 @@ def classify_channel(channel_name):
 
 async def main(args):
     """主执行函数"""
-    print(f"报告哥哥，婉儿的“超级节目单” v9.1【最终成品】版开始工作啦！")
+    print(f"报告哥哥，婉儿的“超级节目单” v11.0【终极完美】版开始工作啦！")
     
-    # --- ✨✨✨ 新增：EPG源优选 ✨✨✨ ---
+    # --- ✨✨✨ EPG备份策略 ✨✨✨ ---
     print("\nEPG处理：正在准备EPG备份列表...")
-    
-    # 1. 直接从配置中获取前3个URL作为备份，写入最终文件
     epg_backup_list = args.epg_url[:3]
     top_3_epgs_str = ",".join(epg_backup_list)
     print(f"  - 最终将写入这几个EPG源到文件: {top_3_epgs_str}")
 
-    # 2. 依次尝试加载EPG数据，直到成功一个为止
     epg_data = {}
-    best_epg_url = "" # 记录一下本次用的是哪个
     for epg_url in epg_backup_list:
-        # load_epg_data 内部会打印开始加载的信息
         temp_epg_data = await load_epg_data(epg_url)
-        if temp_epg_data: # 如果成功加载到数据，就赋值并跳出循环
+        if temp_epg_data:
             epg_data = temp_epg_data
-            best_epg_url = epg_url
             print(f"  - 本次运行选用EPG源: {epg_url}")
             break
     if not epg_data:
@@ -211,9 +206,9 @@ async def main(args):
     
     # --- 第一步：【万源归宗】融合所有源 ---
     print("\n第一步：【万源归宗】正在融合所有源...")
+    # ✨ 恢复多线路核心：使用能区分源类型的 all_channels_pool
     all_channels_pool = {}
     
-    # ✨ GPS定位：读取本地手动源
     manual_sources_abs_dir = os.path.join(BASE_DIR, args.manual_sources_dir)
     if os.path.isdir(manual_sources_abs_dir):
         print(f"  - 读取【种子仓库】: {manual_sources_abs_dir}")
@@ -225,14 +220,13 @@ async def main(args):
                     channels = parse_content(content, ad_keywords)
                     for name, urls in channels.items():
                         if name not in all_channels_pool:
-                            all_channels_pool[name] = set()
-                        all_channels_pool[name].update(urls)
+                            all_channels_pool[name] = {"urls": set(), "source_type": "manual"}
+                        all_channels_pool[name]["urls"].update(urls)
     
-    # ✨ GPS定位：读取网络源列表
     remote_sources_abs_file = os.path.join(BASE_DIR, args.remote_sources_file)
     if os.path.exists(remote_sources_abs_file):
         print(f"  - 读取网络源文件: {remote_sources_abs_file}")
-        remote_urls = load_list_from_file(args.remote_sources_file) # load_list_from_file内部已处理绝对路径
+        remote_urls = load_list_from_file(args.remote_sources_file)
         async with aiohttp.ClientSession() as session:
             tasks = []
             for url in remote_urls:
@@ -243,22 +237,20 @@ async def main(args):
                             channels = parse_content(content, ad_keywords)
                             for name, urls in channels.items():
                                 if name not in all_channels_pool:
-                                    all_channels_pool[name] = set()
-                                all_channels_pool[name].update(urls)
-                            print(f"    - 成功拉取并解析: {remote_url}")
-                    except Exception as e:
-                        print(f"    - 读取网络源 {remote_url} 失败: {e}")
+                                    all_channels_pool[name] = {"urls": set(), "source_type": "network"}
+                                all_channels_pool[name]["urls"].update(urls)
+                    except Exception:
+                        pass
                 tasks.append(fetch_and_parse(url))
             await asyncio.gather(*tasks)
 
-    unique_urls_count = sum(len(urls) for urls in all_channels_pool.values())
+    unique_urls_count = sum(len(data["urls"]) for data in all_channels_pool.values())
     print(f"  - 融合完成！共收集到 {len(all_channels_pool)} 个频道，{unique_urls_count} 个不重复地址。")
 
     # --- 第二步：【终极试炼】检验所有地址的可用性 ---
     print("\n第二步：【终极试炼】正在检验所有地址的可用性...")
-    all_urls_to_test = {url for urls in all_channels_pool.values() for url in urls}
+    all_urls_to_test = {url for data in all_channels_pool.values() for url in data["urls"]}
     
-    # ✨ GPS定位：将【每日精选】的源也加入测试
     picks_abs_dir = os.path.join(BASE_DIR, args.picks_dir)
     if os.path.isdir(picks_abs_dir):
         for pick_file in os.listdir(picks_abs_dir):
@@ -283,22 +275,29 @@ async def main(args):
     # --- 第三步：【生态进化】分类幸存者并筛选线路 ---
     print("\n第三步：【生态进化】正在为幸存者分类并筛选优质线路...")
     survivors_classified = {}
-    for name, urls in all_channels_pool.items():
-        valid_urls = [url for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+    for name, data in all_channels_pool.items():
+        valid_urls = [url for url in data["urls"] if url_speeds.get(url, float('inf')) != float('inf')]
         if valid_urls:
             valid_urls.sort(key=lambda u: url_speeds[u])
             category = classify_channel(name)
             if category not in survivors_classified:
                 survivors_classified[category] = {}
-            survivors_classified[category][name] = valid_urls[:5]
+            if name not in survivors_classified[category]:
+                 survivors_classified[category][name] = []
+            
+            # ✨ 恢复多线路核心：区别对待手动源和网络源
+            if data["source_type"] == "manual":
+                # 手动源，有多少要多少，因为都是我们精挑细选的
+                survivors_classified[category][name].extend(valid_urls)
+            else:
+                # 网络源，只取最快的5条，避免过多低质量线路
+                survivors_classified[category][name].extend(valid_urls[:5])
 
     print(f"  - 生态进化完成！已将幸存频道分类并筛选出最佳线路。")
 
     # --- 第四步：【融合输出】正在生成最终节目单 ---
     print("\n第四步：【融合输出】正在生成最终节目单...")
-    # --- epg_data = await load_epg_data(best_epg_url)
     
-    # ✨ GPS定位：确保输出目录正确
     output_abs_path = os.path.join(BASE_DIR, args.output)
     m3u_filename = f"{output_abs_path}.m3u"
     txt_filename = f"{output_abs_path}.txt"
@@ -306,7 +305,6 @@ async def main(args):
     
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
-
 
     # 1. 准备盲盒分组
     blind_box_group_name = "婉儿为哥哥整理"
@@ -388,18 +386,27 @@ async def main(args):
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                for url in urls:
-                    f_txt.write(f'{safe_name},{url}\n')
-                    catchup_tag = ""
-                    if "PLTV" in url or "TVOD" in url or "/liveplay/" in url or "/replay/" in url:
-                        catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
-                    elif ".m3u8" in url and ("playback" in url or "replay" in url):
-                         catchup_tag = ' catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}"'
-                    elif ".php" in url and "id=" in url:
-                         catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                # ✨ 恢复多线路核心：盲盒只写一条，其他有多少写多少
+                if group == blind_box_group_name:
+                    if urls:
+                        url = urls[0]
+                        f_txt.write(f'{safe_name},{url}\n')
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
+                        f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
+                        f_m3u.write(f'{url}\n')
+                else:
+                    for url in urls:
+                        f_txt.write(f'{safe_name},{url}\n')
+                        catchup_tag = ""
+                        if "PLTV" in url or "TVOD" in url or "/liveplay/" in url or "/replay/" in url:
+                            catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                        elif ".m3u8" in url and ("playback" in url or "replay" in url):
+                             catchup_tag = ' catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}"'
+                        elif ".php" in url and "id=" in url:
+                             catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
 
-                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
-                    f_m3u.write(f'{url}\n')
+                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
+                        f_m3u.write(f'{url}\n')
 
             f_txt.write('\n')
 
@@ -410,7 +417,7 @@ async def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v9.1【最终成品】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v11.0【终极完美】版')
     
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【备用】分类规则目录')
