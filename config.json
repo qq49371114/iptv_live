@@ -13,7 +13,7 @@
     "音乐": ["音乐", "Music"]
   },
   "epg_urls": [
-    "http://epg.51zmt.top:8000/e.xml.gz",
+    "https://epg.112114.xyz/pp.xml",
     "https://live.fanmingming.com/e.xml",
     "https://epg.112114.xyz/pp.xml"
   ],
