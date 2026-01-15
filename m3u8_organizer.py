@@ -408,33 +408,60 @@ async def main(args):
 
     print(f"\n第五步：任务完成！我们的生态系统已按黄金顺序完成最终进化！")
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v8.1【EPG优选】版')
+  if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v8.2【配置中心】版')
+    
+    # 核心路径配置
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
-    parser.add_argument('--rules-dir', type=str, default='rules', help='【规则库】分类规则目录')
+    parser.add_argument('--rules-dir', type=str, default='rules', help='【备用】分类规则目录')
     parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
-    parser.add_argument('--generated-sources-dir', type=str, default='sources_generated', help='【成品仓库】脚本自动生成的源目录')
     parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件')
     parser.add_argument('--picks-dir', type=str, default='picks', help='【每日精选】盲盒源目录')
     
-    # --- ✨✨✨ EPG功能增强 ✨✨✨ ---
-    parser.add_argument(
-        '--epg-url', 
-        nargs='+',  # 允许接收一个或多个值
-        default=['http://epg.51zmt.top:8000/e.xml.gz', 'https://live.fanmingming.com/e.xml'], 
-        help='EPG数据源的URL，可提供多个进行优选'
-    )
+    # EPG参数，现在它的默认值是None，方便我们判断用户是否从命令行输入了
+    parser.add_argument('--epg-url', nargs='+', default=None, help='【覆盖】EPG数据源URL，会覆盖配置文件中的设置')
 
+    # 其他功能性配置
     parser.add_argument('-b', '--blacklist', type=str, default='config/blacklist.txt', help='频道黑名单文件')
     parser.add_argument('-f', '--favorites', type=str, default='config/favorites.txt', help='收藏频道列表文件')
-    parser.add_argument('-o', '--output', type=str, default='dist/live', help='输出文件的前缀')
+    parser.add_argument('-o', '--output', type=str, default='dist/live', help='输出文件的前缀（不含扩展名）')
     
     args = parser.parse_args()
 
-    config = load_global_config(args.config)
-    HEADERS = config['headers']
-    URL_TEST_TIMEOUT = config['url_test_timeout']
-    CLOCK_URL = config['clock_url']
-    CATEGORY_RULES = load_category_rules_from_dir(args.rules_dir)
+    # --- ✨✨✨ 核心升级：从配置中心加载 ✨✨✨ ---
     
-    asyncio.run(main(args))
+    # 1. 加载主配置文件
+    config = load_global_config(args.config)
+    
+    # 2. 加载分类规则 (优先从config.json读取)
+    if 'category_rules' in config and isinstance(config['category_rules'], dict):
+        print("正在从 config.json 加载分类规则...")
+        CATEGORY_RULES = config['category_rules']
+    else:
+        print("config.json 中未找到分类规则，将从 'rules' 目录加载。")
+        CATEGORY_RULES = load_category_rules_from_dir(args.rules_dir)
+
+    # 3. 加载EPG源列表 (命令行 > 配置文件 > 硬编码默认值)
+    epg_source_list = []
+    if args.epg_url:
+         epg_source_list = args.epg_url
+         print("检测到命令行EPG参数，优先使用！")
+    elif 'epg_urls' in config and isinstance(config['epg_urls'], list):
+         epg_source_list = config['epg_urls']
+         print("正在从 config.json 加载EPG源列表...")
+    else:
+         epg_source_list = ['https://live.fanmingming.com/e.xml'] # 保留一个最后的备胎
+         print("未找到任何EPG配置，使用内置备用地址。")
+    # 将最终的EPG列表赋值回args，这样main函数就不用改了
+    args.epg_url = epg_source_list
+
+    # 4. 初始化其他全局变量
+    HEADERS = config.get('headers', {})
+    URL_TEST_TIMEOUT = config.get('url_test_timeout', 8)
+    CLOCK_URL = config.get('clock_url', "")
+    
+    # 启动异步主程序
+    try:
+        asyncio.run(main(args))
+    except KeyboardInterrupt:
+        print("\n收到哥哥的指令，程序提前结束。")
