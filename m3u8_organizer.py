@@ -1,4 +1,4 @@
-# m3u8_organizer.py v11.0 - 终极完美版
+# m3u8_organizer.py v13.0 - 真·盲盒最终版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -73,7 +73,6 @@ HEADERS = {}
 URL_TEST_TIMEOUT = 8
 CATEGORY_RULES = {}
 CLOCK_URL = ""
-
 
 # --- 工具函数区 ---
 def load_list_from_file(filename):
@@ -183,7 +182,7 @@ def classify_channel(channel_name):
 
 async def main(args):
     """主执行函数"""
-    print(f"报告哥哥，婉儿的“超级节目单” v11.0【终极完美】版开始工作啦！")
+    print(f"报告哥哥，婉儿的“超级节目单” v13.0【真·盲盒】版开始工作啦！")
     
     # --- ✨✨✨ EPG备份策略 ✨✨✨ ---
     print("\nEPG处理：正在准备EPG备份列表...")
@@ -287,10 +286,8 @@ async def main(args):
             
             # ✨ 恢复多线路核心：区别对待手动源和网络源
             if data["source_type"] == "manual":
-                # 手动源，有多少要多少，因为都是我们精挑细选的
                 survivors_classified[category][name].extend(valid_urls)
             else:
-                # 网络源，只取最快的5条，避免过多低质量线路
                 survivors_classified[category][name].extend(valid_urls[:5])
 
     print(f"  - 生态进化完成！已将幸存频道分类并筛选出最佳线路。")
@@ -306,31 +303,49 @@ async def main(args):
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
-    # 1. 准备盲盒分组
+    # --- ✨✨✨ 真·盲盒逻辑 ✨✨✨ ---
     blind_box_group_name = "婉儿为哥哥整理"
     blind_box_channels = {}
+    
     picks_abs_dir = os.path.join(BASE_DIR, args.picks_dir)
     if os.path.isdir(picks_abs_dir):
         print("  - 发现【每日精选】盲盒，正在准备...")
-        pick_files = sorted(os.listdir(picks_abs_dir))
-        for pick_file in pick_files:
+        
+        # 1. 筛选出所有有可用源的“有效盲盒”
+        valid_pick_files = []
+        for pick_file in os.listdir(picks_abs_dir):
             pick_path = os.path.join(picks_abs_dir, pick_file)
             if os.path.isfile(pick_path) and pick_file.endswith(('.txt', '.m3u')):
-                pick_name = os.path.splitext(pick_file)[0]
                 with open(pick_path, 'r', encoding='utf-8') as pf:
                     pick_content = pf.read()
                 pick_channels_data = parse_content(pick_content, ad_keywords)
-                pick_valid_urls = [url for urls in pick_channels_data.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
-                
-                if pick_valid_urls:
-                    random_url = random.choice(pick_valid_urls)
-                    safe_pick_name = pick_name.replace(" ", "-")
-                    blind_box_channels[safe_pick_name] = [random_url]
-                    print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
-                else:
-                    print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效。")
+                # 检查这个文件里是否有任何一个可用的URL
+                has_valid_url = any(url_speeds.get(url, float('inf')) != float('inf') for urls in pick_channels_data.values() for url in urls)
+                if has_valid_url:
+                    valid_pick_files.append(pick_path)
+        
+        # 2. 如果有“有效盲盒”，就随机抽一个
+        if valid_pick_files:
+            chosen_pick_path = random.choice(valid_pick_files)
+            chosen_pick_name = os.path.splitext(os.path.basename(chosen_pick_path))[0]
+            print(f"    - 恭喜哥哥！抽中了盲盒: '{chosen_pick_name}'")
+            
+            with open(chosen_pick_path, 'r', encoding='utf-8') as pf:
+                chosen_content = pf.read()
+            chosen_channels_data = parse_content(chosen_content, ad_keywords)
+            
+            # 3. 从抽中的盲盒里，随机选一个可用的URL
+            all_valid_urls_in_chosen = [url for urls in chosen_channels_data.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+            if all_valid_urls_in_chosen:
+                final_url = random.choice(all_valid_urls_in_chosen)
+                safe_pick_name = chosen_pick_name.replace(" ", "-")
+                blind_box_channels[safe_pick_name] = [final_url]
+                print(f"    - 盲盒开启！幸运源已备好！")
+        else:
+            print("    - 可惜，所有盲盒里都没有可用的源。")
     else:
         print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
+
 
     # 2. 准备常规分组
     final_grouped_channels = {}
@@ -386,27 +401,19 @@ async def main(args):
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                # ✨ 恢复多线路核心：盲盒只写一条，其他有多少写多少
-                if group == blind_box_group_name:
-                    if urls:
-                        url = urls[0]
-                        f_txt.write(f'{safe_name},{url}\n')
-                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
-                        f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
-                        f_m3u.write(f'{url}\n')
-                else:
-                    for url in urls:
-                        f_txt.write(f'{safe_name},{url}\n')
-                        catchup_tag = ""
-                        if "PLTV" in url or "TVOD" in url or "/liveplay/" in url or "/replay/" in url:
-                            catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
-                        elif ".m3u8" in url and ("playback" in url or "replay" in url):
-                             catchup_tag = ' catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}"'
-                        elif ".php" in url and "id=" in url:
-                             catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                # ✨ 统一处理所有频道，包括盲盒
+                for url in urls:
+                    f_txt.write(f'{safe_name},{url}\n')
+                    catchup_tag = ""
+                    if "PLTV" in url or "TVOD" in url or "/liveplay/" in url or "/replay/" in url:
+                        catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+                    elif ".m3u8" in url and ("playback" in url or "replay" in url):
+                         catchup_tag = ' catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}"'
+                    elif ".php" in url and "id=" in url:
+                         catchup_tag = ' catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
 
-                        f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
-                        f_m3u.write(f'{url}\n')
+                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}"{catchup_tag},{safe_name}\n')
+                    f_m3u.write(f'{url}\n')
 
             f_txt.write('\n')
 
@@ -417,7 +424,7 @@ async def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v11.0【终极完美】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v13.0【真·盲盒】版')
     
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【备用】分类规则目录')
