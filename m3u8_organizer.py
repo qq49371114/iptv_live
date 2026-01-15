@@ -1,4 +1,4 @@
-# m3u8_organizer.py v7.8 - 终极排序版
+# m3u8_organizer.py v8.1 - EPG优选版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -29,7 +29,12 @@ def load_global_config(config_path):
             with open(config_path, 'r', encoding='utf-8') as f:
                 print(f"正在从 {config_path} 加载外部配置...")
                 user_config = json.load(f)
-                default_config.update(user_config)
+                # 使用深度更新，确保嵌套的字典（如headers）也能正确合并
+                for key, value in user_config.items():
+                    if isinstance(value, dict) and key in default_config and isinstance(default_config[key], dict):
+                        default_config[key].update(value)
+                    else:
+                        default_config[key] = value
                 print("外部配置加载成功！")
         else:
             print(f"配置文件 {config_path} 未找到，将使用默认配置。")
@@ -63,54 +68,66 @@ CLOCK_URL = ""
 
 # --- 工具函数区 ---
 def load_list_from_file(filename):
+    """从文件加载列表，去除空行和注释"""
     if not filename or not os.path.exists(filename):
         if filename: print(f"  - 配置文件 {filename} 未找到，将跳过。")
         return []
     try:
         with open(filename, 'r', encoding='utf-8') as f:
-            return [line.strip() for line in f if line.strip()]
+            return [line.strip() for line in f if line.strip() and not line.startswith('#')]
     except Exception as e:
         print(f"  - 读取配置文件 {filename} 失败: {e}")
         return []
 
 async def test_url(session, url):
+    """测试单个URL的延迟，返回 (url, 延迟毫秒)"""
     try:
         start_time = asyncio.get_event_loop().time()
         async with session.get(url, headers=HEADERS, timeout=URL_TEST_TIMEOUT) as response:
-            if 200 <= response.status < 300:
+            if 200 <= response.status < 400: # 扩大成功状态码范围
                 end_time = asyncio.get_event_loop().time()
                 return url, (end_time - start_time) * 1000
             return url, float('inf')
+    except (aiohttp.ClientError, asyncio.TimeoutError):
+        return url, float('inf')
     except Exception:
         return url, float('inf')
 
 def parse_content(content, ad_keywords):
+    """从文本内容中解析出频道名称和URL"""
     channels = {}
     processed_urls = set()
+
     def add_channel(name, url):
         name = name.strip()
         url = url.strip()
         if not name or not url or url in processed_urls: return
+        # 过滤广告频道
         if any(keyword in name for keyword in ad_keywords): return
         
         if name not in channels: channels[name] = []
         channels[name].append(url)
         processed_urls.add(url)
-        
+
     lines = content.split('\n')
     for i, line in enumerate(lines):
         line = line.strip()
         if not line or line.startswith('#EXTM3U'): continue
         try:
+            # 兼容 #genre# 格式
             if '#genre#' in line: continue
+            
+            # 优先处理 M3U 格式
             if line.startswith('#EXTINF:'):
                 if i + 1 < len(lines):
                     next_line = lines[i+1].strip()
                     if next_line and not next_line.startswith('#'):
                         url = next_line
+                        # 尝试从 tvg-name 获取频道名，失败则从行尾获取
                         name_match = re.search(r'tvg-name="([^"]*)"', line)
                         name = name_match.group(1) if name_match else line.split(',')[-1]
                         add_channel(name, url)
+            # 兼容 频道名,URL 格式
             elif ',' in line and 'http' in line:
                 last_comma_index = line.rfind(',')
                 if last_comma_index != -1:
@@ -118,35 +135,38 @@ def parse_content(content, ad_keywords):
                     url = line[last_comma_index+1:]
                     if url.startswith('http'): add_channel(name, url)
         except Exception as e:
-            print(f"  - 解析行失败: '{line}', 错误: {e}")
+            # 在解析失败时打印更详细的日志，方便排查
+            # print(f"  - 解析行时遇到问题: '{line}', 错误: {e}")
+            pass # 正式运行时可以注释掉，避免过多输出
     return channels
 
 
 async def load_epg_data(epg_url):
+    """加载并解析EPG数据，支持gzip压缩"""
     if not epg_url: return {}
     print(f"\n加载EPG数据: {epg_url}...")
     epg_data = {}
     try:
         content_bytes = b''
-        if epg_url.startswith('http'):
-            async with aiohttp.ClientSession() as session:
-                async with session.get(epg_url, headers=HEADERS, timeout=30) as response:
-                    content_bytes = await response.read()
-        else:
-            with open(epg_url, 'rb') as f: content_bytes = f.read()
+        async with aiohttp.ClientSession() as session:
+            async with session.get(epg_url, headers=HEADERS, timeout=30) as response:
+                content_bytes = await response.read()
+        
+        # 自动检测并解压gzip
         if content_bytes.startswith(b'\x1f\x8b'):
             content = gzip.decompress(content_bytes).decode('utf-8')
         else:
             content = content_bytes.decode('utf-8')
+            
         root = ET.fromstring(content)
         for channel in root.findall('channel'):
-            display_name = channel.find('display-name').text
-            channel_id = channel.get('id')
-            icon_tag = channel.find('icon')
-            logo_url = icon_tag.get('src') if icon_tag is not None else ""
-            if display_name:
-                safe_display_name = display_name.strip()
-                epg_data[safe_display_name] = {"tvg-id": channel_id or safe_display_name, "tvg-logo": logo_url}
+            display_name_tag = channel.find('display-name')
+            if display_name_tag is not None and display_name_tag.text:
+                display_name = display_name_tag.text.strip()
+                channel_id = channel.get('id', display_name)
+                icon_tag = channel.find('icon')
+                logo_url = icon_tag.get('src', "") if icon_tag is not None else ""
+                epg_data[display_name] = {"tvg-id": channel_id, "tvg-logo": logo_url}
         print(f"  - EPG加载成功！共解析出 {len(epg_data)} 个频道的节目信息。")
     except Exception as e:
         print(f"  - EPG数据加载失败: {e}")
@@ -160,8 +180,30 @@ def classify_channel(channel_name):
     return "其他"
 
 async def main(args):
-    print("报告哥哥，婉儿的“超级节目单” v7.8【终极排序】版开始工作啦！")
+    print("报告哥哥，婉儿的“超级节目单” v8.1【EPG优选】版开始工作啦！")
     
+    # --- ✨✨✨ 新增：EPG源优选 ✨✨✨ ---
+    print("\nEPG源优选：正在测试所有EPG地址...")
+    async with aiohttp.ClientSession() as session:
+        epg_tasks = [test_url(session, url) for url in args.epg_url]
+        epg_results = await asyncio.gather(epg_tasks)
+    
+    valid_epgs = [(url, speed) for url, speed in epg_results if speed != float('inf')]
+    if not valid_epgs:
+        print("  - 警告：所有EPG源均不可用！将无法加载节目信息。")
+        best_epg_url = ""
+        top_3_epgs_str = ""
+    else:
+        # 按速度排序
+        valid_epgs.sort(key=lambda x: x[1])
+        # 选出最快的前3个
+        top_3_epgs = [url for url, speed in valid_epgs[:3]]
+        top_3_epgs_str = ",".join(top_3_epgs)
+        # 本次运行使用最快的那个
+        best_epg_url = valid_epgs[0][0]
+        print(f"  - EPG优选完成！本次将使用: {best_epg_url}")
+        print(f"  - 最终将写入这几个源: {top_3_epgs_str}")
+
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
     
@@ -250,15 +292,14 @@ async def main(args):
 
 
     print("\n第四步：【融合输出】正在生成最终节目单...")
-    epg_data = await load_epg_data(args.epg_url)
+    # ✨ 使用我们优选出的最佳EPG源来加载数据
+    epg_data = await load_epg_data(best_epg_url)
     m3u_filename = f"{args.output}.m3u"
     txt_filename = f"{args.output}.txt"
     os.makedirs(os.path.dirname(m3u_filename), exist_ok=True)
     beijing_time = datetime.now(timezone(timedelta(hours=8)))
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
-    
-    # --- ✨✨✨ 终极修正：先在内存中准备好所有分组，再统一写入！ ---
-    
+
     # 1. 准备盲盒分组
     blind_box_group_name = "婉儿为哥哥整理"
     blind_box_channels = {}
@@ -301,20 +342,15 @@ async def main(args):
             final_grouped_channels[group_name][name].extend(urls)
 
     # 3. 确定最终的黄金排序
-    # 你可以修改这个列表来调整你最想要的顺序
     prefix_order = ["婉儿为哥哥整理", "我的最爱", "央视", "卫视", "地方", "港澳台"]
-    
     all_existing_groups = list(final_grouped_channels.keys())
     ordered_groups = []
     
-    # 先按你指定的顺序添加
     for group in prefix_order:
         if group in all_existing_groups:
             ordered_groups.append(group)
             all_existing_groups.remove(group)
     
-    # 再把剩下的、不在你指定顺序里的分组，按字母排序添加
-    # 把 "其他" 分组单独拿出来，确保它在最后
     other_group_exists = "其他" in all_existing_groups
     if other_group_exists:
         all_existing_groups.remove("其他")
@@ -326,11 +362,12 @@ async def main(args):
 
     # 4. 按照黄金顺序，统一写入文件
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
-        # 写入头部信息
-        f_m3u.write(f'#EXTM3U x-tvg-url="{args.epg_url}"\n') if args.epg_url else f_m3u.write("#EXTM3U\n")
-        
-        f_m3u.write(f'#EXTINF:-1 group-title="更新时间" tvg-name="更新时间",{update_time_str}\n')
+        # --- ✨✨✨ 核心修改：写入优选出的多个EPG源 ✨✨✨
+        # 昨晚改好的不会崩的开头，我只把 x-tvg-url 的值换掉，其他结构完全不变！
+        f_m3u.write(f'#EXTM3U x-tvg-url="{top_3_epgs_str}" catchup="append" catchup-source="?playseek=${{(b)yyyyMMddHHmmss}}-${{(e)yyyyMMddHHmmss}}"\n') if top_3_epgs_str else f_m3u.write("#EXTM3U\n")
+        f_m3u.write(f'#EXTINF:-1 group-title="更新时间",{update_time_str}\n')
         f_m3u.write(f'{CLOCK_URL}\n')
+        
         f_txt.write(f'更新时间,#genre#\n')
         f_txt.write(f'{update_time_str},{CLOCK_URL}\n\n')
         
@@ -343,29 +380,21 @@ async def main(args):
             for name, urls in sorted(channels_in_group.items()):
                 safe_name = name.replace(" ", "-")
                 
-                # 获取 EPG 信息
                 epg_info = epg_data.get(name, epg_data.get(safe_name, {}))
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                # --- 逻辑分叉 ---
-                
                 if group == blind_box_group_name:
-                    # 【盲盒模式】只写一条！
-                    if urls: # 确保不为空
+                    if urls:
                         url = urls[0]
                         f_txt.write(f'{safe_name},{url}\n')
-                        
                         f_m3u.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{safe_name}" tvg-logo="{tvg_logo}" group-title="{group}",{safe_name}\n')
                         f_m3u.write(f'#EXTVLCOPT:network-caching=1000\n')
                         f_m3u.write(f'{url}\n')
-                    
                 else:
-                    # 【普通模式】有多少写多少！(带回放标签)
                     for url in urls:
                         f_txt.write(f'{safe_name},{url}\n')
                         
-                        # ✨ 智能识别回放标签 ✨
                         catchup_tag = ""
                         if "PLTV" in url or "TVOD" in url or "/OtpUser/" in url:
                             catchup_tag = ' catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
@@ -377,19 +406,25 @@ async def main(args):
 
             f_txt.write('\n')
 
-
-
     print(f"\n第五步：任务完成！我们的生态系统已按黄金顺序完成最终进化！")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v7.8【终极排序】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v8.1【EPG优选】版')
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【规则库】分类规则目录')
     parser.add_argument('--manual-sources-dir', type=str, default='sources_manual', help='【种子仓库】手动维护的源目录')
     parser.add_argument('--generated-sources-dir', type=str, default='sources_generated', help='【成品仓库】脚本自动生成的源目录')
     parser.add_argument('--remote-sources-file', type=str, default='sources.txt', help='包含远程直播源URL列表的文件')
     parser.add_argument('--picks-dir', type=str, default='picks', help='【每日精选】盲盒源目录')
-    parser.add_argument('--epg-url', type=str, help='EPG数据源的URL或本地路径')
+    
+    # --- ✨✨✨ EPG功能增强 ✨✨✨ ---
+    parser.add_argument(
+        '--epg-url', 
+        nargs='+',  # 允许接收一个或多个值
+        default=['http://epg.51zmt.top:8000/e.xml.gz', 'https://live.fanmingming.com/e.xml'], 
+        help='EPG数据源的URL，可提供多个进行优选'
+    )
+
     parser.add_argument('-b', '--blacklist', type=str, default='config/blacklist.txt', help='频道黑名单文件')
     parser.add_argument('-f', '--favorites', type=str, default='config/favorites.txt', help='收藏频道列表文件')
     parser.add_argument('-o', '--output', type=str, default='dist/live', help='输出文件的前缀')
