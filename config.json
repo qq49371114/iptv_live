@@ -21,7 +21,7 @@
     "纪录": ["纪录", "纪实", "地理", "探索", "发现", "Documentary"],
     "少儿": ["少儿", "卡通", "动漫", "动画", "哈哈", "优漫", "卡酷"],
     "音乐": ["音乐", "Music", "MTV"]
-  }，
+  },
   "epg_urls": [
     "https://666.ewwe.gq/qq49371114/tviptv/Files/EPG.xml",
     "http://epg.51zmt.top:8000/e.xml.gz",
