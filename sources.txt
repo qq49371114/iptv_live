@@ -46,3 +46,4 @@ https://raw.githubusercontent.com/hujingguang/ChinaIPTV/refs/heads/main/cnTV_Aut
 https://raw.githubusercontent.com/huangsuming/iptv/refs/heads/main/list/iptv.txt
 https://iptvindex.com/tv.txt
 https://freetv.fun/test_channels_all_original_new.txt
+https://raw.githubusercontent.com/qq49371114/liveer/master/output/result.m3u
