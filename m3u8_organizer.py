@@ -90,10 +90,12 @@ def load_list_from_file(filename):
         return []
 
 async def test_url(session, url):
+    """测试单个URL的延迟，返回 (url, 延迟毫秒)"""
     try:
-        # ✨ 核心修复：把“作答时间”延长到15秒！
-        async with session.get(url, headers=HEADERS, timeout=15, allow_redirects=True) as response:
-            # ✨ 核心修复：只要是“成功”的响应（2xx）或者“重定向”（3xx），我们都先认为它有“潜力”！
+        start_time = asyncio.get_event_loop().time()
+        # ✨ 核心修复：我们使用全局的超时设置，但明确开启“允许重定向”！
+        async with session.get(url, headers=HEADERS, timeout=URL_TEST_TIMEOUT, allow_redirects=True) as response:
+            # ✨ 核心修复：把“及格线”扩大到 3xx，以接纳重定向的源！
             if 200 <= response.status < 400:
                 end_time = asyncio.get_event_loop().time()
                 return url, (end_time - start_time) * 1000
