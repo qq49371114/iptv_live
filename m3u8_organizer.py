@@ -304,6 +304,7 @@ async def main(args):
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
     # --- ✨✨✨ 真·盲盒逻辑 (v2.0 最终正确版) ✨✨✨ ---
+    # 1. 准备盲盒分组 (最终正确版)
     blind_box_group_name = "婉儿为哥哥整理"
     blind_box_channels = {}
     
@@ -317,25 +318,43 @@ async def main(args):
             pick_path = os.path.join(picks_abs_dir, pick_file)
             if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
                 pick_name = os.path.splitext(pick_file)[0]
+                
+                # 先把这个文件里的所有URL都收集起来
+                urls_in_file = []
                 with open(pick_path, 'r', encoding='utf-8') as pf:
-                    pick_content = pf.read()
+                    for line in pf:
+                        line = line.strip()
+                        if not line or line.startswith('#'): continue
+                        try:
+                            url = line.split(',')[-1]
+                            if url.startswith('http'):
+                                urls_in_file.append(url)
+                        except IndexError:
+                            continue
                 
-                pick_channels_data = parse_content(pick_content, ad_keywords)
-                
-                # 找出这个文件里，所有可用的URL
-                valid_urls_in_file = [url for urls in pick_channels_data.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
-                
-                # 如果这个文件里有可用的URL
-                if valid_urls_in_file:
-                    # 就从这些可用的URL里，随机选一个
-                    random_url = random.choice(valid_urls_in_file)
-                    safe_pick_name = pick_name.replace(" ", "-")
-                    # 然后，把这个节目，加到我们的盲盒分组里！
-                    blind_box_channels[safe_pick_name] = [random_url]
-                    print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
-                else:
-                    # 如果这个文件里没有可用的URL，我们就不生成这个节目
-                    print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，将跳过。")
+                # 如果这个文件里有URL，就为它们举行一次“专属复活赛”
+                if urls_in_file:
+                    print(f"    - 正在为盲盒 '{pick_name}' 举行专属复活赛...")
+                    picks_speeds = {}
+                    async with aiohttp.ClientSession() as session:
+                        tasks = [test_url(session, url) for url in urls_in_file]
+                        results = await asyncio.gather(*tasks)
+                        for url, speed in results:
+                            picks_speeds[url] = speed
+                    
+                    valid_urls_in_file = [url for url in urls_in_file if picks_speeds.get(url, float('inf')) != float('inf')]
+
+                    # 如果这个文件里有可用的URL
+                    if valid_urls_in_file:
+                        # 就从这些可用的URL里，随机选一个
+                        random_url = random.choice(valid_urls_in_file)
+                        safe_pick_name = pick_name.replace(" ", "-")
+                        # 然后，把这个节目，加到我们的盲盒分组里！
+                        blind_box_channels[safe_pick_name] = [random_url]
+                        print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
+                    else:
+                        # 如果这个文件里没有可用的URL，我们就不生成这个节目
+                        print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，将跳过。")
     else:
         print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
     # --- ✨✨✨ 盲盒逻辑修改完毕 ✨✨✨ ---
