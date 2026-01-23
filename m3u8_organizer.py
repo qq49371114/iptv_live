@@ -205,20 +205,75 @@ async def main(args):
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
     
-    # --- 第一步：【万源归宗】融合所有源 ---
+    # --- 第一步：【万源归宗】(v2.0 - 智能分流版) ---
     print("\n第一步：【万源归宗】正在融合所有源...")
-    # ✨ 恢复多线路核心：使用能区分源类型的 all_channels_pool
     all_channels_pool = {}
     
+    # --- ✨ 我们先定义两个更专业的“翻译官”！---
+    def parse_m3u_content(content, ad_keywords):
+        # (这里是专门解析 M3U 格式的逻辑)
+        # ... 我先把我们旧的 parse_content 里的 M3U 部分拿过来
+        channels = {}
+        processed_urls = set()
+        def add_channel(name, url):
+            name = name.strip()
+            url = url.strip()
+            if not name or not url or url in processed_urls: return
+            if any(keyword in name for keyword in ad_keywords): return
+            if name not in channels: channels[name] = []
+            channels[name].append(url)
+            processed_urls.add(url)
+        lines = content.split('\n')
+        for i, line in enumerate(lines):
+            line = line.strip()
+            if line.startswith('#EXTINF:'):
+                if i + 1 < len(lines) and not lines[i+1].strip().startswith('#'):
+                    url = lines[i+1].strip()
+                    name_match = re.search(r'tvg-name="([^"]*)"', line)
+                    name = name_match.group(1) if name_match else line.split(',')[-1]
+                    add_channel(name, url)
+        return channels
+
+    def parse_txt_content(content, ad_keywords):
+        # (这里是专门解析 TXT 格式的逻辑)
+        channels = {}
+        processed_urls = set()
+        def add_channel(name, url):
+            name = name.strip()
+            url = url.strip()
+            if not name or not url or url in processed_urls: return
+            if any(keyword in name for keyword in ad_keywords): return
+            if name not in channels: channels[name] = []
+            channels[name].append(url)
+            processed_urls.add(url)
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '#genre#' in line: continue
+            if ',' in line and 'http' in line:
+                try:
+                    last_comma_index = line.rfind(',')
+                    name = line[:last_comma_index]
+                    url = line[last_comma_index+1:]
+                    if url.startswith('http'): add_channel(name, url)
+                except Exception:
+                    continue
+        return channels
+    # --- ✨ “翻译官”定义完毕！✨ ---
+
     manual_sources_abs_dir = os.path.join(BASE_DIR, args.manual_sources_dir)
     if os.path.isdir(manual_sources_abs_dir):
         print(f"  - 读取【种子仓库】: {manual_sources_abs_dir}")
         for filename in os.listdir(manual_sources_abs_dir):
             filepath = os.path.join(manual_sources_abs_dir, filename)
-            if os.path.isfile(filepath) and filename.endswith(('.txt', '.m3u')):
+            if os.path.isfile(filepath):
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    channels = parse_content(content, ad_keywords)
+                    # ✨ 智能分流！
+                    if filename.endswith('.m3u'):
+                        channels = parse_m3u_content(content, ad_keywords)
+                    else: // 默认都按 txt 处理
+                        channels = parse_txt_content(content, ad_keywords)
+                    
                     for name, urls in channels.items():
                         if name not in all_channels_pool:
                             all_channels_pool[name] = {"urls": set(), "source_type": "manual"}
@@ -235,7 +290,13 @@ async def main(args):
                     try:
                         async with session.get(remote_url, headers=HEADERS, timeout=20) as response:
                             content = await response.text(encoding='utf-8', errors='ignore')
-                            channels = parse_content(content, ad_keywords)
+                            
+                            # ✨ 智能分流！
+                            if remote_url.endswith('.m3u'):
+                                channels = parse_m3u_content(content, ad_keywords)
+                            else: // 默认都按 txt 处理
+                                channels = parse_txt_content(content, ad_keywords)
+
                             for name, urls in channels.items():
                                 if name not in all_channels_pool:
                                     all_channels_pool[name] = {"urls": set(), "source_type": "network"}
