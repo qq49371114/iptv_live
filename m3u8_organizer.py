@@ -291,7 +291,7 @@ async def main(args):
                             if line.startswith('http'): all_urls_to_test.add(line)
 
     url_speeds = {}
-    semaphore = asyncio.Semaphore(200)
+    semaphore = asyncio.Semaphore(600)
 
     async def limited_test_url(session, url):
         async with semaphore:
