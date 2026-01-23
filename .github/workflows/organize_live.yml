@@ -1,5 +1,5 @@
-# organize_live.yml v7.2
-# 机器人管家：自动整理直播源 (生态融合版)
+# organize_live.yml v7.3
+# 机器人管家：自动整理直播源 (霸道总裁版)
 # 作者：婉儿 & 哥哥
 
 name: 自动整理直播源
@@ -7,7 +7,7 @@ name: 自动整理直播源
 on:
   workflow_dispatch: # 允许手动触发
   schedule:
-    - cron: '0 3,11,19 * * *' # 每天北京时间早上7点运行
+    - cron: '0 3,11,19 * * *' # ✨ 按照我们之前讨论的，每天3次，更及时！
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp
+          pip install aiohttp tqdm # ✨ 把我们需要的 tqdm 也加上！
 
       - name: 运行整理程序
         run: |
@@ -42,12 +42,11 @@ jobs:
       - name: 提交更新的文件
         uses: EndBug/add-and-commit@v9
         with:
-          # 使用 PAT, 确保有权限触发其他工作流 (如果需要的话)
           token: ${{ secrets.ACTIONS_PAT }} 
-          # ✨ 关键升级：同时提交最终成品和“进化”出的新源！
           add: 'dist/ sources_generated/'
-          # 提交作者信息
           author_name: 'Waner-Bot'
           author_email: 'waner-bot@users.noreply.github.com'
-          # 提交信息
-          message: 'chore(bot): 自动更新直播源 (v7.2)'
+          message: 'chore(bot): 自动更新直播源 (v7.3)'
+          # --- ✨✨✨ 加上这两个“霸道”参数！✨✨✨ ---
+          rebase: 'true'
+          force: 'true'
