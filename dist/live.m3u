@@ -1,391 +1,591 @@
 #EXTM3U x-tvg-url="https://666.ewwe.gq/qq49371114/tviptv/Files/EPG.xml,http://epg.51zmt.top:8000/e.xml.gz,https://live.fanmingming.com/e.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
-#EXTINF:-1 group-title="更新时间",2026-01-23 08:01:00
+#EXTINF:-1 group-title="更新时间",2026-01-23 12:07:55
 https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
 #EXTINF:-1 tvg-id="今日荐影" tvg-name="今日荐影" tvg-logo="" group-title="婉儿为哥哥整理",今日荐影
-https://stream1.freetv.fun/california-music-channel-1.m3u8
+https://stream1.freetv.fun/hbo-hits-8.ctv
 #EXTINF:-1 tvg-id="今日鉴赏" tvg-name="今日鉴赏" tvg-logo="" group-title="婉儿为哥哥整理",今日鉴赏
-https://txmov2.a.kwimgs.com/upic/2023/08/02/02/BMjAyMzA4MDIwMjM1MDVfMzUwMDUzNzE1MV8xMDk0NjI4NTI5NDhfMl8z_b_B180ec84c183f378933a11512d162f1c4.mp4
-#EXTINF:-1 tvg-id="CCTV+-2-(600p)-[Not-24/7]" tvg-name="CCTV+-2-(600p)-[Not-24/7]" tvg-logo="" group-title="央视",CCTV+-2-(600p)-[Not-24/7]
-https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="CCTV15" tvg-name="CCTV15" tvg-logo="" group-title="央视",CCTV15
-http://69.30.246.194/live/cctv15.m3u8
-#EXTINF:-1 tvg-id="安徽卫视" tvg-name="安徽卫视" tvg-logo="" group-title="卫视",安徽卫视
-http://111.61.236.247:9081/hls/27/index.m3u8
-#EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" tvg-logo="" group-title="卫视",山西卫视
-http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
+https://cloud.video.taobao.com//play/u/57349687/p/1/e/6/t/1/240043672242.mp4
+#EXTINF:-1 tvg-id="CCTV-4-Europe" tvg-name="CCTV-4-Europe" tvg-logo="" group-title="央视",CCTV-4-Europe
+https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
+#EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="" group-title="央视",CCTV1
+http://101.66.194.59:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 tvg-id="CCTV13新闻" tvg-name="CCTV13新闻" tvg-logo="" group-title="央视",CCTV13新闻
+http://pull-hs-f5.flive.douyincdn.com/media/stream-695180860228633260/index.m3u8?arch_hrchy=w1&exp_hrchy=w1&expire=1769679988&major_anchor_level=common&sign=71caa1f6b7f3159013b402e1b0400258&t_id=037-20260122174627710B9646E4C8968A739B-Pdey7N&volcSecret=71caa1f6b7f3159013b402e1b0400258&volcTime=1769679988
+#EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="" group-title="央视",CCTV2
+http://112.123.206.32:808/hls/2/index.m3u8
+#EXTINF:-1 tvg-id="CCTV4" tvg-name="CCTV4" tvg-logo="" group-title="央视",CCTV4
+https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
+#EXTINF:-1 tvg-id="CCTV电视指南" tvg-name="CCTV电视指南" tvg-logo="" group-title="央视",CCTV电视指南
+http://www.tszhgjj.cn:7000/rtp/239.253.93.249:6427
+#EXTINF:-1 tvg-id="CETV1" tvg-name="CETV1" tvg-logo="" group-title="央视",CETV1
+http://171.83.103.119:9999/rtp/239.69.1.110:10298
+#EXTINF:-1 tvg-id="CGTN俄语" tvg-name="CGTN俄语" tvg-logo="" group-title="央视",CGTN俄语
+http://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd.m3u8
+#EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="" group-title="卫视",东方卫视
+http://101.66.194.59:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 tvg-id="吉林卫视" tvg-name="吉林卫视" tvg-logo="" group-title="卫视",吉林卫视
+http://61.156.228.12:8154/tsfile/live/0116_1.m3u8
+#EXTINF:-1 tvg-id="吉林卫视" tvg-name="吉林卫视" tvg-logo="" group-title="卫视",吉林卫视
+http://183.236.43.98:4111/udp/239.77.1.111:5146
+#EXTINF:-1 tvg-id="大湾区卫视" tvg-name="大湾区卫视" tvg-logo="" group-title="卫视",大湾区卫视
+http://222.128.55.152:9080/live/dwq.m3u8
 #EXTINF:-1 tvg-id="广东珠江" tvg-name="广东珠江" tvg-logo="" group-title="卫视",广东珠江
-https://stream1.freetv.fun/yan-dong-zhu-jiang-20.m3u8
-#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="" group-title="卫视",广西卫视
-http://111.61.236.247:9081/hls/44/index.m3u8
-#EXTINF:-1 tvg-id="河南卫视" tvg-name="河南卫视" tvg-logo="" group-title="卫视",河南卫视
-http://120.211.62.180:8000/hls/40/index.m3u8
-#EXTINF:-1 tvg-id="浙江少儿" tvg-name="浙江少儿" tvg-logo="" group-title="卫视",浙江少儿
-https://stream1.freetv.fun/zhe-jiang-shao-er-8.m3u8
-#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" tvg-logo="" group-title="卫视",湖北卫视
-http://www.745612.xyz:7788/rtp/235.254.198.72:1564
-#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="" group-title="卫视",湖南卫视
-http://dodge.lwfz.fun:8800/rtp/239.16.20.72:10720
-#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" tvg-logo="" group-title="卫视",陕西卫视
-http://stream.snrtv.com/sxbc-star-alNQRS.m3u8
-#EXTINF:-1 tvg-id="TVB娱乐新闻" tvg-name="TVB娱乐新闻" tvg-logo="" group-title="港澳台" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",TVB娱乐新闻
-http://php.jdshipin.com/PLTV/iptv.php?id=tvbylxw
-#EXTINF:-1 tvg-id="凤凰中文" tvg-name="凤凰中文" tvg-logo="" group-title="港澳台",凤凰中文
-http://cdn.163189.xyz/live/fhzw/stream.m3u8
-#EXTINF:-1 tvg-id="凤凰资讯" tvg-name="凤凰资讯" tvg-logo="" group-title="港澳台" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",凤凰资讯
-http://cdn5.1678520.xyz:80/live/live2.1.php?id=fhzx
-#EXTINF:-1 tvg-id="民视新闻-HD" tvg-name="民视新闻-HD" tvg-logo="" group-title="港澳台",民视新闻-HD
-http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
-#EXTINF:-1 tvg-id="Arena_Sport" tvg-name="Arena_Sport" tvg-logo="" group-title="体育",Arena_Sport
-http://178.23.88.55/Arena_sport/index.m3u8
-#EXTINF:-1 tvg-id="Bally-Sports" tvg-name="Bally-Sports" tvg-logo="" group-title="体育",Bally-Sports
-https://stream1.freetv.fun/7e911a9d5c804aff29b6a22521f9ce26fbf3ed641a4deed1f2a19644462ef388.m3u8
-#EXTINF:-1 tvg-id="NBC-Sports" tvg-name="NBC-Sports" tvg-logo="" group-title="体育",NBC-Sports
-https://xumo-xumoent-vc-122-sjv70.fast.nbcuni.com/live/master.m3u8
-#EXTINF:-1 tvg-id="RTSH-Sport-(1080p)" tvg-name="RTSH-Sport-(1080p)" tvg-logo="" group-title="体育",RTSH-Sport-(1080p)
-http://178.33.11.6:8696/live/rtshsport/playlist.m3u8
-#EXTINF:-1 tvg-id="七台河新闻综合" tvg-name="七台河新闻综合" tvg-logo="" group-title="新闻-直播",七台河新闻综合
-http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8
-#EXTINF:-1 tvg-id="奎屯汉语综合" tvg-name="奎屯汉语综合" tvg-logo="" group-title="新闻-直播",奎屯汉语综合
-http://218.84.12.186:8001/hls/main/playlist.m3u8
-#EXTINF:-1 tvg-id="广州综合" tvg-name="广州综合" tvg-logo="" group-title="新闻-直播",广州综合
-https://stream1.freetv.fun/yan-zhou-zong-he-25.ctv
-#EXTINF:-1 tvg-id="易门综合" tvg-name="易门综合" tvg-logo="" group-title="新闻-直播",易门综合
-https://zb-live.ynurl.com/yimen/3b75a2f9-7941-46b7-992d-a9796fbca5fe.m3u8
-#EXTINF:-1 tvg-id="腾冲综合" tvg-name="腾冲综合" tvg-logo="" group-title="新闻-直播",腾冲综合
-http://live.ynurl.com/video/s10012-TCTV/index.m3u8
-#EXTINF:-1 tvg-id="舟曲新闻综合" tvg-name="舟曲新闻综合" tvg-logo="" group-title="新闻-直播",舟曲新闻综合
-https://play.kankanlive.com/live/1631185650131909.m3u8
-#EXTINF:-1 tvg-id="芒市综合" tvg-name="芒市综合" tvg-logo="" group-title="新闻-直播",芒市综合
-http://live.ynurl.com/video/s10001-mstv1/index.m3u8?zyund
-#EXTINF:-1 tvg-id="长宁综合" tvg-name="长宁综合" tvg-logo="" group-title="新闻-直播",长宁综合
-http://cnpull.sccnfb.com/live/123456.m3u8?zsicd
-#EXTINF:-1 tvg-id="Comicità-Piccante-Movies-(720p)" tvg-name="Comicità-Piccante-Movies-(720p)" tvg-logo="" group-title="电影",Comicità-Piccante-Movies-(720p)
-https://7f495636.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWl0X0NpbmVtYVNlZ3JldG9fSExT/playlist.m3u8
-#EXTINF:-1 tvg-id="IPTV经典电影" tvg-name="IPTV经典电影" tvg-logo="" group-title="电影",IPTV经典电影
-http://43.138.0.72:35455/yy/1382754187
-#EXTINF:-1 tvg-id="Movies!-(480p)" tvg-name="Movies!-(480p)" tvg-logo="" group-title="电影",Movies!-(480p)
-https://bozztv.com/dvrfl03/hdirect/hdirect-ovair1-movies!/index.m3u8
-#EXTINF:-1 tvg-id="Rakuten-TV-Action-Movies-Italy-(1080p)" tvg-name="Rakuten-TV-Action-Movies-Italy-(1080p)" tvg-logo="" group-title="电影",Rakuten-TV-Action-Movies-Italy-(1080p)
-https://87f2e2e5e7624e3bad85da1ca2ed31a7.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6067/master.m3u8
-#EXTINF:-1 tvg-id="纪录|CI" tvg-name="纪录|CI" tvg-logo="" group-title="纪录",纪录|CI
-http://free.cnlive.club/channel/1404dfbd/index.m3u8?q=1752629214236
+https://cdn2.163189.xyz/live/gdzj/stream.m3u8
+#EXTINF:-1 tvg-id="江苏影视" tvg-name="江苏影视" tvg-logo="" group-title="卫视",江苏影视
+https://migu.188766.xyz/?migutoken=91756b74eb13850e4c87b15c25817e42&id=%E6%B1%9F%E8%8B%8F%E5%BD%B1%E8%A7%86%E9%A2%91%E9%81%93&type=yy
+#EXTINF:-1 tvg-id="河南民生" tvg-name="河南民生" tvg-logo="" group-title="卫视",河南民生
+https://t.freetv.fun/live/he-nan-min-sheng-3.m3u8$[BD]河南民生
+#EXTINF:-1 tvg-id="深圳卫视4K" tvg-name="深圳卫视4K" tvg-logo="" group-title="卫视" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",深圳卫视4K
+http://nn.7x9d.cn/深圳最新.php?id=szws4k
+#EXTINF:-1 tvg-id="湖南都市" tvg-name="湖南都市" tvg-logo="" group-title="卫视",湖南都市
+https://stream1.freetv.fun/hu-nan-du-shi-5.m3u8
+#EXTINF:-1 tvg-id="重庆卫视" tvg-name="重庆卫视" tvg-logo="" group-title="卫视",重庆卫视
+http://61.156.228.12:8154/tsfile/live/0142_1.m3u8
+#EXTINF:-1 tvg-id="黑龙江文体" tvg-name="黑龙江文体" tvg-logo="" group-title="卫视",黑龙江文体
+https://stream1.freetv.fun/hei-long-jiang-wen-ti-1.m3u8
+#EXTINF:-1 tvg-id="TVBS亚洲" tvg-name="TVBS亚洲" tvg-logo="" group-title="港澳台",TVBS亚洲
+http://38.64.72.148/hls/modn/list/4005/chunklist1.m3u8?$LR•IPV4『线路3』
+#EXTINF:-1 tvg-id="Abu-Dhabi-Sports-1-(1080p)" tvg-name="Abu-Dhabi-Sports-1-(1080p)" tvg-logo="" group-title="体育",Abu-Dhabi-Sports-1-(1080p)
+https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_1/abudhabi_sports_1_hls_nd/index.m3u8
+#EXTINF:-1 tvg-id="Abu-Dhabi-Sports-2-(1080p)" tvg-name="Abu-Dhabi-Sports-2-(1080p)" tvg-logo="" group-title="体育",Abu-Dhabi-Sports-2-(1080p)
+https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_2/abudhabi_sports_2_hls_nd/index.m3u8
+#EXTINF:-1 tvg-id="Premier-Sports-1-(480p)" tvg-name="Premier-Sports-1-(480p)" tvg-logo="" group-title="体育",Premier-Sports-1-(480p)
+http://cdn4.skygo.mn/live/disk1/SPSPrime/HLS-FTA/SPSPrime.m3u8
+#EXTINF:-1 tvg-id="Premier-Sports-4-(480p)" tvg-name="Premier-Sports-4-(480p)" tvg-logo="" group-title="体育",Premier-Sports-4-(480p)
+http://cdn4.skygo.mn/live/disk1/SPSFight/HLS-FTA/SPSFight.m3u8
+#EXTINF:-1 tvg-id="Willow-Sports-(1080p)-[Geo-blocked]" tvg-name="Willow-Sports-(1080p)-[Geo-blocked]" tvg-logo="" group-title="体育",Willow-Sports-(1080p)-[Geo-blocked]
+https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="劲爆体育" tvg-name="劲爆体育" tvg-logo="" group-title="体育",劲爆体育
+http://120.238.94.82:9901/tsfile/live/1086_1.m3u8
+#EXTINF:-1 tvg-id="韩国EBS少儿" tvg-name="韩国EBS少儿" tvg-logo="" group-title="少儿",韩国EBS少儿
+http://ebsonairios.ebs.co.kr/ebsutablet500k/tablet500k/playlist.m3u8
+#EXTINF:-1 tvg-id="万荣综合" tvg-name="万荣综合" tvg-logo="" group-title="新闻-直播",万荣综合
+http://60.222.246.220:19433/hls1.m3u8
+#EXTINF:-1 tvg-id="东莞新闻综合" tvg-name="东莞新闻综合" tvg-logo="" group-title="新闻-直播",东莞新闻综合
+https://t.freetv.fun/live/dong-wan-xin-wen-zong-he.php$[HD]东莞新闻综合
+#EXTINF:-1 tvg-id="仁寿综合" tvg-name="仁寿综合" tvg-logo="" group-title="新闻-直播",仁寿综合
+https://play.scrstv.com.cn/DT/live.m3u8?auth_key=60001724663204-0-0-c1cc4ded9841ac34f63cdbd3aec647ef
+#EXTINF:-1 tvg-id="名山综合" tvg-name="名山综合" tvg-logo="" group-title="新闻-直播",名山综合
+https://m3u8channel-ms.yunxya.com:443/nmip-media/audiolive/audio100580/playlist.m3u8
+#EXTINF:-1 tvg-id="嘉兴新闻综合" tvg-name="嘉兴新闻综合" tvg-logo="" group-title="新闻-直播",嘉兴新闻综合
+http://tvfile.jyrmt.cn:80/nmip-media/channellive/channel104452/playlist.m3u8
+#EXTINF:-1 tvg-id="固镇新闻" tvg-name="固镇新闻" tvg-logo="" group-title="新闻-直播",固镇新闻
+http://www.guzhenm.com:7001/hls/hd-live.m3u8
+#EXTINF:-1 tvg-id="固镇新闻频道" tvg-name="固镇新闻频道" tvg-logo="" group-title="新闻-直播",固镇新闻频道
+http://www.guzhenm.com:7001/hls/hd-live.m3u8
+#EXTINF:-1 tvg-id="安顺新闻" tvg-name="安顺新闻" tvg-logo="" group-title="新闻-直播",安顺新闻
+http://hplayer1.juyun.tv/camera/154379194.m3u8
+#EXTINF:-1 tvg-id="武乡新闻综合" tvg-name="武乡新闻综合" tvg-logo="" group-title="新闻-直播",武乡新闻综合
+http://60.220.198.84:81/0.m3u8
+#EXTINF:-1 tvg-id="江夏新闻综合" tvg-name="江夏新闻综合" tvg-logo="" group-title="新闻-直播",江夏新闻综合
+http://59.175.226.142:280/gb28181/xwzh.m3u8?zhubd
+#EXTINF:-1 tvg-id="玛纳斯综合" tvg-name="玛纳斯综合" tvg-logo="" group-title="新闻-直播",玛纳斯综合
+http://218.84.127.245:1026/hls/main1/playlist.m3u8
+#EXTINF:-1 tvg-id="祁县新闻综合" tvg-name="祁县新闻综合" tvg-logo="" group-title="新闻-直播",祁县新闻综合
+http://ggpagerl.live.sxmty.com/live/hls/b350dc1ac5da45c2b2233f6eb122ddf4/49d3766c7f204685a2a8f027b234c33d.m3u8
+#EXTINF:-1 tvg-id="铜梁综合" tvg-name="铜梁综合" tvg-logo="" group-title="新闻-直播",铜梁综合
+http://183.64.174.171:40123/ch1.m3u8?zzhongqd
+#EXTINF:-1 tvg-id="长子综合" tvg-name="长子综合" tvg-logo="" group-title="新闻-直播",长子综合
+https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd
+#EXTINF:-1 tvg-id="长春综合-[Geo-blocked]" tvg-name="长春综合-[Geo-blocked]" tvg-logo="" group-title="新闻-直播",长春综合-[Geo-blocked]
+https://stream2.jlntv.cn/jlcc/sd/live.m3u8
+#EXTINF:-1 tvg-id="靖江新闻综合" tvg-name="靖江新闻综合" tvg-logo="" group-title="新闻-直播",靖江新闻综合
+https://stream1.freetv.fun/jing-jiang-xin-wen-zong-he-1.m3u8
+#EXTINF:-1 tvg-id="Rakuten-TV-Action-Movies-Finland-(1080p)" tvg-name="Rakuten-TV-Action-Movies-Finland-(1080p)" tvg-logo="" group-title="电影",Rakuten-TV-Action-Movies-Finland-(1080p)
+https://bca5a421a70c46ad911efd0a4767c4bf.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6075/master.m3u8
+#EXTINF:-1 tvg-id="Rakuten-TV-Drama-Movies-Germany-(1080p)" tvg-name="Rakuten-TV-Drama-Movies-Germany-(1080p)" tvg-logo="" group-title="电影",Rakuten-TV-Drama-Movies-Germany-(1080p)
+https://968754c2483045c1a9a7f677caec35b6.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6096/master.m3u8
+#EXTINF:-1 tvg-id="Rakuten-TV-Top-Movies-Finland-(1080p)" tvg-name="Rakuten-TV-Top-Movies-Finland-(1080p)" tvg-logo="" group-title="电影",Rakuten-TV-Top-Movies-Finland-(1080p)
+https://1d1b0d4cb6ae4c31985d13221795695b.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6057/master.m3u8
+#EXTINF:-1 tvg-id="王晶电影" tvg-name="王晶电影" tvg-logo="" group-title="电影",王晶电影
+http://www.douzhicloud.site:35455/huya/11602058
+#EXTINF:-1 tvg-id="电影_斯坦森" tvg-name="电影_斯坦森" tvg-logo="" group-title="电影",电影_斯坦森
+https://live.metshop.top/huya/21059588
+#EXTINF:-1 tvg-id="靖天戏剧" tvg-name="靖天戏剧" tvg-logo="" group-title="电视剧",靖天戏剧
+http://220.135.64.124:5050/4gtv-4gtv058/index.m3u8?proxy=true
+#EXTINF:-1 tvg-id="全纪实" tvg-name="全纪实" tvg-logo="" group-title="纪录",全纪实
+http://183.220.107.138:4022/rtp/239.10.0.105:5140
 #EXTINF:-1 tvg-id="金鹰纪实" tvg-name="金鹰纪实" tvg-logo="" group-title="纪录",金鹰纪实
-https://stream1.freetv.fun/jin-ying-ji-shi-2.ctv
-#EXTINF:-1 tvg-id="MMTV-(1080p)" tvg-name="MMTV-(1080p)" tvg-logo="" group-title="音乐",MMTV-(1080p)
-https://sendlive.online/hls/mmtv.m3u8
-#EXTINF:-1 tvg-id="1+1-Ukraine" tvg-name="1+1-Ukraine" tvg-logo="" group-title="其他",1+1-Ukraine
-https://stream1.freetv.fun/4b6553b7679626311ff2526af725434478f13b479b904b59f7d3e3a3351d63c8.ctv
-#EXTINF:-1 tvg-id="3ABN-English" tvg-name="3ABN-English" tvg-logo="" group-title="其他",3ABN-English
-https://3abn.bozztv.com/3abn2/3abn_live/smil:3abn_live.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="4-Fun-TV-(576i)-[Not-24/7]" tvg-name="4-Fun-TV-(576i)-[Not-24/7]" tvg-logo="" group-title="其他",4-Fun-TV-(576i)-[Not-24/7]
-https://stream.4fun.tv:8888/hls/4f_high/index.m3u8
-#EXTINF:-1 tvg-id="ATV-(400p)-[Not-24/7]" tvg-name="ATV-(400p)-[Not-24/7]" tvg-logo="" group-title="其他",ATV-(400p)-[Not-24/7]
-https://guineetvdirect.online:3320/live/atvguineelive.m3u8
-#EXTINF:-1 tvg-id="Abai-TV-(720p)" tvg-name="Abai-TV-(720p)" tvg-logo="" group-title="其他",Abai-TV-(720p)
-https://abaitv-stream.qazcdn.com/abaitv/abaitv/playlist.m3u8
-#EXTINF:-1 tvg-id="AccuWeather-Now-(1080p)" tvg-name="AccuWeather-Now-(1080p)" tvg-logo="" group-title="其他",AccuWeather-Now-(1080p)
-https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00684-accuweather-accuweather-plex/playlist.m3u8
-#EXTINF:-1 tvg-id="Aik-News" tvg-name="Aik-News" tvg-logo="" group-title="其他",Aik-News
-https://video.primexsports.com/pnn/live/playlist.m3u8
-#EXTINF:-1 tvg-id="Alkass-Three-(720p)" tvg-name="Alkass-Three-(720p)" tvg-logo="" group-title="其他",Alkass-Three-(720p)
-https://streamer2.qna.org.qa/148161470_live/148161470_296.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="Alwafa-Tarim-TV-(Am-Media)-(720p)" tvg-name="Alwafa-Tarim-TV-(Am-Media)-(720p)" tvg-logo="" group-title="其他",Alwafa-Tarim-TV-(Am-Media)-(720p)
-https://ammedia.siar.us/ammedia/live/playlist.m3u8
-#EXTINF:-1 tvg-id="Antena-Seis-TV-(720p)-[Geo-blocked]" tvg-name="Antena-Seis-TV-(720p)-[Geo-blocked]" tvg-logo="" group-title="其他",Antena-Seis-TV-(720p)-[Geo-blocked]
-https://video1.azulstream.com:8081/antenaseistv/index.m3u8
-#EXTINF:-1 tvg-id="Arabica-TV" tvg-name="Arabica-TV" tvg-logo="" group-title="其他",Arabica-TV
-http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8
-#EXTINF:-1 tvg-id="Arabica-TV-(720p)" tvg-name="Arabica-TV-(720p)" tvg-logo="" group-title="其他",Arabica-TV-(720p)
-http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8
-#EXTINF:-1 tvg-id="Arabí-TV-(1080p)" tvg-name="Arabí-TV-(1080p)" tvg-logo="" group-title="其他",Arabí-TV-(1080p)
-https://streamtv2.elitecomunicacion.cloud:3628/live/arabitv2025live.m3u8
-#EXTINF:-1 tvg-id="Arax-TV" tvg-name="Arax-TV" tvg-logo="" group-title="其他",Arax-TV
-https://araxhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="Area-809-El-Original-(1080p)" tvg-name="Area-809-El-Original-(1080p)" tvg-logo="" group-title="其他",Area-809-El-Original-(1080p)
-https://vdo.voxhdnet.com:3159/stream/play.m3u8
-#EXTINF:-1 tvg-id="Asianet-News-(360p)" tvg-name="Asianet-News-(360p)" tvg-logo="" group-title="其他",Asianet-News-(360p)
-https://asianetnews.vgcdn.net/ptnr-Embed/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/1c19363c-e4a0-4e4d-ba28-771d5615b88e/9bd4a057-456d-43de-b887-7b87b021f1cc/3.m3u8
-#EXTINF:-1 tvg-id="Autentic-History-(1080p)" tvg-name="Autentic-History-(1080p)" tvg-logo="" group-title="其他",Autentic-History-(1080p)
-https://9e754fa707344ccca6d84955c8fcaf36.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RlaxxTV-eu_AutenticHistory/playlist.m3u8
-#EXTINF:-1 tvg-id="Avers-(480p)" tvg-name="Avers-(480p)" tvg-logo="" group-title="其他",Avers-(480p)
-https://avers.pp.ua/hls/efir.m3u8
-#EXTINF:-1 tvg-id="BAMOS-TV-(1080p)-[Not-24/7]" tvg-name="BAMOS-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",BAMOS-TV-(1080p)-[Not-24/7]
-https://video2.getstreamhosting.com:19360/8092/8092.m3u8
-#EXTINF:-1 tvg-id="BBC-News-Europe" tvg-name="BBC-News-Europe" tvg-logo="" group-title="其他",BBC-News-Europe
-https://dash2.antik.sk/live/test_bbc_world/playlist.m3u8
-#EXTINF:-1 tvg-id="BBC-News-Pashto-(720p)" tvg-name="BBC-News-Pashto-(720p)" tvg-logo="" group-title="其他",BBC-News-Pashto-(720p)
-https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:bbc_afghan_tv/pc_hd_abr_v2.mpd
-#EXTINF:-1 tvg-id="BBC-Top-Gear-Italy-(1080p)" tvg-name="BBC-Top-Gear-Italy-(1080p)" tvg-logo="" group-title="其他",BBC-Top-Gear-Italy-(1080p)
-https://amg00793-amg00793c43-rakuten-it-5537.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Beyaz-TV-(1080p)" tvg-name="Beyaz-TV-(1080p)" tvg-logo="" group-title="其他",Beyaz-TV-(1080p)
-https://beyaztv.daioncdn.net/beyaztv/beyaztv.m3u8?app=fcd5c66b-da9d-44ba-a410-4f34805c397d&ce=3
-#EXTINF:-1 tvg-id="Bondi-Rescue" tvg-name="Bondi-Rescue" tvg-logo="" group-title="其他",Bondi-Rescue
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/66166989635c7500084105a2/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c796a45-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6764d2d1-b42f-4d3f-b861-f9d0d6aeaf33
+http://60.2.190.206:4000/udp/239.253.92.103:6054
+#EXTINF:-1 tvg-id="MTV-Uutiset-(720p)" tvg-name="MTV-Uutiset-(720p)" tvg-logo="" group-title="音乐",MTV-Uutiset-(720p)
+https://live.streaming.a2d.tv/asset/20025962.isml/.m3u8
+#EXTINF:-1 tvg-id="Persiana-Music" tvg-name="Persiana-Music" tvg-logo="" group-title="音乐",Persiana-Music
+https://musichls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="100%-News-(576p)" tvg-name="100%-News-(576p)" tvg-logo="" group-title="其他",100%-News-(576p)
+http://85.238.112.40:8810/hls_sec/239.33.16.32-.m3u8
+#EXTINF:-1 tvg-id="2024年春晚" tvg-name="2024年春晚" tvg-logo="" group-title="其他",2024年春晚
+https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8
+#EXTINF:-1 tvg-id="360°-Новости" tvg-name="360°-Новости" tvg-logo="" group-title="其他",360°-Новости
+https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="3ABN-Latino" tvg-name="3ABN-Latino" tvg-logo="" group-title="其他",3ABN-Latino
+https://3abn.bozztv.com/3abn2/Lat_live/smil:Lat_live.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="92-News-HD-(720p)" tvg-name="92-News-HD-(720p)" tvg-logo="" group-title="其他",92-News-HD-(720p)
+http://92news.vdn.dstreamone.net/92newshd/92hd/playlist.m3u8
+#EXTINF:-1 tvg-id="A&E-East-(720p)-[Not-24/7]" tvg-name="A&E-East-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",A&E-East-(720p)-[Not-24/7]
+https://tvpass.org/live/AEEast/hd
+#EXTINF:-1 tvg-id="ABC-9-Orlando-FL-(WFTV)-(720p)" tvg-name="ABC-9-Orlando-FL-(WFTV)-(720p)" tvg-logo="" group-title="其他",ABC-9-Orlando-FL-(WFTV)-(720p)
+https://amg00327-coxmediagroup-wftvbreaking-ono-hec7b.amagi.tv/playlist/amg00327-coxmediagroup-wftvbreaking-ono/playlist.m3u8
+#EXTINF:-1 tvg-id="AKC-TV" tvg-name="AKC-TV" tvg-logo="" group-title="其他",AKC-TV
+https://stream1.freetv.fun/19abd41b80f3303d059baea2c3ac8f07ba4126792e85c230a30e04ae05e31a09.m3u8
+#EXTINF:-1 tvg-id="AKC-TV-(1080p)" tvg-name="AKC-TV-(1080p)" tvg-logo="" group-title="其他",AKC-TV-(1080p)
+https://broadcast.blivenyc.com/speed/broadcast/22/desktop-playlist.m3u8
+#EXTINF:-1 tvg-id="ALWifak-News-TV-(720p)" tvg-name="ALWifak-News-TV-(720p)" tvg-logo="" group-title="其他",ALWifak-News-TV-(720p)
+http://alwifaklive.info:1935/live/myStream/playlist.m3u8
+#EXTINF:-1 tvg-id="ATV-(1080p)" tvg-name="ATV-(1080p)" tvg-logo="" group-title="其他",ATV-(1080p)
+https://live.zendzend.com/mpegts/29375_107244/media_mpegts_0.m3u8
+#EXTINF:-1 tvg-id="AVA-Series" tvg-name="AVA-Series" tvg-logo="" group-title="其他",AVA-Series
+https://avaserieshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Afra-Film" tvg-name="Afra-Film" tvg-logo="" group-title="其他",Afra-Film
+https://afrafhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Africa-TV-2-(720p)" tvg-name="Africa-TV-2-(720p)" tvg-logo="" group-title="其他",Africa-TV-2-(720p)
+http://africatv.live.net.sa:1935/live/africatv2/playlist.m3u8
+#EXTINF:-1 tvg-id="AfroLandTV-(1080p)" tvg-name="AfroLandTV-(1080p)" tvg-logo="" group-title="其他",AfroLandTV-(1080p)
+https://alt-al.otteravision.com/alt/al/al.m3u8
+#EXTINF:-1 tvg-id="Aghani-Aghani-TV-(1080p)-[Not-24/7]" tvg-name="Aghani-Aghani-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Aghani-Aghani-TV-(1080p)-[Not-24/7]
+https://streaming-a-1035.cdn.nextologies.com/6zj8y5nemi8a32vyjjbkv0oqx/77pcakd8reik3g8qdqnexlkmq/playlist.m3u8
+#EXTINF:-1 tvg-id="Aguacate-TV-(1080p)" tvg-name="Aguacate-TV-(1080p)" tvg-logo="" group-title="其他",Aguacate-TV-(1080p)
+https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8
+#EXTINF:-1 tvg-id="Al-Jazeera-Mubasher-Broadcast-2-(1080p)" tvg-name="Al-Jazeera-Mubasher-Broadcast-2-(1080p)" tvg-logo="" group-title="其他",Al-Jazeera-Mubasher-Broadcast-2-(1080p)
+https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8
+#EXTINF:-1 tvg-id="Alanya-Posta-TV-(1080p)" tvg-name="Alanya-Posta-TV-(1080p)" tvg-logo="" group-title="其他",Alanya-Posta-TV-(1080p)
+https://api-tv3.yayin.com.tr/postatv/postatv/playlist.m3u8
+#EXTINF:-1 tvg-id="Anshun-Comprehensive-News-Channel" tvg-name="Anshun-Comprehensive-News-Channel" tvg-logo="" group-title="其他",Anshun-Comprehensive-News-Channel
+https://hplayer1.juyun.tv/camera/154379194.m3u8
+#EXTINF:-1 tvg-id="Aragon-TV-Internacional-(720p)-[Not-24/7]" tvg-name="Aragon-TV-Internacional-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Aragon-TV-Internacional-(720p)-[Not-24/7]
+https://cartv.streaming.aranova.es/hls/live/aragontv_canal1.m3u8
+#EXTINF:-1 tvg-id="AsiriTV-(720p)-[Not-24/7]" tvg-name="AsiriTV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",AsiriTV-(720p)-[Not-24/7]
+https://video2.lhdserver.es/asiritv/live.m3u8
+#EXTINF:-1 tvg-id="Auf-Achse" tvg-name="Auf-Achse" tvg-logo="" group-title="其他",Auf-Achse
+http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/61fbf91afb1b10000880dd08/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc82e210-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=ab69fa81-0a33-41a6-a74a-fc24b4b607a5
+#EXTINF:-1 tvg-id="BBC-Drama-Italy-(1080p)" tvg-name="BBC-Drama-Italy-(1080p)" tvg-logo="" group-title="其他",BBC-Drama-Italy-(1080p)
+https://amg00793-amg00793c41-rakuten-it-5445.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Backstage-[Geo-blocked]" tvg-name="Backstage-[Geo-blocked]" tvg-logo="" group-title="其他",Backstage-[Geo-blocked]
+https://fuse-backstage-xumo.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="BeitolAbbas-TV-Channel-(720p)" tvg-name="BeitolAbbas-TV-Channel-(720p)" tvg-logo="" group-title="其他",BeitolAbbas-TV-Channel-(720p)
+https://live.beitolabbas.tv/live/beitolabbastv.m3u8
+#EXTINF:-1 tvg-id="Bibel-TV-(720p)" tvg-name="Bibel-TV-(720p)" tvg-logo="" group-title="其他",Bibel-TV-(720p)
+https://bibint01.iptv-playoutcenter.de/bibint01/bibint01.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="Bike-(720p)" tvg-name="Bike-(720p)" tvg-logo="" group-title="其他",Bike-(720p)
+http://backup.superstreaming.inaria.me/BikeSmartMobilityDTT/playlist.m3u8
+#EXTINF:-1 tvg-id="Bilyonaryo-News-Channel-(1080p)-[Geo-blocked]" tvg-name="Bilyonaryo-News-Channel-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",Bilyonaryo-News-Channel-(1080p)-[Geo-blocked]
+https://amg19223-amg19223c11-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c11-amgplt0352/playlist.m3u8
+#EXTINF:-1 tvg-id="Bloomberg" tvg-name="Bloomberg" tvg-logo="" group-title="其他",Bloomberg
+https://liveprodusphoenixeast.akamaized.net/USPhx-HD/Channel-TX-USPhx-AWS-virginia-1/Source-USPhx-16k-1-s6lk2-BP-07-02-81ykIWnsMsg_live.m3u8
+#EXTINF:-1 tvg-id="Bondi-Vet-(720p)" tvg-name="Bondi-Vet-(720p)" tvg-logo="" group-title="其他",Bondi-Vet-(720p)
+https://wtfn-bondivet-1-au.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Boomerang--(FR)" tvg-name="Boomerang--(FR)" tvg-logo="" group-title="其他",Boomerang--(FR)
+https://stream1.freetv.fun/d3e87e1403e42f7223660c1929511c9e9dcbf567c2a6e7b5761fd2281ce6e7ad.m3u8
 #EXTINF:-1 tvg-id="Breaking-News-by-LeadStory-(1080p)" tvg-name="Breaking-News-by-LeadStory-(1080p)" tvg-logo="" group-title="其他",Breaking-News-by-LeadStory-(1080p)
-https://amg02703-leadstory-leadstory-samsungau-rr75f.amagi.tv/playlist/amg02703-leadstory-leadstory-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="CBS-News-Chicago-(720p)" tvg-name="CBS-News-Chicago-(720p)" tvg-logo="" group-title="其他",CBS-News-Chicago-(720p)
-https://cbsn-chi.cbsnstream.cbsnews.com/out/v1/b2fc0d5715d54908adf07f97d2616646/master.m3u8
-#EXTINF:-1 tvg-id="CBS-News-Miami-(720p)" tvg-name="CBS-News-Miami-(720p)" tvg-logo="" group-title="其他",CBS-News-Miami-(720p)
-https://cbsn-mia.cbsnstream.cbsnews.com/out/v1/ac174b7938264d24ae27e56f6584bca0/master.m3u8
-#EXTINF:-1 tvg-id="CBS-News-Minnesota-(720p)" tvg-name="CBS-News-Minnesota-(720p)" tvg-logo="" group-title="其他",CBS-News-Minnesota-(720p)
-https://cbsn-min.cbsnstream.cbsnews.com/out/v1/76518f06941246ba810c8d175600bf74/master.m3u8
-#EXTINF:-1 tvg-id="CNBC-Asia-(720p)" tvg-name="CNBC-Asia-(720p)" tvg-logo="" group-title="其他",CNBC-Asia-(720p)
-https://liveh34.vtvprime.vn/hls/CNBC/03.m3u8
-#EXTINF:-1 tvg-id="Canal-1-(720p)-[Not-24/7]" tvg-name="Canal-1-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Canal-1-(720p)-[Not-24/7]
-https://vid.canal1cr.com:3424/multi_live/play_720.m3u8
-#EXTINF:-1 tvg-id="Canal-9-TV" tvg-name="Canal-9-TV" tvg-logo="" group-title="其他",Canal-9-TV
-https://stream1.freetv.fun/be2d8ffc7f82baa6878368a7005301e835862e7455f23e6e40d0c8786b24cd03.m3u8
+https://amg02703-leadstory-leadstory-samsungnz-vc7nn.amagi.tv/playlist/amg02703-leadstory-leadstory-samsungnz/playlist.m3u8
+#EXTINF:-1 tvg-id="BredaNu-TV-(1080p)" tvg-name="BredaNu-TV-(1080p)" tvg-logo="" group-title="其他",BredaNu-TV-(1080p)
+https://01.tv.streaming.bredanu.nl/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Brionnais-TV-(720p)" tvg-name="Brionnais-TV-(720p)" tvg-logo="" group-title="其他",Brionnais-TV-(720p)
+https://stream2.mandarine.media/brionnaistv/brionnaistv/playlist.m3u8
+#EXTINF:-1 tvg-id="CBN-Espanol-(1080p)" tvg-name="CBN-Espanol-(1080p)" tvg-logo="" group-title="其他",CBN-Espanol-(1080p)
+https://fastly.live.brightcove.com/6383462549112/us-east-1/734546207001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiczFpM3ZpLmVncmVzcy50N2M3emwiLCJhY2NvdW50X2lkIjoiNzM0NTQ2MjA3MDAxIiwiZWhuIjoiZmFzdGx5LmxpdmUuYnJpZ2h0Y292ZS5jb20iLCJpc3MiOiJibGl2ZS1wbGF5YmFjay1zb3VyY2UtYXBpIiwic3ViIjoicGF0aG1hcHRva2VuIiwiYXVkIjpbIjczNDU0NjIwNzAwMSJdLCJqdGkiOiI2MzgzNDYyNTQ5MTEyIn0.g04lznsvgqgIXQt2ZH0H_tWtIeTsMgGjVORsjOJ0T6U/playlist-hls.m3u8
+#EXTINF:-1 tvg-id="CBS-Chicago-WBBM-DT1" tvg-name="CBS-Chicago-WBBM-DT1" tvg-logo="" group-title="其他",CBS-Chicago-WBBM-DT1
+https://fl1.moveonjoy.com/IL_Chicago_CBS/index.m3u8
+#EXTINF:-1 tvg-id="Canal-2-de-Ushuaia-(1080p)" tvg-name="Canal-2-de-Ushuaia-(1080p)" tvg-logo="" group-title="其他",Canal-2-de-Ushuaia-(1080p)
+https://nd106.republicaservers.com:4433/hls/c6611/index.m3u8
+#EXTINF:-1 tvg-id="Canal-2000-La-Solana-(720p)-[Not-24/7]" tvg-name="Canal-2000-La-Solana-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Canal-2000-La-Solana-(720p)-[Not-24/7]
+http://canal2000.berkano-systems.net/streaming/streams/canal2000.m3u8
+#EXTINF:-1 tvg-id="Canal-56-(576p)-[Not-24/7]" tvg-name="Canal-56-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Canal-56-(576p)-[Not-24/7]
+https://videos.canal56.com/directe/stream/index.m3u8
+#EXTINF:-1 tvg-id="Canal-Claro-(720p)" tvg-name="Canal-Claro-(720p)" tvg-logo="" group-title="其他",Canal-Claro-(720p)
+https://stitcher.pluto.tv/stitch/hls/channel/68224482c5d53e1351aaf2f2/master.m3u8?appVersion=1&deviceDNT=0&deviceId=spencer&deviceMake=safari&deviceModel=web&deviceType=web&deviceVersion=1&servertSideAds=false&sid=e3ca3088-b0b3-11f0-ab21-da2bce2249f9
 #EXTINF:-1 tvg-id="Canal-Dos-Yopal-(720p)" tvg-name="Canal-Dos-Yopal-(720p)" tvg-logo="" group-title="其他",Canal-Dos-Yopal-(720p)
 http://131.221.41.94/hls/canal2.m3u8
-#EXTINF:-1 tvg-id="Canal-do-Inter-(720p)-[Not-24/7]" tvg-name="Canal-do-Inter-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Canal-do-Inter-(720p)-[Not-24/7]
-https://video01.soultv.com.br/internacional/internacional/playlist.m3u8
-#EXTINF:-1 tvg-id="Carivision-(1080p)-[Geo-blocked]" tvg-name="Carivision-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",Carivision-(1080p)-[Geo-blocked]
-https://ss2.tvrdomi.com:1936/carivision/carivision/playlist.m3u8
-#EXTINF:-1 tvg-id="Catholic-TV" tvg-name="Catholic-TV" tvg-logo="" group-title="其他",Catholic-TV
-https://catholictvhd-lh.akamaized.net/hls/live/2043390/CTVLiveHD/master.m3u8
-#EXTINF:-1 tvg-id="Chaco-TV-(720p)-[Not-24/7]" tvg-name="Chaco-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Chaco-TV-(720p)-[Not-24/7]
-https://wowzasrv.chaco.gov.ar/Streamtv/chacotv/playlist.m3u8
-#EXTINF:-1 tvg-id="Chada-TV-(720p)" tvg-name="Chada-TV-(720p)" tvg-logo="" group-title="其他",Chada-TV-(720p)
-https://chadatv.vedge.infomaniak.com/livecast/chadatv/playlist.m3u8
-#EXTINF:-1 tvg-id="Cine-Premiere-(720p)" tvg-name="Cine-Premiere-(720p)" tvg-logo="" group-title="其他",Cine-Premiere-(720p)
-https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5cf968040ab7d8f181e6a68b/master.m3u8?advertisingId=channel&appName=rokuchannel&appVersion=1.0&bmodel=bm1&channel_id=channel&content=channel&content_rating=ROKU_ADS_CONTENT_RATING&content_type=livefeed&coppa=false&deviceDNT=1&deviceId=channel&deviceMake=rokuChannel&deviceModel=web&deviceType=rokuChannel&deviceVersion=1.0&embedPartner=rokuChannel&genre=ROKU_ADS_CONTENT_GENRE&is_lat=1&platform=web&rdid=channel&studio_id=viacom&tags=ROKU_CONTENT_TAGS
-#EXTINF:-1 tvg-id="Cypress-Public-Access-Channel-36-(Cypress-CA)-(360p)" tvg-name="Cypress-Public-Access-Channel-36-(Cypress-CA)-(360p)" tvg-logo="" group-title="其他",Cypress-Public-Access-Channel-36-(Cypress-CA)-(360p)
-https://livestream-us-east-edge-2.granicusops.com/live/cypressca/live-1-a/playlist.m3u8
-#EXTINF:-1 tvg-id="De-Ultimo-Minuto-TV" tvg-name="De-Ultimo-Minuto-TV" tvg-logo="" group-title="其他",De-Ultimo-Minuto-TV
-https://soportedvb.click:3620/live/deultimominutomedialive.m3u8
+#EXTINF:-1 tvg-id="Capital-TV-(1080p)" tvg-name="Capital-TV-(1080p)" tvg-logo="" group-title="其他",Capital-TV-(1080p)
+https://streaming.tvnepal.com:19360/capitaltv/capitaltv.m3u8
+#EXTINF:-1 tvg-id="Channel-WIN-(720p)" tvg-name="Channel-WIN-(720p)" tvg-logo="" group-title="其他",Channel-WIN-(720p)
+https://cdn-4.pishow.tv/live/229/master.m3u8
+#EXTINF:-1 tvg-id="Chosen-TV-English-(360p)" tvg-name="Chosen-TV-English-(360p)" tvg-logo="" group-title="其他",Chosen-TV-English-(360p)
+https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_024/Stream/playlist.m3u8
+#EXTINF:-1 tvg-id="Cibaeña-TV-(720p)" tvg-name="Cibaeña-TV-(720p)" tvg-logo="" group-title="其他",Cibaeña-TV-(720p)
+https://streamunoapp.com:3958/live/cibaenatvlive.m3u8
+#EXTINF:-1 tvg-id="CineLife" tvg-name="CineLife" tvg-logo="" group-title="其他",CineLife
+https://magnolia-cinelife.amagi.tv/hls/amagi_hls_data_magnoliaA-cinelife-oando/CDN/playlist.m3u8
+#EXTINF:-1 tvg-id="Ciudad-Magazine-(1080p)-[Geo-blocked]" tvg-name="Ciudad-Magazine-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",Ciudad-Magazine-(1080p)-[Geo-blocked]
+https://live-01-07-ciudad.vodgc.net/live-01-07-ciudad.vodgc.net/index.m3u8
+#EXTINF:-1 tvg-id="Cnews-Bharat-(720p)" tvg-name="Cnews-Bharat-(720p)" tvg-logo="" group-title="其他",Cnews-Bharat-(720p)
+https://legitpro.co.in/cnews/cnews/index.fmp4.m3u8
+#EXTINF:-1 tvg-id="Colorados-Visión-TV-(1080p)" tvg-name="Colorados-Visión-TV-(1080p)" tvg-logo="" group-title="其他",Colorados-Visión-TV-(1080p)
+http://177.234.247.66:9975/ColoradosTV/index.m3u8
+#EXTINF:-1 tvg-id="Cosmos-TV-(720p)" tvg-name="Cosmos-TV-(720p)" tvg-logo="" group-title="其他",Cosmos-TV-(720p)
+https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8
+#EXTINF:-1 tvg-id="Curiquingue-TV-(720p)" tvg-name="Curiquingue-TV-(720p)" tvg-logo="" group-title="其他",Curiquingue-TV-(720p)
+https://video2.lhdserver.es/pjtv/live.m3u8
+#EXTINF:-1 tvg-id="DASDING-90.8-(720p)" tvg-name="DASDING-90.8-(720p)" tvg-logo="" group-title="其他",DASDING-90.8-(720p)
+https://swrdasdingvr-hls.akamaized.net/hls/live/2018681/dasdingvr/master.m3u8
+#EXTINF:-1 tvg-id="DBM-TV-(1080p)" tvg-name="DBM-TV-(1080p)" tvg-logo="" group-title="其他",DBM-TV-(1080p)
+https://dbmtv.vedge.infomaniak.com/livecast/dbmtv/playlist.m3u8
+#EXTINF:-1 tvg-id="Deluxe-Lounge-(720p)" tvg-name="Deluxe-Lounge-(720p)" tvg-logo="" group-title="其他",Deluxe-Lounge-(720p)
+https://jmp2.uk/stvp-CHAJ0500413A
+#EXTINF:-1 tvg-id="Despertar-TV-(720p)" tvg-name="Despertar-TV-(720p)" tvg-logo="" group-title="其他",Despertar-TV-(720p)
+https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8
+#EXTINF:-1 tvg-id="Dhamma-TV-(720p)-[Not-24/7]" tvg-name="Dhamma-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Dhamma-TV-(720p)-[Not-24/7]
+https://b.webcache.maxindo.net.id/dhamma/dhamma.m3u8
 #EXTINF:-1 tvg-id="Diadora-TV" tvg-name="Diadora-TV" tvg-logo="" group-title="其他",Diadora-TV
 https://diadoratv.stream/live/diadora/playlist.m3u8
-#EXTINF:-1 tvg-id="Disney-Channel-(576p)" tvg-name="Disney-Channel-(576p)" tvg-logo="" group-title="其他",Disney-Channel-(576p)
-http://116.90.120.152:8000/play/a0jg/index.m3u8
-#EXTINF:-1 tvg-id="Disney-Channel-(720p)" tvg-name="Disney-Channel-(720p)" tvg-logo="" group-title="其他",Disney-Channel-(720p)
-https://fl31.moveonjoy.com/DISNEY/index.m3u8
-#EXTINF:-1 tvg-id="Disney-Junior-(576p)" tvg-name="Disney-Junior-(576p)" tvg-logo="" group-title="其他",Disney-Junior-(576p)
-http://116.90.120.152:8000/play/a0gu/index.m3u8
-#EXTINF:-1 tvg-id="Diyanet-TV-(1080p)" tvg-name="Diyanet-TV-(1080p)" tvg-logo="" group-title="其他",Diyanet-TV-(1080p)
-https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Duck-Dynasty-(1080p)" tvg-name="Duck-Dynasty-(1080p)" tvg-logo="" group-title="其他",Duck-Dynasty-(1080p)
-https://aegis-cloudfront-1.tubi.video/ae3cd8ce-3c41-452b-92a0-78fdb3c5b855/playlist.m3u8
-#EXTINF:-1 tvg-id="Ebenezer-TV-(1080p)" tvg-name="Ebenezer-TV-(1080p)" tvg-logo="" group-title="其他",Ebenezer-TV-(1080p)
-https://5e85d90130e77.streamlock.net/6010/ngrp:6010_all/playlist.m3u8
-#EXTINF:-1 tvg-id="Ekushey-TV-(480p)" tvg-name="Ekushey-TV-(480p)" tvg-logo="" group-title="其他",Ekushey-TV-(480p)
-https://ekusheyserver.com/etvlivesn.m3u8
-#EXTINF:-1 tvg-id="Erz-TV-Stollberg-(576p)" tvg-name="Erz-TV-Stollberg-(576p)" tvg-logo="" group-title="其他",Erz-TV-Stollberg-(576p)
-https://5acade5fc0c29.streamlock.net/kabeljournal/live2020.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="FC-Public-Media-(Fort-Collins-CO)-(1080p)" tvg-name="FC-Public-Media-(Fort-Collins-CO)-(1080p)" tvg-logo="" group-title="其他",FC-Public-Media-(Fort-Collins-CO)-(1080p)
-https://reflect-fcpublicmedia.cablecast.tv/live-5/live/stream-1/live.m3u8
-#EXTINF:-1 tvg-id="Faro-de-Santidad-TV-(720p)" tvg-name="Faro-de-Santidad-TV-(720p)" tvg-logo="" group-title="其他",Faro-de-Santidad-TV-(720p)
-https://5dbcd1053301e.streamlock.net:4443/farodesantidad/farodesantidad/playlist.m3u8
-#EXTINF:-1 tvg-id="Faros-TV2-(480p)-[Geo-blocked]" tvg-name="Faros-TV2-(480p)-[Geo-blocked]" tvg-logo="" group-title="其他",Faros-TV2-(480p)-[Geo-blocked]
-https://s1.cystream.net/live/faros2/playlist.m3u8
-#EXTINF:-1 tvg-id="Forensic-Files" tvg-name="Forensic-Files" tvg-logo="" group-title="其他",Forensic-Files
-http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62e92392a3e6270007f562e8/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7a54a0-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=053b9371-9f0f-4936-9aa9-ae27ee69ae5f
-#EXTINF:-1 tvg-id="GH-Television-(1080p)-[Not-24/7]" tvg-name="GH-Television-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",GH-Television-(1080p)-[Not-24/7]
-https://fox.hostlagarto.com:8081/ghtelevision/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="GS-Shop-(1080p)" tvg-name="GS-Shop-(1080p)" tvg-logo="" group-title="其他",GS-Shop-(1080p)
-https://gstv-gsshop.gsshop.com/gsshop_hd/gsshop_hd.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="Galicia-TV-Europa-(720p)" tvg-name="Galicia-TV-Europa-(720p)" tvg-logo="" group-title="其他",Galicia-TV-Europa-(720p)
-https://crtvg-europa.flumotion.cloud/playlist.m3u8
-#EXTINF:-1 tvg-id="Gaunda-Punjab-TV" tvg-name="Gaunda-Punjab-TV" tvg-logo="" group-title="其他",Gaunda-Punjab-TV
-http://cdn6.live247stream.com/gaundapunjab/tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Ghost-(720p)" tvg-name="Ghost-(720p)" tvg-logo="" group-title="其他",Ghost-(720p)
-https://9485e5d3.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0dob3N0SU5UTF9ITFM/playlist.m3u8
-#EXTINF:-1 tvg-id="Gong-(1080p)" tvg-name="Gong-(1080p)" tvg-logo="" group-title="其他",Gong-(1080p)
-https://amg01596-gongnetworks-gong-ono-vh5f2.amagi.tv/1080p-vtt/index.m3u8
-#EXTINF:-1 tvg-id="History-Hunters-(1080p)" tvg-name="History-Hunters-(1080p)" tvg-logo="" group-title="其他",History-Hunters-(1080p)
-https://amg00841-amg00841c7-rakuten-uk-2820.playouts.now.amagi.tv/playlist/amg00841-aeemeafast-historyhuntersrakuten-rakutenuk/playlist.m3u8
-#EXTINF:-1 tvg-id="IIPC-TV-(480p)-[Geo-blocked]" tvg-name="IIPC-TV-(480p)-[Geo-blocked]" tvg-logo="" group-title="其他",IIPC-TV-(480p)-[Geo-blocked]
-https://uni10rtmp.tulix.tv/iipctv/iipctv.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="INews-(720p)" tvg-name="INews-(720p)" tvg-logo="" group-title="其他",INews-(720p)
-https://cdn-1.pishow.tv/live/411/master.m3u8
-#EXTINF:-1 tvg-id="Imás-TV-(1080p)-[Not-24/7]" tvg-name="Imás-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Imás-TV-(1080p)-[Not-24/7]
-https://secure3.todostreaming.es/live/imastv-livestream.m3u8
-#EXTINF:-1 tvg-id="InTrouble-(1080p)-[Geo-blocked]" tvg-name="InTrouble-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",InTrouble-(1080p)-[Geo-blocked]
-https://amg00861-amg00861c6-rlaxx-uk-3951.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="India-Today" tvg-name="India-Today" tvg-logo="" group-title="其他",India-Today
-https://indiatodaylive.akamaized.net/hls/live/2014320/indiatoday/indiatodaylive/playlist.m3u8
-#EXTINF:-1 tvg-id="India-Today-(720p)-[Not-24/7]" tvg-name="India-Today-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",India-Today-(720p)-[Not-24/7]
-https://indiatodaylive.akamaized.net/hls/live/2014320/indiatoday/indiatodaylive/playlist.m3u8
-#EXTINF:-1 tvg-id="Investigation" tvg-name="Investigation" tvg-logo="" group-title="其他",Investigation
-https://amg00346-vizioono-investigation-xumo-us.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="JTV-Jewelry-Love-[Geo-blocked]" tvg-name="JTV-Jewelry-Love-[Geo-blocked]" tvg-logo="" group-title="其他",JTV-Jewelry-Love-[Geo-blocked]
-https://jewelrytv-xumo.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="KTV-1-(1080p)" tvg-name="KTV-1-(1080p)" tvg-logo="" group-title="其他",KTV-1-(1080p)
-https://kwtktv1ta.cdn.mangomolo.com/ktv1/smil:ktv1.stream.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="Kanshi-TV-(720p)-[Not-24/7]" tvg-name="Kanshi-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Kanshi-TV-(720p)-[Not-24/7]
-https://live.kanshitv.co.uk/mobile/kanshitvkey.m3u8
-#EXTINF:-1 tvg-id="Kantipur-TV" tvg-name="Kantipur-TV" tvg-logo="" group-title="其他",Kantipur-TV
-https://ktvhdsg.ekantipur.com:8443/high_quality_85840165/hd/playlist.m3u8
-#EXTINF:-1 tvg-id="Kapamilya-Channel-(1080p)" tvg-name="Kapamilya-Channel-(1080p)" tvg-logo="" group-title="其他",Kapamilya-Channel-(1080p)
-https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-kapcha-dash-abscbnono/index.mpd
-#EXTINF:-1 tvg-id="Kino-Barrandov-(720p)" tvg-name="Kino-Barrandov-(720p)" tvg-logo="" group-title="其他",Kino-Barrandov-(720p)
-http://83.167.253.107/hdmi1_ext
-#EXTINF:-1 tvg-id="Kontra-Channel-(1080p)" tvg-name="Kontra-Channel-(1080p)" tvg-logo="" group-title="其他",Kontra-Channel-(1080p)
-https://kontralive.siliconweb.com/live/kontratv/playlist.m3u8
-#EXTINF:-1 tvg-id="L'Equipe-(1080p)" tvg-name="L'Equipe-(1080p)" tvg-logo="" group-title="其他",L'Equipe-(1080p)
-https://dshn8inoshngm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-gac2i63dmu8b7/LEquipe_FR.m3u8
-#EXTINF:-1 tvg-id="La-Perla-Radio-TV-(720p)-[Not-24/7]" tvg-name="La-Perla-Radio-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",La-Perla-Radio-TV-(720p)-[Not-24/7]
-https://eu1.servers10.com:8081/8068/index.m3u8
-#EXTINF:-1 tvg-id="La-TR3-Marsala-(720p)" tvg-name="La-TR3-Marsala-(720p)" tvg-logo="" group-title="其他",La-TR3-Marsala-(720p)
-https://tsw.streamingwebtv24.it:1936/eslife1/eslife1/playlist.m3u8
-#EXTINF:-1 tvg-id="La-Une-(1080p)" tvg-name="La-Une-(1080p)" tvg-logo="" group-title="其他",La-Une-(1080p)
-https://c9851ec-rbm-hilv-fsly.cdn.redbee.live/L22/6d35e26e/1bffdaaf.isml/.m3u8
-#EXTINF:-1 tvg-id="Le-Figaro-IDF-(1080p)" tvg-name="Le-Figaro-IDF-(1080p)" tvg-logo="" group-title="其他",Le-Figaro-IDF-(1080p)
-https://figarotv-live.freecaster.com/live/freecaster/figarotv.m3u8
-#EXTINF:-1 tvg-id="Lighting-Lives-Blessing-Nations-TV-Arabic-(LLBN)-(480p)" tvg-name="Lighting-Lives-Blessing-Nations-TV-Arabic-(LLBN)-(480p)" tvg-logo="" group-title="其他",Lighting-Lives-Blessing-Nations-TV-Arabic-(LLBN)-(480p)
-https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8
-#EXTINF:-1 tvg-id="Lindenstrasse-(720p)" tvg-name="Lindenstrasse-(720p)" tvg-logo="" group-title="其他",Lindenstrasse-(720p)
-https://ad2ef2da.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0FSRFBsdXNMaW5kZW5zdHJhZV9ITFM/playlist.m3u8
-#EXTINF:-1 tvg-id="Loveland-TV-(Loveland-CO)-(1080p)" tvg-name="Loveland-TV-(Loveland-CO)-(1080p)" tvg-logo="" group-title="其他",Loveland-TV-(Loveland-CO)-(1080p)
-https://reflect-cityofloveland-co.cablecast.tv/live-3/live/live.m3u8
-#EXTINF:-1 tvg-id="MCI-Televisión-(1080p)" tvg-name="MCI-Televisión-(1080p)" tvg-logo="" group-title="其他",MCI-Televisión-(1080p)
-https://video.ejeserver.com/live/mcitelevision.m3u8
-#EXTINF:-1 tvg-id="Made-in-Hollywood" tvg-name="Made-in-Hollywood" tvg-logo="" group-title="其他",Made-in-Hollywood
-https://connection3-ent-nz.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Mr.-Bean-Anime-Spain-(1080p)" tvg-name="Mr.-Bean-Anime-Spain-(1080p)" tvg-logo="" group-title="其他",Mr.-Bean-Anime-Spain-(1080p)
-https://amg00627-amg00627c30-rakuten-es-3990.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanescc-rakutenes/playlist.m3u8
-#EXTINF:-1 tvg-id="NBC-3-(480p)" tvg-name="NBC-3-(480p)" tvg-logo="" group-title="其他",NBC-3-(480p)
-https://hls2.nbcplus.na/hls/high_nbc3.m3u8
-#EXTINF:-1 tvg-id="NDR-Niedersachsen-(720p)" tvg-name="NDR-Niedersachsen-(720p)" tvg-logo="" group-title="其他",NDR-Niedersachsen-(720p)
-https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_nds/master.m3u8
-#EXTINF:-1 tvg-id="NTV-Telugu-(576p)" tvg-name="NTV-Telugu-(576p)" tvg-logo="" group-title="其他",NTV-Telugu-(576p)
-https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/ntv_nim_https/110322/ntv/playlist.m3u8
-#EXTINF:-1 tvg-id="NatureTime-Finland-(1080p)" tvg-name="NatureTime-Finland-(1080p)" tvg-logo="" group-title="其他",NatureTime-Finland-(1080p)
-https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Now-70s-(720p)" tvg-name="Now-70s-(720p)" tvg-logo="" group-title="其他",Now-70s-(720p)
-https://lightningnow70-samsungau.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Diez-TV-Úbeda-(1080p)" tvg-name="Diez-TV-Úbeda-(1080p)" tvg-logo="" group-title="其他",Diez-TV-Úbeda-(1080p)
+https://streaming.cloud.innovasur.es/mmj/index.m3u8
+#EXTINF:-1 tvg-id="Dungeons-&-Dragons-Adventures-(1080p)-[Geo-blocked]" tvg-name="Dungeons-&-Dragons-Adventures-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",Dungeons-&-Dragons-Adventures-(1080p)-[Geo-blocked]
+https://amg00461-eone-amg00461c3-firetv-us-5211.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Dunya-News-(UK-Feed)-(720p)-[Not-24/7]" tvg-name="Dunya-News-(UK-Feed)-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Dunya-News-(UK-Feed)-(720p)-[Not-24/7]
+https://ukintl.dunyanews.tv/liveuk/ngrp:dunyalive_all/playlist.m3u8
+#EXTINF:-1 tvg-id="ERT-World-(720p)" tvg-name="ERT-World-(720p)" tvg-logo="" group-title="其他",ERT-World-(720p)
+https://ert-live-bcbs15228.siliconweb.com/media/ert_world/ert_world.m3u8
+#EXTINF:-1 tvg-id="ET-Now-(720p)" tvg-name="ET-Now-(720p)" tvg-logo="" group-title="其他",ET-Now-(720p)
+https://pubads.g.doubleclick.net/ssai/event/pJrzNyDoT_K_GwYQsijTsQ/master.m3u8
+#EXTINF:-1 tvg-id="ETV-(1080p)" tvg-name="ETV-(1080p)" tvg-logo="" group-title="其他",ETV-(1080p)
+http://150.95.66.20:1935/live/livestream/playlist.m3u8
+#EXTINF:-1 tvg-id="ETV-Comedy-(1080p)" tvg-name="ETV-Comedy-(1080p)" tvg-logo="" group-title="其他",ETV-Comedy-(1080p)
+https://cc-wie8j8y69d2uy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wie8j8y69d2uy/WWBI/Amagi/ETV_Comedy_IN/playlist.m3u8
+#EXTINF:-1 tvg-id="Eden-TV-(540p)-[Not-24/7]" tvg-name="Eden-TV-(540p)-[Not-24/7]" tvg-logo="" group-title="其他",Eden-TV-(540p)-[Not-24/7]
+https://rtmp.edentv.bj/hls/stream.m3u8
+#EXTINF:-1 tvg-id="EmanTv-(1080p)" tvg-name="EmanTv-(1080p)" tvg-logo="" group-title="其他",EmanTv-(1080p)
+https://avr.host247.net/live/emantv/playlist.m3u8
+#EXTINF:-1 tvg-id="Erfan-Halgheh-TV-(720p)" tvg-name="Erfan-Halgheh-TV-(720p)" tvg-logo="" group-title="其他",Erfan-Halgheh-TV-(720p)
+https://hls.erfanhalgheh.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Escambia-County-TV-ECTV-(Escambia-County-FL)-(720p)" tvg-name="Escambia-County-TV-ECTV-(Escambia-County-FL)-(720p)" tvg-logo="" group-title="其他",Escambia-County-TV-ECTV-(Escambia-County-FL)-(720p)
+https://cpcdn.azureedge.net/ESCAMBIACOFLLIVE1/ESCAMBIACOFLLIVE1/playlist.m3u8
+#EXTINF:-1 tvg-id="Evrokom-(360p)" tvg-name="Evrokom-(360p)" tvg-logo="" group-title="其他",Evrokom-(360p)
+https://live.ecomservice.bg/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Exodus-TV-(720p)" tvg-name="Exodus-TV-(720p)" tvg-logo="" group-title="其他",Exodus-TV-(720p)
+https://584943999.r.worldssl.net/584943999/_definst_/vzivo/playlist.m3u8
+#EXTINF:-1 tvg-id="FIFA+-German-(720p)" tvg-name="FIFA+-German-(720p)" tvg-logo="" group-title="其他",FIFA+-German-(720p)
+https://4397879b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWRlX0ZJRkFQbHVzR2VybWFuX0hMUw/playlist.m3u8
+#EXTINF:-1 tvg-id="FIFA+-United-States-(720p)" tvg-name="FIFA+-United-States-(720p)" tvg-logo="" group-title="其他",FIFA+-United-States-(720p)
+https://d2w9q46ikgrcwx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-of5cbk3sav3w5/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8
+#EXTINF:-1 tvg-id="FOX-NewsNOW" tvg-name="FOX-NewsNOW" tvg-logo="" group-title="其他",FOX-NewsNOW
+http://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Fluss-Monster-(1080p)" tvg-name="Fluss-Monster-(1080p)" tvg-logo="" group-title="其他",Fluss-Monster-(1080p)
+https://rivermonstergermany-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Fluss-Monster" tvg-name="Fluss-Monster" tvg-logo="" group-title="其他",Fluss-Monster
+http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62a0b2aff4cf470007e47e29/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ad40f9-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=1bf2399a-9762-4f2b-8e0b-daf1db4fac6e
+#EXTINF:-1 tvg-id="Folk-Klub-(720p)" tvg-name="Folk-Klub-(720p)" tvg-logo="" group-title="其他",Folk-Klub-(720p)
+http://tv1.intv.mk:1935/live2/folkklub/index.m3u8
+#EXTINF:-1 tvg-id="Fontana-Community-Television-(720p)-[Geo-blocked]" tvg-name="Fontana-Community-Television-(720p)-[Geo-blocked]" tvg-logo="" group-title="其他",Fontana-Community-Television-(720p)-[Geo-blocked]
+https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8
+#EXTINF:-1 tvg-id="France-24" tvg-name="France-24" tvg-logo="" group-title="其他",France-24
+https://dash4.antik.sk/live/test_france24_france/playlist.m3u8
+#EXTINF:-1 tvg-id="Frikanalen-(720p)" tvg-name="Frikanalen-(720p)" tvg-logo="" group-title="其他",Frikanalen-(720p)
+https://frikanalen.no/stream/index.m3u8
+#EXTINF:-1 tvg-id="Galaxia-TV-(360p)" tvg-name="Galaxia-TV-(360p)" tvg-logo="" group-title="其他",Galaxia-TV-(360p)
+https://streaming.grupomediosdelnorte.com:19360/galaxiateve/galaxiateve.m3u8
+#EXTINF:-1 tvg-id="Gi-Television-(720p)-[Not-24/7]" tvg-name="Gi-Television-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Gi-Television-(720p)-[Not-24/7]
+https://canal.gitelevisionserver.com/live/DIEEFIh506fL8huspvl0f0c2PZF3/index.m3u8
+#EXTINF:-1 tvg-id="Global-Christian-Network-America-(GCN)-(720p)" tvg-name="Global-Christian-Network-America-(GCN)-(720p)" tvg-logo="" group-title="其他",Global-Christian-Network-America-(GCN)-(720p)
+http://liveen24-manminglobal3.ktcdn.co.kr/liveen24/gcnus_1300k.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="Ha-Tinh-TV-(720p)" tvg-name="Ha-Tinh-TV-(720p)" tvg-logo="" group-title="其他",Ha-Tinh-TV-(720p)
+https://wse.hatinhtv.net/live/httv1/playlist.m3u8
+#EXTINF:-1 tvg-id="Haunt-TV-(1080p)" tvg-name="Haunt-TV-(1080p)" tvg-logo="" group-title="其他",Haunt-TV-(1080p)
+https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8
+#EXTINF:-1 tvg-id="History-TV18-HD-(1080p)-[Geo-blocked]" tvg-name="History-TV18-HD-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",History-TV18-HD-(1080p)-[Geo-blocked]
+https://amg01448-amg01448c16-samsung-in-3495.playouts.now.amagi.tv/playlist/amg01448-samsungindia-historychannelenglish-samsungin/playlist.m3u8
+#EXTINF:-1 tvg-id="Horror-Machine-(720p)-[Geo-blocked]" tvg-name="Horror-Machine-(720p)-[Geo-blocked]" tvg-logo="" group-title="其他",Horror-Machine-(720p)-[Geo-blocked]
+https://naviofrequency-horrormachine-klowdtv.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="IERTBCS-Canal-8-La-Paz-(1080p)-[Not-24/7]" tvg-name="IERTBCS-Canal-8-La-Paz-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",IERTBCS-Canal-8-La-Paz-(1080p)-[Not-24/7]
+https://s5.mexside.net:1936/xhbzc81/xhbzc81/playlist.m3u8
+#EXTINF:-1 tvg-id="INTV-Australia-(720p)" tvg-name="INTV-Australia-(720p)" tvg-logo="" group-title="其他",INTV-Australia-(720p)
+http://tv1.intv.mk:1935/live/intv/index.m3u8
+#EXTINF:-1 tvg-id="ITV-(480p)" tvg-name="ITV-(480p)" tvg-logo="" group-title="其他",ITV-(480p)
+https://cdn10.live-tv.cloud/itvrv/abr-lq/playlist.m3u8
+#EXTINF:-1 tvg-id="InWild-(720p)" tvg-name="InWild-(720p)" tvg-logo="" group-title="其他",InWild-(720p)
+https://amg00861-terninternation-inwild-samsungau-3qrga.amagi.tv/playlist/amg00861-terninternation-inwild-samsungau/playlist.m3u8
+#EXTINF:-1 tvg-id="Inazuma-Eleven-Go-Italy-(720p)" tvg-name="Inazuma-Eleven-Go-Italy-(720p)" tvg-logo="" group-title="其他",Inazuma-Eleven-Go-Italy-(720p)
+https://minerva-pictures-inazumaelevengo-1-it.rakuten.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Intuitiva-TV-(720p)" tvg-name="Intuitiva-TV-(720p)" tvg-logo="" group-title="其他",Intuitiva-TV-(720p)
+https://video2.lhdserver.es/cableperu/live.m3u8
+#EXTINF:-1 tvg-id="Ionian-Channel-(1080p)-[Not-24/7]" tvg-name="Ionian-Channel-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Ionian-Channel-(1080p)-[Not-24/7]
+http://stream.ioniantv.gr:8081/ionian/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Islam-Channel-Urdu" tvg-name="Islam-Channel-Urdu" tvg-logo="" group-title="其他",Islam-Channel-Urdu
+https://live-islamtv-urdu.simplestreamcdn.com/live13/islamtv_urdu/bitrate1.isml/live.m3u8
+#EXTINF:-1 tvg-id="Izmail-TV-(384p)" tvg-name="Izmail-TV-(384p)" tvg-logo="" group-title="其他",Izmail-TV-(384p)
+https://cdn10.live-tv.cloud/izod/izod-abr-lq/playlist.m3u8
+#EXTINF:-1 tvg-id="Jail-(720p)" tvg-name="Jail-(720p)" tvg-logo="" group-title="其他",Jail-(720p)
+https://langleyproductions-jail-1-eu.rakuten.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="JČ1-(1080p)" tvg-name="JČ1-(1080p)" tvg-logo="" group-title="其他",JČ1-(1080p)
+https://stream.jc1.cz/hls/jc1.m3u8
+#EXTINF:-1 tvg-id="Kanal-V-(720p)-[Not-24/7]" tvg-name="Kanal-V-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Kanal-V-(720p)-[Not-24/7]
+https://live.artidijitalmedya.com/artidijital_kanalv/kanalv/playlist.m3u8
+#EXTINF:-1 tvg-id="Kay2-HD-(1080p)" tvg-name="Kay2-HD-(1080p)" tvg-logo="" group-title="其他",Kay2-HD-(1080p)
+http://163.61.227.29:8000/play/a038/index.m3u8
+#EXTINF:-1 tvg-id="Kulinar-TV" tvg-name="Kulinar-TV" tvg-logo="" group-title="其他",Kulinar-TV
+https://api.alpaca.t62a.com/hls/9110/index.m3u8
+#EXTINF:-1 tvg-id="LOZ-(Lokale-Omroep-Zeewolde)-(720p)" tvg-name="LOZ-(Lokale-Omroep-Zeewolde)-(720p)" tvg-logo="" group-title="其他",LOZ-(Lokale-Omroep-Zeewolde)-(720p)
+https://5e2b3e3114872.streamlock.net:1443/lozlive/smil:lozlive/playlist.m3u8
+#EXTINF:-1 tvg-id="La-Mega-Mundial" tvg-name="La-Mega-Mundial" tvg-logo="" group-title="其他",La-Mega-Mundial
+https://server40.servistreaming.com:3477/stream/play.m3u8
+#EXTINF:-1 tvg-id="Lalegul-TV-(1080p)" tvg-name="Lalegul-TV-(1080p)" tvg-logo="" group-title="其他",Lalegul-TV-(1080p)
+https://lbl.netmedya.net/hls/lalegultv.m3u8
+#EXTINF:-1 tvg-id="Lawndale-City-TV-(720p)" tvg-name="Lawndale-City-TV-(720p)" tvg-logo="" group-title="其他",Lawndale-City-TV-(720p)
+https://reflect-live-lawndale.cablecast.tv/live-4/live/live.m3u8
+#EXTINF:-1 tvg-id="Lone-Star-(1080p)" tvg-name="Lone-Star-(1080p)" tvg-logo="" group-title="其他",Lone-Star-(1080p)
+https://lonestar-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Los-Angeles-Local-Television-Channel-36-(1080p)" tvg-name="Los-Angeles-Local-Television-Channel-36-(1080p)" tvg-logo="" group-title="其他",Los-Angeles-Local-Television-Channel-36-(1080p)
+https://reflect-channel36-la.cablecast.tv/live-3/live/stream-1/live.m3u8
+#EXTINF:-1 tvg-id="Maxivisión-TV-(720p)" tvg-name="Maxivisión-TV-(720p)" tvg-logo="" group-title="其他",Maxivisión-TV-(720p)
+https://video03.logicahost.com.br/maxivisiontv/maxivisiontv/playlist.m3u8
+#EXTINF:-1 tvg-id="Mechplus-(720p)" tvg-name="Mechplus-(720p)" tvg-logo="" group-title="其他",Mechplus-(720p)
+https://mechtvltd-mechplus-1-se.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Medical-Incredible" tvg-name="Medical-Incredible" tvg-logo="" group-title="其他",Medical-Incredible
+http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6565436c9d5ac4000822f552/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c29b4c5-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=9c4baf85-c54e-4b52-be3a-46a8711afead
+#EXTINF:-1 tvg-id="Meltem-TV-(1080p)" tvg-name="Meltem-TV-(1080p)" tvg-logo="" group-title="其他",Meltem-TV-(1080p)
+https://vhxyrsly.rocketcdn.com/meltemtv/playlist.m3u8
+#EXTINF:-1 tvg-id="Mijas-3.40TV-(720p)" tvg-name="Mijas-3.40TV-(720p)" tvg-logo="" group-title="其他",Mijas-3.40TV-(720p)
+https://streaming004.gestec-video.com/hls/MIJAS.m3u8
+#EXTINF:-1 tvg-id="Million-Dollar-Listing-Vault" tvg-name="Million-Dollar-Listing-Vault" tvg-logo="" group-title="其他",Million-Dollar-Listing-Vault
+https://xumo-xumoent-ch838-coy7x.fast.nbcuni.com/live/master.m3u8
+#EXTINF:-1 tvg-id="Mithila-Nepal-TV-(1080p)" tvg-name="Mithila-Nepal-TV-(1080p)" tvg-logo="" group-title="其他",Mithila-Nepal-TV-(1080p)
+http://150.107.205.212:1935/live/mithila/playlist.m3u8?DVR=
+#EXTINF:-1 tvg-id="Mojitv" tvg-name="Mojitv" tvg-logo="" group-title="其他",Mojitv
+https://odmedia-mojitv-1-be.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Monterrico-TV-(1080p)-[Not-24/7]" tvg-name="Monterrico-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Monterrico-TV-(1080p)-[Not-24/7]
+https://www.opencaster.com/resources/hls_stream/hipodromojcp2.m3u8
+#EXTINF:-1 tvg-id="Motor-Vision" tvg-name="Motor-Vision" tvg-logo="" group-title="其他",Motor-Vision
+https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8
+#EXTINF:-1 tvg-id="Multicanal-Catamayo-(720p)-[Not-24/7]" tvg-name="Multicanal-Catamayo-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Multicanal-Catamayo-(720p)-[Not-24/7]
+https://multicanal.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
+#EXTINF:-1 tvg-id="Mňau-TV-(1080p)" tvg-name="Mňau-TV-(1080p)" tvg-logo="" group-title="其他",Mňau-TV-(1080p)
+https://5ca49f2417d90.streamlock.net/mnau/livestream/playlist.m3u8
+#EXTINF:-1 tvg-id="NBA-TV-(1080p)-[Geo-blocked]" tvg-name="NBA-TV-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",NBA-TV-(1080p)-[Geo-blocked]
+https://amg00556-amg00556c3-firetv-us-6060.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="NBT-HD" tvg-name="NBT-HD" tvg-logo="" group-title="其他",NBT-HD
+https://stream1.freetv.fun/1dd1c07c8f21226b74a0a842f777432646db6e54e08e4fe53c2b25a9b06de65e.m3u8
+#EXTINF:-1 tvg-id="NDTV-NEWS" tvg-name="NDTV-NEWS" tvg-logo="" group-title="其他",NDTV-NEWS
+https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/master.m3u8
+#EXTINF:-1 tvg-id="NEW-K-POP-(1080p)" tvg-name="NEW-K-POP-(1080p)" tvg-logo="" group-title="其他",NEW-K-POP-(1080p)
+https://newidco-newkid-1-eu.xiaomi.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="NOW-Rock" tvg-name="NOW-Rock" tvg-logo="" group-title="其他",NOW-Rock
+https://lightning-now90s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now90s-rakuten/CDN/playlist.m3u8
+#EXTINF:-1 tvg-id="NRG-91-(720p)-[Not-24/7]" tvg-name="NRG-91-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",NRG-91-(720p)-[Not-24/7]
+http://tv.nrg91.gr:1935/onweb/live/master.m3u8
+#EXTINF:-1 tvg-id="NTD-TV" tvg-name="NTD-TV" tvg-logo="" group-title="其他",NTD-TV
+https://live.ntdtv.com/live900/playlist.m3u8
+#EXTINF:-1 tvg-id="Navahang-TV-(720p)" tvg-name="Navahang-TV-(720p)" tvg-logo="" group-title="其他",Navahang-TV-(720p)
+https://hls.navahang.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Nova-Era-TV-(1080p)-[Not-24/7]" tvg-name="Nova-Era-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Nova-Era-TV-(1080p)-[Not-24/7]
+http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8
+#EXTINF:-1 tvg-id="Nova-TV-Brasov-(576p)-[Not-24/7]" tvg-name="Nova-TV-Brasov-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Nova-TV-Brasov-(576p)-[Not-24/7]
+http://novapress.ro:2022/live/nova/playlist.m3u8
+#EXTINF:-1 tvg-id="Omroep-Súdwest-(720p)" tvg-name="Omroep-Súdwest-(720p)" tvg-logo="" group-title="其他",Omroep-Súdwest-(720p)
+https://d2ecwd3cgy6wo0.cloudfront.net/nlpo/clr-nlpo/omroepsudwest/index.m3u8
 #EXTINF:-1 tvg-id="Omroep-Venray-(720p)" tvg-name="Omroep-Venray-(720p)" tvg-logo="" group-title="其他",Omroep-Venray-(720p)
 https://d3j015sg8r68y.cloudfront.net/nlpo/clr-nlpo/omroepvenray/index.m3u8
-#EXTINF:-1 tvg-id="Omroep-Zeeland-(1080p)" tvg-name="Omroep-Zeeland-(1080p)" tvg-logo="" group-title="其他",Omroep-Zeeland-(1080p)
-https://d3isaxd2t6q8zm.cloudfront.net/live/omroepzeeland/tv/index.m3u8
-#EXTINF:-1 tvg-id="Outdoor-America" tvg-name="Outdoor-America" tvg-logo="" group-title="其他",Outdoor-America
-https://linear-600.frequency.stream/dist/xumo/600/hls/master/playlist.m3u8
-#EXTINF:-1 tvg-id="Outside-TV" tvg-name="Outside-TV" tvg-logo="" group-title="其他",Outside-TV
-https://outsidetv-firetv.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="OxiTV-(720p)-[Not-24/7]" tvg-name="OxiTV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",OxiTV-(720p)-[Not-24/7]
-https://streamunoapp.com:3520/live/oxitvcanal36live.m3u8
-#EXTINF:-1 tvg-id="Parliament-TV-(1080p)" tvg-name="Parliament-TV-(1080p)" tvg-logo="" group-title="其他",Parliament-TV-(1080p)
-https://ptvlive.kordia.net.nz/out/v1/daf20b9a9ec5449dadd734e50ce52b74/index.m3u8
-#EXTINF:-1 tvg-id="Persiana-Junior" tvg-name="Persiana-Junior" tvg-logo="" group-title="其他",Persiana-Junior
-https://junhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Outdoor-Channel-(1080p)" tvg-name="Outdoor-Channel-(1080p)" tvg-logo="" group-title="其他",Outdoor-Channel-(1080p)
+https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8
+#EXTINF:-1 tvg-id="Ovation-(1080p)" tvg-name="Ovation-(1080p)" tvg-logo="" group-title="其他",Ovation-(1080p)
+https://fl1.moveonjoy.com/Ovation/index.m3u8
+#EXTINF:-1 tvg-id="PBS-Kids" tvg-name="PBS-Kids" tvg-logo="" group-title="其他",PBS-Kids
+https://livestream.pbskids.org/out/v1/14507d931bbe48a69287e4850e53443c/est.m3u8
+#EXTINF:-1 tvg-id="Parnian-TV-(720p)" tvg-name="Parnian-TV-(720p)" tvg-logo="" group-title="其他",Parnian-TV-(720p)
+https://live2.parnian.tv/hls/.m3u8
+#EXTINF:-1 tvg-id="Pars-TV" tvg-name="Pars-TV" tvg-logo="" group-title="其他",Pars-TV
+https://parshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Persiana-Nostalgia" tvg-name="Persiana-Nostalgia" tvg-logo="" group-title="其他",Persiana-Nostalgia
+https://noshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Persiana-Travel" tvg-name="Persiana-Travel" tvg-logo="" group-title="其他",Persiana-Travel
+https://ptravelhls.persiana.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="Pet-Club-TV-(1080p)" tvg-name="Pet-Club-TV-(1080p)" tvg-logo="" group-title="其他",Pet-Club-TV-(1080p)
 https://petclub-samsungaus.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Pluto-TV-Dog-el-cazarrecompensas-(480p)-[Not-24/7]" tvg-name="Pluto-TV-Dog-el-cazarrecompensas-(480p)-[Not-24/7]" tvg-logo="" group-title="其他",Pluto-TV-Dog-el-cazarrecompensas-(480p)-[Not-24/7]
-https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f9992c685a2a80007fa414a/master.m3u8?advertisingId=&appName=web&appVersion=5.14.0-0f5ca04c21649b8c8aad4e56266a23b96d73b83a&app_name=web&clientDeviceType=0&clientID=6fbead95-26b1-415d-998f-1bdef62d10be&clientModelNumber=na&deviceDNT=false&deviceId=6fbead95-26b1-415d-998f-1bdef62d10be&deviceLat=19.4358&deviceLon=-99.1441&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=88.0.4324.150&marketingRegion=VE&serverSideAds=false&sessionID=b8e5a857-714a-11eb-b532-0242ac110002&sid=b8e5a857-714a-11eb-b532-0242ac110002&userId=
-#EXTINF:-1 tvg-id="Primocanale-(1080p)-[Not-24/7]" tvg-name="Primocanale-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Primocanale-(1080p)-[Not-24/7]
-https://msh0203.stream.seeweb.it/live/flv:stream2.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="PromarTV-(1080p)-[Not-24/7]" tvg-name="PromarTV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",PromarTV-(1080p)-[Not-24/7]
-http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8
-#EXTINF:-1 tvg-id="QVC-Italia-(540p)" tvg-name="QVC-Italia-(540p)" tvg-logo="" group-title="其他",QVC-Italia-(540p)
-https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/master.m3u8
-#EXTINF:-1 tvg-id="RTB-Go-(720p)" tvg-name="RTB-Go-(720p)" tvg-logo="" group-title="其他",RTB-Go-(720p)
-https://d1211whpimeups.cloudfront.net/smil:rtbgo/playlist.m3u8
-#EXTINF:-1 tvg-id="RTV-Arnhem-(480p)-[Not-24/7]" tvg-name="RTV-Arnhem-(480p)-[Not-24/7]" tvg-logo="" group-title="其他",RTV-Arnhem-(480p)-[Not-24/7]
-https://ms2.mx-cd.net/tv/163-669433/RTV_Arnhem.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="RTV-Utrecht-(1080p)" tvg-name="RTV-Utrecht-(1080p)" tvg-logo="" group-title="其他",RTV-Utrecht-(1080p)
-https://d18rwjdhpr8dcw.cloudfront.net/live/rtvutrecht/rtvutrecht/index.m3u8
-#EXTINF:-1 tvg-id="RTV21" tvg-name="RTV21" tvg-logo="" group-title="其他",RTV21
-https://gjirafa-video-live.gjirafa.net/gjvideo-live/2cz-npl-jfn-9he/tracks-v2a1/mono.m3u8
-#EXTINF:-1 tvg-id="Raj-News-Telugu-(576p)-[Not-24/7]" tvg-name="Raj-News-Telugu-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Raj-News-Telugu-(576p)-[Not-24/7]
-http://103.140.254.2:3500/live/664.m3u8
-#EXTINF:-1 tvg-id="Rakuten-TV-Séries-Crime-(720p)" tvg-name="Rakuten-TV-Séries-Crime-(720p)" tvg-logo="" group-title="其他",Rakuten-TV-Séries-Crime-(720p)
-https://1ffd245e4d30495e9b006502a155479e.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6214/master.m3u8
-#EXTINF:-1 tvg-id="Real-Disaster-Channel-[Geo-blocked]" tvg-name="Real-Disaster-Channel-[Geo-blocked]" tvg-logo="" group-title="其他",Real-Disaster-Channel-[Geo-blocked]
-https://linear-475.frequency.stream/dist/glewedtv/475/hls/master/playlist.m3u8
-#EXTINF:-1 tvg-id="Red-Bull-TV" tvg-name="Red-Bull-TV" tvg-logo="" group-title="其他",Red-Bull-TV
-http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
-#EXTINF:-1 tvg-id="Rennsteig-TV-(720p)" tvg-name="Rennsteig-TV-(720p)" tvg-logo="" group-title="其他",Rennsteig-TV-(720p)
-http://wowza.telvi.de/rennsteigtv/stream_720p/playlist.m3u8
-#EXTINF:-1 tvg-id="Revry-News" tvg-name="Revry-News" tvg-logo="" group-title="其他",Revry-News
-https://dcb264a4.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X1JldnJ5TmV3c19ITFM/playlist.m3u8
-#EXTINF:-1 tvg-id="Rock-Antenne-[Not-24/7]" tvg-name="Rock-Antenne-[Not-24/7]" tvg-logo="" group-title="其他",Rock-Antenne-[Not-24/7]
-https://stream.rockantenne.de/rockantenne/stream/mp3
-#EXTINF:-1 tvg-id="SBS-KBC-(1080p)-[Not-24/7]" tvg-name="SBS-KBC-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",SBS-KBC-(1080p)-[Not-24/7]
-https://vod.ikbc.co.kr/KBCTV/tv/playlist.m3u8
-#EXTINF:-1 tvg-id="SL-2" tvg-name="SL-2" tvg-logo="" group-title="其他",SL-2
-https://sltwohls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="Sen-TV-(360p)" tvg-name="Sen-TV-(360p)" tvg-logo="" group-title="其他",Sen-TV-(360p)
-http://69.64.57.208/sentv/playlist.m3u8
-#EXTINF:-1 tvg-id="Shubh-TV-(1080p)" tvg-name="Shubh-TV-(1080p)" tvg-logo="" group-title="其他",Shubh-TV-(1080p)
-https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8
-#EXTINF:-1 tvg-id="Soap-Latino-(720p)" tvg-name="Soap-Latino-(720p)" tvg-logo="" group-title="其他",Soap-Latino-(720p)
-https://fast-channels-network-soaplatino-1-it.rakuten.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Son-Latino" tvg-name="Son-Latino" tvg-logo="" group-title="其他",Son-Latino
-https://stream1.freetv.fun/0a48ebcfe67e0bfa17036b52f3ce43a0bc9bc464c45b565ad99ef07bed5652cc.m3u8
-#EXTINF:-1 tvg-id="Sukan-RTM" tvg-name="Sukan-RTM" tvg-logo="" group-title="其他",Sukan-RTM
-https://stream1.freetv.fun/0994ac57b288c7ffc44869b417923540a141addacfd71e3f63ae9e0a73ec6b0b.m3u8
-#EXTINF:-1 tvg-id="Super-Channel-12-(1080p)" tvg-name="Super-Channel-12-(1080p)" tvg-logo="" group-title="其他",Super-Channel-12-(1080p)
-https://servilive.com:3263/live/channel12live.m3u8
-#EXTINF:-1 tvg-id="Syri-(720p)" tvg-name="Syri-(720p)" tvg-logo="" group-title="其他",Syri-(720p)
-https://stream.syritv.al/live/syritv/playlist.m3u8
-#EXTINF:-1 tvg-id="Syria-One-(1080p)" tvg-name="Syria-One-(1080p)" tvg-logo="" group-title="其他",Syria-One-(1080p)
-https://live.syriaone.tv/live/syriaone.m3u8
-#EXTINF:-1 tvg-id="Szlagier-TV-(1080p)" tvg-name="Szlagier-TV-(1080p)" tvg-logo="" group-title="其他",Szlagier-TV-(1080p)
-https://vefgpbwcjjjbxfng.naszatv.pl/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 tvg-id="TEC-TV-HD" tvg-name="TEC-TV-HD" tvg-logo="" group-title="其他",TEC-TV-HD
-https://stream1.freetv.fun/2ef2665ffdab5d8a0d9dbe380eb38f642d23c5957c7d731cfc7927a3b1772226.m3u8
+#EXTINF:-1 tvg-id="Planet-100.9-FM-(1080p)" tvg-name="Planet-100.9-FM-(1080p)" tvg-logo="" group-title="其他",Planet-100.9-FM-(1080p)
+https://streamlov.alsolnet.com/planet1009fm/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Popular-TV-Melilla-(1080p)-[Not-24/7]" tvg-name="Popular-TV-Melilla-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",Popular-TV-Melilla-(1080p)-[Not-24/7]
+http://5940924978228.streamlock.net:1935/8009/8009/playlist.m3u8
+#EXTINF:-1 tvg-id="Portal-Digital-TV-[Geo-blocked]" tvg-name="Portal-Digital-TV-[Geo-blocked]" tvg-logo="" group-title="其他",Portal-Digital-TV-[Geo-blocked]
+https://vdo1.streamgato.us:3999/live/portaldigitallive.m3u8
+#EXTINF:-1 tvg-id="Poudre-School-District-TV-(PSD-TV)-(Fort-Collins-CO)-(720p)" tvg-name="Poudre-School-District-TV-(PSD-TV)-(Fort-Collins-CO)-(720p)" tvg-logo="" group-title="其他",Poudre-School-District-TV-(PSD-TV)-(Fort-Collins-CO)-(720p)
+https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8
+#EXTINF:-1 tvg-id="Power-Hit-Radio-(576p)" tvg-name="Power-Hit-Radio-(576p)" tvg-logo="" group-title="其他",Power-Hit-Radio-(576p)
+https://cdnlb.tvplayhome.lt/live/eds/PWR_LTU_Live/GO3_LIVE_HLS/PWR_LTU_Live.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDczNDU2NjEsInBhdGgiOiIvbGl2ZS9lZHMvUFdSX0xUVV9MaXZlL0dPM19MSVZFX0hMUy8iLCJzaXAiOiI3Mi4xMS4xNTcuMTEyIiwiZGV2aWNlX2lkIjoiMCIsInNlc3Npb25faWQiOiIwIiwiY2xpZW50X2lkIjoiMCJ9.oHc5wUgwNPQ-4P7wJy_WvWQh0muFg9Lprhc4STS3cUHi0FI4tAKGdZOOeE-dOhVBHKFUYETmoXSMrrVHOeLC3g
+#EXTINF:-1 tvg-id="Primer-TV-(1080p)" tvg-name="Primer-TV-(1080p)" tvg-logo="" group-title="其他",Primer-TV-(1080p)
+http://200.194.238.229:8383/live/primer/playlist.m3u8
+#EXTINF:-1 tvg-id="Pulari-TV-(720p)" tvg-name="Pulari-TV-(720p)" tvg-logo="" group-title="其他",Pulari-TV-(720p)
+https://royalstarindia.co.in/pularitv_hls/pularitv.m3u8
+#EXTINF:-1 tvg-id="Qausain-TV-(720p)" tvg-name="Qausain-TV-(720p)" tvg-logo="" group-title="其他",Qausain-TV-(720p)
+https://acasmedia3.acangroup.org/qausaintv/qausaintv_output/playlist.m3u8
+#EXTINF:-1 tvg-id="Quarto-Canale-Flegreo-(720p)" tvg-name="Quarto-Canale-Flegreo-(720p)" tvg-logo="" group-title="其他",Quarto-Canale-Flegreo-(720p)
+https://live.mariatvcdn.com/dialogos/171e41deedf405f10c7dd6311387fb43.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="RT-DE-(1080p)-[Not-24/7]" tvg-name="RT-DE-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",RT-DE-(1080p)-[Not-24/7]
+https://rt-ger.rttv.com/dvr/rtdeutsch/playlist.m3u8
+#EXTINF:-1 tvg-id="RT-France-(1080p)-[Geo-blocked]" tvg-name="RT-France-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",RT-France-(1080p)-[Geo-blocked]
+https://rt-fra.rttv.com/dvr/rtfrance/playlist.m3u8
+#EXTINF:-1 tvg-id="RTN-(Neuquén)-(720p)-[Not-24/7]" tvg-name="RTN-(Neuquén)-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",RTN-(Neuquén)-(720p)-[Not-24/7]
+https://media.neuquen.gov.ar/rtn/television/media.m3u8
+#EXTINF:-1 tvg-id="RTV-Horizon-(720p)" tvg-name="RTV-Horizon-(720p)" tvg-logo="" group-title="其他",RTV-Horizon-(720p)
+https://tv.rtvhorizon.nl/hls/horizon/1_2/index.m3u8
+#EXTINF:-1 tvg-id="RTV-Zenica-(720p)" tvg-name="RTV-Zenica-(720p)" tvg-logo="" group-title="其他",RTV-Zenica-(720p)
+https://stream.rtvze.ba/live/123/123.m3u8
+#EXTINF:-1 tvg-id="Rai-3-(720p)-[Not-24/7]" tvg-name="Rai-3-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Rai-3-(720p)-[Not-24/7]
+https://wzstreaming.rai.it/TVlive/liveStream/chunklist_w823540263.m3u8
+#EXTINF:-1 tvg-id="Rashid-AlMajed-(1080p)" tvg-name="Rashid-AlMajed-(1080p)" tvg-logo="" group-title="其他",Rashid-AlMajed-(1080p)
+https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8
+#EXTINF:-1 tvg-id="Real-Madrid-tv-Football" tvg-name="Real-Madrid-tv-Football" tvg-logo="" group-title="其他",Real-Madrid-tv-Football
+https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/bitrate_3.m3u8
+#EXTINF:-1 tvg-id="RecordTV-Interior-SP" tvg-name="RecordTV-Interior-SP" tvg-logo="" group-title="其他",RecordTV-Interior-SP
+http://200.77.176.130:8000/udp/224.0.0.4:49152
+#EXTINF:-1 tvg-id="Red-Bull-TV-(1080p)" tvg-name="Red-Bull-TV-(1080p)" tvg-logo="" group-title="其他",Red-Bull-TV-(1080p)
+https://e7c8f7d5.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX1JlZEJ1bGxUVi0xX0hMUw/playlist.m3u8
+#EXTINF:-1 tvg-id="Rengoni-(576p)" tvg-name="Rengoni-(576p)" tvg-logo="" group-title="其他",Rengoni-(576p)
+http://103.78.149.54:8000/play/a03v/index.m3u8
+#EXTINF:-1 tvg-id="Rotana-Tarab-Jordan-City-View-(720p)-[Not-24/7]" tvg-name="Rotana-Tarab-Jordan-City-View-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Rotana-Tarab-Jordan-City-View-(720p)-[Not-24/7]
+http://45.63.116.205/hls3/stream1.m3u8
+#EXTINF:-1 tvg-id="Royal-Time-Television-(1080p)" tvg-name="Royal-Time-Television-(1080p)" tvg-logo="" group-title="其他",Royal-Time-Television-(1080p)
+https://tixbolt.com/royaltv/index.fmp4.m3u8
+#EXTINF:-1 tvg-id="Runtime-Espanol-(720p)" tvg-name="Runtime-Espanol-(720p)" tvg-logo="" group-title="其他",Runtime-Espanol-(720p)
+https://run-rt-uh-roku.otteravision.com/run/rt_uh/rt_uh.m3u8
+#EXTINF:-1 tvg-id="Rákosmente-TV-(720p)" tvg-name="Rákosmente-TV-(720p)" tvg-logo="" group-title="其他",Rákosmente-TV-(720p)
+http://rakosmentetv.hu:8080/hls/rmtv.m3u8
+#EXTINF:-1 tvg-id="SBS-JIBS-(720p)-[Not-24/7]" tvg-name="SBS-JIBS-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",SBS-JIBS-(720p)-[Not-24/7]
+http://123.140.197.22/stream/1/play.m3u8
+#EXTINF:-1 tvg-id="SEATV-(1080p)" tvg-name="SEATV-(1080p)" tvg-logo="" group-title="其他",SEATV-(1080p)
+https://seatv.netlinkbroadcaster.com/hls/test.m3u8
+#EXTINF:-1 tvg-id="SET-Televisión-Canal-26.1-(720p)-[Not-24/7]" tvg-name="SET-Televisión-Canal-26.1-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",SET-Televisión-Canal-26.1-(720p)-[Not-24/7]
+https://5d0d1d7a6be9e.streamlock.net/sicom/canal1/playlist.m3u8
+#EXTINF:-1 tvg-id="SIPSE-TVCUN-8.1-(1080p)-[Not-24/7]" tvg-name="SIPSE-TVCUN-8.1-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",SIPSE-TVCUN-8.1-(1080p)-[Not-24/7]
+https://webprod.sipse.com.mx:8080/show/tvcun.m3u8
+#EXTINF:-1 tvg-id="SPORTS-Channel" tvg-name="SPORTS-Channel" tvg-logo="" group-title="其他",SPORTS-Channel
+https://stream.snexus.co/live/SN_WILDLIFE/main_stream.m3u8
+#EXTINF:-1 tvg-id="SWR-3-Visual-Radio-(720p)" tvg-name="SWR-3-Visual-Radio-(720p)" tvg-logo="" group-title="其他",SWR-3-Visual-Radio-(720p)
+https://swrswr3vr-hls.akamaized.net/hls/live/2018683/swr3vr/master.m3u8
+#EXTINF:-1 tvg-id="Salto-ADE-(720p)" tvg-name="Salto-ADE-(720p)" tvg-logo="" group-title="其他",Salto-ADE-(720p)
+https://live.salto.nl/hls/at5.m3u8
+#EXTINF:-1 tvg-id="Scares-by-Shudder" tvg-name="Scares-by-Shudder" tvg-logo="" group-title="其他",Scares-by-Shudder
+https://amc-scaresbyshudder-1-us.xumo.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Schladming-Dachstein-TV-(720p)" tvg-name="Schladming-Dachstein-TV-(720p)" tvg-logo="" group-title="其他",Schladming-Dachstein-TV-(720p)
+https://m317.video-stream-hosting.de/gzSoftware-live/_definst_/smil:livestream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Senal-Digital-TV-[Not-24/7]" tvg-name="Senal-Digital-TV-[Not-24/7]" tvg-logo="" group-title="其他",Senal-Digital-TV-[Not-24/7]
+https://soportedvb.click:3494/live/senaldigitaltvlive.m3u8
+#EXTINF:-1 tvg-id="Sochi-24-HD-🇷🇺" tvg-name="Sochi-24-HD-🇷🇺" tvg-logo="" group-title="其他",Sochi-24-HD-🇷🇺
+http://serv30.vintera.tv:8081/sochi/sochi24_tv/playlist.m3u8
+#EXTINF:-1 tvg-id="SoloBáilalo-(480p)" tvg-name="SoloBáilalo-(480p)" tvg-logo="" group-title="其他",SoloBáilalo-(480p)
+https://5ff3d9babae13.streamlock.net/8000/8000/playlist.m3u8
+#EXTINF:-1 tvg-id="Sony-One-Favoris-(1080p)" tvg-name="Sony-One-Favoris-(1080p)" tvg-logo="" group-title="其他",Sony-One-Favoris-(1080p)
+https://49d735318d6b4c30a24a7997ea594e1b.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-820-FR-SONYONEFAVORIS-LG_FR/playlist.m3u8
+#EXTINF:-1 tvg-id="Streek-TV-(720p)-[Not-24/7]" tvg-name="Streek-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Streek-TV-(720p)-[Not-24/7]
+http://cdn22.streampartner.nl/streektv/streektv/playlist.m3u8
+#EXTINF:-1 tvg-id="Studio-47-(576p)" tvg-name="Studio-47-(576p)" tvg-logo="" group-title="其他",Studio-47-(576p)
+https://h057.video-stream-hosting.de/studio47-live/_definst_/mp4:livestream/playlist.m3u8
+#EXTINF:-1 tvg-id="Sudarshan-News-(1080p)" tvg-name="Sudarshan-News-(1080p)" tvg-logo="" group-title="其他",Sudarshan-News-(1080p)
+https://ott.livelegitpro.in/sudarshannews/sudarshannews/tracks-v1/index.fmp4.m3u8
 #EXTINF:-1 tvg-id="TRT-EBA-Ortaokul-(720p)" tvg-name="TRT-EBA-Ortaokul-(720p)" tvg-logo="" group-title="其他",TRT-EBA-Ortaokul-(720p)
 https://tv-e-okul01.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="TV-Metropole-(720p)-[Not-24/7]" tvg-name="TV-Metropole-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",TV-Metropole-(720p)-[Not-24/7]
-https://cdn-fundacao-2110.ciclano.io:1443/fundacao-2110/fundacao-2110/playlist.m3u8
-#EXTINF:-1 tvg-id="TVA-(1080p)-[Not-24/7]" tvg-name="TVA-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",TVA-(1080p)-[Not-24/7]
-https://tvaktuellr.iptv-playoutcenter.de/tvaktuellr/tvaktuellr.stream_1/playlist.m3u8
-#EXTINF:-1 tvg-id="TVP1-(1080p)" tvg-name="TVP1-(1080p)" tvg-logo="" group-title="其他",TVP1-(1080p)
-https://ec06-krk3.cache.orange.pl/dai4/org1/vb/104/tvp1hd/index.m3u8
-#EXTINF:-1 tvg-id="Tarotéame-(576p)" tvg-name="Tarotéame-(576p)" tvg-logo="" group-title="其他",Tarotéame-(576p)
-https://5d2733224ac48.streamlock.net/taroteame/tarot_web/playlist.m3u8
+#EXTINF:-1 tvg-id="TRT-Haber-(720p)" tvg-name="TRT-Haber-(720p)" tvg-logo="" group-title="其他",TRT-Haber-(720p)
+https://tv-trthaber.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="TV-Dielli-(720p)-[Not-24/7]" tvg-name="TV-Dielli-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",TV-Dielli-(720p)-[Not-24/7]
+http://stream.tvdielli.com:8081/dielli/index.m3u8
+#EXTINF:-1 tvg-id="TV-Mar-Los-Cabos-(1080p)" tvg-name="TV-Mar-Los-Cabos-(1080p)" tvg-logo="" group-title="其他",TV-Mar-Los-Cabos-(1080p)
+https://5fc584f3f19c9.streamlock.net/tvmarloscabos/smil:tvmarloscabos.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="TV-Niksic-(720p)" tvg-name="TV-Niksic-(720p)" tvg-logo="" group-title="其他",TV-Niksic-(720p)
+https://tv.rtv-niksic.me/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TV-Plan-(720p)" tvg-name="TV-Plan-(720p)" tvg-logo="" group-title="其他",TV-Plan-(720p)
+https://live.cdn.upx.com/723b/myStream.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="TV5-(1080p)" tvg-name="TV5-(1080p)" tvg-logo="" group-title="其他",TV5-(1080p)
+https://10st.vcast.im/MYASIATV/TV5/playlist.m3u8
+#EXTINF:-1 tvg-id="TVRI-Sulawesi-Barat-(720p)" tvg-name="TVRI-Sulawesi-Barat-(720p)" tvg-logo="" group-title="其他",TVRI-Sulawesi-Barat-(720p)
+https://ott-balancer.tvri.go.id/live/eds/Sulbar/hls/Sulbar.m3u8
+#EXTINF:-1 tvg-id="TVS-(720p)" tvg-name="TVS-(720p)" tvg-logo="" group-title="其他",TVS-(720p)
+https://vcp10.myplaytv.com/tvs/tvs/playlist.m3u8
+#EXTINF:-1 tvg-id="Tabbar-Hits-(1080p)" tvg-name="Tabbar-Hits-(1080p)" tvg-logo="" group-title="其他",Tabbar-Hits-(1080p)
+https://live1.ottlive.co.in/tabbarhitsswift/index.m3u8
 #EXTINF:-1 tvg-id="Tele-One-16" tvg-name="Tele-One-16" tvg-logo="" group-title="其他",Tele-One-16
 https://648026e87a75e.streamlock.net/teleone/teleone/playlist.m3u8
-#EXTINF:-1 tvg-id="Tele7ABC-HD-(720p)" tvg-name="Tele7ABC-HD-(720p)" tvg-logo="" group-title="其他",Tele7ABC-HD-(720p)
-https://live.tele7abc.ro/hls/stream/index.m3u8
-#EXTINF:-1 tvg-id="Teledeporte-(1080p)" tvg-name="Teledeporte-(1080p)" tvg-logo="" group-title="其他",Teledeporte-(1080p)
-https://d1cctoeg0n48w5.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mnixw9wn5ugmv/TeledeporteES.m3u8
-#EXTINF:-1 tvg-id="Telemundo-Al-Dia" tvg-name="Telemundo-Al-Dia" tvg-logo="" group-title="其他",Telemundo-Al-Dia
-https://d1rqgw5gocwo9i.cloudfront.net/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-nbcu-stitched/10a44c37-f976-4d2b-ab23-8637a7a094ca/3.m3u8
-#EXTINF:-1 tvg-id="Telepace-3-(1080p)" tvg-name="Telepace-3-(1080p)" tvg-logo="" group-title="其他",Telepace-3-(1080p)
-https://932y4273djv8-hls-live.mariatvcdn.it/teleradiopace3/d2274c22e9ee09eb2eda01ed0496f8f5.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="Teletrak-(720p)" tvg-name="Teletrak-(720p)" tvg-logo="" group-title="其他",Teletrak-(720p)
-https://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="TeleBilbao" tvg-name="TeleBilbao" tvg-logo="" group-title="其他",TeleBilbao
+https://stream1.freetv.fun/58bb63e85f803d208242390aaf6a0821c6d0c30bebcea253fc6fdef8e1a604a4.m3u8
+#EXTINF:-1 tvg-id="TeleTusciaSabina-2000-(576p)-[Not-24/7]" tvg-name="TeleTusciaSabina-2000-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",TeleTusciaSabina-2000-(576p)-[Not-24/7]
+http://ts2000tv.streaming.nextware.it:8081/ts2000tv/ts2000tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Teleislas-(486p)-[Not-24/7]" tvg-name="Teleislas-(486p)-[Not-24/7]" tvg-logo="" group-title="其他",Teleislas-(486p)-[Not-24/7]
+https://5ab772334c39c.streamlock.net/live-teleislas/teleislas/playlist.m3u8
+#EXTINF:-1 tvg-id="Televisa-Telenovela-Channel" tvg-name="Televisa-Telenovela-Channel" tvg-logo="" group-title="其他",Televisa-Telenovela-Channel
+https://televisa-telenovelas-3-eu.rakuten.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="Tennis-Channel-Germany-(720p)" tvg-name="Tennis-Channel-Germany-(720p)" tvg-logo="" group-title="其他",Tennis-Channel-Germany-(720p)
 https://tennischanneldeu-rakuten.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="The-Ohio-Channel-(WVIZ-DT-2)" tvg-name="The-Ohio-Channel-(WVIZ-DT-2)" tvg-logo="" group-title="其他" catchup="append" catchup-source="?starttime=${(b)yyyyMMddHHmmss}&endtime=${(e)yyyyMMddHHmmss}",The-Ohio-Channel-(WVIZ-DT-2)
-https://0888934ec1a5.us-east-1.playback.live-video.net/api/video/v1/us-east-1.289485033693.channel.Aeaac0ZpvcAZ.m3u8
-#EXTINF:-1 tvg-id="The-Pet-Collective-Sweden" tvg-name="The-Pet-Collective-Sweden" tvg-logo="" group-title="其他",The-Pet-Collective-Sweden
-https://the-pet-collective-international-se.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="ToonGoggles-(720p)" tvg-name="ToonGoggles-(720p)" tvg-logo="" group-title="其他",ToonGoggles-(720p)
-https://amg01329-otterainc-toongoggles-samsungau-ad-4c.amagi.tv/playlist/amg01329-otterainc-toongoggles-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="Top-News-(720p)" tvg-name="Top-News-(720p)" tvg-logo="" group-title="其他",Top-News-(720p)
-https://live.topnews.co.th/hls/topnews_a_720.m3u8
-#EXTINF:-1 tvg-id="U-Los-Lagos-TV-(1080p)-[Not-24/7]" tvg-name="U-Los-Lagos-TV-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",U-Los-Lagos-TV-(1080p)-[Not-24/7]
-http://tv.ulagos.cl/web/live.m3u8
-#EXTINF:-1 tvg-id="VAM-Vid's-&-More-(720p)" tvg-name="VAM-Vid's-&-More-(720p)" tvg-logo="" group-title="其他",VAM-Vid's-&-More-(720p)
-https://sincerecloud.stream/loadbalancer/public/J9EmQQGf.m3u8
-#EXTINF:-1 tvg-id="VegaTeve-(1080p)-[Not-24/7]" tvg-name="VegaTeve-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",VegaTeve-(1080p)-[Not-24/7]
-https://cloud6.livescast.com:3797/live/vegatevelive.m3u8
-#EXTINF:-1 tvg-id="Whittier-CityTV-(Whittier-CA)-(720p)" tvg-name="Whittier-CityTV-(Whittier-CA)-(720p)" tvg-logo="" group-title="其他",Whittier-CityTV-(Whittier-CA)-(720p)
-https://whittier.cablecast.tv/live/stream-1/live.m3u8
-#EXTINF:-1 tvg-id="Zindagi-TV-(576p)-[Not-24/7]" tvg-name="Zindagi-TV-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Zindagi-TV-(576p)-[Not-24/7]
-https://5ad386ff92705.streamlock.net/live_transcoder/ngrp:zindagitv.stream_all/chunklist.m3u8
-#EXTINF:-1 tvg-id="douyu20" tvg-name="douyu20" tvg-logo="" group-title="其他",douyu20
-http://epg.112114.xyz/douyu/52787
-#EXTINF:-1 tvg-id="douyu24" tvg-name="douyu24" tvg-logo="" group-title="其他",douyu24
-http://epg.112114.xyz/douyu/36337
-#EXTINF:-1 tvg-id="Дождь-(1080p)-[Geo-blocked]" tvg-name="Дождь-(1080p)-[Geo-blocked]" tvg-logo="" group-title="其他",Дождь-(1080p)-[Geo-blocked]
-https://wl.tvrain.tv/transcode/ngrp:ses_all/playlist.m3u8
-#EXTINF:-1 tvg-id="КРИК-ТВ-(Екатеринбург)" tvg-name="КРИК-ТВ-(Екатеринбург)" tvg-logo="" group-title="其他",КРИК-ТВ-(Екатеринбург)
-http://cdn-01.bonus-tv.ru/kriktv_edge/playlist.m3u8
-#EXTINF:-1 tvg-id="Ника-ТВ-(576p)-[Not-24/7]" tvg-name="Ника-ТВ-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Ника-ТВ-(576p)-[Not-24/7]
-https://live-nikatv.cdnvideo.ru/nikatv/nikatv.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="宿州科教" tvg-name="宿州科教" tvg-logo="" group-title="其他",宿州科教
-http://live.ahsz.tv/video/s10001-kxjy/index.m3u8
-#EXTINF:-1 tvg-id="宿州科教-(1080p)-[Not-24/7]" tvg-name="宿州科教-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",宿州科教-(1080p)-[Not-24/7]
-http://live.ahsz.tv/video/s10001-kxjy/index.m3u8
-#EXTINF:-1 tvg-id="宿州科教频道" tvg-name="宿州科教频道" tvg-logo="" group-title="其他",宿州科教频道
-http://live.ahsz.tv/video/s10001-kxjy/index.m3u8
-#EXTINF:-1 tvg-id="時尚台FTV" tvg-name="時尚台FTV" tvg-logo="" group-title="其他",時尚台FTV
-http://80.94.54.42/fashiontv/stream/playlist.m3u8
-#EXTINF:-1 tvg-id="智林體育" tvg-name="智林體育" tvg-logo="" group-title="其他",智林體育
-https://t.freetv.fun/live/zhi-lin-ti-yu-9.m3u8$[HD]智林體育
-#EXTINF:-1 tvg-id="福建经济" tvg-name="福建经济" tvg-logo="" group-title="其他",福建经济
-https://stream1.freetv.fun/fu-jian-jing-ji-1.m3u8
-#EXTINF:-1 tvg-id="靖天映画" tvg-name="靖天映画" tvg-logo="" group-title="其他",靖天映画
-http://nmk.ioapk.com:5050/li-4gtv-4gtv055/index.m3u8?proxy=true
+#EXTINF:-1 tvg-id="The-Pet-Collective-International-(720p)" tvg-name="The-Pet-Collective-International-(720p)" tvg-logo="" group-title="其他",The-Pet-Collective-International-(720p)
+https://the-pet-collective-international-mx.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Top-Serien-(1080p)" tvg-name="Top-Serien-(1080p)" tvg-logo="" group-title="其他",Top-Serien-(1080p)
+https://amg00609-palatinmediafil-cractiontv-rakuten-dhjcp.amagi.tv/hls/amagi_hls_data_rakutenAA-cractiontv-rakuten/CDN/master.m3u8
+#EXTINF:-1 tvg-id="Travel-XP-English-NZ" tvg-name="Travel-XP-English-NZ" tvg-logo="" group-title="其他",Travel-XP-English-NZ
+https://travelxp-travelxp-1-nz.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Travelxp-Spain-(720p)" tvg-name="Travelxp-Spain-(720p)" tvg-logo="" group-title="其他",Travelxp-Spain-(720p)
+https://travelxp-travelxp-5-eu.rakuten.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="True-Crime-Now-(1080p)" tvg-name="True-Crime-Now-(1080p)" tvg-logo="" group-title="其他",True-Crime-Now-(1080p)
+https://amg00376-magellan-amg00376c12-samsung-au-1725.playouts.now.amagi.tv/playlist/amg00376-magellantv-truecrimenowaunzin-samsungau/playlist.m3u8
+#EXTINF:-1 tvg-id="True-Lives-(1080p)" tvg-name="True-Lives-(1080p)" tvg-logo="" group-title="其他",True-Lives-(1080p)
+https://amg00654-itv-amg00654c7-rakuten-uk-1282.playouts.now.amagi.tv/playlist/amg00654-itvstudiosfast-truelives-rakutenuk/playlist.m3u8
+#EXTINF:-1 tvg-id="Universal-Westerns" tvg-name="Universal-Westerns" tvg-logo="" group-title="其他",Universal-Westerns
+https://xumo-xumoent-ch834-iwtka.fast.nbcuni.com/live/master.m3u8
+#EXTINF:-1 tvg-id="Vallenato-Internacional-(720p)-[Not-24/7]" tvg-name="Vallenato-Internacional-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Vallenato-Internacional-(720p)-[Not-24/7]
+https://59a564764e2b6.streamlock.net/vallenato/vallenatom/playlist.m3u8
+#EXTINF:-1 tvg-id="Vice-News-(1080p)" tvg-name="Vice-News-(1080p)" tvg-logo="" group-title="其他",Vice-News-(1080p)
+https://vicetv-vicefast2-firetv.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Village-of-Hastings-On-Hudson-NY-(WHOH-TV)-(360p)" tvg-name="Village-of-Hastings-On-Hudson-NY-(WHOH-TV)-(360p)" tvg-logo="" group-title="其他",Village-of-Hastings-On-Hudson-NY-(WHOH-TV)-(360p)
+https://stream.swagit.com/live-edge/hastingsonhudsonny/smil:std-4x3-1-a/playlist.m3u8
+#EXTINF:-1 tvg-id="Visual-Radio-(576p)-[Not-24/7]" tvg-name="Visual-Radio-(576p)-[Not-24/7]" tvg-logo="" group-title="其他",Visual-Radio-(576p)-[Not-24/7]
+http://wms.shared.streamshow.it:1935/visualradio/visualradio/live.m3u8
+#EXTINF:-1 tvg-id="Vizion-Plus-(1080p)" tvg-name="Vizion-Plus-(1080p)" tvg-logo="" group-title="其他",Vizion-Plus-(1080p)
+https://tringliveviz.akamaized.net/delta/105/out/u/qwaszxerdfcvrtryuy.m3u8
+#EXTINF:-1 tvg-id="Vísir-(1080p)" tvg-name="Vísir-(1080p)" tvg-logo="" group-title="其他",Vísir-(1080p)
+https://live.visir.is/hls-live/visir.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="WBRZ-Weather-Channel-Baton-Rouge-LA-(480p)" tvg-name="WBRZ-Weather-Channel-Baton-Rouge-LA-(480p)" tvg-logo="" group-title="其他",WBRZ-Weather-Channel-Baton-Rouge-LA-(480p)
+https://d2a6g6zgxepbwi.cloudfront.net/wbrz-edge/weather.stream_360p/playlist.m3u8
+#EXTINF:-1 tvg-id="WGN-Chicago-IL-(WGN-TV1)-(720p)" tvg-name="WGN-Chicago-IL-(WGN-TV1)-(720p)" tvg-logo="" group-title="其他",WGN-Chicago-IL-(WGN-TV1)-(720p)
+https://cdn1-8p.teleuptv.net/3773db6d-881b-4096-b9cc-b4fe99ab68ac/index.m3u8
+#EXTINF:-1 tvg-id="WTNH-DT1-(720p)" tvg-name="WTNH-DT1-(720p)" tvg-logo="" group-title="其他",WTNH-DT1-(720p)
+https://tkx.mp.lura.live/rest/v2/mcp/video/11135425.m3u8?anvack=pDKqMLyG9pVqMkSYRJHWu3XROjAlvR6z&eud=1iqQ+zazzEobWIhmmj6bA8STRJm4HceYQApO7QYBvy9BTps0KI7LuXGD4KK7RLtBTyO8KsbFw40vgX8hrw+xqw==
+#EXTINF:-1 tvg-id="Waffi-TV-(240p)" tvg-name="Waffi-TV-(240p)" tvg-logo="" group-title="其他",Waffi-TV-(240p)
+https://oqgdro3xd4rm-hls-live.5centscdn.com/waffiitvstreaminglivetfmediacast/e0885d428bea69e372309657f3bd895f.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="Wap-TV-(720p)-[Not-24/7]" tvg-name="Wap-TV-(720p)-[Not-24/7]" tvg-logo="" group-title="其他",Wap-TV-(720p)-[Not-24/7]
+https://newproxy3.vidivu.tv/waptv/index.m3u8
+#EXTINF:-1 tvg-id="Wayanad-Vision-(1080p)" tvg-name="Wayanad-Vision-(1080p)" tvg-logo="" group-title="其他",Wayanad-Vision-(1080p)
+https://cloudsavre.in.net/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Welt-der-Wunder-TV-(576p)" tvg-name="Welt-der-Wunder-TV-(576p)" tvg-logo="" group-title="其他",Welt-der-Wunder-TV-(576p)
+https://wdw.iptv-playoutcenter.de/wdw/wdw1/playlist.m3u8
+#EXTINF:-1 tvg-id="Wicked-Tuna-(1080p)" tvg-name="Wicked-Tuna-(1080p)" tvg-logo="" group-title="其他",Wicked-Tuna-(1080p)
+https://amg00353-amg00353c25-rakuten-us-4896.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Wild-West-TV" tvg-name="Wild-West-TV" tvg-logo="" group-title="其他",Wild-West-TV
+https://linear-799.frequency.stream/dist/xumo/799/hls/master/playlist.m3u8
+#EXTINF:-1 tvg-id="Yu-Gi-Oh!-Italy" tvg-name="Yu-Gi-Oh!-Italy" tvg-logo="" group-title="其他",Yu-Gi-Oh!-Italy
+https://amg01796-amg01796c17-rakuten-it-7492.playouts.now.amagi.tv/playlist/amg01796-fastmediafast-yugioh3it-rakutenit/playlist.m3u8
+#EXTINF:-1 tvg-id="Zabb-Channel-(720p)" tvg-name="Zabb-Channel-(720p)" tvg-logo="" group-title="其他",Zabb-Channel-(720p)
+https://vdo.plathong.net/flash7057/flash7057/playlist.m3u8
+#EXTINF:-1 tvg-id="Zee-Kannada-News-(720p)" tvg-name="Zee-Kannada-News-(720p)" tvg-logo="" group-title="其他",Zee-Kannada-News-(720p)
+https://d3vzwoqcbpfm8p.cloudfront.net/index_4.m3u8
+#EXTINF:-1 tvg-id="ZillarBarta-News" tvg-name="ZillarBarta-News" tvg-logo="" group-title="其他",ZillarBarta-News
+https://server.zillarbarta.com/zillarbarta/index.m3u8
+#EXTINF:-1 tvg-id="Zylo-Fréquence-Novelas" tvg-name="Zylo-Fréquence-Novelas" tvg-logo="" group-title="其他",Zylo-Fréquence-Novelas
+https://d20oth1416y9a1.cloudfront.net/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8
+#EXTINF:-1 tvg-id="dlaCiebie.tv-(1080p)-[Not-24/7]" tvg-name="dlaCiebie.tv-(1080p)-[Not-24/7]" tvg-logo="" group-title="其他",dlaCiebie.tv-(1080p)-[Not-24/7]
+http://94.246.128.53:1935/tv/dlaCiebieTv/playlist.m3u8
+#EXTINF:-1 tvg-id="hr-fernsehen-(1080p)" tvg-name="hr-fernsehen-(1080p)" tvg-logo="" group-title="其他",hr-fernsehen-(1080p)
+https://hrhls.akamaized.net/hls/live/2024525/hrhls/index.m3u8
+#EXTINF:-1 tvg-id="Первый-Ярославский" tvg-name="Первый-Ярославский" tvg-logo="" group-title="其他",Первый-Ярославский
+https://yaroslavl.mediacdn.ru/cdn/pervyaroslavsk/playlist.m3u8
+#EXTINF:-1 tvg-id="СТБ-(720p)" tvg-name="СТБ-(720p)" tvg-logo="" group-title="其他",СТБ-(720p)
+https://ctv.dc.beltelecom.by/ctv/ctv.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="Сибирь-24-(Новосибирск)" tvg-name="Сибирь-24-(Новосибирск)" tvg-logo="" group-title="其他",Сибирь-24-(Новосибирск)
+https://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/sibir24-hd/index.m3u8
+#EXTINF:-1 tvg-id="Сочи-24-HD" tvg-name="Сочи-24-HD" tvg-logo="" group-title="其他",Сочи-24-HD
+http://serv30.vintera.tv:8081/sochi/sochi24_tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Суббота!" tvg-name="Суббота!" tvg-logo="" group-title="其他",Суббота!
+http://hls2.hd-tv.club/2_super/index.m3u8
+#EXTINF:-1 tvg-id="ТВ-Центр" tvg-name="ТВ-Центр" tvg-logo="" group-title="其他",ТВ-Центр
+https://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="ТК-Алмазный-край-(576p)" tvg-name="ТК-Алмазный-край-(576p)" tvg-logo="" group-title="其他",ТК-Алмазный-край-(576p)
+https://stream.almaz-media.tv:8080/hls/576.m3u8
+#EXTINF:-1 tvg-id="天龙八部" tvg-name="天龙八部" tvg-logo="" group-title="其他",天龙八部
+http://www.douzhicloud.site:35455/yy/1351814644
+#EXTINF:-1 tvg-id="广州竞赛" tvg-name="广州竞赛" tvg-logo="" group-title="其他" catchup="append" catchup-source="&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",广州竞赛
+http://nn.7x9d.cn/地方台8563/gsw.php?id=gzjs
+#EXTINF:-1 tvg-id="武夷山文旅茶" tvg-name="武夷山文旅茶" tvg-logo="" group-title="其他",武夷山文旅茶
+http://fjwysdb.chinashadt.com:2036/live/3.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="法治天地" tvg-name="法治天地" tvg-logo="" group-title="其他",法治天地
+http://171.83.103.119:9999/rtp/239.69.2.10:11214
+#EXTINF:-1 tvg-id="石家庄都市" tvg-name="石家庄都市" tvg-logo="" group-title="其他",石家庄都市
+https://stream1.freetv.fun/shi-jia-zhuang-du-shi-1.ctv
+#EXTINF:-1 tvg-id="第一财经" tvg-name="第一财经" tvg-logo="" group-title="其他",第一财经
+http://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
+#EXTINF:-1 tvg-id="金川电视台" tvg-name="金川电视台" tvg-logo="" group-title="其他",金川电视台
+http://play.kankanlive.com/live/1657360567739997.m3u8
+#EXTINF:-1 tvg-id="靖天戲劇" tvg-name="靖天戲劇" tvg-logo="" group-title="其他",靖天戲劇
+https://t.freetv.fun/live/jing-tian-xi-ju-6.m3u8$[BD]靖天戲劇
