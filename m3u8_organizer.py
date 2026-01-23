@@ -271,7 +271,7 @@ async def main(args):
                     # ✨ 智能分流！
                     if filename.endswith('.m3u'):
                         channels = parse_m3u_content(content, ad_keywords)
-                    else: // 默认都按 txt 处理
+                    else: 
                         channels = parse_txt_content(content, ad_keywords)
                     
                     for name, urls in channels.items():
