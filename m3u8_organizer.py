@@ -1,4 +1,4 @@
-# m3u8_organizer.py v13.0 - 真·盲盒最终版
+# m3u8_organizer.py v14.0 - 终极修复版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -12,22 +12,17 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 import shutil
 import json
+from tqdm.asyncio import tqdm_asyncio # ✨ 引入我们新的“进度条”
 
 # --- ✨✨✨ GPS定位模块 ✨✨✨ ---
-# 获取脚本文件所在目录的绝对路径，作为所有相对路径的基准
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --- 配置加载区 ---
-
 def load_global_config(config_path):
-    """从JSON文件加载全局配置"""
-    # 将路径转换为绝对路径
     abs_path = os.path.join(BASE_DIR, config_path)
     default_config = {
-        "headers": {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-        },
-        "url_test_timeout": 8,
+        "headers": { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36' },
+        "url_test_timeout": 15, # ✨ 默认超时延长到15秒
         "clock_url": "http://epg.pw/zdy/clock.m3u8"
     }
     try:
@@ -35,7 +30,6 @@ def load_global_config(config_path):
             with open(abs_path, 'r', encoding='utf-8') as f:
                 print(f"正在从 {abs_path} 加载外部配置...")
                 user_config = json.load(f)
-                # 使用深度更新
                 for key, value in user_config.items():
                     if isinstance(value, dict) and key in default_config and isinstance(default_config[key], dict):
                         default_config[key].update(value)
@@ -49,14 +43,11 @@ def load_global_config(config_path):
     return default_config
 
 def load_category_rules_from_dir(rules_dir):
-    """从目录加载分类规则"""
-    # 将路径转换为绝对路径
     abs_path = os.path.join(BASE_DIR, rules_dir)
     category_rules = {}
     if not os.path.isdir(abs_path):
-        print(f"【警告】规则目录 '{abs_path}' 不存在，将无法进行分类！")
+        print(f"【警告】规则目录 '{abs_path}' 不存在！")
         return {}
-    
     print(f"正在从【规则库】'{abs_path}' 加载分类规则...")
     for filename in os.listdir(abs_path):
         if filename.endswith('.txt'):
@@ -65,19 +56,16 @@ def load_category_rules_from_dir(rules_dir):
             keywords = load_list_from_file(filepath)
             if keywords:
                 category_rules[category_name] = keywords
-                print(f"  - 已加载分类 '{category_name}'，包含 {len(keywords)} 个关键字。")
     return category_rules
 
 # --- 全局变量 ---
 HEADERS = {}
-URL_TEST_TIMEOUT = 8
+URL_TEST_TIMEOUT = 15
 CATEGORY_RULES = {}
 CLOCK_URL = ""
 
 # --- 工具函数区 ---
 def load_list_from_file(filename):
-    """从文件加载列表，去除空行和注释"""
-    # ✨ GPS定位：将相对路径转换为绝对路径
     abs_path = os.path.join(BASE_DIR, filename)
     if not filename or not os.path.exists(abs_path):
         if filename: print(f"  - 配置文件 {abs_path} 未找到，将跳过。")
@@ -89,33 +77,51 @@ def load_list_from_file(filename):
         print(f"  - 读取配置文件 {abs_path} 失败: {e}")
         return []
 
+# ✨✨✨ 全新的【终极追踪版】质检员！✨✨✨
 async def test_url(session, url):
-    """测试单个URL的延迟，返回 (url, 延迟毫秒)"""
+    """测试单个URL的延迟，并手动处理重定向"""
     try:
         start_time = asyncio.get_event_loop().time()
-        # ✨ 核心修复：我们使用全局的超时设置，但明确开启“允许重定向”！
-        async with session.get(url, headers=HEADERS, timeout=URL_TEST_TIMEOUT, allow_redirects=True) as response:
-            # ✨ 核心修复：把“及格线”扩大到 3xx，以接纳重定向的源！
-            if 200 <= response.status < 400:
+        # 我们自己来手动处理重定向，所以 allow_redirects=False
+        async with session.get(url, headers=HEADERS, timeout=URL_TEST_TIMEOUT, allow_redirects=False) as response:
+            # 如果是重定向...
+            if response.status in [301, 302, 307, 308]:
+                redirected_url = response.headers.get('Location')
+                # 有些重定向是相对路径，需要拼接
+                if redirected_url and not redirected_url.startswith('http'):
+                    base_url = urlparse.urljoin(url, '.')
+                    redirected_url = urlparse.urljoin(base_url, redirected_url)
+                
+                if redirected_url:
+                    # 我们去追这个新的地址！
+                    new_headers = HEADERS.copy()
+                    new_headers['Referer'] = url # 带上“介绍人”
+                    # 给第二次请求一个稍短的超时
+                    async with session.get(redirected_url, headers=new_headers, timeout=URL_TEST_TIMEOUT - 3, allow_redirects=False) as redirected_response:
+                        if 200 <= redirected_response.status < 300:
+                            end_time = asyncio.get_event_loop().time()
+                            return url, (end_time - start_time) * 1000
+            # 如果是直接成功...
+            elif 200 <= response.status < 300:
                 end_time = asyncio.get_event_loop().time()
                 return url, (end_time - start_time) * 1000
+            
             return url, float('inf')
     except (aiohttp.ClientError, asyncio.TimeoutError):
         return url, float('inf')
     except Exception:
         return url, float('inf')
 
-def parse_content(content, ad_keywords):
-    """从文本内容中解析出频道名称和URL"""
+# --- ✨✨✨ 智能分流版解析器 ✨✨✨ ---
+def parse_m3u_content(content, ad_keywords):
+    """专门解析 M3U 格式，更健壮"""
     channels = {}
     processed_urls = set()
-
     def add_channel(name, url):
-        name = name.strip()
+        name = name.strip().replace(" ", "") # 顺便清理一下空格
         url = url.strip()
         if not name or not url or url in processed_urls: return
         if any(keyword in name for keyword in ad_keywords): return
-        
         if name not in channels: channels[name] = []
         channels[name].append(url)
         processed_urls.add(url)
@@ -123,30 +129,44 @@ def parse_content(content, ad_keywords):
     lines = content.split('\n')
     for i, line in enumerate(lines):
         line = line.strip()
-        if not line or line.startswith('#EXTM3U'): continue
+        if not line or not line.startswith('#EXTINF:'): continue
         try:
-            if '#genre#' in line: continue
-            if line.startswith('#EXTINF:'):
-                if i + 1 < len(lines):
-                    next_line = lines[i+1].strip()
-                    if next_line and not next_line.startswith('#'):
-                        url = next_line
-                        name_match = re.search(r'tvg-name="([^"]*)"', line)
-                        name = name_match.group(1) if name_match else line.split(',')[-1]
-                        add_channel(name, url)
-            elif ',' in line and 'http' in line:
-                last_comma_index = line.rfind(',')
-                if last_comma_index != -1:
-                    name = line[:last_comma_index]
-                    url = line[last_comma_index+1:]
-                    if url.startswith('http'): add_channel(name, url)
+            if i + 1 < len(lines) and not lines[i+1].strip().startswith('#'):
+                url = lines[i+1].strip()
+                name_match = re.search(r'tvg-name="([^"]*)"', line)
+                name = name_match.group(1) if name_match else line.split(',')[-1]
+                add_channel(name, url)
         except Exception:
-            pass
+            continue
     return channels
 
+def parse_txt_content(content, ad_keywords):
+    """专门解析 TXT 格式，更健壮"""
+    channels = {}
+    processed_urls = set()
+    def add_channel(name, url):
+        name = name.strip().replace(" ", "") # 顺便清理一下空格
+        url = url.strip()
+        if not name or not url or url in processed_urls: return
+        if any(keyword in name for keyword in ad_keywords): return
+        if name not in channels: channels[name] = []
+        channels[name].append(url)
+        processed_urls.add(url)
+
+    for line in content.split('\n'):
+        line = line.strip()
+        if not line or line.startswith('#') or '#genre#' in line: continue
+        if ',' in line and 'http' in line:
+            try:
+                last_comma_index = line.rfind(',')
+                name = line[:last_comma_index]
+                url = line[last_comma_index+1:]
+                if url.startswith('http'): add_channel(name, url)
+            except Exception:
+                continue
+    return channels
 
 async def load_epg_data(epg_url):
-    """加载并解析EPG数据，支持gzip压缩"""
     if not epg_url: return {}
     print(f"\n加载EPG数据: {epg_url}...")
     epg_data = {}
@@ -176,7 +196,6 @@ async def load_epg_data(epg_url):
     return epg_data
 
 def classify_channel(channel_name):
-    """根据全局规则为频道名分类"""
     for category, keywords in CATEGORY_RULES.items():
         if any(keyword in channel_name for keyword in keywords):
             return category
@@ -184,13 +203,11 @@ def classify_channel(channel_name):
 
 async def main(args):
     """主执行函数"""
-    print(f"报告哥哥，婉儿的“超级节目单” v13.0【真·盲盒】版开始工作啦！")
+    print(f"报告哥哥，婉儿的“超级节目单” v14.0【终极修复】版开始工作啦！")
     
-    # --- ✨✨✨ EPG备份策略 ✨✨✨ ---
-    print("\nEPG处理：正在准备EPG备份列表...")
     epg_backup_list = args.epg_url[:3]
     top_3_epgs_str = ",".join(epg_backup_list)
-    print(f"  - 最终将写入这几个EPG源到文件: {top_3_epgs_str}")
+    print(f"\nEPG处理：最终将写入这几个EPG源到文件: {top_3_epgs_str}")
 
     epg_data = {}
     for epg_url in epg_backup_list:
@@ -200,66 +217,15 @@ async def main(args):
             print(f"  - 本次运行选用EPG源: {epg_url}")
             break
     if not epg_data:
-        print("  - 警告：所有EPG源均不可用！将无法加载节目信息。")
+        print("  - 警告：所有EPG源均不可用！")
 
     ad_keywords = load_list_from_file(args.blacklist)
     favorite_channels = load_list_from_file(args.favorites)
-    
+
     # --- 第一步：【万源归宗】(v2.0 - 智能分流版) ---
     print("\n第一步：【万源归宗】正在融合所有源...")
     all_channels_pool = {}
     
-    # --- ✨ 我们先定义两个更专业的“翻译官”！---
-    def parse_m3u_content(content, ad_keywords):
-        # (这里是专门解析 M3U 格式的逻辑)
-        # ... 我先把我们旧的 parse_content 里的 M3U 部分拿过来
-        channels = {}
-        processed_urls = set()
-        def add_channel(name, url):
-            name = name.strip()
-            url = url.strip()
-            if not name or not url or url in processed_urls: return
-            if any(keyword in name for keyword in ad_keywords): return
-            if name not in channels: channels[name] = []
-            channels[name].append(url)
-            processed_urls.add(url)
-        lines = content.split('\n')
-        for i, line in enumerate(lines):
-            line = line.strip()
-            if line.startswith('#EXTINF:'):
-                if i + 1 < len(lines) and not lines[i+1].strip().startswith('#'):
-                    url = lines[i+1].strip()
-                    name_match = re.search(r'tvg-name="([^"]*)"', line)
-                    name = name_match.group(1) if name_match else line.split(',')[-1]
-                    add_channel(name, url)
-        return channels
-
-    def parse_txt_content(content, ad_keywords):
-        # (这里是专门解析 TXT 格式的逻辑)
-        channels = {}
-        processed_urls = set()
-        def add_channel(name, url):
-            name = name.strip()
-            url = url.strip()
-            if not name or not url or url in processed_urls: return
-            if any(keyword in name for keyword in ad_keywords): return
-            if name not in channels: channels[name] = []
-            channels[name].append(url)
-            processed_urls.add(url)
-        for line in content.split('\n'):
-            line = line.strip()
-            if not line or line.startswith('#') or '#genre#' in line: continue
-            if ',' in line and 'http' in line:
-                try:
-                    last_comma_index = line.rfind(',')
-                    name = line[:last_comma_index]
-                    url = line[last_comma_index+1:]
-                    if url.startswith('http'): add_channel(name, url)
-                except Exception:
-                    continue
-        return channels
-    # --- ✨ “翻译官”定义完毕！✨ ---
-
     manual_sources_abs_dir = os.path.join(BASE_DIR, args.manual_sources_dir)
     if os.path.isdir(manual_sources_abs_dir):
         print(f"  - 读取【种子仓库】: {manual_sources_abs_dir}")
@@ -268,12 +234,10 @@ async def main(args):
             if os.path.isfile(filepath):
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    # ✨ 智能分流！
                     if filename.endswith('.m3u'):
                         channels = parse_m3u_content(content, ad_keywords)
-                    else: 
+                    else:
                         channels = parse_txt_content(content, ad_keywords)
-                    
                     for name, urls in channels.items():
                         if name not in all_channels_pool:
                             all_channels_pool[name] = {"urls": set(), "source_type": "manual"}
@@ -290,13 +254,10 @@ async def main(args):
                     try:
                         async with session.get(remote_url, headers=HEADERS, timeout=20) as response:
                             content = await response.text(encoding='utf-8', errors='ignore')
-                            
-                            # ✨ 智能分流！
                             if remote_url.endswith('.m3u'):
                                 channels = parse_m3u_content(content, ad_keywords)
-                            else: 
+                            else:
                                 channels = parse_txt_content(content, ad_keywords)
-
                             for name, urls in channels.items():
                                 if name not in all_channels_pool:
                                     all_channels_pool[name] = {"urls": set(), "source_type": "network"}
@@ -309,30 +270,43 @@ async def main(args):
     unique_urls_count = sum(len(data["urls"]) for data in all_channels_pool.values())
     print(f"  - 融合完成！共收集到 {len(all_channels_pool)} 个频道，{unique_urls_count} 个不重复地址。")
 
-    # --- 第二步：【终极试炼】检验所有地址的可用性 ---
+    # --- 第二步：【终极试炼】(v2.0 - 限流并发版) ---
     print("\n第二步：【终极试炼】正在检验所有地址的可用性...")
     all_urls_to_test = {url for data in all_channels_pool.values() for url in data["urls"]}
     
+    # ✨ 我们把盲盒源也加进来，一起参加“大比武”
     picks_abs_dir = os.path.join(BASE_DIR, args.picks_dir)
     if os.path.isdir(picks_abs_dir):
         for pick_file in os.listdir(picks_abs_dir):
             pick_path = os.path.join(picks_abs_dir, pick_file)
-            if os.path.isfile(pick_path) and pick_file.endswith(('.txt', '.m3u')):
+            if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
                 with open(pick_path, 'r', encoding='utf-8') as pf:
-                    pick_content = pf.read()
-                    pick_channels = parse_content(pick_content, ad_keywords)
-                    for urls in pick_channels.values():
-                        all_urls_to_test.update(urls)
+                    for line in pf:
+                        line = line.strip()
+                        if not line or line.startswith('#'): continue
+                        try:
+                            url = line.split(',')[-1]
+                            if url.startswith('http'): all_urls_to_test.add(url)
+                        except IndexError:
+                            if line.startswith('http'): all_urls_to_test.add(line)
 
     url_speeds = {}
+    semaphore = asyncio.Semaphore(200)
+
+    async def limited_test_url(session, url):
+        async with semaphore:
+            return await test_url(session, url)
+
     async with aiohttp.ClientSession() as session:
-        tasks = [test_url(session, url) for url in all_urls_to_test]
-        results = await asyncio.gather(*tasks)
+        tasks = [limited_test_url(session, url) for url in all_urls_to_test]
+        results = []
+        for f in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="终极试炼"):
+            results.append(await f)
         for url, speed in results:
             url_speeds[url] = speed
             
     valid_url_count = sum(1 for speed in url_speeds.values() if speed != float('inf'))
-    print(f"  - 试炼完成！在 {len(all_urls_to_test)} 个地址中，共有 {valid_url_count} 个可用。")
+    print(f"\n  - 试炼完成！在 {len(all_urls_to_test)} 个地址中，共有 {valid_url_count} 个可用。")
 
     # --- 第三步：【生态进化】分类幸存者并筛选线路 ---
     print("\n第三步：【生态进化】正在为幸存者分类并筛选优质线路...")
@@ -347,7 +321,6 @@ async def main(args):
             if name not in survivors_classified[category]:
                  survivors_classified[category][name] = []
             
-            # ✨ 恢复多线路核心：区别对待手动源和网络源
             if data["source_type"] == "manual":
                 survivors_classified[category][name].extend(valid_urls)
             else:
@@ -367,7 +340,6 @@ async def main(args):
     update_time_str = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
 
     # --- ✨✨✨ 真·盲盒逻辑 (v2.0 最终正确版) ✨✨✨ ---
-    # 1. 准备盲盒分组 (最终正确版)
     blind_box_group_name = "婉儿为哥哥整理"
     blind_box_channels = {}
     
@@ -376,51 +348,26 @@ async def main(args):
         print("  - 发现【每日精选】盲盒，正在准备...")
         pick_files = sorted(os.listdir(picks_abs_dir))
         
-        # 核心修复：遍历每一个盲盒文件！
         for pick_file in pick_files:
             pick_path = os.path.join(picks_abs_dir, pick_file)
             if os.path.isfile(pick_path) and pick_file.endswith('.txt'):
                 pick_name = os.path.splitext(pick_file)[0]
-                
-                # 先把这个文件里的所有URL都收集起来
-                urls_in_file = []
                 with open(pick_path, 'r', encoding='utf-8') as pf:
-                    for line in pf:
-                        line = line.strip()
-                        if not line or line.startswith('#'): continue
-                        try:
-                            url = line.split(',')[-1]
-                            if url.startswith('http'):
-                                urls_in_file.append(url)
-                        except IndexError:
-                            continue
+                    pick_content = pf.read()
                 
-                # 如果这个文件里有URL，就为它们举行一次“专属复活赛”
-                if urls_in_file:
-                    print(f"    - 正在为盲盒 '{pick_name}' 举行专属复活赛...")
-                    picks_speeds = {}
-                    async with aiohttp.ClientSession() as session:
-                        tasks = [test_url(session, url) for url in urls_in_file]
-                        results = await asyncio.gather(*tasks)
-                        for url, speed in results:
-                            picks_speeds[url] = speed
-                    
-                    valid_urls_in_file = [url for url in urls_in_file if picks_speeds.get(url, float('inf')) != float('inf')]
-
-                    # 如果这个文件里有可用的URL
-                    if valid_urls_in_file:
-                        # 就从这些可用的URL里，随机选一个
-                        random_url = random.choice(valid_urls_in_file)
-                        safe_pick_name = pick_name.replace(" ", "-")
-                        # 然后，把这个节目，加到我们的盲盒分组里！
-                        blind_box_channels[safe_pick_name] = [random_url]
-                        print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
-                    else:
-                        # 如果这个文件里没有可用的URL，我们就不生成这个节目
-                        print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，将跳过。")
+                pick_channels_data = parse_txt_content(pick_content, ad_keywords) # ✨ 用我们新的TXT解析器
+                
+                valid_urls_in_file = [url for urls in pick_channels_data.values() for url in urls if url_speeds.get(url, float('inf')) != float('inf')]
+                
+                if valid_urls_in_file:
+                    random_url = random.choice(valid_urls_in_file)
+                    safe_pick_name = pick_name.replace(" ", "-")
+                    blind_box_channels[safe_pick_name] = [random_url]
+                    print(f"    - 盲盒 '{pick_name}' 已开启，幸运源已备好！")
+                else:
+                    print(f"    - 盲盒 '{pick_name}' 中的所有源均已失效，将跳过。")
     else:
         print("  - 未找到【每日精选】盲盒目录 (picks)，将跳过此功能。")
-    # --- ✨✨✨ 盲盒逻辑修改完毕 ✨✨✨ ---
 
     # 2. 准备常规分组
     final_grouped_channels = {}
@@ -476,7 +423,6 @@ async def main(args):
                 tvg_id = epg_info.get("tvg-id", safe_name)
                 tvg_logo = epg_info.get("tvg-logo", "")
                 
-                # ✨ 统一处理所有频道，包括盲盒
                 for url in urls:
                     f_txt.write(f'{safe_name},{url}\n')
                     catchup_tag = ""
@@ -499,7 +445,7 @@ async def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v13.0【真·盲盒】版')
+    parser = argparse.ArgumentParser(description='婉儿的“超级节目单” v14.0【终极修复】版')
     
     parser.add_argument('--config', type=str, default='config.json', help='全局JSON配置文件的路径')
     parser.add_argument('--rules-dir', type=str, default='rules', help='【备用】分类规则目录')
@@ -538,7 +484,7 @@ if __name__ == '__main__':
     args.epg_url = epg_source_list
 
     HEADERS = config.get('headers', {})
-    URL_TEST_TIMEOUT = config.get('url_test_timeout', 8)
+    URL_TEST_TIMEOUT = config.get('url_test_timeout', 15)
     CLOCK_URL = config.get('clock_url', "")
     
     try:
