@@ -448,28 +448,38 @@ async def main(args):
     ordered_groups.extend(sorted([g for g in final_grouped_channels.keys() if g not in prefix_order]))
 
     # 4. ✨✨✨ 按照黄金顺序同步写入 M3U 与 TXT (注入图标与 EPG 修复) ✨✨✨
-    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u, open(txt_filename, 'w', encoding='utf-8') as f_txt:
-        # 写入地表最强头部定义
-        f_m3u.write(f'#EXTM3U x-tvg-url="{top_3_epgs_str}" catchup="append" catchup-source="?playseek=${{(b)yyyyMMddHHmmss}}-${{(e)yyyyMMddHHmmss}}"\n')
-        f_m3u.write(f'#EXTINF:-1 group-title="🕒 凤凰·更新时间",{beijing_time}\n{CLOCK_URL}\n')
+    with open(m3u_filename, 'w', enco# --- ✨✨✨ 婉儿的 v16.8 “暴力通杀”输出逻辑 ✨✨✨ ---
+
+    with open(m3u_filename, 'w', encoding='utf-8') as f_m3u:
+        # 1. 暴力双标签头部 (x-tvg-url 和 tvg-url 全写上，通杀所有播放器)
+        header = (f'#EXTM3U '
+                  f'tvg-url="{top_3_epgs_str}" '
+                  f'x-tvg-url="{top_3_epgs_str}" '
+                  f'catchup="append" '
+                  f'catchup-source="?playseek=${{(b)yyyyMMddHHmmss}}-${{(e)yyyyMMddHHmmss}}"\n')
+        f_m3u.write(header)
         
-        f_txt.write(f'更新时间,#genre#\n{beijing_time},{CLOCK_URL}\n\n')
+        # 2. 规范化更新时间 (给它一个正常的名字，比如 "凤凰更新时间")
+        # 这样不会干扰播放器的名字解析引擎
+        f_m3u.write(f'#EXTINF:-1 group-title="🕒 凤凰·更新时间",凤凰更新时间({beijing_time})\n{CLOCK_URL}\n')
 
-        for group in ordered_groups:
-            pretty_group_name = get_pretty_group(group) # ✨ 加上婉儿的霓虹图标
-            f_txt.write(f'{pretty_group_name},#genre#\n')
-
+        for group in ordered_keys:
+            pretty_group_name = get_pretty_group(group)
+            
             for name, urls in sorted(final_grouped_channels[group].items()):
-                # 【核心修复】两套名字，一个撞库(适配范明明)，一个视觉显示(带4K)
-                epg_id = get_epg_id(name)        # CCTV-1
-                display_name = get_display_name(name) # CCTV-1 4K
+                # 这一步保持咱们之前的 v16.6 “开锁”引擎
+                epg_id = get_epg_id(name) # 产出 CCTV1
+                display_name = get_display_name(name) # 产出 CCTV-1 4K
                 
-                # 双向对齐：如果 CCTV-1 找不到，尝试 CCTV1
-                info = epg_data.get(epg_id, epg_data.get(epg_id.replace("-", ""), {}))
-                tid, logo = info.get("tvg-id", epg_id), info.get("tvg-logo", "")
+                info = epg_master_data.get(epg_id, {})
+                tid = info.get("tvg-id", epg_id)
+                logo = info.get("tvg-logo", "")
 
                 for u in urls:
-                    f_txt.write(f'{display_name},{u}\n')
+                    # 写入每一行，确保 tvg-id 和 tvg-name 全部对齐极简 ID
+                    # 逗号后跟 display_name
+                    f_m3u.write(f'#EXTINF:-1 tvg-id="{tid}" tvg-name="{tid}" tvg-logo="{logo}" group-title="{pretty_group_name}",{display_name}\n')
+                    f_m3u.write(f'{u}\n')
                     # 【核心找回】三套回看协议精准适配 (v14.0 精髓)
                     c_tag = ""
                     if any(x in u for x in ["PLTV", "TVOD", "/liveplay/", "/replay/"]):
