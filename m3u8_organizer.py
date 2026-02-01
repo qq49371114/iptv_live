@@ -71,7 +71,6 @@ def is_4k_channel(name):
 
 ### **【m3u8_organizer.py v15.1 · 第二部分：配置加载与终极质检员】**
 
-```python
 # --- 配置加载区 ---
 def load_global_config(config_path):
     abs_path = os.path.join(BASE_DIR, config_path)
@@ -143,7 +142,7 @@ async def test_url(session, url):
 
 ### **【m3u8_organizer.py v15.1 · 第三部分：解析引擎与 EPG 撞库】**
 
-```python
+
 # --- ✨✨✨ 智能解析引擎 ✨✨✨ ---
 def parse_m3u_content(content, ad_keywords):
     """专门解析 M3U 格式，支持智能去广告"""
@@ -226,7 +225,6 @@ def classify_channel(channel_name):
 
 ### **【m3u8_organizer.py v15.1 · 第四部分：万源归宗与终极试炼】**
 
-```python
 async def main(args):
     """主执行函数：凤凰系统的核心驱动"""
     print(f"🚀 报告哥哥！婉儿 v15.1 [凤凰·霓虹进化版] 引擎启动...")
@@ -315,7 +313,6 @@ async def main(args):
 
 ### **【m3u8_organizer.py v15.1 · 第五部分：颜值进化与黄金输出 (完结)】**
 
-```python
     # --- 第三步：【生态进化】分类、4K 提取与筛选 ---
     print("\n第三步：【生态进化】正在进行智能分类与 4K 信号拦截...")
     survivors_classified = {}
