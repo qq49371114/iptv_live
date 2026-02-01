@@ -448,7 +448,7 @@ async def main(args):
     ordered_groups.extend(sorted([g for g in final_grouped_channels.keys() if g not in prefix_order]))
 
     # 4. ✨✨✨ 按照黄金顺序同步写入 M3U 与 TXT (注入图标与 EPG 修复) ✨✨✨
-    with open(m3u_filename, 'w', enco# --- ✨✨✨ 婉儿的 v16.8 “暴力通杀”输出逻辑 ✨✨✨ ---
+    # --- ✨✨✨ 婉儿的 v16.8 “暴力通杀”输出逻辑 ✨✨✨ ---
 
     with open(m3u_filename, 'w', encoding='utf-8') as f_m3u:
         # 1. 暴力双标签头部 (x-tvg-url 和 tvg-url 全写上，通杀所有播放器)
