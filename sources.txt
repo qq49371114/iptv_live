@@ -51,3 +51,5 @@ https://raw.githubusercontent.com/qq49371114/migu_video/refs/heads/main/interfac
 https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.txt
 https://raw.githubusercontent.com/zwc456baby/iptv_alive/master/live.txt
 https://raw.githubusercontent.com/qq49371114/Livelist/refs/heads/main/IPTV.m3u
+https://raw.bgithub.xyz/wwb521/live/refs/heads/main/tv.txt
+https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/GNTV.m3u
