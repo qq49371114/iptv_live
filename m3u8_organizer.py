@@ -6,11 +6,10 @@ import asyncio
 import argparse
 import random
 import aiohttp
-import datetime
-from datetime import datetime, timezone, timedelta # <--- 就是这句！
 import xml.etree.ElementTree as ET
 from urllib import parse as urlparse
 from tqdm.asyncio import tqdm_asyncio
+import datetime # <--- 我们就用这种最简单的、只导入“大工具箱”的方式！
 
 # =========================================================
 # ✨ V22.0 全局设定：我们的“创世法则”
@@ -433,7 +432,7 @@ async def main(args):
     txt_filename = f"{output_abs_path}.txt"
     os.makedirs(os.path.dirname(m3u_filename), exist_ok=True)
 
-    beijing_time = datetime.datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
+    beijing_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
 
     # 【100% 还原】真·盲盒随机逻辑
     blind_box_group_name = "婉儿为哥哥整理"
