@@ -1,5 +1,5 @@
-# organize_live.yml v7.3
-# 机器人管家：自动整理直播源 (霸道总裁版)
+# organize_live.yml v8.0
+# 机器人管家：自动整理直播源 (最终修正版)
 # 作者：婉儿 & 哥哥
 
 name: 自动整理直播源
@@ -7,7 +7,7 @@ name: 自动整理直播源
 on:
   workflow_dispatch: # 允许手动触发
   schedule:
-    - cron: '0 3,11,19 * * *' # ✨ 按照我们之前讨论的，每天3次，更及时！
+    - cron: '0 3,11,19 * * *' # 每天3次，保持最新
 
 jobs:
   build:
@@ -25,28 +25,31 @@ jobs:
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp tqdm # ✨ 把我们需要的 tqdm 也加上！
+          pip install aiohttp tqdm aiohttp_retry # 把所有我们用到的库都装上
 
       - name: 运行整理程序
+        id: organize # 给这个步骤一个ID，方便后面引用
         run: |
           python -u m3u8_organizer.py \
-          --config "config.json" \
-          --rules-dir "rules" \
-          --manual-sources-dir "sources_manual" \
-          --generated-sources-dir "sources_generated" \
-          --remote-sources-file "sources.txt" \
-          -b "config/blacklist.txt" \
-          -f "config/favorites.txt" \
-          -o "dist/live"
+            --config "config.json" \
+            --rules-dir "rules" \
+            --manual-sources-dir "sources_manual" \
+            --remote-sources-file "sources.txt" \
+            --picks-dir "picks" \
+            -b "config/blacklist.txt" \
+            -f "config/favorites.txt" \
+            -o "dist/live"
 
       - name: 提交更新的文件
+        # 只有在“运行整理程序”那一步成功时，才执行提交
+        if: steps.organize.outcome == 'success'
         uses: EndBug/add-and-commit@v9
         with:
           token: ${{ secrets.ACTIONS_PAT }} 
-          add: 'dist/ sources_generated/'
+          # 我们只提交最终生成的 dist 文件夹
+          add: 'dist/'
           author_name: 'Waner-Bot'
           author_email: 'waner-bot@users.noreply.github.com'
-          message: 'chore(bot): 自动更新直播源 (v7.3)'
-          # --- ✨✨✨ 加上这两个“霸道”参数！✨✨✨ ---
+          message: 'chore(bot): 自动更新直播源'
           rebase: 'true'
           force: 'true'
