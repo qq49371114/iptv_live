@@ -6,6 +6,7 @@ import asyncio
 import argparse
 import random
 import aiohttp
+import datetime
 import xml.etree.ElementTree as ET
 from urllib import parse as urlparse
 from tqdm.asyncio import tqdm_asyncio
