@@ -1,4 +1,4 @@
-# organize_live.yml v7.9
+# organize_live.yml v7.9 - 婉儿修复版
 name: organize_live
 
 on:
@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: '0 3,11,19 * * *'
   push:
-    branches: [main]
+    branches: [main, dev]
 
 jobs:
   build:
@@ -25,12 +25,13 @@ jobs:
         run: pip install aiohttp tqdm
 
       - name: Run organizer
-        run: python m3u8_organizer.py --config config.json --rules-dir rules --manual-sources-dir sources_manual --generated-sources-dir sources_generated --remote-sources-file sources.txt --b config/blacklist.txt -f config/favorites.txt -o dist/live
+        run: |
+          python m3u8_organizer.py --config config.json --rules-dir rules --manual-sources-dir sources_manual --remote-sources-file sources.txt -b config/blacklist.txt -f config/favorites.txt -o dist/live
 
       - name: Commit updates
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'chore: auto update (v7.9)'
           commit_user_name: 'Waner-Bot'
-          commit_user_email: 'waner-bot@users.noreply.github.com'
+          commit_user_email: 'waner-bot@usersn0reply.github.com'
           push_options: '--force'
