@@ -136,9 +136,101 @@ def load_category_rules_from_dir(rules_dir: str) -> Dict[str, List[str]]:
     return category_rules
 
 
+
 # =========================================================
-# ✨ v24.2 深度URL测试（核心改进）
+# ✨ v24.3 深度验证：解析并测试m3u8子流
 # =========================================================
+async def test_url(session: aiohttp.ClientSession, url: str, timeout: int = 10, deep_verify: bool = False) -> Tuple[str, float]:
+    """
+    深度URL测试 - v24.3 子流验证版
+    deep_verify: 是否验证子流有效性
+    """
+    try:
+        start_time = asyncio.get_event_loop().time()
+        
+        async with session.get(url, headers=HEADERS, timeout=timeout, allow_redirects=False) as response:
+            if response.status in [301, 302, 307, 308]:
+                redirected_url = response.headers.get('Location')
+                if redirected_url and not redirected_url.startswith('http'):
+                    base_url = urlparse.urljoin(url, '.')
+                    redirected_url = urlparse.urljoin(base_url, redirected_url)
+
+                if redirected_url:
+                    new_headers = HEADERS.copy()
+                    new_headers['Referer'] = url
+                    async with session.get(redirected_url, headers=new_headers, timeout=max(5, timeout-5), allow_redirects=False) as redirected_response:
+                        if 200 <= redirected_response.status < 300:
+                            if deep_verify and redirected_response.content_type in ['application/x-mpegURL', 'application/vnd.apple.mpegurl']:
+                                try:
+                                    m3u8_content = await redirected_response.text()
+                                    sub_streams = _extract_sub_streams(m3u8_content, redirected_url)
+                                    if sub_streams:
+                                        import random
+                                        test_stream = random.choice(sub_streams[:3])
+                                        try:
+                                            async with session.get(test_stream, headers=HEADERS, timeout=5, allow_redirects=True) as sub_resp:
+                                                if 200 <= sub_resp.status < 300:
+                                                    sample = await sub_resp.content.read(1024)
+                                                    if sample:
+                                                        end_time = asyncio.get_event_loop().time()
+                                                        return url, (end_time - start_time) * 1000
+                                        except Exception:
+                                            pass
+                                    end_time = asyncio.get_event_loop().time()
+                                    return url, (end_time - start_time) * 1000
+                                except Exception:
+                                    return url, float('inf')
+                            end_time = asyncio.get_event_loop().time()
+                            return url, (end_time - start_time) * 1000
+                return url, float('inf')
+            elif 200 <= response.status < 300:
+                if deep_verify and response.content_type in ['application/x-mpegURL', 'application/vnd.apple.mpegurl']:
+                    try:
+                        m3u8_content = await response.text()
+                        sub_streams = _extract_sub_streams(m3u8_content, url)
+                        if sub_streams:
+                            import random
+                            test_stream = random.choice(sub_streams[:3])
+                            try:
+                                async with session.get(test_stream, headers=HEADERS, timeout=5, allow_redirects=True) as sub_resp:
+                                    if 200 <= sub_resp.status < 300:
+                                        sample = await sub_resp.content.read(1024)
+                                        if sample:
+                                            end_time = asyncio.get_event_loop().time()
+                                            return url, (end_time - start_time) * 1000
+                            except Exception:
+                                pass
+                        end_time = asyncio.get_event_loop().time()
+                        return url, (end_time - start_time) * 1000
+                    except Exception:
+                        return url, float('inf')
+                end_time = asyncio.get_event_loop().time()
+                return url, (end_time - start_time) * 1000)
+            return url, float('inf')
+            
+    except (aiohttp.ClientError, asyncio.TimeoutError):
+        return url, float('inf')
+    except Exception:
+        return url, float('inf')
+
+
+def _extract_sub_streams(m3u8_content: str, base_url: str) -> List[str]:
+    \"\"\"从m3u8内容中提取子流URL\"\"\"
+    sub_streams = []
+    lines = m3u8_content.split('\n')
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        if not line.startswith('http'):
+            line = urlparse.urljoin(base_url, line)
+        sub_streams.append(line)
+    return sub_streams
+
+
+# =========================================================
+# ✨ v24.3 智能URL选择（核心改进）
+# =========================================================# =========================================================
 async def test_url(session: aiohttp.ClientSession, url: str, timeout: int = 10, deep_verify: bool = False) -> Tuple[str, float]:
     """
     深度URL测试
