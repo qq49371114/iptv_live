@@ -322,7 +322,11 @@ def _add_channel_to_dict(
     url = url.strip()
     if not name or not url or url in processed_urls:
         return
+    # 过滤频道名称中的黑名单关键词
     if any(keyword in name for keyword in ad_keywords):
+        return
+    # 过滤URL中的黑名单域名
+    if any(keyword in url for keyword in ad_keywords):
         return
 
     final_category = classify_channel(name) or group_title or "其他"
