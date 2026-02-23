@@ -205,7 +205,7 @@ async def test_url(session: aiohttp.ClientSession, url: str, timeout: int = 10, 
                     except Exception:
                         return url, float('inf')
                 end_time = asyncio.get_event_loop().time()
-                return url, (end_time - start_time) * 1000)
+                return url, (end_time - start_time) * 1000
             return url, float('inf')
             
     except (aiohttp.ClientError, asyncio.TimeoutError):
