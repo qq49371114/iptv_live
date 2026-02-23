@@ -1,8 +1,8 @@
 # 📺 直播源整理工具 - 婉儿的"超级节目单"
 
-> v24.2 深度优化版 - 解决播放卡顿，提升播放体验
+> v24.3 子流验证版 - 解决播放卡顿，提升播放体验
 
-![version](https://img.shields.io/badge/version-24.2-blue)
+![version](https://img.shields.io/badge/version-24.3-blue)
 ![python](https://img.shields.io/badge/python-3.8+-green)
 ![license](https://img.shields.io/badge/license-MIT-orange)
 
@@ -246,6 +246,14 @@ timeout 1800 python m3u8_organizer.py
 ---
 
 ## 📝 更新日志
+
+### v24.3 (2024-02-23)
+### v24.3 (2024-02-23)
+
+- 🔥 新增m3u8子流验证（解析播放列表）
+- 🔥 新增真实流地址测试（.ts/.m3u8片段）
+- 🎯 修复：解决列表中源播放不了的问题
+- 🎯 优化：更准确地验证直播源可用性
 
 ### v24.2 (2024-02-23)
 
