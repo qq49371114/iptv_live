@@ -215,7 +215,7 @@ async def test_url(session: aiohttp.ClientSession, url: str, timeout: int = 10, 
 
 
 def _extract_sub_streams(m3u8_content: str, base_url: str) -> List[str]:
-    \"\"\"从m3u8内容中提取子流URL\"\"\"
+    """从m3u8内容中提取子流URL"""
     sub_streams = []
     lines = m3u8_content.split('\n')
     for line in lines:
