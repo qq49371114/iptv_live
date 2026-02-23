@@ -1,67 +1,36 @@
-# organize_live.yml v7.5 - 婉儿极速版（修复版）
-# 机器人管家：自动整理直播源 (极速优化版)
-# 作者：婉儿 & 哥哥
-
-name: 自动整理直播源
+# organize_live.yml v7.9
+name: organize_live
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 3,11,19 * * *'
-    - cron: '0 */4 * * *'
   push:
-    branches: [main, dev]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
 
     steps:
-      - name: 📥 检出代码
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: 🐍 设置 Python 3.10 + 缓存
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip'  # ✅ 保留缓存，但不指定依赖文件
 
-      - name: 💾 优化 Python 环境
-        run: |
-          python -m pip install --upgrade pip --no-cache-dir
-          pip install --no-cache-dir aiohttp tqdm
+      - name: Install dependencies
+        run: pip install aiohttp tqdm
 
-      - name: 🔧 创建配置文件
-        run: |
-          if [ ! -f "config.json" ]; then
-            cat > config.json << 'CONFIG'
-{
-  "headers": { "User-Agent": "Mozilla/5.0" },
-  "url_test_timeout": 15,
-  "concurrent_limit": 600,
-  "connection_limit": 1000,
-  "ttl_dns_cache": 300,
-  "keepalive_timeout": 30
-}
-CONFIG
-          fi
+      - name: Run organizer
+        run: python m3u8_organizer.py --config config.json --rules-dir rules --manual-sources-dir sources_manual --generated-sources-dir sources_generated --remote-sources-file sources.txt --b config/blacklist.txt -f config/favorites.txt -o dist/live
 
-      - name: 📊 运行整理程序（超并发版）
-        run: |
-          export PYTHONUNBUFFERED=1
-          python -u m3u8_organizer.py --config "config.json" --rules-dir "rules" --manual-sources-dir "sources_manual" --generated-sources-dir "sources_generated" --remote-sources-file "sources.txt" -b "config/blacklist.txt" -f "config/favorites.txt" -o "dist/live"
-
-      - name: 🎯 提交更新
-        uses: EndBug/add-and-commit@v9
+      - name: Commit updates
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          token: ${{ secrets.ACTIONS_PAT }}
-          add: 'dist/ sources_generated/'
-          author_name: 'Waner-Bot'
-          author_email: 'waner-bot@users.noreply.github.com'
-          message: 'chore(bot): 自动更新直播源 (v7.5 修复版)'
-          rebase: 'true'
-          force: 'true'
-          push: 'origin main'
+          commit_message: 'chore: auto update (v7.9)'
+          commit_user_name: 'Waner-Bot'
+          commit_user_email: 'waner-bot@users.noreply.github.com'
+          push_options: '--force'
