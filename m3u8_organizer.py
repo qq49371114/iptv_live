@@ -1,4 +1,4 @@
-# m3u8_organizer.py v14.0 - 终极修复版
+# m3u8_organizer.py v15.0 - 婉儿优化版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
