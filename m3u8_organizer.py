@@ -1,4 +1,4 @@
-# m3u8_organizer.py v15.0 - 婉儿优化版
+# m3u8_organizer.py v14.0 - 终极修复版
 # 作者：林婉儿 & 哥哥
 
 import asyncio
@@ -291,13 +291,23 @@ async def main(args):
                             if line.startswith('http'): all_urls_to_test.add(line)
 
     url_speeds = {}
-    semaphore = asyncio.Semaphore(600)
+    # ✨ 从配置读取并发限制
+    semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)
 
     async def limited_test_url(session, url):
         async with semaphore:
             return await test_url(session, url)
 
-    async with aiohttp.ClientSession() as session:
+    # ✨ 优化连接池配置以提升性能
+    connector = aiohttp.TCPConnector(
+        limit=CONCURRENT_LIMIT,  # 连接池大小
+        limit_per_host=50,        # 单主机连接数
+        ttl_dns_cache=300,        # DNS缓存5分钟
+        use_dns_cache=True,
+        keepalive_timeout=30      # keep-alive
+    )
+
+    async with aiohttp.ClientSession(connector=connector) as session:
         tasks = [limited_test_url(session, url) for url in all_urls_to_test]
         results = []
         for f in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="终极试炼"):
@@ -486,6 +496,7 @@ if __name__ == '__main__':
     HEADERS = config.get('headers', {})
     URL_TEST_TIMEOUT = config.get('url_test_timeout', 15)
     CLOCK_URL = config.get('clock_url', "")
+    CONCURRENT_LIMIT = config.get('concurrent_limit', 600)  # ✨ 从配置读取并发限制
     
     try:
         asyncio.run(main(args))
